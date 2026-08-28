@@ -1,0 +1,330 @@
+.about-page {
+  background-color: var(--primary-bg);
+  padding-top: 80px; /* Offset for fixed header */
+}
+
+/* About Hero */
+.about-hero {
+  background-color: var(--forest-green);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/kudrat-villa-rooftop-view.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-light);
+  padding: 120px 5%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.about-hero-mobile-bg {
+  display: none;
+}
+
+.about-hero-content {
+  max-width: 900px;
+}
+
+.about-hero .massive-title {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  letter-spacing: 5px;
+  color: var(--accent-gold);
+  margin-bottom: 35px;
+}
+
+.about-hero-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Facilities */
+.facilities-section {
+  background-color: var(--secondary-bg);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.facility-card {
+  background-color: var(--primary-bg);
+  padding: 40px 30px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-slow);
+  border: 1px solid rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.facility-card:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+}
+
+.facility-icon {
+  color: var(--accent-gold);
+  margin-bottom: 20px;
+  transition: var(--transition-fast);
+}
+
+.facility-card:hover .facility-icon {
+  transform: scale(1.1);
+  color: var(--forest-green);
+}
+
+.facility-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.facility-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Gallery category spacing */
+.gallery-category {
+  margin-bottom: 40px;
+}
+
+/* FAQ & Map */
+.faq-main-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 50px;
+}
+
+.faq-map-section {
+  display: flex;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.faq-container {
+  flex: 1;
+}
+
+.faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.faq-item h4 {
+  font-size: 1.1rem; /* Reduced from 1.25rem */
+  color: var(--forest-green);
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.faq-item p {
+  font-size: 0.95rem; /* Reduced from 1.05rem */
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Distances Column */
+.distances-container {
+  flex: 0.8;
+  background-color: transparent;
+}
+
+.distances-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.distance-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.distance-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #f97316; /* Bright orange like the screenshot */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+}
+
+.distance-text h5 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.distance-text span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.map-container {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: var(--secondary-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px dashed #ccc;
+}
+
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
+
+@media (max-width: 992px) {
+  .faq-map-section {
+    flex-direction: column;
+  }
+  .faq-main-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  .about-hero .massive-title {
+    font-size: 3rem;
+  }
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .about-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/kudrat-villa-estate.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+  }
+  .about-hero-mobile-bg {
+    display: none;
+  }
+  .about-hero-content {
+    padding: 0;
+    text-align: center;
+  }
+  .about-hero .massive-title {
+    font-size: 2.2rem; /* Reduced for cinema feel */
+    margin-bottom: 12px;
+  }
+  .about-hero-subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .about-hero-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  .facility-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .faq-item h4 {
+    font-size: 1rem;
+  }
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+  
+  .distance-item {
+    gap: 10px;
+  }
+  .distance-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .distance-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .distance-text h5 {
+    font-size: 0.9rem;
+  }
+  .distance-text span {
+    font-size: 0.8rem;
+  }
+  
+  .map-placeholder {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-hero .massive-title {
+    font-size: 2rem;
+  }
+  .map-placeholder {
+    height: 350px;
+  }
+}

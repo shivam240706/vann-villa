@@ -1,0 +1,225 @@
+.amenities-section {
+  background-color: var(--primary-bg);
+  padding: 80px 5%;
+}
+
+.amenities-header {
+  margin-bottom: 60px;
+}
+
+/* Removed grid layout styles for mobile */
+
+/* Swiper Coverflow Styles (Desktop) */
+.amenities-swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.amenities-coverflow {
+  width: 100%;
+  padding: 0 0 50px 0; /* Space for pagination */
+}
+
+.amenities-coverflow .swiper-slide {
+  width: 340px; /* Large width for mobile */
+  height: 380px; /* Much taller on mobile, closer to user's red box */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.amenity-slide-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents ANY cropping of images or videos */
+  background-color: #ebebeb; /* Whitish gray background */
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 15px; /* Less bottom padding on mobile */
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: white;
+  user-select: none;
+  pointer-events: none; /* Let drag events pass through */
+}
+
+.slide-text {
+  flex: 1;
+}
+
+.slide-action {
+  margin-left: 15px;
+  pointer-events: auto; /* Re-enable clicks for the button */
+}
+
+.slide-title {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-size: 1.2rem; /* Smaller on mobile */
+  margin: 0 0 4px 0;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.slide-subtitle {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.95rem;
+  margin: 0;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.slide-action {
+  margin-left: 15px;
+}
+
+.slide-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  width: 36px; /* Smaller on mobile */
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.amenities-coverflow .swiper-slide-active .slide-btn {
+  background: white;
+  color: #000000 !important; /* Force black so the arrow is always visible */
+}
+
+.amenities-coverflow .swiper-slide-active .slide-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Custom Swiper Navigation & Pagination */
+.amenities-coverflow .swiper-pagination {
+  position: absolute;
+  bottom: 0px;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+  .amenities-coverflow .swiper-button-prev,
+  .amenities-coverflow .swiper-button-next {
+    display: none; /* Hide huge arrows on mobile, users will naturally swipe */
+  }
+  
+  .amenities-section {
+    padding: 50px 20px;
+  }
+  
+  .amenities-header {
+    margin-bottom: 25px; /* Reduced gap between title and slider */
+  }
+  
+  .amenities-swiper-container {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .amenities-coverflow {
+    padding-bottom: 30px;
+  }
+}
+
+.amenities-coverflow .swiper-button-prev,
+.amenities-coverflow .swiper-button-next {
+  pointer-events: auto;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.amenities-coverflow .swiper-button-prev:hover,
+.amenities-coverflow .swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.amenities-coverflow .swiper-button-prev:after,
+.amenities-coverflow .swiper-button-next:after {
+  font-size: 20px;
+}
+
+.amenities-coverflow .swiper-pagination-bullet {
+  background: var(--text-dark, #333);
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.amenities-coverflow .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--accent-color, #c5a880);
+}
+
+@media (min-width: 768px) {
+  .amenities-coverflow .swiper-slide {
+    width: 480px;
+    height: 420px;
+    border-radius: 16px;
+  }
+  
+  .slide-content {
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+  }
+  
+  .slide-title {
+    font-size: 1.6rem;
+  }
+  
+  .slide-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .amenities-coverflow .swiper-slide {
+    width: 600px;
+    height: 500px;
+    border-radius: 20px;
+  }
+}

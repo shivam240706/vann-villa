@@ -1,0 +1,123 @@
+.seo-page-container {
+  padding-top: 80px;
+  min-height: 80vh;
+  background-color: #faf9f7;
+}
+
+.seo-hero {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.seo-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+}
+
+.seo-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.seo-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 15px;
+  color: var(--accent-gold);
+}
+
+.seo-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.seo-content-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.seo-content-block {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+}
+
+.seo-content-block h2 {
+  font-family: var(--font-heading);
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+.seo-content-block h3 {
+  font-family: var(--font-heading);
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+  margin: 30px 0 15px;
+}
+
+.seo-content-block p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.seo-content-block ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-bottom: 25px;
+}
+
+.seo-content-block li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.seo-cta-section {
+  text-align: center;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .seo-content-block {
+    padding: 20px 15px;
+  }
+  .seo-content-block h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .seo-content-block h3 {
+    font-size: 1.15rem;
+    margin: 20px 0 10px;
+  }
+  .seo-content-block p, 
+  .seo-content-block li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+}

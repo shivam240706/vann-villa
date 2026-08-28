@@ -1,0 +1,337 @@
+.experience-page {
+  background-color: var(--primary-bg);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.experience-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+
+.experience-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(2, 44, 34, 0.4), rgba(2, 44, 34, 0.8));
+  z-index: 2;
+}
+
+.experience-hero-overlay {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--text-light);
+  padding: 0 20px;
+}
+
+.experience-hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-top: 15px;
+}
+
+/* Article Content */
+.experience-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.experience-article {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.article-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--forest-green);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.article-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.article-text strong {
+  color: var(--forest-green);
+  font-weight: 600;
+}
+
+/* Images */
+.article-image-full {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin: 10px 0;
+}
+
+.article-image-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.image-grid-2 img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Itinerary */
+.itinerary-days {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.itinerary-day {
+  background-color: #ffffff;
+  border: 1px solid rgba(6, 78, 59, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.itinerary-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--accent-gold);
+}
+
+.day-badge {
+  display: inline-block;
+  background-color: rgba(184, 134, 11, 0.1);
+  color: var(--accent-gold);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.day-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--forest-green);
+  margin-bottom: 20px;
+}
+
+.day-activities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.day-activities li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.activity-icon {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Next Steps Interlocking Navigation */
+.next-steps-section {
+  background-color: var(--forest-green);
+  padding: 80px 20px;
+  color: var(--text-light);
+}
+
+.next-steps-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.next-steps-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--accent-gold);
+}
+
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.next-step-card {
+  position: relative;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  color: var(--text-light);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.next-step-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.next-step-card:hover .next-step-bg {
+  transform: scale(1.05);
+}
+
+.next-step-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+  z-index: 2;
+}
+
+.next-step-content {
+  position: relative;
+  z-index: 3;
+  padding: 30px;
+  width: 100%;
+}
+
+.next-step-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.next-step-content p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+}
+
+.next-step-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: gap 0.3s ease;
+}
+
+.next-step-card:hover .next-step-btn {
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .experience-hero {
+    height: 50vh;
+  }
+  .experience-hero-overlay h1 {
+    font-size: 2.2rem;
+    color: #ffffff; /* Make it more readable */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  .experience-container {
+    padding: 40px 20px;
+  }
+  .article-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  .article-text {
+    font-size: 0.85rem;
+  }
+  .image-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .image-grid-2 img {
+    height: 250px;
+  }
+  .itinerary-day {
+    padding: 20px;
+  }
+  .day-title {
+    font-size: 1.1rem;
+  }
+  .day-activities li {
+    font-size: 0.8rem;
+  }
+  .next-steps-section {
+    padding: 50px 20px;
+  }
+  .next-steps-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  .next-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .next-step-card {
+    height: 280px;
+  }
+}

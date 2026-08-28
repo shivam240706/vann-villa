@@ -1,0 +1,100 @@
+.highlights-bar-container {
+  width: 100%;
+  background-color: #fff;
+  color: var(--forest-green);
+  padding: 60px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.highlights-title-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.why-kudrat-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--forest-green);
+  margin-bottom: 10px;
+}
+
+.highlights-bar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.highlight-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(184, 134, 11, 0.3); /* Gold border */
+}
+
+.highlight-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--forest-green);
+  text-align: center;
+  max-width: 180px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .highlights-bar-container {
+    padding: 40px 20px;
+  }
+  
+  .highlights-title-container {
+    text-align: left;
+    margin-bottom: 25px;
+  }
+  
+  .why-kudrat-title {
+    font-size: 1.6rem;
+  }
+
+  .highlights-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .highlight-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .highlight-icon {
+    padding: 8px;
+  }
+  
+  .highlight-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .highlight-text {
+    font-size: 0.8rem;
+    text-align: left;
+    max-width: none;
+  }
+}

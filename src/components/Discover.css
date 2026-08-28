@@ -1,0 +1,47 @@
+.discover-section {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.discover-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.massive-title {
+  font-size: 8rem;
+  letter-spacing: 15px;
+  margin-bottom: 40px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+}
+
+.white-btn {
+  border-color: var(--text-light);
+  color: var(--text-light);
+}
+
+.white-btn:hover {
+  background-color: var(--text-light);
+  color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+  .massive-title {
+    font-size: 5rem;
+    letter-spacing: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .massive-title {
+    font-size: 3rem;
+    letter-spacing: 5px;
+  }
+}
