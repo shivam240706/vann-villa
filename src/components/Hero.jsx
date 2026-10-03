@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Waves, Dog, Home } from 'lucide-react';
-import KatanaStrikePrice from './KatanaStrikePrice';
 import MagneticButton from './MagneticButton';
 
 import './Hero.css';
@@ -65,7 +64,7 @@ const Hero = () => {
           ))}
         </motion.h1>
         <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-          <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#b8860b" size="0.7em" newSize="1em" /><span style={{ fontSize: '0.8em', marginLeft: '4px' }}>/night</span>
+          ₹4,999<span style={{ fontSize: '0.8em', marginLeft: '4px' }}>/night</span>
         </motion.p>
 
         <motion.div variants={itemVariants} className="hero-selling-points">
