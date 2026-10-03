@@ -44,7 +44,7 @@
 }
 
 .header.scrolled .logo a {
-  color: var(--text-dark); /* Dark text on solid background */
+  color: var(--text-light); /* Keep text light on dark green background */
 }
 
 .nav-links {
@@ -173,7 +173,7 @@
 }
 
 .header.scrolled .hamburger .bar {
-  background-color: var(--text-dark); /* Dark lines on solid background */
+  background-color: var(--text-light); /* Keep lines light on dark background */
 }
 
 @media (max-width: 768px) {
