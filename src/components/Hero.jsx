@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Waves, Dog, Home } from 'lucide-react';
 import KatanaStrikePrice from './KatanaStrikePrice';
+import MagneticButton from './MagneticButton';
 
 import './Hero.css';
 
@@ -74,11 +75,11 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="hero-actions">
-          <button id="hero-cta-book" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => window.location.href = 'https://wa.me/916396335179?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20and%20pricing%20at%20Kudrat%20Villa.'}>Check Availability & Pricing</button>
-          <button id="hero-cta-explore" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => {
+          <MagneticButton id="hero-cta-book" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => window.location.href = 'https://wa.me/916396335179?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20and%20pricing%20at%20Kudrat%20Villa.'}>Check Availability & Pricing</MagneticButton>
+          <MagneticButton id="hero-cta-explore" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => {
             const packagesSection = document.getElementById('packages');
             if (packagesSection) packagesSection.scrollIntoView({ behavior: 'smooth' });
-          }}>View Packages</button>
+          }}>View Packages</MagneticButton>
         </motion.div>
       </motion.div>
 
