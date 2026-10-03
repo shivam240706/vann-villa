@@ -5,6 +5,8 @@ import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = React.useRef(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [policiesOpen, setPoliciesOpen] = useState(false);
   const location = useLocation();
@@ -12,7 +14,16 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 150) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setHidden(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -73,7 +84,7 @@ const Header = () => {
 
   return (
     <header 
-      className={`header ${(scrolled || !isHomePage) ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}
+      className={`header ${(scrolled || !isHomePage) ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''} ${hidden && !menuOpen ? 'hidden' : ''}`}
       role="banner"
     >
       <div className="header-container">

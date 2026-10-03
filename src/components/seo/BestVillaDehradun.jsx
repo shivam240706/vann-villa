@@ -71,7 +71,7 @@ const BestVillaDehradun = () => {
 
           <h3><Sparkles size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Ideal for Every Stay in Dehradun</h3>
           <p>
-            Whether you are looking for a <strong>romantic couple getaway in Dehradun</strong>, a <strong>family vacation homestay in Dehradun</strong>, or a <strong>100% pet-friendly stay in Dehradun</strong>, Kudrat Villa provides customized stay packages starting from ₹9,999 per night for the entire estate.
+            Whether you are looking for a <strong>romantic couple getaway in Dehradun</strong>, a <strong>family vacation homestay in Dehradun</strong>, or a <strong>100% pet-friendly stay in Dehradun</strong>, Kudrat Villa provides customized stay packages starting from ₹4,999 per night for the entire estate.
           </p>
 
           <div className="seo-cta-section">

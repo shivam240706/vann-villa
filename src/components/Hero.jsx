@@ -9,9 +9,18 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
+        staggerChildren: 0.1,
+        delayChildren: 0.15
       }
+    }
+  };
+
+  const wordVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1] }
     }
   };
 
@@ -33,11 +42,19 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 variants={itemVariants} className="hero-title" style={{ marginBottom: '10px' }}>Wake up to misty mountain views in Dehradun</motion.h1>
+        <motion.h1 className="hero-title" style={{ marginBottom: '10px' }}>
+          {"Wake up to misty mountain views in Dehradun".split(" ").map((word, idx) => (
+            <span key={idx} style={{ display: 'inline-block', marginRight: '0.25em', overflow: 'hidden' }}>
+              <motion.span style={{ display: 'inline-block' }} variants={wordVariants}>
+                {word}
+              </motion.span>
+            </span>
+          ))}
+        </motion.h1>
         <motion.h2 variants={itemVariants} className="hero-subtitle" style={{ marginBottom: '15px', color: 'var(--text-light)', lineHeight: '1.6' }}>
-          Step outside to pine-scented air, your own crystal pool catching the morning light, and complete silence — no other guests, no shared spaces.
+          Experience a peaceful, private 2BHK villa with your own exclusive pool and stunning mountain views. Perfect for a relaxing getaway with no shared spaces.
         </motion.h2>
-        <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>Starting at ₹9,999/night</motion.p>
+        <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>Starting at <span style={{ textDecoration: 'line-through', opacity: 0.7, marginRight: '10px', fontSize: '1.2rem' }}>₹9,999</span>₹4,999/night</motion.p>
 
         <motion.div variants={itemVariants} className="hero-selling-points">
           <div className="point"><Waves size={18} className="point-icon" /> <span>Private Pool</span></div>

@@ -9,7 +9,7 @@ const DelhiWeekend = () => {
     <div className="seo-page-container">
       <SEO 
         title="Luxury Weekend Getaway from Delhi NCR to Dehradun | Kudrat Villa"
-        description="Weekend getaway from Delhi to Dehradun — 5–6 hr drive, private pool villa, 2+ acres. Dehradun. From ₹9,999/night. Book on WhatsApp."
+        description="Weekend getaway from Delhi to Dehradun — 5–6 hr drive, private pool villa, 2+ acres. Dehradun. From ₹4,999/night. Book on WhatsApp."
       />
       
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-rooftop-view.webp")' }}>

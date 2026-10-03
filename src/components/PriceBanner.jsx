@@ -25,7 +25,8 @@ const PriceBanner = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         >
-          <span className="currency">₹</span>9,999
+          <span style={{ textDecoration: 'line-through', opacity: 0.6, fontSize: '0.6em', marginRight: '10px' }}>₹9,999</span>
+          <span className="currency">₹</span>4,999
         </motion.h2>
         
         <motion.p 
@@ -35,7 +36,7 @@ const PriceBanner = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.2, delay: 0.2, ease: "easeOut" }}
         >
-          per night <br/><span style={{ fontSize: '0.8rem', opacity: 0.8 }}>(+₹999 per person if more than 4)</span>
+          per night <br/><span style={{ fontSize: '0.8rem', opacity: 0.8 }}>(+₹500 per person if more than 4)</span>
         </motion.p>
 
         {/* Trust Signals */}

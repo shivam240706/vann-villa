@@ -7,10 +7,25 @@ const LeadCapture = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (email) {
-      // In a real app, this would connect to a backend or Mailchimp
+      try {
+        await fetch("https://formsubmit.co/ajax/kudratvilla98@gmail.com", {
+          method: "POST",
+          headers: { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+              _subject: "New Newsletter Subscription!",
+              email: email,
+              message: "Please add me to the secret deals newsletter."
+          })
+        });
+      } catch (err) {
+        console.error("Newsletter submission error:", err);
+      }
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 5000);
       setEmail('');
