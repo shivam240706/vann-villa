@@ -1,11 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Waves, Dog, Home } from 'lucide-react';
 import KatanaStrikePrice from './KatanaStrikePrice';
 
 import './Hero.css';
 
 const Hero = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+  
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,13 +45,14 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="hero" aria-label="Welcome to Kudrat Villa">
+    <section ref={ref} id="hero" className="hero" aria-label="Welcome to Kudrat Villa">
       <div className="hero-overlay"></div>
       <motion.div 
         className="hero-content"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        style={{ y, opacity }}
       >
         <motion.h1 className="hero-title" style={{ marginBottom: '10px' }}>
           {"Wake up to misty mountain views in Dehradun".split(" ").map((word, idx) => (

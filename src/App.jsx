@@ -8,6 +8,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import BackToTop from './components/BackToTop';
 import ErrorBoundary from './components/ErrorBoundary';
 import PageLoader from './components/PageLoader';
+import InitialLoader from './components/InitialLoader';
 import './App.css';
 
 if ('scrollRestoration' in window.history) {
@@ -147,6 +148,7 @@ function App() {
     <HelmetProvider>
       <ErrorBoundary>
         <Router>
+          <InitialLoader />
           <div className="app">
           <Header />
           <Suspense fallback={<PageLoader />}>
