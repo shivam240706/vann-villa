@@ -64,7 +64,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   color: var(--text-dark);
   line-height: 1.25;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px; /* Increased for editorial look */
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 2px; /* Extra tracking for massive titles */
 }
 
 a {
@@ -86,11 +93,11 @@ button {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--primary-bg);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -209,7 +216,7 @@ html {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 25px;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
 }
 
 .section-subtitle {
@@ -218,7 +225,7 @@ html {
   font-family: var(--font-body);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px; /* More dramatic tracking for subtitles */
   font-size: 0.95rem;
   margin-bottom: 8px;
 }

@@ -11,6 +11,7 @@ import FAQ from './FAQ';
 import LeadCapture from './LeadCapture';
 import PriceBanner from './PriceBanner';
 import SEO from './SEO';
+import ParallaxDivider from './ParallaxDivider';
 import { ArrowRight } from 'lucide-react';
 
 const Home = () => {
@@ -23,9 +24,11 @@ const Home = () => {
       <Hero />
       <HighlightsBar />
       <Packages />
+      <ParallaxDivider imageSrc="/images/kudrat-villa-rooftop-view.webp" height="350px" />
       <Amenities />
       <StatsCounter />
       <Gallery />
+      <ParallaxDivider imageSrc="/images/kudrat-villa-pool-nature.webp" height="350px" />
       <Testimonials />
       <FAQ />
       <LeadCapture />
