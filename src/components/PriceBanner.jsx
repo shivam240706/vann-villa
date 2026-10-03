@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Shield, Clock, CreditCard } from 'lucide-react';
+import KatanaStrikePrice from './KatanaStrikePrice';
 import './PriceBanner.css';
 
 const PriceBanner = () => {
@@ -25,8 +26,7 @@ const PriceBanner = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         >
-          <span style={{ textDecoration: 'line-through', opacity: 0.6, fontSize: '0.6em', marginRight: '10px' }}>₹9,999</span>
-          <span className="currency">₹</span>4,999
+          <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#ff2a2a" size="0.6em" newSize="1em" />
         </motion.h2>
         
         <motion.p 

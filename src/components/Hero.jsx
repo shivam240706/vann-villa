@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Waves, Dog, Home } from 'lucide-react';
+import KatanaStrikePrice from './KatanaStrikePrice';
 import './Hero.css';
 
 const Hero = () => {
@@ -54,7 +55,9 @@ const Hero = () => {
         <motion.h2 variants={itemVariants} className="hero-subtitle" style={{ marginBottom: '15px', color: 'var(--text-light)', lineHeight: '1.6' }}>
           Experience a peaceful, private 2BHK villa with your own exclusive pool and stunning mountain views. Perfect for a relaxing getaway with no shared spaces.
         </motion.h2>
-        <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>Starting at <span style={{ textDecoration: 'line-through', opacity: 0.7, marginRight: '10px', fontSize: '1.2rem' }}>₹9,999</span>₹4,999/night</motion.p>
+        <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
+          Starting at <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#ff2a2a" size="1.2rem" newSize="1.6rem" />/night
+        </motion.p>
 
         <motion.div variants={itemVariants} className="hero-selling-points">
           <div className="point"><Waves size={18} className="point-icon" /> <span>Private Pool</span></div>

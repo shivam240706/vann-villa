@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Heart, Users, Sparkles } from 'lucide-react';
 import './Packages.css';
-
+import KatanaStrikePrice from './KatanaStrikePrice';
 import { Link } from 'react-router-dom';
 
 const packageData = [
@@ -10,7 +10,7 @@ const packageData = [
     id: 'pool-escape',
     title: 'Private Pool Escape',
     tagline: 'The entire property is yours — pool, lawns, kudrat-villa-outdoor-fire-pit, and all.',
-    price: <><span style={{ textDecoration: 'line-through', fontSize: '0.7em', opacity: 0.7, marginRight: '6px' }}>₹9,999</span>₹4,999</>,
+    price: <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: '/night',
     icon: Sparkles,
     bestFor: 'Up to 4 Guests',
@@ -29,7 +29,7 @@ const packageData = [
     id: 'romantic-stay',
     title: 'Romantic 2-Night Stay',
     tagline: 'Two nights of uninterrupted stillness, a kudrat-villa-outdoor-fire-pit, and a sky full of stars.',
-    price: <><span style={{ textDecoration: 'line-through', fontSize: '0.7em', opacity: 0.7, marginRight: '6px' }}>₹19,998</span>₹9,998</>,
+    price: <KatanaStrikePrice oldPrice="₹19,998" newPrice="₹9,998" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: 'total',
     icon: Heart,
     bestFor: 'Couples',
@@ -47,7 +47,7 @@ const packageData = [
     id: 'family-getaway',
     title: 'Family Villa Getaway',
     tagline: 'Space for everyone: 2 acres of lawns, a private pool, and a kitchen on your terms.',
-    price: <><span style={{ textDecoration: 'line-through', fontSize: '0.7em', opacity: 0.7, marginRight: '6px' }}>₹11,999</span>₹5,999</>,
+    price: <KatanaStrikePrice oldPrice="₹11,999" newPrice="₹5,999" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: '/night',
     icon: Users,
     bestFor: 'Families (up to 6 Guests)',
