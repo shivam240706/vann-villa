@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import SEO from './SEO';
+import AnimatedImage from './AnimatedImage';
 import './Gallery.css';
 
 const CATEGORIES = ['All', 'Living Spaces', 'The Outdoors', 'Pool & Features'];
@@ -47,15 +47,15 @@ const Gallery = () => {
   const openLightbox = (index) => setSelectedIndex(index);
   const closeLightbox = () => setSelectedIndex(null);
   
-  const nextImage = (e) => {
-    e.stopPropagation();
+  const nextImage = useCallback((e) => {
+    if (e) e.stopPropagation();
     setSelectedIndex((prev) => (prev + 1) % displayedImages.length);
-  };
+  }, [displayedImages.length]);
   
-  const prevImage = (e) => {
-    e.stopPropagation();
+  const prevImage = useCallback((e) => {
+    if (e) e.stopPropagation();
     setSelectedIndex((prev) => (prev - 1 + displayedImages.length) % displayedImages.length);
-  };
+  }, [displayedImages.length]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -66,18 +66,7 @@ const Gallery = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedIndex, displayedImages.length]);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (selectedIndex === null) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') nextImage(e);
-      if (e.key === 'ArrowLeft') prevImage(e);
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedIndex, displayedImages.length]);
+  }, [selectedIndex, nextImage, prevImage]);
 
   return (
     <section id="gallery" className="gallery-section section-padding" aria-label="Photo Gallery">
@@ -144,7 +133,7 @@ const Gallery = () => {
                   className="gallery-slide-inner" 
                   onClick={() => { if (isActive) openLightbox(index); }}
                 >
-                  <img src={img.src} alt={img.alt} loading="lazy" decoding="async" className="gallery-slide-media" />
+                  <AnimatedImage src={img.src} alt={img.alt} loading="lazy" decoding="async" className="gallery-slide-media" />
                   <div className="gallery-overlay">
                     <span className="expand-icon"><Maximize2 size={18} />Click to expand</span>
                   </div>

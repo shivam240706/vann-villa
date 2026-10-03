@@ -1,14 +1,15 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wifi, Flame, ConciergeBell, Dog, Waves, Leaf, ChevronLeft, ChevronRight, X, Bus, Clock, Plane, Landmark, GraduationCap, Mountain, Maximize2 } from 'lucide-react';
+import { Wifi, Flame, ConciergeBell, Dog, Waves, Leaf, ChevronLeft, ChevronRight, X, Bus, Clock, Landmark, GraduationCap, Mountain, Maximize2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import SEO from './SEO';
+import AnimatedImage from './AnimatedImage';
 import './About.css';
 import './Gallery.css';
 
@@ -28,36 +29,6 @@ const distances = [
   { icon: Clock, name: "Clock Tower", dist: "17 km" },
   { icon: Bus, name: "ISBT Bus Stand", dist: "18 km" },
   { icon: Mountain, name: "Mussoorie", dist: "36 km" }
-];
-
-const propertyFeatures = [
-  {
-    title: 'Main House',
-    description: 'A beautifully designed 2BHK villa with natural light, premium furnishings, and a spacious living area.',
-    images: [
-      { src: '/images/kudrat-villa-exterior.webp', alt: 'Kudrat Villa premium exterior view' },
-      { src: '/images/kudrat-villa-indoor-lounge.webp', alt: 'Indoor lounge and sitting area' },
-      { src: '/images/kudrat-villa-kitchen.webp', alt: 'Fully equipped modern kitchen' }
-    ]
-  },
-  {
-    title: 'The Outdoors',
-    description: '2 acres of lush green lawns, perfect for morning walks, outdoor games, and relaxation.',
-    images: [
-      { src: '/images/kudrat-villa-estate.webp', alt: 'Lush green lawns at Kudrat Villa' },
-      { src: '/images/kudrat-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the gardens' },
-      { src: '/images/kudrat-villa-exterior-lawn.webp', alt: 'Spacious exterior lawn' }
-    ]
-  },
-  {
-    title: 'Private Pool & Fire Pit',
-    description: 'A crystal-clear private pool to unwind, and an outdoor fire pit for cozy evenings under the stars.',
-    images: [
-      { src: '/images/kudrat-villa-private-pool.webp', alt: 'Private luxury swimming pool at Kudrat Villa' },
-      { src: '/images/kudrat-villa-outdoor-fire-pit.webp', alt: 'Outdoor BBQ and fire pit' },
-      { src: '/images/kudrat-villa-pool-nature.webp', alt: 'Clear blue swimming pool surrounded by nature' }
-    ]
-  }
 ];
 
 const GalleryRow = ({ title, images, onImageClick }) => {
@@ -94,7 +65,7 @@ const GalleryRow = ({ title, images, onImageClick }) => {
                   className="gallery-slide-inner" 
                   onClick={() => { if (isActive) onImageClick(images, i); }}
                 >
-                  <img src={imgObj.src} alt={imgObj.alt} loading="lazy" decoding="async" className="gallery-slide-media" />
+                  <AnimatedImage src={imgObj.src} alt={imgObj.alt} loading="lazy" decoding="async" className="gallery-slide-media" />
                   <div className="gallery-overlay">
                     <span className="expand-icon"><Maximize2 size={18} />Click to expand</span>
                   </div>

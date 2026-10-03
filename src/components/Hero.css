@@ -8,6 +8,7 @@
   text-align: center;
   overflow: hidden; /* Important for the zoom effect */
   background-color: #000000; /* Dark background so fading image looks good */
+  scroll-snap-align: start;
 }
 
 /* Add the Ken Burns effect using a pseudo-element so we don't scale the content */

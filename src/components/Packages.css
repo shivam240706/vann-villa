@@ -30,7 +30,6 @@
 }
 
 .package-card:hover {
-  transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
   border-color: rgba(212, 175, 55, 0.3);
 }
@@ -43,7 +42,7 @@
 }
 
 .package-card.recommended:hover {
-  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
 }
 
 .recommended-badge {
@@ -167,11 +166,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .package-card.recommended {
-    transform: scale(1);
     order: -1; /* Make recommended first on tablet */
   }
   .package-card.recommended:hover {
-    transform: translateY(-8px);
+    /* Handle hover state on tablet if necessary, but we removed scale */
   }
 }
 

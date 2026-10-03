@@ -4,6 +4,7 @@ import { CheckCircle2, Heart, Users, Sparkles } from 'lucide-react';
 import './Packages.css';
 import KatanaStrikePrice from './KatanaStrikePrice';
 import { Link } from 'react-router-dom';
+import TiltCard from './TiltCard';
 
 const packageData = [
   {
@@ -114,10 +115,11 @@ const Packages = () => {
           {packageData.map((pkg) => {
             const Icon = pkg.icon;
             return (
-              <motion.div 
+              <TiltCard 
                 key={pkg.id} 
                 className={`package-card ${pkg.recommended ? 'recommended' : ''}`}
                 variants={itemVariants}
+                scale={pkg.recommended && window.innerWidth > 992 ? 1.05 : 1}
               >
                 {pkg.recommended && <div className="recommended-badge">Most Popular</div>}
                 
@@ -162,7 +164,7 @@ const Packages = () => {
                     Check Availability via WhatsApp
                   </button>
                 </div>
-              </motion.div>
+              </TiltCard>
             );
           })}
         </motion.div>
