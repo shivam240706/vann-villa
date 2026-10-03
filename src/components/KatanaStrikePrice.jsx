@@ -44,12 +44,15 @@ const KatanaStrikePrice = ({ oldPrice, newPrice, color = '#ff3b30', size = '1.2r
       <motion.span 
         initial="hidden" 
         whileInView="visible" 
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: false, margin: "-50px" }}
         onViewportEnter={() => {
-          setTimeout(() => setIsSlashed(true), 300); // slight pause for anticipation
+          setTimeout(() => setIsSlashed(true), 500); // Slower anticipation
         }}
-        animate={isSlashed ? { x: [-3, 3, -1, 1, 0], opacity: 0.4 } : { opacity: oldOpacity }}
-        transition={{ duration: 0.3 }}
+        onViewportLeave={() => {
+          setIsSlashed(false); // Reset animation when scrolling away
+        }}
+        animate={isSlashed ? { x: [-3, 3, -1, 1, 0], opacity: 0.5 } : { opacity: oldOpacity, x: 0 }}
+        transition={{ duration: 0.4 }}
         style={{ position: 'relative', display: 'inline-block', fontSize: size, color: 'inherit' }}
       >
         {oldPrice}
@@ -58,10 +61,10 @@ const KatanaStrikePrice = ({ oldPrice, newPrice, color = '#ff3b30', size = '1.2r
         <motion.span
           initial={{ scaleX: 0, opacity: 0 }}
           animate={isSlashed ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
-          transition={{ duration: 0.12, ease: [0.1, 0.9, 0.2, 1] }} // Ultra-fast fruit-ninja cut!
+          transition={{ duration: 0.35, ease: [0.1, 0.9, 0.2, 1] }} // Slower, more visible cut
           style={{
             position: 'absolute',
-            top: '50%',
+            top: '58%', // Shifted slightly lower to correctly center on numbers
             left: '-10%',
             width: '120%',
             height: '3px',
@@ -79,7 +82,7 @@ const KatanaStrikePrice = ({ oldPrice, newPrice, color = '#ff3b30', size = '1.2r
       <motion.span
         initial={{ opacity: 0, scale: 0.5, x: -15, filter: 'blur(4px)' }}
         animate={isSlashed ? { opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' } : { opacity: 0, scale: 0.5, x: -15, filter: 'blur(4px)' }}
-        transition={{ duration: 0.5, type: 'spring', bounce: 0.6, delay: 0.05 }} // Snaps in almost immediately after cut
+        transition={{ duration: 0.6, type: 'spring', bounce: 0.6, delay: 0.15 }} // Reveal is slower and slightly delayed
         style={{ fontSize: newSize, fontWeight: 'bold', color: 'inherit' }}
       >
         {newPrice}

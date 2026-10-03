@@ -52,9 +52,6 @@ const Hero = () => {
             </span>
           ))}
         </motion.h1>
-        <motion.h2 variants={itemVariants} className="hero-subtitle" style={{ marginBottom: '15px', color: 'var(--text-light)', lineHeight: '1.6' }}>
-          Experience a peaceful, private 2BHK villa with your own exclusive pool and stunning mountain views. Perfect for a relaxing getaway with no shared spaces.
-        </motion.h2>
         <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
           Starting at <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#ff2a2a" size="1.2rem" newSize="1.6rem" />/night
         </motion.p>
