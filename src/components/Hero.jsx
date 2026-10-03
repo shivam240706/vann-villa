@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Waves, Dog, Home } from 'lucide-react';
-import KatanaStrikePrice from './KatanaStrikePrice';
+
 import './Hero.css';
 
 const Hero = () => {
@@ -53,7 +53,7 @@ const Hero = () => {
           ))}
         </motion.h1>
         <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
-          Starting at <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#ff2a2a" size="1.2rem" newSize="1.6rem" />/night
+          ₹4,999/night
         </motion.p>
 
         <motion.div variants={itemVariants} className="hero-selling-points">
