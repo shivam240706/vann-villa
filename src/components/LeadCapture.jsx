@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, ArrowRight } from 'lucide-react';
 import './LeadCapture.css';
 
@@ -7,29 +7,11 @@ const LeadCapture = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (email) {
-      try {
-        await fetch("https://formsubmit.co/ajax/kudratvilla98@gmail.com", {
-          method: "POST",
-          headers: { 
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-              _subject: "New Newsletter Subscription!",
-              email: email,
-              message: "Please add me to the secret deals newsletter."
-          })
-        });
-      } catch (err) {
-        console.error("Newsletter submission error:", err);
-      }
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 5000);
-      setEmail('');
-    }
+  const handleSubmit = (e) => {
+    // We let the form do a standard HTML submit to FormSubmit.co
+    // This bypasses AJAX CORS issues and guarantees the email is sent/verified.
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 8000);
   };
 
   return (
@@ -48,45 +30,38 @@ const LeadCapture = () => {
           </div>
           
           <div className="lead-capture-form-wrapper">
-            <AnimatePresence mode="wait">
-              {!submitted ? (
-                <motion.form 
-                  key="form"
-                  className="lead-capture-form" 
-                  onSubmit={handleSubmit}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                >
-                  <div className="input-group">
-                    <Mail className="input-icon" size={20} />
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email address" 
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required 
-                      aria-label="Email address for newsletter"
-                    />
-                  </div>
-                  <button type="submit" className="subscribe-btn">
-                    <span>Subscribe</span>
-                    <ArrowRight size={18} />
-                  </button>
-                </motion.form>
-              ) : (
-                <motion.div 
-                  key="success"
-                  className="lead-capture-success"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                >
-                  <CheckCircle2 size={24} className="success-icon" />
-                  <span>You're on the list! Check your inbox for your first exclusive offer.</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {!submitted ? (
+              <form 
+                className="lead-capture-form" 
+                action="https://formsubmit.co/kudratvilla98@gmail.com"
+                method="POST"
+                target="_blank"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="_subject" value="New Newsletter Subscription!" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="message" value="Please add me to the secret deals newsletter." />
+                <div className="input-group">
+                  <Mail className="input-icon" size={20} />
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Enter your email address" 
+                    required 
+                    aria-label="Email address for newsletter"
+                  />
+                </div>
+                <button type="submit" className="subscribe-btn">
+                  <span>Subscribe</span>
+                  <ArrowRight size={18} />
+                </button>
+              </form>
+            ) : (
+              <div className="lead-capture-success">
+                <CheckCircle2 size={24} className="success-icon" />
+                <span>You're on the list! Check your inbox for your first exclusive offer.</span>
+              </div>
+            )}
           </div>
         </motion.div>
       </div>
