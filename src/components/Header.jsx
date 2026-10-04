@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import { motion, useScroll } from 'framer-motion';
 import './Header.css';
 
 const Header = () => {
@@ -11,6 +12,7 @@ const Header = () => {
   const [policiesOpen, setPoliciesOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,6 +89,20 @@ const Header = () => {
       className={`header ${(scrolled || !isHomePage) ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''} ${hidden && !menuOpen ? 'hidden' : ''}`}
       role="banner"
     >
+      <motion.div
+        className="scroll-progress-bar"
+        style={{
+          scaleX: scrollYProgress,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '2px',
+          backgroundColor: 'var(--accent-gold)',
+          transformOrigin: '0%',
+          zIndex: 1002
+        }}
+      />
       <div className="header-container">
         <div className="logo">
           <Link to="/" onClick={handleHomeClick} aria-label="Kudrat Villa — Home">Kudrat Villa</Link>

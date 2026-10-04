@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../SEO';
-import { Award, Sparkles, ShieldCheck, MapPin, Heart, Compass } from 'lucide-react';
+import { Award, Sparkles } from 'lucide-react';
 import './SEOPages.css';
 
 const BestVillaDehradun = () => {

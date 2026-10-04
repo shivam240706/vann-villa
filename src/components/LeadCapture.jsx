@@ -4,10 +4,10 @@ import { Mail, CheckCircle2, ArrowRight } from 'lucide-react';
 import './LeadCapture.css';
 
 const LeadCapture = () => {
-  const [email, setEmail] = useState('');
+
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (_e) => {
     // We let the form do a standard HTML submit to FormSubmit.co
     // This bypasses AJAX CORS issues and guarantees the email is sent/verified.
     setSubmitted(true);

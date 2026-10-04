@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X, ArrowRight, Maximize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Maximize2 } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Mousewheel, FreeMode } from 'swiper/modules';
 
@@ -59,39 +59,6 @@ const Amenities = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxState.isOpen, lightboxState.images.length]);
 
-  const renderMedia = (feature) => {
-    const altText = feature.alt || `Kudrat Villa - ${typeof feature.name === 'string' ? feature.name : 'Premium Amenity'}`;
-    if (Array.isArray(feature.img)) {
-      return (
-        <div className="amenity-multi-image">
-          {feature.img.map((imgSrc, i) => (
-            <img 
-              key={i} 
-              src={imgSrc} 
-              alt={altText} 
-              loading="lazy"
-              decoding="async"
-              onClick={() => openLightbox(imgSrc)}
-              className="clickable-amenity-image"
-            />
-          ))}
-        </div>
-      );
-    }
-    if (feature.img.endsWith('.mp4')) {
-      return <video src={feature.img} autoPlay loop muted playsInline />;
-    }
-    return (
-      <img 
-        src={feature.img} 
-        alt={altText} 
-        loading="lazy"
-        decoding="async"
-        onClick={() => openLightbox(feature.img)}
-        className="clickable-amenity-image"
-      />
-    );
-  };
 
   return (
     <section id="amenities" className="amenities-section section-padding">

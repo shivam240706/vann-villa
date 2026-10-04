@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
@@ -26,9 +26,6 @@ const LinkedInIcon = () => (
 );
 
 const Footer = () => {
-  const location = useLocation();
-  const isContactPage = location.pathname === '/contact';
-
   return (
     <footer id="contact" className="footer-section" role="contentinfo">
       <div className="footer-container">
