@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node prerender.cjs",
-    "vercel-build": "vite build",
-    "lint": "eslint .",
+    "vercel-build": "vite build && node prerender.cjs",
+    "lint": "oxlint .",
     "preview": "vite preview",
     "verify": "npm run preview & sleep 2 && node verify-prerender.cjs",
     "check:images": "node scripts/check-image-sizes.cjs"
