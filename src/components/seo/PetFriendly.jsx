@@ -9,7 +9,7 @@ const PetFriendly = () => {
     <div className="seo-page-container">
       <SEO 
         title="100% Pet Friendly Villa in Dehradun | Kudrat Villa"
-        description="100% pet-friendly private villa in Dehradun. No pet fees. 2+ fenced acres for dogs. Private pool. Book direct from ₹4,999/night."
+        description="100% pet-friendly private villa in Dehradun. No pet fees. 2+ fenced acres for dogs. Private pool. Book direct starting at just ₹4,999/night."
       />
       
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-exterior-lawn.webp")' }}>
@@ -39,7 +39,7 @@ const PetFriendly = () => {
               <li><strong>Pet Policy:</strong> 100% pet-friendly, zero hidden pet charges, all dog and cat breeds welcome.</li>
               <li><strong>Space for Pets:</strong> 2+ acres (87,120 sq. ft.) of securely fenced private green lawns.</li>
               <li><strong>Safety & Comfort:</strong> Gated private estate with no road traffic hazard, nearby pine forest walking trails.</li>
-              <li><strong>Villa Pricing:</strong> Entire 2BHK stay from ₹4,999 / night with direct WhatsApp booking.</li>
+              <li><strong>Villa Pricing:</strong> Entire 2BHK stay starting at just ₹4,999 / night with direct WhatsApp booking.</li>
             </ul>
           </aside>
 

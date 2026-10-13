@@ -64,6 +64,7 @@ const Hero = () => {
           ))}
         </motion.h1>
         <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
+          <span style={{ fontSize: '1.05rem', fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)', marginRight: '8px', letterSpacing: '0.5px' }}>Starting at just</span>
           ₹4,999<span style={{ fontSize: '0.8em', marginLeft: '4px' }}>/night</span>
         </motion.p>
 

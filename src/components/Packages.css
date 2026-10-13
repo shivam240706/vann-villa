@@ -103,6 +103,18 @@
   margin-bottom: 15px;
 }
 
+.package-price-prefix {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
 .package-price-wrap {
   display: flex;
   align-items: baseline;

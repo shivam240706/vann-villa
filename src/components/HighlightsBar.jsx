@@ -18,7 +18,7 @@ const HighlightsBar = () => {
       <div className="highlights-title-container">
         <h2 className="why-kudrat-title">Why Kudrat Villa?</h2>
         <p className="why-kudrat-direct-answer" style={{ maxWidth: '800px', margin: '12px auto 24px', textAlign: 'center', color: 'var(--text-muted, #a3b18a)', fontSize: '1.05rem', lineHeight: '1.6' }}>
-          Kudrat Villa is Dehradun's premier 2BHK private luxury pool villa set across 2+ acres of fenced lawns in Dehradun (near UPES). Offering 100% exclusive privacy with no shared guests, a private swimming pool, open rainwater shower, outdoor BBQ, and pet-friendly accommodations starting from <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#b8860b" size="0.9em" newSize="1em" />/night.
+          Kudrat Villa is Dehradun's premier 2BHK private luxury pool villa set across 2+ acres of fenced lawns in Dehradun (near UPES). Offering 100% exclusive privacy with no shared guests, a private swimming pool, open rainwater shower, outdoor BBQ, and pet-friendly accommodations starting at just <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#b8860b" size="0.9em" newSize="1em" />/night.
         </p>
       </div>
       <div className="highlights-bar-content" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '30px', maxWidth: '1200px', margin: '0 auto' }}>

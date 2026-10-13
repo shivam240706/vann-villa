@@ -9,7 +9,7 @@ const FamilyVilla = () => {
     <div className="seo-page-container">
       <SEO 
         title="Luxury Family Villa in Dehradun with Private Pool | Kudrat Villa"
-        description="Luxury 2BHK family villa in Dehradun with private pool. Fits 6 guests, pet-friendly, BBQ included. Exclusively yours from ₹5,999/night."
+        description="Luxury 2BHK family villa in Dehradun with private pool. Fits 6 guests, pet-friendly, BBQ included. Exclusively yours starting at just ₹5,999/night."
       />
       
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-private-pool.jpg")' }}>

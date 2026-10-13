@@ -9,7 +9,7 @@ const CoupleGetaway = () => {
     <div className="seo-page-container">
       <SEO 
         title="Romantic Couple Getaway Villa in Dehradun | Kudrat Villa"
-        description="Romantic private villa in Dehradun — private pool, no other guests. Book the entire 2BHK for anniversaries or honeymoons from ₹9,998/2 nights."
+        description="Romantic private villa in Dehradun — private pool, no other guests. Book the entire 2BHK for anniversaries or honeymoons starting at just ₹9,998/2 nights."
       />
       
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-master-bedroom-view.webp")' }}>
@@ -39,7 +39,7 @@ const CoupleGetaway = () => {
               <li><strong>Exclusive Privacy:</strong> Entire 2BHK private villa, private pool, and 2+ acres of lawns reserved 100% for the couple.</li>
               <li><strong>Romantic Features:</strong> Private temperature-suited pool, stargazing outdoor bonfire pit, open rainwater shower, candlelit setup.</li>
               <li><strong>Location & Access:</strong> Dehradun (30 min drive to Dehradun City Centre, 30 km to Mussoorie).</li>
-              <li><strong>Rates & Booking:</strong> Packages from ₹9,998 / 2 nights including romantic decor arrangements.</li>
+              <li><strong>Rates & Booking:</strong> Packages starting at just ₹9,998 / 2 nights including romantic decor arrangements.</li>
             </ul>
           </aside>
 

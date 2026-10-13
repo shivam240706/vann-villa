@@ -26,7 +26,7 @@ const packages = [
   },
   {
     title: 'Best Villa & Hidden Gem Stay',
-    description: 'Dehradun’s premier private luxury pool villa set across 2+ acres of mountain lawns. 100% exclusive privacy starting from ₹4,999/night.',
+    description: 'Dehradun’s premier private luxury pool villa set across 2+ acres of mountain lawns. 100% exclusive privacy starting at just ₹4,999/night.',
     image: '/images/kudrat-villa-estate.webp',
     link: '/best-villa-in-dehradun',
   },
@@ -43,7 +43,7 @@ const PackagesHub = () => {
     <div className="packages-hub-container">
       <SEO
         title="Luxury Stay Packages in Dehradun | Kudrat Villa"
-        description="Browse all stay packages at Kudrat Villa — romantic getaways, family vacations, pet-friendly stays, and Delhi weekend trips. Private pool villa from ₹4,999/night."
+        description="Browse all stay packages at Kudrat Villa — romantic getaways, family vacations, pet-friendly stays, and Delhi weekend trips. Private pool villa starting at just ₹4,999/night."
       />
 
       <section

@@ -129,7 +129,8 @@ const Packages = () => {
                   </div>
                   <span className="best-for">Best For: {pkg.bestFor}</span>
                   <h3 className="package-title">{pkg.title}</h3>
-                  {pkg.tagline && <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.5', marginTop: '6px', marginBottom: '4px', fontStyle: 'italic' }}>{pkg.tagline}</p>}
+                  {pkg.tagline && <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.5', marginTop: '6px', marginBottom: '8px', fontStyle: 'italic' }}>{pkg.tagline}</p>}
+                  <span className="package-price-prefix">Starting at just</span>
                   <div className="package-price-wrap">
                     <span className="package-price">{pkg.price}</span>
                     <span className="package-unit">{pkg.unit}</span>
