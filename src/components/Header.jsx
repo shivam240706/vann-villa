@@ -105,7 +105,17 @@ const Header = () => {
       />
       <div className="header-container">
         <div className="logo">
-          <Link to="/" onClick={handleHomeClick} aria-label="Kudrat Villa — Home">Kudrat Villa</Link>
+          <Link to="/" onClick={handleHomeClick} aria-label="Kudrat Villa — Home" className="logo-link">
+            <img 
+              src="/images/kudrat-logo.webp" 
+              alt="Kudrat Villa Logo" 
+              className="header-logo-img" 
+              width="44" 
+              height="44" 
+              loading="eager"
+            />
+            <span className="logo-text">Kudrat Villa</span>
+          </Link>
         </div>
         
         <button

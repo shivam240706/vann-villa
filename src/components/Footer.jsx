@@ -32,7 +32,10 @@ const Footer = () => {
         {/* Top Row */}
         <div className="footer-top-row">
           <div className="footer-col footer-brand">
-            <h2>Kudrat Villa</h2>
+            <div className="footer-brand-header">
+              <img src="/images/kudrat-logo.webp" alt="Kudrat Villa Logo" className="footer-logo-img" width="52" height="52" loading="lazy" />
+              <h2>Kudrat Villa</h2>
+            </div>
             <p>Your sanctuary in the lap of nature.</p>
             <div className="footer-social">
               <a href="https://www.instagram.com/kudrat_villa" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><InstagramIcon /></a>

@@ -42,12 +42,31 @@ const InitialLoader = () => {
           }}
         >
           <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ marginBottom: '16px' }}
+          >
+            <img 
+              src="/images/kudrat-logo.webp" 
+              alt="Kudrat Villa" 
+              width="80" 
+              height="80" 
+              style={{ 
+                borderRadius: '50%', 
+                border: '2px solid rgba(212, 175, 55, 0.7)', 
+                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.45)',
+                display: 'block' 
+              }} 
+            />
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             style={{
               fontFamily: 'var(--font-heading, Playfair Display)',
-              fontSize: '3rem',
+              fontSize: '2.5rem',
               fontWeight: 500,
               letterSpacing: '4px',
               textTransform: 'uppercase',
