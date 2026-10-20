@@ -75,7 +75,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="hero-actions">
-          <MagneticButton id="hero-cta-book" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => window.location.href = 'https://wa.me/916396335179?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20and%20pricing%20at%20Kudrat%20Villa.'}>Check Availability & Pricing</MagneticButton>
+          <MagneticButton id="hero-cta-book" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20and%20pricing%20at%20Kudrat%20Villa.'}>Check Availability & Pricing</MagneticButton>
           <MagneticButton id="hero-cta-explore" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => {
             const packagesSection = document.getElementById('packages');
             if (packagesSection) packagesSection.scrollIntoView({ behavior: 'smooth' });

@@ -88,7 +88,7 @@ const Packages = () => {
 
   const handleBook = (pkgTitle) => {
     const text = `Hi, I am interested in booking the "${pkgTitle}" package at Kudrat Villa. Please share availability.`;
-    window.open(`https://wa.me/916396335179?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/919411770969?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (

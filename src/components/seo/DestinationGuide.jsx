@@ -69,7 +69,7 @@ const DestinationGuide = () => {
           </ul>
 
           <div className="seo-cta-section">
-            <a href="https://wa.me/916396335179?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Kudrat%20Villa." className="btn-primary seo-cta-btn">Check Availability via WhatsApp</a>
+            <a href="https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Kudrat%20Villa." className="btn-primary seo-cta-btn">Check Availability via WhatsApp</a>
           </div>
         </motion.div>
       </section>

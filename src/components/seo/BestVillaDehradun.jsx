@@ -75,7 +75,7 @@ const BestVillaDehradun = () => {
           </p>
 
           <div className="seo-cta-section">
-            <a href="https://wa.me/916396335179?text=Hi%2C%20I%20want%20to%20book%20the%20best%20villa%20in%20Dehradun%20(Kudrat%20Villa)." className="btn-primary seo-cta-btn">Book Your Stay via WhatsApp (+91 63963 35179)</a>
+            <a href="https://wa.me/919411770969?text=Hi%2C%20I%20want%20to%20book%20the%20best%20villa%20in%20Dehradun%20(Kudrat%20Villa)." className="btn-primary seo-cta-btn">Book Your Stay via WhatsApp (+91 94117 70969)</a>
           </div>
         </motion.div>
       </section>

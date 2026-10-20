@@ -51,8 +51,8 @@ const Footer = () => {
           <div className="footer-col footer-contact">
             <h3>Contact</h3>
             <address>
-              <a href="tel:+916396335179" className="footer-contact-item">
-                <Phone size={14} aria-hidden="true" /> +91 63963 35179
+              <a href="tel:+919411770969" className="footer-contact-item">
+                <Phone size={14} aria-hidden="true" /> +91 94117 70969
               </a>
               <a href="mailto:kudratvilla98@gmail.com" className="footer-contact-item">
                 <Mail size={14} aria-hidden="true" /> kudratvilla98@gmail.com

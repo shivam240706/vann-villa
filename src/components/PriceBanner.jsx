@@ -55,7 +55,7 @@ const PriceBanner = () => {
         <motion.button 
           id="price-cta-book"
           className="ultra-premium-book-btn" 
-          onClick={() => window.location.href = 'https://wa.me/916396335179?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Kudrat%20Villa.'}
+          onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Kudrat%20Villa.'}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
