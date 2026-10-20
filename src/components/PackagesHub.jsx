@@ -15,7 +15,7 @@ const packages = [
   {
     title: 'Family Villa Vacation',
     description: 'Space for everyone: 2BHK villa, 2+ acres of lawns, a private pool, and a fully equipped kitchen. Fits up to 6 guests.',
-    image: '/images/kudrat-villa-private-pool.jpg',
+    image: '/images/kudrat-villa-private-pool.webp',
     link: '/family-villa-dehradun',
   },
   {

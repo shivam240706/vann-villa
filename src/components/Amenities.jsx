@@ -16,7 +16,7 @@ const Amenities = () => {
   const [lightboxState, setLightboxState] = useState({ isOpen: false, images: [], index: 0 });
 
   const features = [
-    { name: 'Swimming Pool', subtitle: 'Relax & Unwind', img: '/images/kudrat-villa-private-pool.jpg', alt: 'Crystal-clear private swimming pool at Kudrat Villa, Dehradun' },
+    { name: 'Swimming Pool', subtitle: 'Relax & Unwind', img: '/images/kudrat-villa-private-pool.webp', alt: 'Crystal-clear private swimming pool at Kudrat Villa, Dehradun' },
     { name: <><span style={{ fontFamily: '"Times New Roman", Times, serif', fontSize: '0.93em', fontWeight: 500, marginRight: '4px' }}>2</span>BHK Property</>, subtitle: 'Spacious Living', img: '/images/kudrat-villa-exterior.webp', alt: 'Full exterior view of the 2BHK private villa and landscaped gardens' },
     { name: "AC's", subtitle: 'Cool Comfort', img: '/images/kudrat-villa-spacious-bedroom.webp', alt: 'Air-conditioned bedroom with premium bedding at Kudrat Villa' },
     { name: 'Self kudrat-villa-kitchen', subtitle: 'Fully Equipped', img: '/images/kudrat-villa-kitchen.webp', alt: 'Fully equipped self-catering kitchen with modern appliances' },
@@ -111,7 +111,16 @@ const Amenities = () => {
                     style={{ cursor: isActive ? 'pointer' : 'default' }}
                   >
                     {isVideo ? (
-                      <video src={firstImg} autoPlay loop muted playsInline className="slide-media" />
+                      <video 
+                        src={isActive ? firstImg : undefined} 
+                        poster="/images/kudrat-villa-open-shower.webp"
+                        autoPlay={isActive} 
+                        loop 
+                        muted 
+                        playsInline 
+                        preload="none" 
+                        className="slide-media" 
+                      />
                     ) : (
                       <img src={firstImg} alt={feature.alt || `Kudrat Villa - ${typeof feature.name === 'string' ? feature.name : 'Premium Amenity'}`} loading="lazy" decoding="async" className="slide-media" />
                     )}

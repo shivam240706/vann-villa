@@ -2,23 +2,42 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const InitialLoader = () => {
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
+  // If already visited this session or in prerender mode, don't show loader
+  const alreadyVisited = typeof window !== 'undefined' && (
+    Boolean(sessionStorage.getItem('kudrat_visited')) || 
+    Boolean(window.__PRERENDER_READY__)
+  );
+
+  const [loading, setLoading] = useState(!alreadyVisited);
+  const [progress, setProgress] = useState(alreadyVisited ? 100 : 0);
 
   useEffect(() => {
-    let count = 0;
-    const interval = setInterval(() => {
-      count += Math.floor(Math.random() * 12) + 4;
-      if (count >= 100) {
-        count = 100;
-        clearInterval(interval);
-        setTimeout(() => setLoading(false), 500);
-      }
-      setProgress(count);
-    }, 120);
+    if (alreadyVisited) return;
 
-    return () => clearInterval(interval);
-  }, []);
+    // Fast, responsive entry: complete in 280ms
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          return 100;
+        }
+        return Math.min(100, prev + 25);
+      });
+    }, 40);
+
+    const finishTimer = setTimeout(() => {
+      setProgress(100);
+      setLoading(false);
+      try {
+        sessionStorage.setItem('kudrat_visited', 'true');
+      } catch (_) {}
+    }, 280);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(finishTimer);
+    };
+  }, [alreadyVisited]);
 
   return (
     <AnimatePresence>
@@ -28,7 +47,7 @@ const InitialLoader = () => {
           initial={{ y: 0 }}
           exit={{ 
             y: "-100%",
-            transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] } 
+            transition: { duration: 0.35, ease: [0.76, 0, 0.24, 1] } 
           }}
           style={{
             position: 'fixed',

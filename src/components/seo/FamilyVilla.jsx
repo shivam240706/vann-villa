@@ -12,7 +12,7 @@ const FamilyVilla = () => {
         description="Luxury 2BHK family villa in Dehradun with private pool. Fits 6 guests, pet-friendly, BBQ included. Exclusively yours starting at just ₹5,999/night."
       />
       
-      <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-private-pool.jpg")' }}>
+      <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-private-pool.webp")' }}>
         <div className="seo-hero-overlay"></div>
         <motion.div 
           className="seo-hero-content"

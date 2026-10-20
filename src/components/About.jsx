@@ -183,37 +183,37 @@ const About = () => {
         <GalleryRow 
           title="Kudrat Villa" 
           images={[
-            { src: '/images/kudrat-villa-exterior.jpg', alt: 'Kudrat Villa front exterior view' },
-            { src: '/images/kudrat-villa-lawn-view.jpg', alt: 'Expansive lush green lawn' },
-            { src: '/images/kudrat-villa-estate.jpg', alt: 'Beautiful estate view' },
-            { src: '/images/kudrat-villa-exterior-lawn.jpg', alt: 'Exterior lawn and garden' },
-            { src: '/images/kudrat-villa-front-view.jpg', alt: 'Front facade of the luxury villa' }
+            { src: '/images/kudrat-villa-exterior.webp', alt: 'Kudrat Villa front exterior view' },
+            { src: '/images/kudrat-villa-lawn-view.webp', alt: 'Expansive lush green lawn' },
+            { src: '/images/kudrat-villa-estate.webp', alt: 'Beautiful estate view' },
+            { src: '/images/kudrat-villa-exterior-lawn.webp', alt: 'Exterior lawn and garden' },
+            { src: '/images/kudrat-villa-front-view.webp', alt: 'Front facade of the luxury villa' }
           ]}
           onImageClick={openLightbox}
         />
         <GalleryRow 
           title="Outdoors" 
           images={[
-            { src: '/images/kudrat-villa-grand-entrance.jpg', alt: 'Grand villa entrance' },
-            { src: '/images/kudrat-villa-outdoor-seating.jpg', alt: 'Outdoor seating area' },
-            { src: '/images/kudrat-villa-morning-tea-spot.jpg', alt: 'Morning tea spot in the garden' },
-            { src: '/images/kudrat-villa-rooftop-view.jpg', alt: 'Scenic rooftop view' },
-            { src: '/images/kudrat-villa-private-pool.jpg', alt: 'Private luxury pool' },
-            { src: '/images/kudrat-villa-pool-nature.jpg', alt: 'Pool surrounded by nature' },
-            { src: '/images/kudrat-villa-outdoor-fire-pit.jpg', alt: 'Outdoor fire pit area' },
-            { src: '/images/kudrat-villa-open-shower.jpg', alt: 'Open shower by the pool' }
+            { src: '/images/kudrat-villa-grand-entrance.webp', alt: 'Grand villa entrance' },
+            { src: '/images/kudrat-villa-outdoor-seating.webp', alt: 'Outdoor seating area' },
+            { src: '/images/kudrat-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the garden' },
+            { src: '/images/kudrat-villa-rooftop-view.webp', alt: 'Scenic rooftop view' },
+            { src: '/images/kudrat-villa-private-pool.webp', alt: 'Private luxury pool' },
+            { src: '/images/kudrat-villa-pool-nature.webp', alt: 'Pool surrounded by nature' },
+            { src: '/images/kudrat-villa-outdoor-fire-pit.webp', alt: 'Outdoor fire pit area' },
+            { src: '/images/kudrat-villa-open-shower.webp', alt: 'Open shower by the pool' }
           ]}
           onImageClick={openLightbox}
         />
         <GalleryRow 
           title="Indoors" 
           images={[
-            { src: '/images/kudrat-villa-indoor-lounge.jpg', alt: 'Cozy indoor lounge area' },
-            { src: '/images/kudrat-villa-mini-bar.jpg', alt: 'Private mini bar setup' },
-            { src: '/images/kudrat-villa-master-bedroom.jpg', alt: 'Luxury master bedroom' },
-            { src: '/images/kudrat-villa-spacious-bedroom.jpg', alt: 'Spacious guest bedroom' },
-            { src: '/images/kudrat-villa-family-suite-bedroom.jpg', alt: 'Family suite bedroom' },
-            { src: '/images/kudrat-villa-master-bedroom-view.jpg', alt: 'Master bedroom with a view' }
+            { src: '/images/kudrat-villa-indoor-lounge.webp', alt: 'Cozy indoor lounge area' },
+            { src: '/images/kudrat-villa-mini-bar.webp', alt: 'Private mini bar setup' },
+            { src: '/images/kudrat-villa-master-bedroom.webp', alt: 'Luxury master bedroom' },
+            { src: '/images/kudrat-villa-spacious-bedroom.webp', alt: 'Spacious guest bedroom' },
+            { src: '/images/kudrat-villa-family-suite-bedroom.webp', alt: 'Family suite bedroom' },
+            { src: '/images/kudrat-villa-master-bedroom-view.webp', alt: 'Master bedroom with a view' }
           ]}
           onImageClick={openLightbox}
         />
