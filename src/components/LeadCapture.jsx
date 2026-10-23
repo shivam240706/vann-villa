@@ -45,7 +45,9 @@ const LeadCapture = () => {
                   <Mail className="input-icon" size={20} />
                   <input 
                     type="email" 
+                    id="newsletter-email"
                     name="email"
+                    autoComplete="email"
                     placeholder="Enter your email address" 
                     required 
                     aria-label="Email address for newsletter"

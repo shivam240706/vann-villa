@@ -2,17 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const InitialLoader = () => {
+  // If in prerender mode, headless browser, or crawler, never show loader
+  const isPrerender = typeof window !== 'undefined' && (
+    Boolean(window.__IS_PRERENDER__) || 
+    Boolean(window.__PRERENDER_READY__) ||
+    /bot|googlebot|crawler|spider|robot|crawling|headlesschrome|puppeteer/i.test(navigator.userAgent)
+  );
+
   // If already visited this session or in prerender mode, don't show loader
   const alreadyVisited = typeof window !== 'undefined' && (
-    Boolean(sessionStorage.getItem('kudrat_visited')) || 
-    Boolean(window.__PRERENDER_READY__)
+    isPrerender || 
+    Boolean(sessionStorage.getItem('kudrat_visited'))
   );
 
   const [loading, setLoading] = useState(!alreadyVisited);
   const [progress, setProgress] = useState(alreadyVisited ? 100 : 0);
 
   useEffect(() => {
-    if (alreadyVisited) return;
+    if (alreadyVisited) {
+      setLoading(false);
+      return;
+    }
 
     // Fast, responsive entry: complete in 280ms
     const interval = setInterval(() => {
@@ -30,19 +40,30 @@ const InitialLoader = () => {
       setLoading(false);
       try {
         sessionStorage.setItem('kudrat_visited', 'true');
-      } catch (_) {}
+      } catch {}
     }, 280);
+
+    // Hard fallback: loader MUST hide after 400ms under any circumstances
+    const safetyTimer = setTimeout(() => {
+      setLoading(false);
+    }, 400);
 
     return () => {
       clearInterval(interval);
       clearTimeout(finishTimer);
+      clearTimeout(safetyTimer);
     };
   }, [alreadyVisited]);
+
+  if (isPrerender || !loading) {
+    return null;
+  }
 
   return (
     <AnimatePresence>
       {loading && (
         <motion.div
+          id="initial-loader"
           key="loader"
           initial={{ y: 0 }}
           exit={{ 

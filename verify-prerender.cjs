@@ -32,6 +32,9 @@ const BANNED_STRINGS = [
   'esteemed travel experts',
   'localhost:',
   '127.0.0.1:',
+  'initial-loader',
+  'z-index: 99999',
+  '25%',
 ];
 
 async function checkStaticFile(routePath) {

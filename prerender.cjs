@@ -153,6 +153,14 @@ async function prerender() {
     page.on('console', msg => console.log(`[${route.path} LOG] ${msg.text()}`));
     page.on('pageerror', err => console.log(`[${route.path} ERR] ${err.message}`));
     
+    // Set prerender environment flag in browser before scripts execute
+    await page.evaluateOnNewDocument(() => {
+      window.__IS_PRERENDER__ = true;
+      try {
+        sessionStorage.setItem('kudrat_visited', 'true');
+      } catch {}
+    });
+
     const url = `http://localhost:${PORT}${route.path}`;
 
     try {
@@ -164,6 +172,12 @@ async function prerender() {
         timeout: READY_TIMEOUT_MS,
       });
 
+      // Explicitly remove loader from DOM if it exists
+      await page.evaluate(() => {
+        const loader = document.getElementById('initial-loader');
+        if (loader) loader.remove();
+      });
+
       let html = await page.content();
       html = injectMeta(html, route);
 
@@ -172,6 +186,10 @@ async function prerender() {
       html = html.replace(/https?:\/\/localhost:\d+/gi, '');
       html = html.replace(/https?:\/\/127\.0\.0\.1:\d+\//gi, '/');
       html = html.replace(/https?:\/\/127\.0\.0\.1:\d+/gi, '');
+
+      // Double safety: guarantee loader markup is never in static prerender HTML
+      html = html.replace(/<div[^>]*id="initial-loader"[^>]*>[\s\S]*?<\/div>/gi, '');
+      html = html.replace(/<div[^>]*style="[^"]*z-index:\s*99999[^"]*"[\s\S]*?<\/div>/gi, '');
 
       const outPath = outputPathFor(route.path);
       fs.mkdirSync(path.dirname(outPath), { recursive: true });
