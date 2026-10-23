@@ -9,7 +9,7 @@ const BestVillaDehradun = () => {
     <div className="seo-page-container">
       <SEO 
         title="Best Villa in Dehradun | Kudrat Villa — Luxury Private Pool & Hidden Gem"
-        description="Discover why Kudrat Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 2+ acres private lawns, BBQ, pet-friendly & hidden gem escape."
+        description="Discover why Kudrat Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 10,000 sq ft private lawns, BBQ, pet-friendly & hidden gem escape."
         canonicalUrl="https://kudratvilla.com/best-villa-in-dehradun"
       />
       
@@ -38,7 +38,7 @@ const BestVillaDehradun = () => {
             <h3 style={{ color: 'var(--accent-gold, #d4af37)', fontSize: '1.2rem', marginTop: 0, marginBottom: '14px' }}>At a Glance — Why Kudrat Villa is Dehradun's #1 Luxury Villa</h3>
             <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.8', fontSize: '0.98rem' }}>
               <li><strong>Property Rating:</strong> 4.9★ Google Rated — Top Luxury Private Villa & Homestay in Dehradun.</li>
-              <li><strong>Exclusive Privacy:</strong> Rent the entire 2BHK villa with 2+ acres (87,120 sq. ft.) of fenced lawns and zero shared guests.</li>
+              <li><strong>Exclusive Privacy:</strong> Rent the entire 2BHK villa with 10,000 sq. ft. of fenced private lawns and zero shared guests.</li>
               <li><strong>Signature Amenities:</strong> Private outdoor swimming pool, open-air rainwater shower, bonfire pit, BBQ, and high-speed Wi-Fi.</li>
               <li><strong>100% Pet Friendly:</strong> All dog & cat breeds welcome with zero hidden pet charges.</li>
               <li><strong>Prime Location:</strong> Nestled in peaceful pine foothills near UPES Bidholi, 15 km from Dehradun city center.</li>
@@ -47,13 +47,13 @@ const BestVillaDehradun = () => {
 
           <h2>Why Kudrat Villa is Rated the Best Villa in Dehradun</h2>
           <p>
-            When travellers search for the <strong>best villa in dehradun</strong>, <strong>villa in dehradun</strong>, or a <strong>hidden villa in dehradun</strong>, Kudrat Villa stands out as the ultimate destination. Set against the serene backdrop of Himalayan pine foothills, Kudrat Villa offers a rare blend of complete seclusion, 5-star modern comforts, and 2+ acres of pristine green lawns.
+            When travellers search for the <strong>best villa in dehradun</strong>, <strong>villa in dehradun</strong>, or a <strong>hidden villa in dehradun</strong>, Kudrat Villa stands out as the ultimate destination. Set against the serene backdrop of Himalayan pine foothills, Kudrat Villa offers a rare blend of complete seclusion, 5-star modern comforts, and 10,000 sq ft of pristine green lawns.
           </p>
 
           <h3><Award size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />What Makes Kudrat Villa Extraordinary?</h3>
           <ul>
             <li><strong>100% Private Outdoor Swimming Pool:</strong> Swim, relax, and lounge under the mountain sky in your private pool with no public crowd or fixed pool timing constraints.</li>
-            <li><strong>Expansive 2+ Acre Private Estate:</strong> Spread across over 87,000 sq. ft. of gated lawns, ideal for morning walks, kids' play, pet sports, and starry night bonfires.</li>
+            <li><strong>Expansive 10,000 Sq. Ft. Private Estate:</strong> Spread across 10,000 sq. ft. of gated lawns, ideal for morning walks, kids' play, pet sports, and starry night bonfires.</li>
             <li><strong>Luxury 2BHK Layout:</strong> Fully furnished air-conditioned bedrooms with ensuite bathrooms, panoramic glass windows, living lounge, and a modern self-catering kitchen.</li>
             <li><strong>Personalized Caretaker & Chef Services:</strong> Enjoy fresh, hot Pahadi and North Indian home-cooked meals prepared specifically to your taste preferences.</li>
           </ul>

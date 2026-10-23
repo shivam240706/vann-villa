@@ -6,7 +6,7 @@ import './FAQ.css';
 const faqData = [
   {
     question: "Is Kudrat Villa pet-friendly?",
-    answer: "Yes, we are 100% pet-friendly. Your dogs can roam free in our 2+ acres of fenced lawns. We do not charge any extra pet fees."
+    answer: "Yes, we are 100% pet-friendly. Your dogs can roam free in our 10,000 sq ft of securely fenced lawns. We do not charge any extra pet fees."
   },
   {
     question: "Is the swimming pool private?",

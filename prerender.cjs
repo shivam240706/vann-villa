@@ -20,17 +20,17 @@ const PORT = 4173;
 // Every route that must be independently crawlable.
 // Add to this list whenever you add a new route to the app.
 const ROUTES = [
-  { path: '/', title: 'Best Villa in Dehradun | Kudrat Villa Private Pool Stay', description: 'Kudrat Villa is the #1 luxury private pool villa and hidden gem stay in Dehradun. 2BHK homestay, 2+ acres private lawns, BBQ & pet-friendly.', priority: '1.0', changefreq: 'weekly' },
-  { path: '/best-villa-in-dehradun', title: 'Best Villa in Dehradun | Kudrat Luxury Homestay', description: 'Discover why Kudrat Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 2+ acres lawns, BBQ & pet-friendly escape.', priority: '1.0', changefreq: 'weekly' },
-  { path: '/villa-in-dehradun', title: 'Villa in Dehradun | Kudrat Private Pool Homestay', description: 'Looking for a private luxury villa in Dehradun? Rent the entire 2BHK Kudrat Villa with private swimming pool, 2+ acres lawns, and 100% privacy.', priority: '0.9', changefreq: 'weekly' },
-  { path: '/about', title: 'About Us | Kudrat Villa Dehradun', description: "Learn about Kudrat Villa, Dehradun's premier 2BHK luxury private pool homestay set across 2+ acres of private fenced lawns.", priority: '0.8', changefreq: 'monthly' },
+  { path: '/', title: 'Best Villa in Dehradun | Kudrat Villa Private Pool Stay', description: 'Kudrat Villa is the #1 luxury private pool villa and hidden gem stay in Dehradun. 2BHK homestay, 10,000 sq ft private lawns, BBQ & pet-friendly.', priority: '1.0', changefreq: 'weekly' },
+  { path: '/best-villa-in-dehradun', title: 'Best Villa in Dehradun | Kudrat Luxury Homestay', description: 'Discover why Kudrat Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 10,000 sq ft lawns, BBQ & pet-friendly escape.', priority: '1.0', changefreq: 'weekly' },
+  { path: '/villa-in-dehradun', title: 'Villa in Dehradun | Kudrat Private Pool Homestay', description: 'Looking for a private luxury villa in Dehradun? Rent the entire 2BHK Kudrat Villa with private swimming pool, 10,000 sq ft lawns, and 100% privacy.', priority: '0.9', changefreq: 'weekly' },
+  { path: '/about', title: 'About Us | Kudrat Villa Dehradun', description: "Learn about Kudrat Villa, Dehradun's premier 2BHK luxury private pool homestay set across 10,000 sq ft of private fenced lawns.", priority: '0.8', changefreq: 'monthly' },
   { path: '/contact', title: 'Contact Us | Kudrat Villa Dehradun', description: 'Contact Kudrat Villa in Dehradun via WhatsApp or phone. Book your luxury private pool villa stay with instant confirmation.', priority: '0.8', changefreq: 'monthly' },
   { path: '/experience', title: 'The Experience | Kudrat Villa Dehradun', description: 'Explore the 5-star Kudrat Villa experience in Dehradun — private pool, open rainwater shower, bonfire pit, BBQ, and mountain views.', priority: '0.8', changefreq: 'monthly' },
   { path: '/packages', title: 'Luxury Villa Packages in Dehradun | Kudrat Villa', description: 'Browse luxury stay packages at Kudrat Villa Dehradun. Private pool 2BHK stay, family vacations, couple getaways & weekend retreats.', priority: '0.9', changefreq: 'monthly' },
   { path: '/destination-guide', title: 'Dehradun Travel & Destination Guide | Kudrat Villa', description: 'Explore top attractions, nature trails, and hidden gems near Kudrat Villa in Dehradun. The ultimate local getaway travel guide.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/family-villa-dehradun', title: 'Family Villa in Dehradun | Kudrat Villa', description: 'Book the best family villa in Dehradun. Entire 2BHK luxury stay, private swimming pool, 2+ acres fenced lawns, and space for 6+ guests.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/family-villa-dehradun', title: 'Family Villa in Dehradun | Kudrat Villa', description: 'Book the best family villa in Dehradun. Entire 2BHK luxury stay, private swimming pool, 10,000 sq ft fenced lawns, and space for 6+ guests.', priority: '0.9', changefreq: 'monthly' },
   { path: '/couple-getaway-dehradun', title: 'Couple Getaway in Dehradun | Kudrat Villa', description: 'Romantic private pool villa in Dehradun for couples. 100% exclusive access, stargazing bonfire pit, and cozy luxury stay from ₹19,998.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/pet-friendly-villa-dehradun', title: 'Pet Friendly Villa in Dehradun | Kudrat Villa', description: '100% pet friendly luxury villa in Dehradun. Zero pet fees, 2+ acres of securely fenced lawns, and private pool access for your stay.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/pet-friendly-villa-dehradun', title: 'Pet Friendly Villa in Dehradun | Kudrat Villa', description: '100% pet friendly luxury villa in Dehradun. Zero pet fees, 10,000 sq ft of securely fenced lawns, and private pool access for your stay.', priority: '0.9', changefreq: 'monthly' },
   { path: '/delhi-to-dehradun-weekend', title: 'Delhi to Dehradun Weekend Escape | Kudrat Villa', description: 'Easy 5-hour drive from Delhi NCR to your private luxury pool villa in Dehradun. 2BHK stay, gated parking for 5 SUVs, and fresh mountain air.', priority: '0.9', changefreq: 'monthly' },
   { path: '/terms-conditions', title: 'Terms & Conditions | Kudrat Villa', description: 'Terms and conditions for booking a stay at Kudrat Villa in Dehradun. Check-in policies, guest guidelines, and house rules.', priority: '0.5', changefreq: 'yearly' },
   { path: '/privacy-policy', title: 'Privacy Policy | Kudrat Villa', description: 'Privacy Policy for Kudrat Villa guests and website visitors. Learn how we protect your personal data and booking privacy.', priority: '0.5', changefreq: 'yearly' },
@@ -166,6 +166,12 @@ async function prerender() {
 
       let html = await page.content();
       html = injectMeta(html, route);
+
+      // Clean up any absolute localhost / 127.0.0.1 origins injected into modulepreload, stylesheet, or script links
+      html = html.replace(/https?:\/\/localhost:\d+\//gi, '/');
+      html = html.replace(/https?:\/\/localhost:\d+/gi, '');
+      html = html.replace(/https?:\/\/127\.0\.0\.1:\d+\//gi, '/');
+      html = html.replace(/https?:\/\/127\.0\.0\.1:\d+/gi, '');
 
       const outPath = outputPathFor(route.path);
       fs.mkdirSync(path.dirname(outPath), { recursive: true });

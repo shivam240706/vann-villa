@@ -36,7 +36,7 @@ const CoupleGetaway = () => {
           <aside className="ai-summary-card" style={{ background: 'rgba(212, 175, 55, 0.08)', padding: '20px 24px', borderRadius: '12px', marginBottom: '32px', border: '1px solid rgba(212, 175, 55, 0.3)' }}>
             <h3 style={{ color: 'var(--accent-gold, #d4af37)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance — Romantic Couple Stay Highlights</h3>
             <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.7', fontSize: '0.95rem' }}>
-              <li><strong>Exclusive Privacy:</strong> Entire 2BHK private villa, private pool, and 2+ acres of lawns reserved 100% for the couple.</li>
+              <li><strong>Exclusive Privacy:</strong> Entire 2BHK private villa, private pool, and 10,000 sq. ft. of lawns reserved 100% for the couple.</li>
               <li><strong>Romantic Features:</strong> Private temperature-suited pool, stargazing outdoor bonfire pit, open rainwater shower, candlelit setup.</li>
               <li><strong>Location & Access:</strong> Dehradun (30 min drive to Dehradun City Centre, 30 km to Mussoorie).</li>
               <li><strong>Rates & Booking:</strong> Packages starting at just ₹9,998 / 2 nights including romantic decor arrangements.</li>
@@ -45,7 +45,7 @@ const CoupleGetaway = () => {
 
           <h2>The Ultimate Romantic Escape</h2>
           <p>
-            Kudrat Villa in Dehradun is the top-rated romantic couple getaway in Uttarakhand, giving couples 100% exclusive access to a 2BHK luxury villa with a private swimming pool, 2+ acres of secluded mountain-facing lawns, outdoor bonfire pit, and customized anniversary or honeymoon setups.
+            Kudrat Villa in Dehradun is the top-rated romantic couple getaway in Uttarakhand, giving couples 100% exclusive access to a 2BHK luxury villa with a private swimming pool, 10,000 sq ft of secluded mountain-facing lawns, outdoor bonfire pit, and customized anniversary or honeymoon setups.
           </p>
 
           <h3><Heart size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Designed for Romance</h3>

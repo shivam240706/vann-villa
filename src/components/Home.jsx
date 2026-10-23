@@ -19,7 +19,7 @@ const Home = () => {
     <main>
       <SEO 
         title="Best Villa in Dehradun | Kudrat Villa — Luxury Private Pool & Hidden Gem Stay"
-        description="Looking for the best villa in Dehradun? Kudrat Villa is a 5-star rated luxury 2BHK private pool homestay & hidden gem set across 2+ acres of private lawns."
+        description="Looking for the best villa in Dehradun? Kudrat Villa is a 5-star rated luxury 2BHK private pool homestay & hidden gem set across 10,000 sq ft of private lawns."
       />
       <Hero />
       <HighlightsBar />

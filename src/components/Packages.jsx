@@ -10,7 +10,7 @@ const packageData = [
   {
     id: 'pool-escape',
     title: 'Private Pool Escape',
-    tagline: 'The entire property is yours — pool, lawns, kudrat-villa-outdoor-fire-pit, and all.',
+    tagline: 'The entire property is yours — pool, lawns, outdoor fire pit, and all.',
     price: <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: '/night',
     icon: Sparkles,
@@ -29,7 +29,7 @@ const packageData = [
   {
     id: 'romantic-stay',
     title: 'Romantic 2-Night Stay',
-    tagline: 'Two nights of uninterrupted stillness, a kudrat-villa-outdoor-fire-pit, and a sky full of stars.',
+    tagline: 'Two nights of uninterrupted stillness, an outdoor fire pit, and a sky full of stars.',
     price: <KatanaStrikePrice oldPrice="₹19,998" newPrice="₹9,998" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: 'total',
     icon: Heart,
@@ -47,7 +47,7 @@ const packageData = [
   {
     id: 'family-getaway',
     title: 'Family Villa Getaway',
-    tagline: 'Space for everyone: 2 acres of lawns, a private pool, and a kitchen on your terms.',
+    tagline: 'Space for everyone: 10,000 sq ft of private grounds, a private pool, and a kitchen on your terms.',
     price: <KatanaStrikePrice oldPrice="₹11,999" newPrice="₹5,999" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: '/night',
     icon: Users,

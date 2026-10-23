@@ -19,7 +19,7 @@ const facilities = [
   { icon: ConciergeBell, title: "Personalized Concierge", desc: "Catering to your every need." },
   { icon: Dog, title: "Pet-Friendly", desc: "Your furry friends are always welcome." },
   { icon: Waves, title: "Swimming Pool", desc: "A private oasis to unwind." },
-  { icon: Leaf, title: "Lush Green Lawns", desc: "Acres of serene nature to explore." }
+  { icon: Leaf, title: "Lush Green Lawns", desc: "10,000 sq ft of serene nature to explore." }
 ];
 
 const distances = [
@@ -246,7 +246,7 @@ const About = () => {
               </div>
               <div className="faq-item">
                 <h4>2. Is Kudrat Villa pet-friendly?</h4>
-                <p><strong>Yes, 100% pet-friendly — with no hidden charges.</strong> Your pets are welcome to roam freely on our 2+ acres of private, fenced lawns. We ask that pets are kept supervised near the pool area for their safety.</p>
+                <p><strong>Yes, 100% pet-friendly — with no hidden charges.</strong> Your pets are welcome to roam freely on our 10,000 sq ft of private, fenced lawns. We ask that pets are kept supervised near the pool area for their safety.</p>
               </div>
               <div className="faq-item">
                 <h4>3. Is food provided? Can we order from Zomato or Swiggy?</h4>
@@ -270,7 +270,7 @@ const About = () => {
               </div>
               <div className="faq-item">
                 <h4>8. What amenities are included in every booking?</h4>
-                <p><strong>Every booking includes the entire private pool, kudrat-villa-outdoor-fire-pit, high-speed Wi-Fi, secure parking, and all 2 bedrooms.</strong> The villa is privately yours for the duration of your stay — no shared spaces with other guests.</p>
+                <p><strong>Every booking includes the entire private pool, outdoor fire pit, high-speed Wi-Fi, secure parking, and all 2 bedrooms.</strong> The villa is privately yours for the duration of your stay — no shared spaces with other guests.</p>
               </div>
             </div>
           </motion.div>

@@ -30,6 +30,8 @@ const BANNED_STRINGS = [
   'mov_bbb.mp4',
   'Statista Travel Report',
   'esteemed travel experts',
+  'localhost:',
+  '127.0.0.1:',
 ];
 
 async function checkStaticFile(routePath) {

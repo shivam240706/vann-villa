@@ -16,8 +16,8 @@ const galleryImages = [
   // Pool & Features
   { src: '/images/kudrat-villa-private-pool.webp', alt: 'Private luxury swimming pool at Kudrat Villa Dehradun', category: 'Pool & Features' },
   { src: '/images/kudrat-villa-pool-nature.webp', alt: 'Clear blue swimming pool surrounded by nature in Uttarakhand', category: 'Pool & Features' },
-  { src: '/images/kudrat-villa-outdoor-fire-pit.webp', alt: 'Outdoor BBQ kudrat-villa-outdoor-fire-pit for cozy evenings at the private villa', category: 'Pool & Features' },
-  { src: '/images/kudrat-villa-open-shower.webp', alt: 'Premium kudrat-villa-open-shower experience at Kudrat Villa', category: 'Pool & Features' },
+  { src: '/images/kudrat-villa-outdoor-fire-pit.webp', alt: 'Outdoor BBQ fire pit for cozy evenings at the private villa', category: 'Pool & Features' },
+  { src: '/images/kudrat-villa-open-shower.webp', alt: 'Premium open rainwater shower experience at Kudrat Villa', category: 'Pool & Features' },
   
   // Living Spaces
   { src: '/images/kudrat-villa-master-bedroom.webp', alt: 'Luxury master bedroom with panoramic mountain views', category: 'Living Spaces' },

@@ -14,19 +14,19 @@ const packages = [
   },
   {
     title: 'Family Villa Vacation',
-    description: 'Space for everyone: 2BHK villa, 2+ acres of lawns, a private pool, and a fully equipped kitchen. Fits up to 6 guests.',
+    description: 'Space for everyone: 2BHK villa, 10,000 sq ft of private grounds, a private pool, and a fully equipped kitchen. Fits up to 6 guests.',
     image: '/images/kudrat-villa-private-pool.webp',
     link: '/family-villa-dehradun',
   },
   {
     title: 'Pet-Friendly Stay',
-    description: 'No pet fees, no restrictions. 2+ fenced acres for dogs to roam free, with secure gated access and on-site support.',
+    description: 'No pet fees, no restrictions. 10,000 sq ft of fenced grounds for dogs to roam free, with secure gated access and on-site support.',
     image: '/images/kudrat-villa-exterior-lawn.webp',
     link: '/pet-friendly-villa-dehradun',
   },
   {
     title: 'Best Villa & Hidden Gem Stay',
-    description: 'Dehradun’s premier private luxury pool villa set across 2+ acres of mountain lawns. 100% exclusive privacy starting at just ₹4,999/night.',
+    description: 'Dehradun’s premier private luxury pool villa set across 10,000 sq ft of mountain lawns. 100% exclusive privacy starting at just ₹4,999/night.',
     image: '/images/kudrat-villa-estate.webp',
     link: '/best-villa-in-dehradun',
   },

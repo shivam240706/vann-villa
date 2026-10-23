@@ -49,10 +49,10 @@ const Experience = () => {
               When searching for the <strong>best luxury private villa in Dehradun</strong>, travelers often look for a balance between natural serenity and modern comfort. Tucked away from the bustling city center, Kudrat Villa has earned its reputation as <strong>Dehradun's hidden villa</strong>, offering an exclusive sanctuary for families, couples, and groups seeking a premium retreat.
             </p>
             <p className="article-text">
-              Unlike traditional hotels where you are confined to a single room, a luxury villa provides expansive living spaces, private outdoor areas, and a personalized experience. At Kudrat Villa, you're not just booking accommodation; you're securing a private, 2+ acre estate surrounded by lush greenery, complete with a private swimming pool, outdoor kudrat-villa-outdoor-fire-pits, and beautifully curated indoor spaces.
+              Unlike traditional hotels where you are confined to a single room, a luxury villa provides expansive living spaces, private outdoor areas, and a personalized experience. At Kudrat Villa, you're not just booking accommodation; you're securing a private, 10,000 sq ft estate surrounded by lush greenery, complete with a private swimming pool, outdoor fire pit, and beautifully curated indoor spaces.
             </p>
             <p className="article-text">
-              As a premier <strong>pet-friendly villa in Uttarakhand</strong>, we understand that a family vacation isn't complete without your furry companions. Our expansive lawns provide the perfect playground for pets, ensuring every member of your family enjoys the getaway. From waking up to the sound of chirping birds to spending evenings under the starlit sky by the kudrat-villa-outdoor-fire-pit, every moment at Kudrat Villa is designed to be unforgettable.
+              As a premier <strong>pet-friendly villa in Uttarakhand</strong>, we understand that a family vacation isn't complete without your furry companions. Our expansive lawns provide the perfect playground for pets, ensuring every member of your family enjoys the getaway. From waking up to the sound of chirping birds to spending evenings under the starlit sky by the outdoor fire pit, every moment at Kudrat Villa is designed to be unforgettable.
             </p>
           </motion.div>
 
@@ -93,7 +93,7 @@ const Experience = () => {
                   </li>
                   <li>
                     <Camera className="activity-icon" />
-                    <span><strong>Evening BBQ & Firepit:</strong> As the sun sets, gather around the outdoor kudrat-villa-outdoor-fire-pit. Enjoy a personalized BBQ experience under the stars, making memories with your loved ones in your private haven.</span>
+                    <span><strong>Evening BBQ & Firepit:</strong> As the sun sets, gather around the outdoor fire pit. Enjoy a personalized BBQ experience under the stars, making memories with your loved ones in your private haven.</span>
                   </li>
                 </ul>
               </div>
@@ -148,7 +148,7 @@ const Experience = () => {
             transition={{ duration: 0.3 }}
           >
             <img src="/images/kudrat-villa-master-bedroom.webp" alt="Luxurious bedroom at Kudrat Villa" loading="lazy" />
-            <img src="/images/kudrat-villa-outdoor-fire-pit.webp" alt="Outdoor kudrat-villa-outdoor-fire-pit at Kudrat Villa Dehradun" loading="lazy" />
+            <img src="/images/kudrat-villa-outdoor-fire-pit.webp" alt="Outdoor fire pit at Kudrat Villa Dehradun" loading="lazy" />
           </motion.div>
 
           <motion.div

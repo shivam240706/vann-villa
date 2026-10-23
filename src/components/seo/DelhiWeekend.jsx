@@ -9,7 +9,7 @@ const DelhiWeekend = () => {
     <div className="seo-page-container">
       <SEO 
         title="Luxury Weekend Getaway from Delhi NCR to Dehradun | Kudrat Villa"
-        description="Weekend getaway from Delhi to Dehradun — 5–6 hr drive, private pool villa, 2+ acres. Dehradun. Starting at just ₹4,999/night. Book on WhatsApp."
+        description="Weekend getaway from Delhi to Dehradun — 5–6 hr drive, private pool villa, 10,000 sq ft grounds. Dehradun. Starting at just ₹4,999/night. Book on WhatsApp."
       />
       
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-rooftop-view.webp")' }}>
@@ -38,14 +38,14 @@ const DelhiWeekend = () => {
             <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.7', fontSize: '0.95rem' }}>
               <li><strong>Drive Duration:</strong> 4.5 to 5.5 hours drive from Delhi NCR via Delhi-Dehradun Expressway.</li>
               <li><strong>Secure Parking:</strong> On-site gated parking for up to 5 large SUVs.</li>
-              <li><strong>Property Features:</strong> 2BHK luxury stay, private swimming pool, 2+ acres lawns, outdoor BBQ & fire pit.</li>
+              <li><strong>Property Features:</strong> 2BHK luxury stay, private swimming pool, 10,000 sq. ft. lawns, outdoor BBQ & fire pit.</li>
               <li><strong>Air Quality:</strong> Fresh mountain air with low AQI, situated away from congested city traffic in Dehradun.</li>
             </ul>
           </aside>
 
           <h2>The Perfect Delhi to Dehradun Road Trip</h2>
           <p>
-            Kudrat Villa in Dehradun is the ideal weekend getaway from Delhi NCR, offering a 4.5 to 5.5 hour scenic drive to a 2BHK private pool villa set across 2+ acres of mountain lawns with secure parking for 5 SUVs.
+            Kudrat Villa in Dehradun is the ideal weekend getaway from Delhi NCR, offering a 4.5 to 5.5 hour scenic drive to a 2BHK private pool villa set across 10,000 sq ft of mountain lawns with secure parking for 5 SUVs.
           </p>
 
           <h3><Car size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Easy Accessibility</h3>

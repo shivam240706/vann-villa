@@ -38,11 +38,20 @@
 
 .stat-number {
   font-family: var(--font-body);
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 600;
   color: var(--accent-gold);
   line-height: 1;
   text-shadow: 0 0 30px rgba(184, 134, 11, 0.2);
+  white-space: nowrap;
+}
+
+.stat-suffix {
+  font-size: 0.55em;
+  margin-left: 4px;
+  vertical-align: baseline;
+  font-weight: 500;
+  opacity: 0.95;
 }
 
 .stat-label {

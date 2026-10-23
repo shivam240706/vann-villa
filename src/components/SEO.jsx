@@ -44,7 +44,7 @@ const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMa
 
 SEO.defaultProps = {
   title: 'Kudrat Villa | Luxury Private Pool Villa in Dehradun',
-  description: 'Kudrat Villa is a premium 2BHK private pool villa located in Dehradun (near UPES). Offering 2 acres of lawns, open shower, BBQ, and a 100% pet-friendly stay.',
+  description: 'Kudrat Villa is a premium 2BHK private pool villa located in Dehradun (near UPES). Offering 10,000 sq ft of private lawns, open shower, BBQ, and a 100% pet-friendly stay.',
   name: 'Kudrat Villa',
   ogType: 'website'
 };
