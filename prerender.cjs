@@ -164,7 +164,7 @@ async function prerender() {
     const url = `http://localhost:${PORT}${route.path}`;
 
     try {
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: READY_TIMEOUT_MS });
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: READY_TIMEOUT_MS });
 
       // Wait for the app-side ready signal (see main.jsx note below) instead
       // of a fixed sleep, so late/async data fetches are captured too.
