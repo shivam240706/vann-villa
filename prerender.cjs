@@ -133,8 +133,8 @@ async function prerender() {
   let executablePath = undefined;
   let args = ['--no-sandbox', '--disable-setuid-sandbox'];
   
-  if (process.env.VERCEL) {
-    console.log('Vercel environment detected. Loading @sparticuz/chromium...');
+  if (process.env.VERCEL && process.platform === 'linux') {
+    console.log('Vercel Linux environment detected. Loading @sparticuz/chromium...');
     const chromium = require('@sparticuz/chromium');
     executablePath = await chromium.default.executablePath();
     args = chromium.default.args;
