@@ -48,7 +48,7 @@ const Testimonials = () => {
     },
     {
       id: 7,
-      quote: "Best pet-friendly property in Dehradun. Our golden retriever loved the huge lawns. The BBQ in the evening was a great touch.",
+      quote: "Best pet-friendly property in Dehradun. Our golden retriever loved the 5,000 sq ft private lawns. The peaceful mountain atmosphere was so relaxing.",
       author: "Priya Singh",
       time: "3 months ago on Google",
       stars: "★★★★★"

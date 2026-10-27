@@ -12,7 +12,7 @@ const InitialLoader = () => {
   // If already visited this session or in prerender mode, don't show loader
   const alreadyVisited = typeof window !== 'undefined' && (
     isPrerender || 
-    Boolean(sessionStorage.getItem('kudrat_visited'))
+    Boolean(sessionStorage.getItem('van_visited'))
   );
 
   const [loading, setLoading] = useState(!alreadyVisited);
@@ -39,7 +39,7 @@ const InitialLoader = () => {
       setProgress(100);
       setLoading(false);
       try {
-        sessionStorage.setItem('kudrat_visited', 'true');
+        sessionStorage.setItem('van_visited', 'true');
       } catch {}
     }, 280);
 
@@ -88,8 +88,8 @@ const InitialLoader = () => {
             style={{ marginBottom: '16px' }}
           >
             <img 
-              src="/images/kudrat-logo.webp" 
-              alt="Kudrat Villa" 
+              src="/images/vann-villa-logo.webp" 
+              alt="Van Villa" 
               width="80" 
               height="80" 
               style={{ 
@@ -114,7 +114,7 @@ const InitialLoader = () => {
               marginBottom: '20px'
             }}
           >
-            Kudrat Villa
+            Van Villa
           </motion.div>
           <motion.div
             style={{

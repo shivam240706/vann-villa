@@ -8,11 +8,11 @@ const PetFriendly = () => {
   return (
     <div className="seo-page-container">
       <SEO 
-        title="100% Pet Friendly Villa in Dehradun | Kudrat Villa"
-        description="100% pet-friendly private villa in Dehradun. No pet fees. 10,000 sq ft fenced grounds for dogs. Private pool. Book direct starting at just ₹4,999/night."
+        title="100% Pet Friendly Villa in Dehradun | Van Villa"
+        description="100% pet-friendly private villa in Dehradun. No pet fees. 5,000 sq ft fenced grounds for dogs. Private pool. Book direct starting at just ₹4,499/night."
       />
       
-      <section className="seo-hero" style={{ backgroundImage: 'url("/images/kudrat-villa-exterior-lawn.webp")' }}>
+      <section className="seo-hero" style={{ backgroundImage: 'url("/images/vann-villa-exterior-lawn.webp")' }}>
         <div className="seo-hero-overlay"></div>
         <motion.div 
           className="seo-hero-content"
@@ -37,20 +37,20 @@ const PetFriendly = () => {
             <h3 style={{ color: 'var(--accent-gold, #d4af37)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance — 100% Pet-Friendly Villa Highlights</h3>
             <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.7', fontSize: '0.95rem' }}>
               <li><strong>Pet Policy:</strong> 100% pet-friendly, zero hidden pet charges, all dog and cat breeds welcome.</li>
-              <li><strong>Space for Pets:</strong> 10,000 sq. ft. of securely fenced private green lawns.</li>
-              <li><strong>Safety & Comfort:</strong> Gated private estate with no road traffic hazard, nearby pine forest walking trails.</li>
-              <li><strong>Villa Pricing:</strong> Entire 2BHK stay starting at just ₹4,999 / night with direct WhatsApp booking.</li>
+              <li><strong>Space for Pets:</strong> 5,000 sq. ft. of securely fenced private green lawns.</li>
+              <li><strong>Safety & Comfort:</strong> Gated private estate with no road traffic hazard, peaceful mountain surroundings.</li>
+              <li><strong>Villa Pricing:</strong> Entire 2BHK stay starting at just ₹4,499 / night with direct WhatsApp booking.</li>
             </ul>
           </aside>
 
           <h2>A True Haven for Pets</h2>
           <p>
-            Kudrat Villa in Dehradun is the best 100% pet-friendly luxury villa in Uttarakhand, featuring 10,000 sq ft of securely fenced lawns, zero hidden pet surcharges, and a private 2BHK stay where dogs and cats can roam freely in complete safety.
+            Van Villa in Dehradun is the best 100% pet-friendly luxury villa in Uttarakhand, featuring 5,000 sq ft of securely fenced lawns, zero hidden pet surcharges, and a private 2BHK stay where dogs and cats can roam freely in complete safety.
           </p>
 
-          <h3><Dog size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Why Pets Love Kudrat Villa</h3>
+          <h3><Dog size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Why Pets Love Van Villa</h3>
           <ul>
-            <li><strong>10,000 Sq. Ft. of Open Space:</strong> Your dogs will be in paradise. Our expansive, well-maintained lawns provide endless space for running, playing fetch, and rolling in the grass.</li>
+            <li><strong>5,000 Sq. Ft. of Open Space:</strong> Your dogs will be in paradise. Our expansive, well-maintained lawns provide plenty of space for running, playing fetch, and rolling in the grass.</li>
             <li><strong>Secure & Gated:</strong> The property is fully fenced and gated, ensuring that your pets can roam freely and safely within the estate without the risk of wandering off.</li>
             <li><strong>No Hidden Pet Fees:</strong> We do not charge arbitrary nightly pet fees. As long as the property rules are respected, bringing your pet is absolutely free.</li>
           </ul>
@@ -63,11 +63,11 @@ const PetFriendly = () => {
 
           <h3>Nature Walks</h3>
           <p>
-            The quiet, paved roads and trails around the villa and the nearby UPES campus are excellent for early morning or late evening walks with your dog, far away from heavy city traffic.
+            The quiet, scenic paths around the villa offer excellent routes for early morning or late evening walks with your dog, far away from heavy city traffic.
           </p>
 
           <div className="seo-cta-section">
-            <a href="https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Kudrat%20Villa." className="btn-primary seo-cta-btn">Check Availability via WhatsApp</a>
+            <a href="https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Van%20Villa." className="btn-primary seo-cta-btn">Check Availability via WhatsApp</a>
           </div>
         </motion.div>
       </section>

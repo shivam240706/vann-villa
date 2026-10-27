@@ -105,16 +105,16 @@ const Header = () => {
       />
       <div className="header-container">
         <div className="logo">
-          <Link to="/" onClick={handleHomeClick} aria-label="Kudrat Villa — Home" className="logo-link">
+          <Link to="/" onClick={handleHomeClick} aria-label="Van Villa — Home" className="logo-link">
             <img 
-              src="/images/kudrat-logo.webp" 
-              alt="Kudrat Villa Logo" 
+              src="/images/vann-villa-logo.webp" 
+              alt="Van Villa Logo" 
               className="header-logo-img" 
               width="44" 
               height="44" 
               loading="eager"
             />
-            <span className="logo-text">Kudrat Villa</span>
+            <span className="logo-text">Van Villa</span>
           </Link>
         </div>
         

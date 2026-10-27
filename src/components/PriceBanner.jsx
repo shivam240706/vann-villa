@@ -26,7 +26,7 @@ const PriceBanner = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         >
-          <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#ff2a2a" size="0.6em" newSize="1em" />
+          <KatanaStrikePrice oldPrice="₹8,999" newPrice="₹4,499" color="#ff2a2a" size="0.6em" newSize="1em" />
         </motion.h2>
         
         <motion.p 
@@ -55,7 +55,7 @@ const PriceBanner = () => {
         <motion.button 
           id="price-cta-book"
           className="ultra-premium-book-btn" 
-          onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Kudrat%20Villa.'}
+          onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20book%20a%20stay%20at%20Van%20Villa.'}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

@@ -33,7 +33,7 @@ const LeadCapture = () => {
             {!submitted ? (
               <form 
                 className="lead-capture-form" 
-                action="https://formsubmit.co/kudratvilla98@gmail.com"
+                action="https://formsubmit.co/info@vanvilla.com"
                 method="POST"
                 target="_blank"
                 onSubmit={handleSubmit}

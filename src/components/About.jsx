@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wifi, Flame, ConciergeBell, Dog, Waves, Leaf, ChevronLeft, ChevronRight, X, Bus, Clock, Landmark, GraduationCap, Mountain, Maximize2 } from 'lucide-react';
+import { Wifi, ChefHat, ConciergeBell, Dog, Waves, Leaf, ChevronLeft, ChevronRight, X, Bus, Clock, Landmark, GraduationCap, Mountain, Maximize2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
@@ -15,11 +15,11 @@ import './Gallery.css';
 
 const facilities = [
   { icon: Wifi, title: "Free Wi-Fi Access", desc: "High-speed connectivity throughout the property." },
-  { icon: Flame, title: "Outdoor BBQ & Dining", desc: "Exquisite alfresco dining experiences." },
+  { icon: ChefHat, title: "Equipped Kitchen", desc: "Self-catering kitchen with modern appliances." },
   { icon: ConciergeBell, title: "Personalized Concierge", desc: "Catering to your every need." },
   { icon: Dog, title: "Pet-Friendly", desc: "Your furry friends are always welcome." },
   { icon: Waves, title: "Swimming Pool", desc: "A private oasis to unwind." },
-  { icon: Leaf, title: "Lush Green Lawns", desc: "10,000 sq ft of serene nature to explore." }
+  { icon: Leaf, title: "Lush Green Lawns", desc: "5,000 sq ft of serene nature to explore." }
 ];
 
 const distances = [
@@ -112,11 +112,11 @@ const About = () => {
   return (
     <div className="about-page">
       <SEO 
-        title="Dehradun's Hidden Gem | About Kudrat Villa"
-        description="Learn more about Kudrat Villa, Dehradun's hidden gem. Discover our luxury facilities, pet-friendly environment, and serene natural surroundings."
+        title="Dehradun's Hidden Gem | About Van Villa"
+        description="Learn more about Van Villa, Dehradun's hidden gem. Discover our luxury facilities, pet-friendly environment, and serene natural surroundings."
       />
       {/* Hero Section */}
-      <section className="about-hero" aria-label="About Kudrat Villa">
+      <section className="about-hero" aria-label="About Van Villa">
         <motion.div 
           className="about-hero-content"
           initial={{ opacity: 0, y: 50 }}
@@ -124,9 +124,9 @@ const About = () => {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <h1 className="massive-title">Dehradun's Hidden Gem</h1>
-          <p className="about-hero-subtitle">The Story of Kudrat Villa</p>
+          <p className="about-hero-subtitle">The Story of Van Villa</p>
           <p className="about-hero-text">
-            Escape the noise and commotion of the city and lose yourself in the peaceful surroundings of one of the finest villas in Dehradun. Kudrat Villa is a haven of tranquility, nestled in the lap of nature, where you can unwind and recharge your senses. Recognized as Dehradun's hidden villa, our property is a sanctuary for those seeking a premium retreat.
+            Escape the noise and commotion of the city and lose yourself in the peaceful surroundings of one of the finest villas in Dehradun. Van Villa is a haven of tranquility, nestled in the lap of nature, where you can unwind and recharge your senses. Recognized as Dehradun's hidden villa, our property is a sanctuary for those seeking a premium retreat.
           </p>
           <p className="about-hero-text" style={{ marginTop: '15px' }}>
             Whether you are searching for premium properties in Dehradun for family stays or a pet-friendly villa in Uttarakhand, our state-of-the-art facilities and amenities cater to your every need, ensuring a comfortable and indulgent luxury experience. We built this private villa with a simple vision: to offer a space where guests can reconnect with nature without compromising on modern luxury.
@@ -181,39 +181,37 @@ const About = () => {
           Gallery
         </motion.h2>
         <GalleryRow 
-          title="Kudrat Villa" 
+          title="Van Villa" 
           images={[
-            { src: '/images/kudrat-villa-exterior.webp', alt: 'Kudrat Villa front exterior view' },
-            { src: '/images/kudrat-villa-lawn-view.webp', alt: 'Expansive lush green lawn' },
-            { src: '/images/kudrat-villa-estate.webp', alt: 'Beautiful estate view' },
-            { src: '/images/kudrat-villa-exterior-lawn.webp', alt: 'Exterior lawn and garden' },
-            { src: '/images/kudrat-villa-front-view.webp', alt: 'Front facade of the luxury villa' }
+            { src: '/images/vann-villa-exterior.webp', alt: 'Van Villa front exterior view' },
+            { src: '/images/vann-villa-lawn-view.webp', alt: 'Expansive lush green lawn' },
+            { src: '/images/vann-villa-estate.webp', alt: 'Beautiful estate view' },
+            { src: '/images/vann-villa-exterior-lawn.webp', alt: 'Exterior lawn and garden' },
+            { src: '/images/vann-villa-front-view.webp', alt: 'Front facade of the luxury villa' }
           ]}
           onImageClick={openLightbox}
         />
         <GalleryRow 
           title="Outdoors" 
           images={[
-            { src: '/images/kudrat-villa-grand-entrance.webp', alt: 'Grand villa entrance' },
-            { src: '/images/kudrat-villa-outdoor-seating.webp', alt: 'Outdoor seating area' },
-            { src: '/images/kudrat-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the garden' },
-            { src: '/images/kudrat-villa-rooftop-view.webp', alt: 'Scenic rooftop view' },
-            { src: '/images/kudrat-villa-private-pool.webp', alt: 'Private luxury pool' },
-            { src: '/images/kudrat-villa-pool-nature.webp', alt: 'Pool surrounded by nature' },
-            { src: '/images/kudrat-villa-outdoor-fire-pit.webp', alt: 'Outdoor fire pit area' },
-            { src: '/images/kudrat-villa-open-shower.webp', alt: 'Open shower by the pool' }
+            { src: '/images/vann-villa-grand-entrance.webp', alt: 'Grand villa entrance' },
+            { src: '/images/vann-villa-outdoor-seating.webp', alt: 'Outdoor seating area' },
+            { src: '/images/vann-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the garden' },
+            { src: '/images/vann-villa-rooftop-view.webp', alt: 'Scenic rooftop view' },
+            { src: '/images/vann-villa-private-pool.webp', alt: 'Private luxury pool' },
+            { src: '/images/vann-villa-pool-nature.webp', alt: 'Pool surrounded by nature' }
           ]}
           onImageClick={openLightbox}
         />
         <GalleryRow 
           title="Indoors" 
           images={[
-            { src: '/images/kudrat-villa-indoor-lounge.webp', alt: 'Cozy indoor lounge area' },
-            { src: '/images/kudrat-villa-mini-bar.webp', alt: 'Private mini bar setup' },
-            { src: '/images/kudrat-villa-master-bedroom.webp', alt: 'Luxury master bedroom' },
-            { src: '/images/kudrat-villa-spacious-bedroom.webp', alt: 'Spacious guest bedroom' },
-            { src: '/images/kudrat-villa-family-suite-bedroom.webp', alt: 'Family suite bedroom' },
-            { src: '/images/kudrat-villa-master-bedroom-view.webp', alt: 'Master bedroom with a view' }
+            { src: '/images/vann-villa-indoor-lounge.webp', alt: 'Cozy indoor lounge area' },
+            { src: '/images/vann-villa-mini-bar.webp', alt: 'Private mini bar setup' },
+            { src: '/images/vann-villa-master-bedroom.webp', alt: 'Luxury master bedroom' },
+            { src: '/images/vann-villa-spacious-bedroom.webp', alt: 'Spacious guest bedroom' },
+            { src: '/images/vann-villa-family-suite-bedroom.webp', alt: 'Family suite bedroom' },
+            { src: '/images/vann-villa-master-bedroom-view.webp', alt: 'Master bedroom with a view' }
           ]}
           onImageClick={openLightbox}
         />
@@ -241,16 +239,16 @@ const About = () => {
           >
             <div className="faq-grid">
               <div className="faq-item">
-                <h4>1. Where is Kudrat Villa located?</h4>
-                <p><strong>Kudrat Villa is located 1km ahead of Nature Campus, Dehradun (PIN: 248007).</strong> It is roughly 15 km from Dehradun city centre and 25 km from the ISBT bus stand. Google Maps directions are shared upon booking confirmation.</p>
+                <h4>1. Where is Van Villa located?</h4>
+                <p><strong>Van Villa is located in Dehradun, Uttarakhand (PIN: 248007).</strong> It is roughly 15 km from Dehradun city centre. Exact location and Google Maps directions are shared upon booking confirmation.</p>
               </div>
               <div className="faq-item">
-                <h4>2. Is Kudrat Villa pet-friendly?</h4>
-                <p><strong>Yes, 100% pet-friendly — with no hidden charges.</strong> Your pets are welcome to roam freely on our 10,000 sq ft of private, fenced lawns. We ask that pets are kept supervised near the pool area for their safety.</p>
+                <h4>2. Is Van Villa pet-friendly?</h4>
+                <p><strong>Yes, 100% pet-friendly — with no hidden charges.</strong> Your pets are welcome to roam freely on our 5,000 sq ft of private, fenced lawns. We ask that pets are kept supervised near the pool area for their safety.</p>
               </div>
               <div className="faq-item">
                 <h4>3. Is food provided? Can we order from Zomato or Swiggy?</h4>
-                <p><strong>We offer a dedicated barbecue setup so you can grill your own food.</strong> Food delivery from Swiggy and Zomato is available in the area, though delivery times may vary. We recommend confirming availability with the app before arrival, or planning to bring your own groceries for a self-catered experience.</p>
+                <p><strong>Guests have full access to our fully equipped kitchen to prepare meals.</strong> Food delivery from Swiggy and Zomato is also available in the area. You can bring your own groceries for a personalized cooking experience.</p>
               </div>
               <div className="faq-item">
                 <h4>4. How deep is the private swimming pool?</h4>
@@ -265,12 +263,12 @@ const About = () => {
                 <p><strong>Yes, secure on-site parking for up to 3 vehicles is included at no extra cost.</strong> The parking area is within the gated estate and monitored 24/7. It can comfortably accommodate SUVs and sedans.</p>
               </div>
               <div className="faq-item">
-                <h4>7. How far is Kudrat Villa from Delhi?</h4>
+                <h4>7. How far is Van Villa from Delhi?</h4>
                 <p><strong>The villa is approximately 270–300 km from Delhi</strong>, roughly a 5-6 hour drive via NH334 through Roorkee and Haridwar. It is an ideal destination for a Delhi weekend getaway, especially Thursday-to-Sunday bookings.</p>
               </div>
               <div className="faq-item">
                 <h4>8. What amenities are included in every booking?</h4>
-                <p><strong>Every booking includes the entire private pool, outdoor fire pit, high-speed Wi-Fi, secure parking, and all 2 bedrooms.</strong> The villa is privately yours for the duration of your stay — no shared spaces with other guests.</p>
+                <p><strong>Every booking includes the entire private pool, fully equipped kitchen, high-speed Wi-Fi, secure parking, and all 2 bedrooms.</strong> The villa is privately yours for the duration of your stay — no shared spaces with other guests.</p>
               </div>
             </div>
           </motion.div>
@@ -316,7 +314,7 @@ const About = () => {
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Kudrat Villa Location"
+                title="Van Villa Location"
               ></iframe>
             </div>
           </motion.div>
@@ -329,14 +327,14 @@ const About = () => {
           <h2 className="next-steps-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', textAlign: 'center', marginBottom: '30px', color: 'var(--accent-gold)' }}>Continue Your Journey</h2>
           <div className="next-steps-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <Link to="/experience" className="next-step-card" style={{ height: '350px', borderRadius: '12px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-end', textDecoration: 'none', color: 'var(--text-light)', boxShadow: 'var(--shadow-md)' }}>
-              <div className="next-step-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center', '--mobile-bg': 'url("/images/kudrat-villa-outdoor-seating.webp")', '--desktop-bg': 'url("/images/kudrat-villa-exterior.webp")', zIndex: 1 }}></div>
+              <div className="next-step-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center', '--mobile-bg': 'url("/images/vann-villa-outdoor-seating.webp")', '--desktop-bg': 'url("/images/vann-villa-exterior.webp")', zIndex: 1 }}></div>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))', zIndex: 2 }}></div>
               <div style={{ position: 'relative', zIndex: 3, padding: '20px', width: '100%' }}>
                 <span className="next-step-btn" style={{ color: 'var(--accent-gold)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.85rem' }}>Read our Local Guide &rarr;</span>
               </div>
             </Link>
             <Link to="/contact" className="next-step-card" style={{ height: '350px', borderRadius: '12px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-end', textDecoration: 'none', color: 'var(--text-light)', boxShadow: 'var(--shadow-md)' }}>
-              <div className="next-step-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center', '--mobile-bg': 'url("/images/kudrat-villa-master-bedroom.webp")', '--desktop-bg': 'url("/images/kudrat-villa-rooftop-view.webp")', zIndex: 1 }}></div>
+              <div className="next-step-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center', '--mobile-bg': 'url("/images/vann-villa-master-bedroom.webp")', '--desktop-bg': 'url("/images/vann-villa-rooftop-view.webp")', zIndex: 1 }}></div>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))', zIndex: 2 }}></div>
               <div style={{ position: 'relative', zIndex: 3, padding: '20px', width: '100%' }}>
                 <span className="next-step-btn" style={{ color: 'var(--accent-gold)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.85rem' }}>Check Availability via WhatsApp &rarr;</span>

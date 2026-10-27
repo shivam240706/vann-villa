@@ -10,8 +10,8 @@ const packageData = [
   {
     id: 'pool-escape',
     title: 'Private Pool Escape',
-    tagline: 'The entire property is yours — pool, lawns, outdoor fire pit, and all.',
-    price: <KatanaStrikePrice oldPrice="₹9,999" newPrice="₹4,999" color="#b8860b" size="0.7em" newSize="1em" />,
+    tagline: 'The entire property is yours — private pool, 5,000 sq ft lawns, and all.',
+    price: <KatanaStrikePrice oldPrice="₹8,999" newPrice="₹4,499" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: '/night',
     icon: Sparkles,
     bestFor: 'Up to 4 Guests',
@@ -21,7 +21,7 @@ const packageData = [
       'Entire 2BHK Private Villa',
       '₹500 per extra person (if > 4 guests)',
       'Exclusive Access to Swimming Pool',
-      'Evening Bonfire Setup',
+      'Fully Equipped Kitchen',
       'High-Speed Wi-Fi & Smart TV'
     ],
     recommended: true,
@@ -29,8 +29,8 @@ const packageData = [
   {
     id: 'romantic-stay',
     title: 'Romantic 2-Night Stay',
-    tagline: 'Two nights of uninterrupted stillness, an outdoor fire pit, and a sky full of stars.',
-    price: <KatanaStrikePrice oldPrice="₹19,998" newPrice="₹9,998" color="#b8860b" size="0.7em" newSize="1em" />,
+    tagline: 'Two nights of uninterrupted stillness, private pool access, and a sky full of stars.',
+    price: <KatanaStrikePrice oldPrice="₹17,998" newPrice="₹8,998" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: 'total',
     icon: Heart,
     bestFor: 'Couples',
@@ -47,8 +47,8 @@ const packageData = [
   {
     id: 'family-getaway',
     title: 'Family Villa Getaway',
-    tagline: 'Space for everyone: 10,000 sq ft of private grounds, a private pool, and a kitchen on your terms.',
-    price: <KatanaStrikePrice oldPrice="₹11,999" newPrice="₹5,999" color="#b8860b" size="0.7em" newSize="1em" />,
+    tagline: 'Space for everyone: 5,000 sq ft of private grounds, a private pool, and a kitchen on your terms.',
+    price: <KatanaStrikePrice oldPrice="₹10,999" newPrice="₹5,499" color="#b8860b" size="0.7em" newSize="1em" />,
     unit: '/night',
     icon: Users,
     bestFor: 'Families (up to 6 Guests)',
@@ -57,7 +57,7 @@ const packageData = [
     features: [
       'Entire 2BHK Villa',
       'Extra Mattresses Provided',
-      'Complete BBQ Setup',
+      'Fully Equipped Kitchen for Cooking',
       'Pet-Friendly Access to Lawns',
       'Exclusive Access to Swimming Pool',
       'High-Speed Wi-Fi & Smart TV'
@@ -87,7 +87,7 @@ const Packages = () => {
   };
 
   const handleBook = (pkgTitle) => {
-    const text = `Hi, I am interested in booking the "${pkgTitle}" package at Kudrat Villa. Please share availability.`;
+    const text = `Hi, I am interested in booking the "${pkgTitle}" package at Van Villa. Please share availability.`;
     window.open(`https://wa.me/919411770969?text=${encodeURIComponent(text)}`, '_blank');
   };
 

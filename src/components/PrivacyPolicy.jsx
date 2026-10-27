@@ -7,8 +7,8 @@ const PrivacyPolicy = () => {
   return (
     <div className="legal-page">
       <SEO 
-        title="Privacy Policy | Kudrat Villa"
-        description="Read the privacy policy for Kudrat Villa."
+        title="Privacy Policy | Van Villa"
+        description="Read the privacy policy for Van Villa."
       />
       <section className="legal-hero">
         <div className="legal-hero-overlay"></div>
@@ -32,8 +32,8 @@ const PrivacyPolicy = () => {
             transition={{ duration: 0.2 }}
           >
             <ul className="legal-list">
-              <li>Kudrat Villa is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, and then you can be assured that it will only be used in accordance with this privacy statement.</li>
-              <li>Kudrat Villa may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you adhere to these changes.</li>
+              <li>Van Villa is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, and then you can be assured that it will only be used in accordance with this privacy statement.</li>
+              <li>Van Villa may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you adhere to these changes.</li>
             </ul>
             
             <p style={{ marginTop: '20px' }}><strong>We may collect the following information:</strong></p>

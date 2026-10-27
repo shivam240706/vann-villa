@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMarkup }) => {
-  const defaultImage = 'https://kudratvilla.com/images/kudrat%20villa(1).jpg';
-  const defaultCanonical = typeof window !== 'undefined' ? window.location.href : 'https://kudratvilla.com/';
+  const defaultImage = '/images/vann-villa-exterior-lawn.webp';
+  const defaultCanonical = typeof window !== 'undefined' ? window.location.href : 'https://vanvilla.com/';
   
   const finalCanonical = canonicalUrl || defaultCanonical;
   const finalImage = ogImage || defaultImage;
@@ -21,7 +21,7 @@ const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMa
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={finalType} />
-      <meta property="og:site_name" content="Kudrat Villa" />
+      <meta property="og:site_name" content="Van Villa" />
       <meta property="og:locale" content="en_IN" />
       <meta property="og:url" content={finalCanonical} />
       <meta property="og:title" content={title} />
@@ -30,7 +30,7 @@ const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMa
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={name || 'Kudrat Villa'} />
+      <meta name="twitter:creator" content={name || 'Van Villa'} />
       <meta name="twitter:url" content={finalCanonical} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
@@ -43,9 +43,9 @@ const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMa
 };
 
 SEO.defaultProps = {
-  title: 'Kudrat Villa | Luxury Private Pool Villa in Dehradun',
-  description: 'Kudrat Villa is a premium 2BHK private pool villa located in Dehradun (near UPES). Offering 10,000 sq ft of private lawns, open shower, BBQ, and a 100% pet-friendly stay.',
-  name: 'Kudrat Villa',
+  title: 'Van Villa | Luxury 2BHK Private Pool Villa in Dehradun',
+  description: 'Van Villa is a premier 2BHK private pool villa located in Dehradun. Offering 5,000 sq ft of private lawns, fully equipped kitchen, mountain views, and a 100% pet-friendly stay.',
+  name: 'Van Villa',
   ogType: 'website'
 };
 

@@ -13,15 +13,15 @@ const Experience = () => {
   return (
     <div className="experience-page">
       <SEO 
-        title="Luxury Villa in Dehradun | Local Guide & Experience | Kudrat Villa"
-        description="Discover Dehradun's hidden gem. Explore our curated 3-day itinerary, local attractions, and see why Kudrat Villa is the best luxury private villa in Dehradun."
+        title="Luxury Villa in Dehradun | Local Guide & Experience | Van Villa"
+        description="Discover Dehradun's hidden gem. Explore our curated 3-day itinerary, local attractions, and see why Van Villa is the best luxury private villa in Dehradun."
       />
       
       {/* Hero Section */}
       <section className="experience-hero">
         <picture>
-          <source media="(min-width: 769px)" srcSet="/images/kudrat-villa-exterior.webp" />
-          <img src="/images/kudrat-villa-outdoor-seating.webp" alt="Kudrat Villa - Dehradun's Hidden Villa" className="global-hero-bg" loading="eager" />
+          <source media="(min-width: 769px)" srcSet="/images/vann-villa-exterior.webp" />
+          <img src="/images/vann-villa-outdoor-seating.webp" alt="Van Villa - Dehradun's Hidden Villa" className="global-hero-bg" loading="eager" />
         </picture>
         <motion.div 
           className="experience-hero-overlay"
@@ -46,13 +46,13 @@ const Experience = () => {
           >
             <h2 className="article-title">Why Choose a Luxury Villa in Dehradun?</h2>
             <p className="article-text">
-              When searching for the <strong>best luxury private villa in Dehradun</strong>, travelers often look for a balance between natural serenity and modern comfort. Tucked away from the bustling city center, Kudrat Villa has earned its reputation as <strong>Dehradun's hidden villa</strong>, offering an exclusive sanctuary for families, couples, and groups seeking a premium retreat.
+              When searching for the <strong>best luxury private villa in Dehradun</strong>, travelers often look for a balance between natural serenity and modern comfort. Tucked away from the bustling city center, Van Villa has earned its reputation as <strong>Dehradun's hidden villa</strong>, offering an exclusive sanctuary for families, couples, and groups seeking a premium retreat.
             </p>
             <p className="article-text">
-              Unlike traditional hotels where you are confined to a single room, a luxury villa provides expansive living spaces, private outdoor areas, and a personalized experience. At Kudrat Villa, you're not just booking accommodation; you're securing a private, 10,000 sq ft estate surrounded by lush greenery, complete with a private swimming pool, outdoor fire pit, and beautifully curated indoor spaces.
+              Unlike traditional hotels where you are confined to a single room, a luxury villa provides expansive living spaces, private outdoor areas, and a personalized experience. At Van Villa, you're not just booking accommodation; you're securing a private, 5,000 sq ft estate surrounded by lush greenery, complete with a private swimming pool, fully equipped kitchen, and beautifully curated indoor spaces.
             </p>
             <p className="article-text">
-              As a premier <strong>pet-friendly villa in Uttarakhand</strong>, we understand that a family vacation isn't complete without your furry companions. Our expansive lawns provide the perfect playground for pets, ensuring every member of your family enjoys the getaway. From waking up to the sound of chirping birds to spending evenings under the starlit sky by the outdoor fire pit, every moment at Kudrat Villa is designed to be unforgettable.
+              As a premier <strong>pet-friendly villa in Uttarakhand</strong>, we understand that a family vacation isn't complete without your furry companions. Our expansive lawns provide the perfect playground for pets, ensuring every member of your family enjoys the getaway. From waking up to the sound of chirping birds to spending evenings under the starlit sky, every moment at Van Villa is designed to be unforgettable.
             </p>
           </motion.div>
 
@@ -63,7 +63,7 @@ const Experience = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.3 }}
           >
-            <img src="/images/kudrat-villa-private-pool.webp" alt="Private swimming pool at Kudrat Villa, luxury private villa in Dehradun" loading="lazy" />
+            <img src="/images/vann-villa-private-pool.webp" alt="Private swimming pool at Van Villa, luxury private villa in Dehradun" loading="lazy" />
           </motion.div>
 
           <motion.div
@@ -74,7 +74,7 @@ const Experience = () => {
           >
             <h2 className="article-title">Your Perfect 3-Day Itinerary</h2>
             <p className="article-text">
-              Making the most of your stay at <strong>Dehradun's hidden gem</strong> requires the perfect balance of relaxation and exploration. Here is our curated itinerary to help you experience the best of Dehradun while enjoying the luxurious comforts of Kudrat Villa.
+              Making the most of your stay at <strong>Dehradun's hidden gem</strong> requires the perfect balance of relaxation and exploration. Here is our curated itinerary to help you experience the best of Dehradun while enjoying the luxurious comforts of Van Villa.
             </p>
 
             <div className="itinerary-days">
@@ -85,7 +85,7 @@ const Experience = () => {
                 <ul className="day-activities">
                   <li>
                     <Coffee className="activity-icon" />
-                    <span><strong>Afternoon Check-in:</strong> Arrive at Kudrat Villa and be greeted by the tranquil surroundings. Enjoy a refreshing welcome drink as you settle into your beautifully appointed rooms.</span>
+                    <span><strong>Afternoon Check-in:</strong> Arrive at Van Villa and be greeted by the tranquil surroundings. Enjoy a refreshing welcome drink as you settle into your beautifully appointed rooms.</span>
                   </li>
                   <li>
                     <Sun className="activity-icon" />
@@ -93,7 +93,7 @@ const Experience = () => {
                   </li>
                   <li>
                     <Camera className="activity-icon" />
-                    <span><strong>Evening BBQ & Firepit:</strong> As the sun sets, gather around the outdoor fire pit. Enjoy a personalized BBQ experience under the stars, making memories with your loved ones in your private haven.</span>
+                    <span><strong>Evening Under the Stars:</strong> As the sun sets, relax on the lawns under the starlit sky. Enjoy a quiet dinner or self-cooked meal with your loved ones in your private haven.</span>
                   </li>
                 </ul>
               </div>
@@ -113,7 +113,7 @@ const Experience = () => {
                   </li>
                   <li>
                     <Sun className="activity-icon" />
-                    <span><strong>Relaxed Evening at the Villa:</strong> Return to the comfort of Kudrat Villa. Enjoy a quiet evening on the terrace, perhaps reading a book from our mini-library or enjoying a quiet drink from the mini-bar.</span>
+                    <span><strong>Relaxed Evening at the Villa:</strong> Return to the comfort of Van Villa. Enjoy a quiet evening on the terrace, perhaps reading a book or enjoying refreshments from the mini-bar.</span>
                   </li>
                 </ul>
               </div>
@@ -125,11 +125,11 @@ const Experience = () => {
                 <ul className="day-activities">
                   <li>
                     <MapPin className="activity-icon" />
-                    <span><strong>Nature Walk near UPES:</strong> Take a refreshing morning walk around the scenic campus of UPES University, located just 500 meters from the villa, surrounded by pine forests.</span>
+                    <span><strong>Nature Walk in the Foothills:</strong> Take a refreshing morning walk surrounded by greenery and pine forests.</span>
                   </li>
                   <li>
                     <Coffee className="activity-icon" />
-                    <span><strong>Hearty Breakfast:</strong> Enjoy a delicious, freshly prepared breakfast in our alfresco dining area, taking in the morning breeze.</span>
+                    <span><strong>Hearty Breakfast:</strong> Enjoy a delicious breakfast in our alfresco outdoor area, taking in the morning breeze.</span>
                   </li>
                   <li>
                     <ArrowRight className="activity-icon" />
@@ -147,8 +147,8 @@ const Experience = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.3 }}
           >
-            <img src="/images/kudrat-villa-master-bedroom.webp" alt="Luxurious bedroom at Kudrat Villa" loading="lazy" />
-            <img src="/images/kudrat-villa-outdoor-fire-pit.webp" alt="Outdoor fire pit at Kudrat Villa Dehradun" loading="lazy" />
+            <img src="/images/vann-villa-master-bedroom.webp" alt="Luxurious bedroom at Van Villa" loading="lazy" />
+            <img src="/images/vann-villa-outdoor-seating.webp" alt="Outdoor seating at Van Villa Dehradun" loading="lazy" />
           </motion.div>
 
           <motion.div
@@ -159,7 +159,7 @@ const Experience = () => {
           >
             <h2 className="article-title">The Benefits of a Pet-Friendly Villa in Uttarakhand</h2>
             <p className="article-text">
-              Finding truly pet-friendly accommodations can often be a challenge for travelers. Kudrat Villa stands out as a premier <strong>pet-friendly villa in Uttarakhand</strong> because we don't just tolerate pets; we welcome them. The expansive outdoor areas mean your dogs can run and play freely in a safe, enclosed environment. The crisp mountain air and natural surroundings provide sensory enrichment that city living often lacks.
+              Finding truly pet-friendly accommodations can often be a challenge for travelers. Van Villa stands out as a premier <strong>pet-friendly villa in Uttarakhand</strong> because we don't just tolerate pets; we welcome them. The expansive outdoor areas mean your dogs can run and play freely in a safe, enclosed environment. The crisp mountain air and natural surroundings provide sensory enrichment that city living often lacks.
             </p>
             <p className="article-text">
               When planning your next vacation, don't leave a piece of your heart at a boarding kennel. Experience the joy of watching your pet explore the great outdoors right alongside you. Our commitment to providing a luxurious experience extends to all our guests, both two-legged and four-legged.
@@ -181,14 +181,14 @@ const Experience = () => {
           <h2 className="next-steps-title">Continue Your Journey</h2>
           <div className="next-steps-grid">
             <Link to="/about" className="next-step-card">
-              <div className="next-step-bg" style={{ '--mobile-bg': 'url("/images/kudrat-villa-exterior-lawn.webp")', '--desktop-bg': 'url("/images/kudrat-villa-private-pool.webp")' }}></div>
+              <div className="next-step-bg" style={{ '--mobile-bg': 'url("/images/vann-villa-exterior-lawn.webp")', '--desktop-bg': 'url("/images/vann-villa-private-pool.webp")' }}></div>
               <div className="next-step-overlay"></div>
               <div className="next-step-content">
                 <span className="next-step-btn">Discover Our Story &rarr;</span>
               </div>
             </Link>
             <Link to="/contact" className="next-step-card">
-              <div className="next-step-bg" style={{ '--mobile-bg': 'url("/images/kudrat-villa-grand-entrance.webp")', '--desktop-bg': 'url("/images/kudrat-villa-outdoor-seating.webp")' }}></div>
+              <div className="next-step-bg" style={{ '--mobile-bg': 'url("/images/vann-villa-grand-entrance.webp")', '--desktop-bg': 'url("/images/vann-villa-outdoor-seating.webp")' }}></div>
               <div className="next-step-overlay"></div>
               <div className="next-step-content">
                 <span className="next-step-btn">Check Availability via WhatsApp &rarr;</span>

@@ -33,14 +33,14 @@ const Footer = () => {
         <div className="footer-top-row">
           <div className="footer-col footer-brand">
             <div className="footer-brand-header">
-              <img src="/images/kudrat-logo.webp" alt="Kudrat Villa Logo" className="footer-logo-img" width="52" height="52" loading="lazy" />
-              <h2>Kudrat Villa</h2>
+              <img src="/images/vann-villa-logo.webp" alt="Van Villa Logo" className="footer-logo-img" width="52" height="52" loading="lazy" />
+              <h2>Van Villa</h2>
             </div>
             <p>Your sanctuary in the lap of nature.</p>
             <div className="footer-social">
-              <a href="https://www.instagram.com/kudrat_villa" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><InstagramIcon /></a>
-              <a href="https://www.facebook.com/kudratvilla" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><FacebookIcon /></a>
-              <a href="https://www.linkedin.com/company/kudrat-villa" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><LinkedInIcon /></a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><InstagramIcon /></a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><FacebookIcon /></a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><LinkedInIcon /></a>
             </div>
           </div>
         </div>
@@ -54,8 +54,8 @@ const Footer = () => {
               <a href="tel:+919411770969" className="footer-contact-item">
                 <Phone size={14} aria-hidden="true" /> +91 94117 70969
               </a>
-              <a href="mailto:kudratvilla98@gmail.com" className="footer-contact-item">
-                <Mail size={14} aria-hidden="true" /> kudratvilla98@gmail.com
+              <a href="mailto:vannvilla@gmail.com" className="footer-contact-item">
+                <Mail size={14} aria-hidden="true" /> vannvilla@gmail.com
               </a>
               <a href="https://maps.app.goo.gl/gjF7a1iz6D2W21HR8" target="_blank" rel="noopener noreferrer" className="footer-contact-item">
                 <MapPin size={14} aria-hidden="true" /> Dehradun, Uttarakhand 248007
@@ -97,7 +97,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Kudrat Villa. All rights reserved. Made with ♥ in Dehradun.</p>
+        <p>&copy; {new Date().getFullYear()} Van Villa. All rights reserved. Made with ♥ in Dehradun.</p>
       </div>
     </footer>
   );

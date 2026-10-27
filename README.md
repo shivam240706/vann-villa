@@ -1,16 +1,27 @@
-# React + Vite
+# Vann Villa | Luxury Private Pool Villa in Dehradun
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Official web application for **Vann Villa**, an exclusive 2BHK luxury private pool villa retreat nestled in the hills of Dehradun, Uttarakhand.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Framework**: React 19 + Vite
+- **Styling**: Vanilla CSS with modern aesthetics and micro-animations
+- **Routing**: React Router DOM
+- **SEO & Pre-rendering**: Static HTML generation via Puppeteer + Headless Chromium (`prerender.cjs`)
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Quick Start
 
-## React Compiler
+```bash
+# Install dependencies
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Run development server
+npm run dev
 
-## Expanding the Oxlint configuration
+# Build and prerender static pages
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Deployment
+Configured for automated zero-config deployments on [Vercel](https://vercel.com).

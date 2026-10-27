@@ -5,8 +5,8 @@ import './FAQ.css';
 
 const faqData = [
   {
-    question: "Is Kudrat Villa pet-friendly?",
-    answer: "Yes, we are 100% pet-friendly. Your dogs can roam free in our 10,000 sq ft of securely fenced lawns. We do not charge any extra pet fees."
+    question: "Is Van Villa pet-friendly?",
+    answer: "Yes, we are 100% pet-friendly. Your dogs can roam free in our 5,000 sq ft of securely fenced lawns. We do not charge any extra pet fees."
   },
   {
     question: "Is the swimming pool private?",
@@ -18,15 +18,15 @@ const faqData = [
   },
   {
     question: "Is it suitable for families with kids?",
-    answer: "Absolutely. The villa is spacious and safe, with huge lawns for kids to play. We also provide extra mattresses for larger families."
+    answer: "Absolutely. The villa is spacious and safe, with 5,000 sq ft of lawns for kids to play. We also provide extra mattresses for larger families."
   },
   {
     question: "How far is it from Dehradun city center?",
-    answer: "Kudrat Villa is located near UPES, which is about a 30-40 minute scenic drive from the main Dehradun city center."
+    answer: "Van Villa is located in the peaceful scenic hills of Dehradun, about a 30-40 minute drive from the main city center."
   },
   {
     question: "Do you provide BBQ or bonfire?",
-    answer: "Yes, we have a dedicated outdoor fire pit for bonfires and can arrange a BBQ setup upon request for cozy evenings."
+    answer: "Currently, bonfire and BBQ setups are not available. However, we offer a fully equipped kitchen for self-cooking and cozy outdoor seating to enjoy the mountain breeze."
   },
   {
     question: "Is parking available?",

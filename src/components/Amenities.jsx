@@ -16,15 +16,15 @@ const Amenities = () => {
   const [lightboxState, setLightboxState] = useState({ isOpen: false, images: [], index: 0 });
 
   const features = [
-    { name: 'Swimming Pool', subtitle: 'Relax & Unwind', img: '/images/kudrat-villa-private-pool.webp', alt: 'Crystal-clear private swimming pool at Kudrat Villa, Dehradun' },
-    { name: <><span style={{ fontFamily: '"Times New Roman", Times, serif', fontSize: '0.93em', fontWeight: 500, marginRight: '4px' }}>2</span>BHK Property</>, subtitle: 'Spacious Living', img: '/images/kudrat-villa-exterior.webp', alt: 'Full exterior view of the 2BHK private villa and landscaped gardens' },
-    { name: "AC's", subtitle: 'Cool Comfort', img: '/images/kudrat-villa-spacious-bedroom.webp', alt: 'Air-conditioned bedroom with premium bedding at Kudrat Villa' },
-    { name: 'Kitchen', subtitle: 'Fully Equipped', img: '/images/kudrat-villa-kitchen.webp', alt: 'Fully equipped self-catering kitchen with modern appliances' },
-    { name: 'Bedrooms', subtitle: 'Cozy Stays', img: ['/images/kudrat-villa-master-bedroom.webp', '/images/kudrat-villa-master-bedroom-view.webp'], alt: 'Spacious bedrooms with mountain views and luxury furnishings' },
-    { name: 'Spacious Area', subtitle: 'Outdoor Bliss', img: '/images/kudrat-villa-morning-tea-spot.webp', alt: 'Shaded outdoor seating area surrounded by pine forest in Dehradun' },
-    { name: 'Mini Bar', subtitle: 'Refreshments', img: '/images/kudrat-villa-mini-bar.webp', alt: 'In-house mini bar with seating for private gatherings' },
-    { name: 'Fire Pit', subtitle: 'Warm Evenings', img: '/images/kudrat-villa-outdoor-fire-pit.webp', alt: 'Outdoor BBQ fire pit for evening bonfires under the stars' },
-    { name: 'Open Shower', subtitle: 'Nature Retreat', img: '/images/open_shower.mp4', alt: 'Open-air shower surrounded by nature at Kudrat Villa' }
+    { name: 'Swimming Pool', subtitle: 'Relax & Unwind', img: '/images/vann-villa-private-pool.webp', alt: 'Crystal-clear private swimming pool at Van Villa, Dehradun' },
+    { name: <><span style={{ fontFamily: '"Times New Roman", Times, serif', fontSize: '0.93em', fontWeight: 500, marginRight: '4px' }}>2</span>BHK Property</>, subtitle: 'Spacious Living', img: '/images/vann-villa-exterior.webp', alt: 'Full exterior view of the 2BHK private villa and landscaped gardens' },
+    { name: "AC's", subtitle: 'Cool Comfort', img: '/images/vann-villa-spacious-bedroom.webp', alt: 'Air-conditioned bedroom with premium bedding at Van Villa' },
+    { name: 'Kitchen', subtitle: 'Fully Equipped', img: '/images/vann-villa-kitchen.webp', alt: 'Fully equipped self-catering kitchen with modern appliances' },
+    { name: 'Bedrooms', subtitle: 'Cozy Stays', img: ['/images/vann-villa-master-bedroom.webp', '/images/vann-villa-master-bedroom-view.webp'], alt: 'Spacious bedrooms with mountain views and luxury furnishings' },
+    { name: 'Spacious Area', subtitle: 'Outdoor Bliss', img: '/images/vann-villa-morning-tea-spot.webp', alt: 'Shaded outdoor seating area surrounded by greenery in Dehradun' },
+    { name: 'Mini Bar', subtitle: 'Refreshments', img: '/images/vann-villa-mini-bar.webp', alt: 'In-house mini bar with seating for private gatherings' },
+    { name: 'Private Lawns', subtitle: '5,000 Sq Ft', img: '/images/vann-villa-lawn-view.webp', alt: 'Expansive 5,000 sq ft private green lawn at Van Villa' },
+    { name: 'Mountain Terrace', subtitle: 'Scenic Views', img: '/images/vann-villa-rooftop-view.webp', alt: 'Rooftop terrace with serene views at Van Villa' }
   ];
 
   const allMedia = features.flatMap(f => Array.isArray(f.img) ? f.img : [f.img]);
@@ -113,7 +113,7 @@ const Amenities = () => {
                     {isVideo ? (
                       <video 
                         src={isActive ? firstImg : undefined} 
-                        poster="/images/kudrat-villa-open-shower.webp"
+                        poster="/images/vann-villa-open-shower.webp"
                         autoPlay={isActive} 
                         loop 
                         muted 
@@ -122,7 +122,7 @@ const Amenities = () => {
                         className="slide-media" 
                       />
                     ) : (
-                      <img src={firstImg} alt={feature.alt || `Kudrat Villa - ${typeof feature.name === 'string' ? feature.name : 'Premium Amenity'}`} loading="lazy" decoding="async" className="slide-media" />
+                      <img src={firstImg} alt={feature.alt || `Van Villa - ${typeof feature.name === 'string' ? feature.name : 'Premium Amenity'}`} loading="lazy" decoding="async" className="slide-media" />
                     )}
                     <div className="slide-overlay"></div>
                     <div className="slide-content">
@@ -179,7 +179,7 @@ const Amenities = () => {
                   style={{ maxWidth: '100%', maxHeight: '85vh', objectFit: 'contain', boxShadow: 'var(--shadow-xl)' }}
                 />
               ) : (
-                <img src={lightboxState.images[lightboxState.index]} alt={`Kudrat Villa amenity — image ${lightboxState.index + 1} of ${lightboxState.images.length}`} />
+                <img src={lightboxState.images[lightboxState.index]} alt={`Van Villa amenity — image ${lightboxState.index + 1} of ${lightboxState.images.length}`} />
               )}
               <div className="lightbox-counter">
                 {lightboxState.index + 1} / {lightboxState.images.length}

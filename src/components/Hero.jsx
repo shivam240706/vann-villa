@@ -45,7 +45,7 @@ const Hero = () => {
   };
 
   return (
-    <section ref={ref} id="hero" className="hero" aria-label="Welcome to Kudrat Villa">
+    <section ref={ref} id="hero" className="hero" aria-label="Welcome to Van Villa">
       <div className="hero-overlay"></div>
       <motion.div 
         className="hero-content"
@@ -65,7 +65,7 @@ const Hero = () => {
         </motion.h1>
         <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '700', color: 'var(--accent-gold)', marginBottom: '30px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>
           <span style={{ fontSize: '1.05rem', fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)', marginRight: '8px', letterSpacing: '0.5px' }}>Starting at just</span>
-          ₹4,999<span style={{ fontSize: '0.8em', marginLeft: '4px' }}>/night</span>
+          ₹4,499<span style={{ fontSize: '0.8em', marginLeft: '4px' }}>/night</span>
         </motion.p>
 
         <motion.div variants={itemVariants} className="hero-selling-points">
@@ -75,7 +75,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div variants={itemVariants} className="hero-actions">
-          <MagneticButton id="hero-cta-book" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20and%20pricing%20at%20Kudrat%20Villa.'}>Check Availability & Pricing</MagneticButton>
+          <MagneticButton id="hero-cta-book" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20and%20pricing%20at%20Van%20Villa.'}>Check Availability & Pricing</MagneticButton>
           <MagneticButton id="hero-cta-explore" className="btn-primary hero-cta-btn pulse-glow" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => {
             const packagesSection = document.getElementById('packages');
             if (packagesSection) packagesSection.scrollIntoView({ behavior: 'smooth' });

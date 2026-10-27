@@ -16,7 +16,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('/images/kudrat-villa-exterior.webp');
+  background-image: url('/images/vann-villa-exterior.webp');
   background-size: cover;
   background-position: center;
   animation: droneZoom 20s ease-out forwards;

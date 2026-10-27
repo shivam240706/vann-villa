@@ -9,31 +9,31 @@ const packages = [
   {
     title: 'Romantic Couple Getaway',
     description: 'A secluded private villa for two — private pool, starry nights, and complete privacy for anniversaries and honeymoons.',
-    image: '/images/kudrat-villa-master-bedroom-view.webp',
+    image: '/images/vann-villa-master-bedroom-view.webp',
     link: '/couple-getaway-dehradun',
   },
   {
     title: 'Family Villa Vacation',
-    description: 'Space for everyone: 2BHK villa, 10,000 sq ft of private grounds, a private pool, and a fully equipped kitchen. Fits up to 6 guests.',
-    image: '/images/kudrat-villa-private-pool.webp',
+    description: 'Space for everyone: 2BHK villa, 5,000 sq ft of private grounds, a private pool, and a fully equipped kitchen. Fits up to 6 guests.',
+    image: '/images/vann-villa-private-pool.webp',
     link: '/family-villa-dehradun',
   },
   {
     title: 'Pet-Friendly Stay',
-    description: 'No pet fees, no restrictions. 10,000 sq ft of fenced grounds for dogs to roam free, with secure gated access and on-site support.',
-    image: '/images/kudrat-villa-exterior-lawn.webp',
+    description: 'No pet fees, no restrictions. 5,000 sq ft of fenced grounds for dogs to roam free, with secure gated access and on-site support.',
+    image: '/images/vann-villa-exterior-lawn.webp',
     link: '/pet-friendly-villa-dehradun',
   },
   {
     title: 'Best Villa & Hidden Gem Stay',
-    description: 'Dehradun’s premier private luxury pool villa set across 10,000 sq ft of mountain lawns. 100% exclusive privacy starting at just ₹4,999/night.',
-    image: '/images/kudrat-villa-estate.webp',
+    description: 'Dehradun’s premier private luxury pool villa set across 5,000 sq ft of mountain lawns. 100% exclusive privacy starting at just ₹4,499/night.',
+    image: '/images/vann-villa-estate.webp',
     link: '/best-villa-in-dehradun',
   },
   {
     title: 'Delhi Weekend Getaway',
     description: 'A 5–6 hour drive from Delhi NCR to clean mountain air and your own private pool. Leave Friday, return Sunday recharged.',
-    image: '/images/kudrat-villa-rooftop-view.webp',
+    image: '/images/vann-villa-rooftop-view.webp',
     link: '/delhi-to-dehradun-weekend',
   },
 ];
@@ -42,13 +42,13 @@ const PackagesHub = () => {
   return (
     <div className="packages-hub-container">
       <SEO
-        title="Luxury Stay Packages in Dehradun | Kudrat Villa"
-        description="Browse all stay packages at Kudrat Villa — romantic getaways, family vacations, pet-friendly stays, and Delhi weekend trips. Private pool villa starting at just ₹4,999/night."
+        title="Luxury Stay Packages in Dehradun | Van Villa"
+        description="Browse all stay packages at Van Villa — romantic getaways, family vacations, pet-friendly stays, and Delhi weekend trips. Private pool villa starting at just ₹4,499/night."
       />
 
       <section
         className="packages-hub-hero"
-        style={{ backgroundImage: 'url("/images/kudrat-villa-exterior.webp")' }}
+        style={{ backgroundImage: 'url("/images/vann-villa-exterior.webp")' }}
       >
         <motion.div
           className="packages-hub-hero-content"

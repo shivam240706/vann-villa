@@ -1,4 +1,4 @@
-# robots.txt for Kudrat Villa (https://kudratvilla.com)
+# robots.txt for Van Villa (https://vanvilla.com)
 User-agent: *
 Allow: /
 
@@ -34,4 +34,4 @@ User-agent: Bingbot
 Allow: /
 
 # XML Sitemap
-Sitemap: https://kudratvilla.com/sitemap.xml
+Sitemap: https://vanvilla.com/sitemap.xml

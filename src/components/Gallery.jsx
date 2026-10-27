@@ -14,26 +14,24 @@ const CATEGORIES = ['All', 'Living Spaces', 'The Outdoors', 'Pool & Features'];
 
 const galleryImages = [
   // Pool & Features
-  { src: '/images/kudrat-villa-private-pool.webp', alt: 'Private luxury swimming pool at Kudrat Villa Dehradun', category: 'Pool & Features' },
-  { src: '/images/kudrat-villa-pool-nature.webp', alt: 'Clear blue swimming pool surrounded by nature in Uttarakhand', category: 'Pool & Features' },
-  { src: '/images/kudrat-villa-outdoor-fire-pit.webp', alt: 'Outdoor BBQ fire pit for cozy evenings at the private villa', category: 'Pool & Features' },
-  { src: '/images/kudrat-villa-open-shower.webp', alt: 'Premium open rainwater shower experience at Kudrat Villa', category: 'Pool & Features' },
+  { src: '/images/vann-villa-private-pool.webp', alt: 'Private luxury swimming pool at Van Villa Dehradun', category: 'Pool & Features' },
+  { src: '/images/vann-villa-pool-nature.webp', alt: 'Clear blue swimming pool surrounded by nature at Van Villa', category: 'Pool & Features' },
   
   // Living Spaces
-  { src: '/images/kudrat-villa-master-bedroom.webp', alt: 'Luxury master bedroom with panoramic mountain views', category: 'Living Spaces' },
-  { src: '/images/kudrat-villa-spacious-bedroom.webp', alt: 'Spacious second bedroom with premium bedding and decor', category: 'Living Spaces' },
-  { src: '/images/kudrat-villa-family-suite-bedroom.webp', alt: 'Comfortable family suite at Kudrat Villa', category: 'Living Spaces' },
-  { src: '/images/kudrat-villa-master-bedroom-view.webp', alt: 'Well-lit bedroom interiors at the Dehradun villa', category: 'Living Spaces' },
-  { src: '/images/kudrat-villa-indoor-lounge.webp', alt: 'Elegant indoor kudrat-villa-indoor-lounge and lounge', category: 'Living Spaces' },
-  { src: '/images/kudrat-villa-mini-bar.webp', alt: 'In-house kudrat-villa-mini-bar setup for private parties and relaxation', category: 'Living Spaces' },
+  { src: '/images/vann-villa-master-bedroom.webp', alt: 'Luxury master bedroom with panoramic mountain views at Van Villa', category: 'Living Spaces' },
+  { src: '/images/vann-villa-spacious-bedroom.webp', alt: 'Spacious second bedroom with premium bedding and decor', category: 'Living Spaces' },
+  { src: '/images/vann-villa-family-suite-bedroom.webp', alt: 'Comfortable family suite at Van Villa', category: 'Living Spaces' },
+  { src: '/images/vann-villa-master-bedroom-view.webp', alt: 'Well-lit bedroom interiors at Van Villa Dehradun', category: 'Living Spaces' },
+  { src: '/images/vann-villa-indoor-lounge.webp', alt: 'Elegant indoor lounge at Van Villa', category: 'Living Spaces' },
+  { src: '/images/vann-villa-mini-bar.webp', alt: 'In-house mini-bar setup for private gatherings and relaxation', category: 'Living Spaces' },
 
   // The Outdoors
-  { src: '/images/kudrat-villa-exterior.webp', alt: 'Exterior view of Kudrat Villa, a premium private pool property', category: 'The Outdoors' },
-  { src: '/images/kudrat-villa-estate.webp', alt: 'Lush green lawns and expansive estate in Dehradun', category: 'The Outdoors' },
-  { src: '/images/kudrat-villa-outdoor-seating.webp', alt: 'Comfortable outdoor seating area surrounded by forest', category: 'The Outdoors' },
-  { src: '/images/kudrat-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the private gardens of Kudrat Villa', category: 'The Outdoors' },
-  { src: '/images/kudrat-villa-rooftop-view.webp', alt: 'Stunning rooftop view of the Dehradun valley and foothills', category: 'The Outdoors' },
-  { src: '/images/kudrat-villa-grand-entrance.webp', alt: 'Grand entrance to the luxury pet-friendly villa', category: 'The Outdoors' }
+  { src: '/images/vann-villa-exterior.webp', alt: 'Exterior view of Van Villa, a premium private pool property', category: 'The Outdoors' },
+  { src: '/images/vann-villa-estate.webp', alt: 'Lush green lawns and 5,000 sq ft private estate in Dehradun', category: 'The Outdoors' },
+  { src: '/images/vann-villa-outdoor-seating.webp', alt: 'Comfortable outdoor seating area surrounded by nature', category: 'The Outdoors' },
+  { src: '/images/vann-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the private gardens of Van Villa', category: 'The Outdoors' },
+  { src: '/images/vann-villa-rooftop-view.webp', alt: 'Stunning rooftop view of the Dehradun valley and foothills', category: 'The Outdoors' },
+  { src: '/images/vann-villa-grand-entrance.webp', alt: 'Grand entrance to the luxury pet-friendly Van Villa', category: 'The Outdoors' }
 ];
 
 const Gallery = () => {

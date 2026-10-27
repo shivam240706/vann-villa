@@ -1,4 +1,4 @@
-# Prerendering setup — Kudrat Villa
+# Prerendering setup — Van Villa
 
 ## What changed vs. the original plan, and why
 
@@ -113,7 +113,7 @@ Once deployed, the only test that actually matches how Google and other
 tools read the page:
 
 ```bash
-curl -s https://kudratvilla.com/about | grep -o '<title>.*</title>'
+curl -s https://vanvilla.com/about | grep -o '<title>.*</title>'
 ```
 
 If that returns real, route-specific content instead of an empty shell,

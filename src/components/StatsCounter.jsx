@@ -5,7 +5,7 @@ import './StatsCounter.css';
 const stats = [
   { value: 200, suffix: '+', label: 'Happy Guests' },
   { value: 4.7, suffix: '★', label: 'Google Rating', isDecimal: true },
-  { value: 10000, suffix: ' sq ft', label: 'Private Estate' },
+  { value: 5000, suffix: ' sq ft', label: 'Private Estate' },
   { value: 100, suffix: '%', label: 'Pet Friendly' }
 ];
 

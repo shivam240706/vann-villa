@@ -7,8 +7,8 @@ const CancellationRefund = () => {
   return (
     <div className="legal-page">
       <SEO 
-        title="Cancellation & Refund Policy | Kudrat Villa"
-        description="Read the cancellation and refund policy for Kudrat Villa."
+        title="Cancellation & Refund Policy | Van Villa"
+        description="Read the cancellation and refund policy for Van Villa."
       />
       <section className="legal-hero">
         <div className="legal-hero-overlay"></div>

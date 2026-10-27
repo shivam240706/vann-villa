@@ -9,8 +9,8 @@ const NotFound = () => {
   return (
     <div className="not-found-page">
       <SEO 
-        title="Page Not Found | Kudrat Villa"
-        description="The page you are looking for at Kudrat Villa could not be found. Return to our home page."
+        title="Page Not Found | Van Villa"
+        description="The page you are looking for at Van Villa could not be found. Return to our home page."
       />
       
       <div className="not-found-content">
