@@ -21,7 +21,7 @@ const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMa
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={finalType} />
-      <meta property="og:site_name" content="Van Villa" />
+      <meta property="og:site_name" content="Vann Villa" />
       <meta property="og:locale" content="en_IN" />
       <meta property="og:url" content={finalCanonical} />
       <meta property="og:title" content={title} />
@@ -30,7 +30,7 @@ const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMa
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={name || 'Van Villa'} />
+      <meta name="twitter:creator" content={name || 'Vann Villa'} />
       <meta name="twitter:url" content={finalCanonical} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
@@ -43,9 +43,9 @@ const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMa
 };
 
 SEO.defaultProps = {
-  title: 'Van Villa | Luxury 2BHK Private Pool Villa in Dehradun',
-  description: 'Van Villa is a premier 2BHK private pool villa located in Dehradun. Offering 5,000 sq ft of private lawns, fully equipped kitchen, mountain views, and a 100% pet-friendly stay.',
-  name: 'Van Villa',
+  title: 'Vann Villa | Luxury 2BHK Private Pool Villa in Dehradun',
+  description: 'Vann Villa is a premier 2BHK private pool villa located in Dehradun. Offering 5,000 sq ft of private lawns, fully equipped kitchen, mountain views, and a 100% pet-friendly stay.',
+  name: 'Vann Villa',
   ogType: 'website'
 };
 

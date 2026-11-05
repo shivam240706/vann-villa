@@ -59,7 +59,7 @@
 
 .package-hub-card {
   position: relative;
-  border-radius: 14px;
+  border-radius: 2px;
   overflow: hidden;
   min-height: 280px;
   display: flex;
@@ -67,13 +67,12 @@
   justify-content: flex-end;
   text-decoration: none;
   color: var(--text-light);
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(165, 167, 155, 0.4);
+  transition: border-color 0.25s ease;
 }
 
 .package-hub-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-gold);
 }
 
 .package-hub-card-bg {
@@ -85,11 +84,6 @@
   background-size: cover;
   background-position: center;
   z-index: 1;
-  transition: transform 0.5s ease;
-}
-
-.package-hub-card:hover .package-hub-card-bg {
-  transform: scale(1.05);
 }
 
 .package-hub-card-overlay {

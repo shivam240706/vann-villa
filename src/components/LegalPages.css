@@ -6,18 +6,17 @@
 
 .legal-hero {
   position: relative;
-  background-color: var(--forest-green); /* Elegant dark green background instead of messy image */
-  background-image: linear-gradient(135deg, rgba(6, 95, 70, 0.95) 0%, rgba(2, 44, 34, 1) 100%);
+  background-color: #590907;
   padding: 120px 20px 60px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 4px solid var(--accent-gold);
+  border-bottom: 1px solid var(--accent-gold);
 }
 
 .legal-hero-overlay {
-  display: none; /* No longer needed with gradient */
+  display: none;
 }
 
 .legal-hero-content {
@@ -33,11 +32,10 @@
 
 .legal-title {
   font-family: var(--font-heading);
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   color: var(--accent-gold);
-  letter-spacing: 6px;
-  margin-bottom: 25px;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  letter-spacing: 3px;
+  margin-bottom: 15px;
 }
 
 .legal-subtitle {
@@ -54,17 +52,16 @@
 
 .legal-content-section {
   background-color: var(--primary-bg);
-  padding: 100px 20px;
+  padding: 80px 20px;
 }
 
 .legal-container {
   max-width: 900px;
   margin: 0 auto;
-  background: #ffffff;
+  background: var(--bg-light);
   padding: 60px 80px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-xl);
-  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 2px;
+  border: 1px solid rgba(165, 167, 155, 0.4);
 }
 
 .legal-container .intro {
@@ -76,7 +73,7 @@
   letter-spacing: 2px;
   line-height: 1.5;
   padding-bottom: 30px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .legal-text-content p {
@@ -104,19 +101,21 @@
 .legal-list li {
   position: relative;
   padding-left: 35px;
-  color: #333333; /* Darker for readability */
+  color: #333333;
+  /* Darker for readability */
   font-size: 1.15rem;
   line-height: 1.8;
   font-weight: 400;
 }
 
 .legal-list li::before {
-  content: '♦'; /* Elegant diamond bullet */
-  color: var(--accent-gold);
+  content: '';
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent-gold);
   position: absolute;
-  left: 0;
-  top: 2px;
-  font-size: 1.2rem;
+  left: 8px;
+  top: 12px;
 }
 
 .legal-container h3 {
@@ -144,32 +143,41 @@
 @media (max-width: 768px) {
   .legal-title {
     font-size: 1.8rem;
-    letter-spacing: 0; /* Remove letter spacing to prevent right-shift when centered */
+    letter-spacing: 0;
+    /* Remove letter spacing to prevent right-shift when centered */
     margin-bottom: 0;
     text-align: center;
     width: 100%;
   }
+
   .legal-hero {
-    padding: 100px 20px 40px; /* Adjusted padding for better vertical centering below fixed header */
+    padding: 100px 20px 40px;
+    /* Adjusted padding for better vertical centering below fixed header */
     min-height: 180px;
   }
+
   .legal-container {
     padding: 20px 15px;
   }
-  .legal-list li, .legal-container p {
+
+  .legal-list li,
+  .legal-container p {
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 15px;
   }
+
   .legal-container h3 {
     font-size: 1.2rem;
     margin: 25px 0 15px;
   }
+
   .legal-container .intro {
     font-size: 1rem;
     margin-bottom: 20px;
     padding-bottom: 15px;
   }
+
   .legal-content-section {
     padding: 30px 10px;
   }

@@ -73,7 +73,7 @@ const InitialLoader = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: '#022C22',
+            backgroundColor: '#2B0605',
             zIndex: 99999,
             display: 'flex',
             alignItems: 'center',
@@ -82,45 +82,44 @@ const InitialLoader = () => {
           }}
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             style={{ marginBottom: '16px' }}
           >
             <img 
               src="/images/vann-villa-logo.webp" 
-              alt="Van Villa" 
+              alt="Vann Villa" 
               width="80" 
               height="80" 
               style={{ 
-                borderRadius: '50%', 
-                border: '2px solid rgba(212, 175, 55, 0.7)', 
-                boxShadow: '0 8px 30px rgba(0, 0, 0, 0.45)',
+                borderRadius: '2px', 
+                border: '1px solid #E8D2B5', 
                 display: 'block' 
               }} 
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
             style={{
-              fontFamily: 'var(--font-heading, Playfair Display)',
+              fontFamily: 'var(--font-heading)',
               fontSize: '2.5rem',
               fontWeight: 500,
               letterSpacing: '4px',
               textTransform: 'uppercase',
-              color: '#B8860B',
+              color: '#E8D2B5',
               marginBottom: '20px'
             }}
           >
-            Van Villa
+            Vann Villa
           </motion.div>
           <motion.div
             style={{
-              fontFamily: 'var(--font-body, Inter)',
-              fontSize: '1rem',
-              color: 'rgba(255, 255, 255, 0.6)',
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.9rem',
+              color: 'rgba(255, 255, 255, 0.7)',
               letterSpacing: '2px',
               marginBottom: '10px'
             }}
@@ -133,7 +132,7 @@ const InitialLoader = () => {
             transition={{ ease: "linear", duration: 0.1 }}
             style={{
               height: '1px',
-              backgroundColor: '#B8860B',
+              backgroundColor: '#E8D2B5',
               maxWidth: '200px'
             }}
           />

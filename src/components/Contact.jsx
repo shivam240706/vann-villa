@@ -34,7 +34,7 @@ const Contact = () => {
     const { name, email, phone, message } = formData;
     
     // Construct the WhatsApp message
-    const whatsappText = `Hello Van Villa! I have an inquiry.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+    const whatsappText = `Hello Vann Villa! I have an inquiry.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
     const whatsappNumber = "919411770969";
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
     
@@ -45,12 +45,12 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <SEO 
-        title="Contact Us | Book Van Villa — Luxury Private Villa in Dehradun"
-        description="Ready to experience Dehradun's hidden gem? Contact Van Villa today to book your luxury private villa retreat or inquire about our amenities."
+        title="Contact Us | Book Vann Villa: Luxury Private Villa in Dehradun"
+        description="Ready to experience Dehradun's hidden gem? Contact Vann Villa today to book your luxury private villa retreat or inquire about our amenities."
       />
       {/* Hero Section */}
       <section className="contact-hero">
-        <img src="/images/vann-villa-exterior.webp" alt="Van Villa — Premium Luxury Private Villa in Dehradun" className="global-hero-bg" loading="eager" />
+        <img src="/images/vann-villa-exterior.webp" alt="Vann Villa: Premium Luxury Private Villa in Dehradun" className="global-hero-bg" loading="eager" />
         <motion.div 
           className="contact-hero-overlay"
           initial={{ opacity: 0, y: 50 }}
@@ -85,7 +85,7 @@ const Contact = () => {
           </a>
 
           <p className="info-desc">
-            Van Villa is situated amidst the serene landscapes of Dehradun, offering a peaceful escape from the hustle and bustle of city life. Discover us at:
+            Vann Villa is situated amidst the serene landscapes of Dehradun, offering a peaceful escape from the hustle and bustle of city life. Discover us at:
             <br/><br/>
             <a 
               href="https://maps.app.goo.gl/gjF7a1iz6D2W21HR8" 
@@ -115,7 +115,7 @@ const Contact = () => {
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Van Villa Location on Google Maps"
+              title="Vann Villa Location on Google Maps"
             ></iframe>
           </div>
         </div>

@@ -1,29 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-bg: #FAF9F6; /* Warm off-white/cream */
-  --secondary-bg: #F0EFE9; /* Subtle beige */
-  --accent-gold: #B8860B; /* Rich dark gold for high contrast on light backgrounds */
-  --accent-gold-hover: #F59E0B; /* Vibrant glowing gold */
-  --text-dark: #022C22; /* Deepest forest black-green */
-  --text-muted: #4B5563; /* Elegant slate gray */
-  --forest-green: #064E3B; /* Vibrant deep emerald green */
-  --forest-green-hover: #047857; /* Bright vibrant emerald */
+  --primary-bg: #FAF6F0; /* Soft warm cream */
+  --secondary-bg: #E8D2B5; /* Warm cream beige */
+  --warm-cream: #E8D2B5; /* Warm cream beige */
+  --accent-gold: #A5A79B; /* Muted sage grey */
+  --accent-gold-hover: #8E9084; /* Refined sage grey hover */
+  --muted-sage: #A5A79B; /* Muted sage grey */
+  --text-dark: #2B0605; /* Deep burgundy-tinted dark espresso */
+  --text-muted: #555750; /* Elegant sage slate */
+  --forest-green: #590907; /* Deep burgundy */
+  --forest-green-hover: #78100E; /* Vibrant rich burgundy hover */
+  --deep-burgundy: #590907; /* Deep burgundy */
+  --burgundy-hover: #78100E;
+  --primary-color: #590907;
+  --secondary-color: #A5A79B;
+  --primary-dark: #2B0605;
+  --bg-light: #FAF6F0;
+  --text-color: #2B0605;
   --text-light: #FFFFFF;
   
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
-  /* Shadow System - Cinematic Soft Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.1);
-  --shadow-gold: 0 8px 24px rgba(184, 134, 11, 0.15);
-  --shadow-green: 0 8px 24px rgba(6, 78, 59, 0.15);
+  /* Architectural Tailoring - Zero floaty diffused shadows */
+  --shadow-sm: 0 1px 2px rgba(43, 6, 5, 0.04);
+  --shadow-md: 0 2px 6px rgba(43, 6, 5, 0.06);
+  --shadow-lg: 0 4px 12px rgba(43, 6, 5, 0.08);
+  --shadow-xl: 0 6px 16px rgba(43, 6, 5, 0.1);
+  --shadow-gold: none;
+  --shadow-green: none;
+  --shadow-burgundy: none;
 
-  --transition-fast: all 0.3s ease;
-  --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: all 0.25s ease;
+  --transition-slow: all 0.4s ease;
   
   /* Spacing system */
   --section-gap: 100px;
@@ -87,7 +97,7 @@ button {
 
 /* Selection Color */
 ::selection {
-  background-color: var(--accent-gold);
+  background-color: var(--forest-green);
   color: var(--text-light);
 }
 
@@ -152,6 +162,7 @@ html {
 
 .btn-primary:hover {
   border-color: var(--accent-gold);
+  color: var(--text-dark);
   box-shadow: var(--shadow-gold);
   transform: translateY(-2px);
 }
@@ -221,7 +232,7 @@ html {
 
 .section-subtitle {
   text-align: center;
-  color: rgba(139, 101, 8, 0.7);
+  color: var(--forest-green);
   font-family: var(--font-body);
   font-weight: 600;
   text-transform: uppercase;
@@ -239,22 +250,17 @@ html {
   border: none;
 }
 
-/* Glass Card Utility */
+/* Architectural Card Utility */
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
+  background: var(--primary-bg);
+  border: 1px solid rgba(89, 9, 7, 0.12);
+  border-radius: 2px;
+  box-shadow: none;
 }
 
-/* Animated gradient text */
+/* Editorial Heading Accent */
 .gradient-text {
-  background: linear-gradient(135deg, var(--forest-green), var(--accent-gold));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--forest-green);
 }
 
 /* Page transition wrapper */
@@ -333,7 +339,7 @@ html {
 
 /* Accessibility Focus States */
 :focus-visible {
-  outline: 3px solid var(--accent-gold);
+  outline: 3px solid var(--forest-green);
   outline-offset: 4px;
   border-radius: 2px;
 }

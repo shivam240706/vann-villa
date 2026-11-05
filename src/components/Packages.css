@@ -1,217 +1,193 @@
 .packages-section {
-  background-color: var(--primary-bg);
-  background-image: radial-gradient(circle at top right, rgba(6, 78, 59, 0.03) 0%, transparent 50%),
-                    radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  background-color: var(--secondary-bg);
+  border-top: 1px solid rgba(89, 9, 7, 0.1);
+  border-bottom: 1px solid rgba(89, 9, 7, 0.1);
 }
 
 .packages-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.packages-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 50px;
+.estate-rates-intro {
+  max-width: 680px;
+  margin: 0 auto 50px;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-.package-card {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid rgba(6, 78, 59, 0.1);
-  box-shadow: var(--shadow-md);
-  padding: 40px 30px;
+.estate-stays-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.estate-stay-card {
+  background-color: var(--primary-bg);
+  border: 1px solid rgba(89, 9, 7, 0.15);
+  border-radius: 2px;
+  padding: 36px 28px;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: border-color 0.25s ease;
 }
 
-.package-card:hover {
-  box-shadow: var(--shadow-xl);
-  border-color: rgba(212, 175, 55, 0.3);
+.estate-stay-card:hover {
+  border-color: var(--forest-green);
 }
 
-.package-card.recommended {
-  border: 2px solid var(--accent-gold);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-xl);
-  z-index: 2;
+.estate-primary-card {
+  border: 2px solid var(--forest-green);
+  background-color: #FAF6F0;
 }
 
-.package-card.recommended:hover {
-  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+.stay-card-header {
+  border-bottom: 1px solid rgba(89, 9, 7, 0.1);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
 }
 
-.recommended-badge {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--accent-gold);
-  color: #fff;
+.stay-capacity {
+  display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
-}
-
-.package-header {
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.package-icon {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(6, 78, 59, 0.05);
-  color: var(--forest-green);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px;
-}
-
-.package-card.recommended .package-icon {
-  background-color: rgba(212, 175, 55, 0.1);
-  color: var(--accent-gold);
-}
-
-.best-for {
-  display: block;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #666;
-  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: var(--forest-green);
+  margin-bottom: 8px;
 }
 
-.package-title {
+.stay-title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--forest-green);
-  margin-bottom: 15px;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
 }
 
-.package-price-prefix {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-top: 10px;
-  margin-bottom: 6px;
+.stay-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 18px 0;
 }
 
-.package-price-wrap {
+.stay-pricing {
   display: flex;
   align-items: baseline;
-  justify-content: center;
-  gap: 4px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.package-price {
+.stay-rate-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stay-old-price {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.stay-price {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--forest-green);
+  line-height: 1;
+}
+
+.stay-unit {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.stay-card-body {
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.stay-inclusions-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.stay-inclusions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stay-inclusions-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
   color: var(--text-dark);
 }
 
-.package-unit {
-  font-size: 1rem;
-  color: #666;
+.stay-bullet {
+  color: var(--forest-green);
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1.5;
 }
 
-.package-body {
-  flex-grow: 1;
-  margin-bottom: 30px;
+.stay-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 12px 0 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(89, 9, 7, 0.1);
 }
 
-.package-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.stay-card-footer {
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.package-features li {
-  display: flex;
-  align-items: flex-start;
   gap: 12px;
-  font-size: 1rem;
-  color: #4a4a4a;
-  line-height: 1.4;
 }
 
-.feature-check {
-  color: var(--accent-gold);
-  flex-shrink: 0;
-  margin-top: 2px;
+.stay-deep-link {
+  font-size: 0.85rem;
+  color: var(--forest-green);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-align: center;
 }
 
-.package-footer {
-  margin-top: auto;
+.stay-deep-link:hover {
+  color: var(--forest-green-hover);
 }
 
-.package-btn {
+.stay-inquire-btn {
   width: 100%;
-  padding: 15px;
-  font-size: 1.05rem;
+  padding: 14px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
 }
 
-@media (max-width: 992px) {
-  .packages-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .package-card.recommended {
-    order: -1; /* Make recommended first on tablet */
-  }
-  .package-card.recommended:hover {
-    /* Handle hover state on tablet if necessary, but we removed scale */
-  }
-}
-
-@media (max-width: 768px) {
-  .packages-grid {
+@media (max-width: 1024px) {
+  .estate-stays-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .package-card {
-    padding: 20px 15px;
-  }
-  .package-title {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-  }
-  .package-price {
-    font-size: 1.8rem;
-  }
-  .package-icon {
-    width: 45px;
-    height: 45px;
-    margin-bottom: 10px;
-  }
-  .package-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-  .recommended-badge {
-    padding: 4px 12px;
-    font-size: 0.75rem;
-    top: -12px;
+    gap: 20px;
   }
 }

@@ -2,32 +2,31 @@
   position: fixed;
   bottom: 100px;
   right: 30px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 2px;
   background-color: var(--forest-green);
-  color: var(--text-light);
-  border: none;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  box-shadow: var(--shadow-md);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .back-to-top:hover {
-  background-color: var(--accent-gold);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-gold);
+  background-color: #3d0504;
+  color: #FAF6F0;
+  border-color: #FAF6F0;
 }
 
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 76px;
     right: 20px;
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
   }
 }

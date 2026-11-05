@@ -101,24 +101,25 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #25D366;
-  color: #fff;
-  font-weight: 600;
+  background-color: var(--forest-green);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  font-weight: 500;
   font-family: var(--font-body);
   text-decoration: none;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-size: 1.05rem;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px 28px;
+  border-radius: 2px;
+  font-size: 0.95rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
   margin-bottom: 35px;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .contact-whatsapp-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-  color: #fff;
+  background-color: #3d0504;
+  color: #FAF6F0;
+  border-color: #FAF6F0;
 }
 
 .social-icons {
@@ -131,20 +132,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 2px;
   background-color: var(--secondary-bg);
   color: var(--text-dark);
   font-weight: bold;
   cursor: pointer;
-  transition: var(--transition-fast);
+  border: 1px solid rgba(165, 167, 155, 0.4);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .social-icons .icon:hover {
   background-color: var(--forest-green);
-  color: var(--text-light);
-  transform: translateY(-3px);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
 }
 
 /* Map and Form Section */
@@ -177,7 +179,7 @@
   padding: 60px 8%;
   display: flex;
   align-items: center;
-  box-shadow: var(--shadow-xl);
+  border-left: 1px solid rgba(165, 167, 155, 0.4);
   z-index: 10;
 }
 

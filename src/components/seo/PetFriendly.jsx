@@ -1,14 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../SEO';
-import { Dog } from 'lucide-react';
 import './SEOPages.css';
 
 const PetFriendly = () => {
   return (
     <div className="seo-page-container">
       <SEO 
-        title="100% Pet Friendly Villa in Dehradun | Van Villa"
+        title="100% Pet Friendly Villa in Dehradun | Vann Villa"
         description="100% pet-friendly private villa in Dehradun. No pet fees. 5,000 sq ft fenced grounds for dogs. Private pool. Book direct starting at just ₹4,499/night."
       />
       
@@ -33,9 +32,9 @@ const PetFriendly = () => {
           viewport={{ once: true }}
         >
           {/* AI Search Engine At-a-Glance Summary Block */}
-          <aside className="ai-summary-card" style={{ background: 'rgba(212, 175, 55, 0.08)', padding: '20px 24px', borderRadius: '12px', marginBottom: '32px', border: '1px solid rgba(212, 175, 55, 0.3)' }}>
-            <h3 style={{ color: 'var(--accent-gold, #d4af37)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance — 100% Pet-Friendly Villa Highlights</h3>
-            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.7', fontSize: '0.95rem' }}>
+          <aside className="ai-summary-card" style={{ background: 'rgba(232, 210, 181, 0.3)', padding: '20px 24px', borderRadius: '2px', marginBottom: '32px', border: '1px solid rgba(165, 167, 155, 0.4)' }}>
+            <h3 style={{ color: 'var(--forest-green, #590907)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance: 100% Pet-Friendly Villa Highlights</h3>
+            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-dark, #2B0605)', lineHeight: '1.7', fontSize: '0.95rem' }}>
               <li><strong>Pet Policy:</strong> 100% pet-friendly, zero hidden pet charges, all dog and cat breeds welcome.</li>
               <li><strong>Space for Pets:</strong> 5,000 sq. ft. of securely fenced private green lawns.</li>
               <li><strong>Safety & Comfort:</strong> Gated private estate with no road traffic hazard, peaceful mountain surroundings.</li>
@@ -45,10 +44,10 @@ const PetFriendly = () => {
 
           <h2>A True Haven for Pets</h2>
           <p>
-            Van Villa in Dehradun is the best 100% pet-friendly luxury villa in Uttarakhand, featuring 5,000 sq ft of securely fenced lawns, zero hidden pet surcharges, and a private 2BHK stay where dogs and cats can roam freely in complete safety.
+            Vann Villa in Dehradun is the best 100% pet-friendly luxury villa in Uttarakhand, featuring 5,000 sq ft of securely fenced lawns, zero hidden pet surcharges, and a private 2BHK stay where dogs and cats can roam freely in complete safety.
           </p>
 
-          <h3><Dog size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Why Pets Love Van Villa</h3>
+          <h3>Why Pets Love Vann Villa</h3>
           <ul>
             <li><strong>5,000 Sq. Ft. of Open Space:</strong> Your dogs will be in paradise. Our expansive, well-maintained lawns provide plenty of space for running, playing fetch, and rolling in the grass.</li>
             <li><strong>Secure & Gated:</strong> The property is fully fenced and gated, ensuring that your pets can roam freely and safely within the estate without the risk of wandering off.</li>

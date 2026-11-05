@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--primary-bg);
-  background-image: radial-gradient(circle at center, rgba(6, 78, 59, 0.05) 0%, transparent 70%);
+  background-image: radial-gradient(circle at center, rgba(89, 9, 7, 0.06) 0%, transparent 70%);
   padding: 20px;
   text-align: center;
 }

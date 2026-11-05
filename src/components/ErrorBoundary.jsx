@@ -23,8 +23,8 @@ class ErrorBoundary extends React.Component {
           alignItems: 'center',
           justifyContent: 'center',
           height: '100vh',
-          backgroundColor: '#FAF9F6',
-          color: '#064E3B',
+          backgroundColor: '#FAF6F0',
+          color: '#590907',
           textAlign: 'center',
           padding: '20px'
         }}>
@@ -34,7 +34,7 @@ class ErrorBoundary extends React.Component {
             onClick={() => window.location.reload()}
             style={{
               padding: '12px 30px',
-              backgroundColor: '#064E3B',
+              backgroundColor: '#590907',
               color: '#fff',
               border: 'none',
               cursor: 'pointer',

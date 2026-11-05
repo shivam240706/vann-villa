@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, CheckCircle2, ArrowRight } from 'lucide-react';
 import './LeadCapture.css';
+
+const MailIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16" rx="1"></rect>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+  </svg>
+);
 
 const LeadCapture = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (_e) => {
-    // We let the form do a standard HTML submit to FormSubmit.co
-    // This bypasses AJAX CORS issues and guarantees the email is sent/verified.
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 8000);
   };
@@ -19,14 +23,14 @@ const LeadCapture = () => {
       <div className="lead-capture-container">
         <motion.div 
           className="lead-capture-content"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
         >
           <div className="lead-capture-text">
-            <h2 id="newsletter-heading">Unlock Secret Deals</h2>
-            <p>Not ready to book yet? Join our inner circle to receive exclusive 10% off direct booking codes, last-minute cancellation deals, and curated Dehradun itineraries.</p>
+            <h2 id="newsletter-heading">Estate Dispatch</h2>
+            <p>Join our private guest registry to receive seasonal availability, estate announcements, and curated regional itineraries for Dehradun and Mussoorie.</p>
           </div>
           
           <div className="lead-capture-form-wrapper">
@@ -40,9 +44,9 @@ const LeadCapture = () => {
               >
                 <input type="hidden" name="_subject" value="New Newsletter Subscription!" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="message" value="Please add me to the secret deals newsletter." />
+                <input type="hidden" name="message" value="Please add me to the estate dispatch registry." />
                 <div className="input-group">
-                  <Mail className="input-icon" size={20} />
+                  <span className="input-icon"><MailIcon /></span>
                   <input 
                     type="email" 
                     id="newsletter-email"
@@ -50,18 +54,18 @@ const LeadCapture = () => {
                     autoComplete="email"
                     placeholder="Enter your email address" 
                     required 
-                    aria-label="Email address for newsletter"
+                    aria-label="Email address for estate dispatch"
                   />
                 </div>
                 <button type="submit" className="subscribe-btn">
-                  <span>Subscribe</span>
-                  <ArrowRight size={18} />
+                  <span>Register</span>
+                  <span className="btn-arrow" aria-hidden="true">&rarr;</span>
                 </button>
               </form>
             ) : (
               <div className="lead-capture-success">
-                <CheckCircle2 size={24} className="success-icon" />
-                <span>You're on the list! Check your inbox for your first exclusive offer.</span>
+                <span className="success-tag">Confirmed</span>
+                <span>You are registered on our guest dispatch list.</span>
               </div>
             )}
           </div>

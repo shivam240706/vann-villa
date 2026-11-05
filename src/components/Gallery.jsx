@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -10,28 +9,47 @@ import 'swiper/css/navigation';
 import AnimatedImage from './AnimatedImage';
 import './Gallery.css';
 
+const CloseIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+);
+
+const PrevIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="15 18 9 12 15 6"></polyline>
+  </svg>
+);
+
+const NextIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+);
+
 const CATEGORIES = ['All', 'Living Spaces', 'The Outdoors', 'Pool & Features'];
 
 const galleryImages = [
   // Pool & Features
-  { src: '/images/vann-villa-private-pool.webp', alt: 'Private luxury swimming pool at Van Villa Dehradun', category: 'Pool & Features' },
-  { src: '/images/vann-villa-pool-nature.webp', alt: 'Clear blue swimming pool surrounded by nature at Van Villa', category: 'Pool & Features' },
+  { src: '/images/vann-villa-private-pool.webp', alt: 'Private luxury swimming pool at Vann Villa Dehradun', category: 'Pool & Features' },
+  { src: '/images/vann-villa-pool-nature.webp', alt: 'Clear blue swimming pool surrounded by nature at Vann Villa', category: 'Pool & Features' },
   
   // Living Spaces
-  { src: '/images/vann-villa-master-bedroom.webp', alt: 'Luxury master bedroom with panoramic mountain views at Van Villa', category: 'Living Spaces' },
+  { src: '/images/vann-villa-master-bedroom.webp', alt: 'Luxury master bedroom with panoramic mountain views at Vann Villa', category: 'Living Spaces' },
   { src: '/images/vann-villa-spacious-bedroom.webp', alt: 'Spacious second bedroom with premium bedding and decor', category: 'Living Spaces' },
-  { src: '/images/vann-villa-family-suite-bedroom.webp', alt: 'Comfortable family suite at Van Villa', category: 'Living Spaces' },
-  { src: '/images/vann-villa-master-bedroom-view.webp', alt: 'Well-lit bedroom interiors at Van Villa Dehradun', category: 'Living Spaces' },
-  { src: '/images/vann-villa-indoor-lounge.webp', alt: 'Elegant indoor lounge at Van Villa', category: 'Living Spaces' },
+  { src: '/images/vann-villa-family-suite-bedroom.webp', alt: 'Comfortable family suite at Vann Villa', category: 'Living Spaces' },
+  { src: '/images/vann-villa-master-bedroom-view.webp', alt: 'Well-lit bedroom interiors at Vann Villa Dehradun', category: 'Living Spaces' },
+  { src: '/images/vann-villa-indoor-lounge.webp', alt: 'Elegant indoor lounge at Vann Villa', category: 'Living Spaces' },
   { src: '/images/vann-villa-mini-bar.webp', alt: 'In-house mini-bar setup for private gatherings and relaxation', category: 'Living Spaces' },
 
   // The Outdoors
-  { src: '/images/vann-villa-exterior.webp', alt: 'Exterior view of Van Villa, a premium private pool property', category: 'The Outdoors' },
+  { src: '/images/vann-villa-exterior.webp', alt: 'Exterior view of Vann Villa, a premium private pool property', category: 'The Outdoors' },
   { src: '/images/vann-villa-estate.webp', alt: 'Lush green lawns and 5,000 sq ft private estate in Dehradun', category: 'The Outdoors' },
   { src: '/images/vann-villa-outdoor-seating.webp', alt: 'Comfortable outdoor seating area surrounded by nature', category: 'The Outdoors' },
-  { src: '/images/vann-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the private gardens of Van Villa', category: 'The Outdoors' },
+  { src: '/images/vann-villa-morning-tea-spot.webp', alt: 'Morning tea spot in the private gardens of Vann Villa', category: 'The Outdoors' },
   { src: '/images/vann-villa-rooftop-view.webp', alt: 'Stunning rooftop view of the Dehradun valley and foothills', category: 'The Outdoors' },
-  { src: '/images/vann-villa-grand-entrance.webp', alt: 'Grand entrance to the luxury pet-friendly Van Villa', category: 'The Outdoors' }
+  { src: '/images/vann-villa-grand-entrance.webp', alt: 'Grand entrance to the luxury pet-friendly Vann Villa', category: 'The Outdoors' }
 ];
 
 const Gallery = () => {
@@ -79,20 +97,24 @@ const Gallery = () => {
         <h2 className="section-title">The Gallery</h2>
       </motion.div>
       
-      <div className="gallery-tabs" style={{ display: 'flex', justifyContent: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '40px', padding: '0 20px' }}>
+      <div className="gallery-tabs" style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '40px', padding: '0 20px' }}>
         {CATEGORIES.map(category => (
           <button
             key={category}
             onClick={() => { setActiveCategory(category); setSelectedIndex(null); }}
             style={{
-              padding: '10px 24px',
-              borderRadius: '30px',
-              border: '1px solid var(--accent-gold)',
-              background: activeCategory === category ? 'var(--accent-gold)' : 'transparent',
-              color: activeCategory === category ? '#fff' : 'var(--text-color)',
-              fontWeight: activeCategory === category ? '600' : '500',
+              padding: '8px 20px',
+              borderRadius: '2px',
+              border: '1px solid var(--forest-green)',
+              background: activeCategory === category ? 'var(--forest-green)' : 'transparent',
+              color: activeCategory === category ? 'var(--accent-gold)' : 'var(--text-color)',
+              fontWeight: '500',
+              fontFamily: 'var(--font-body)',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              fontSize: '0.82rem',
               cursor: 'pointer',
-              transition: 'all 0.3s ease'
+              transition: 'all 0.25s ease'
             }}
           >
             {category}
@@ -133,7 +155,7 @@ const Gallery = () => {
                 >
                   <AnimatedImage src={img.src} alt={img.alt} loading="lazy" decoding="async" className="gallery-slide-media" />
                   <div className="gallery-overlay">
-                    <span className="expand-icon"><Maximize2 size={18} />Click to expand</span>
+                    <span className="expand-icon">View Fullscreen</span>
                   </div>
                 </div>
               )}
@@ -155,9 +177,9 @@ const Gallery = () => {
             exit={{ opacity: 0 }}
             onClick={closeLightbox}
           >
-            <button className="lightbox-close" aria-label="Close lightbox" onClick={closeLightbox}><X size={32} /></button>
-            <button className="lightbox-nav prev" aria-label="Previous image" onClick={prevImage}><ChevronLeft size={48} /></button>
-            <button className="lightbox-nav next" aria-label="Next image" onClick={nextImage}><ChevronRight size={48} /></button>
+            <button className="lightbox-close" aria-label="Close lightbox" onClick={closeLightbox}><CloseIcon /></button>
+            <button className="lightbox-nav prev" aria-label="Previous image" onClick={prevImage}><PrevIcon /></button>
+            <button className="lightbox-nav next" aria-label="Next image" onClick={nextImage}><NextIcon /></button>
             
             <motion.div 
               className="lightbox-content"

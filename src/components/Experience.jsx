@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { MapPin, ArrowRight, Sun, Coffee, Camera } from 'lucide-react';
 import SEO from './SEO';
 import './Experience.css';
 
@@ -13,15 +12,15 @@ const Experience = () => {
   return (
     <div className="experience-page">
       <SEO 
-        title="Luxury Villa in Dehradun | Local Guide & Experience | Van Villa"
-        description="Discover Dehradun's hidden gem. Explore our curated 3-day itinerary, local attractions, and see why Van Villa is the best luxury private villa in Dehradun."
+        title="Luxury Villa in Dehradun | Local Guide & Experience | Vann Villa"
+        description="Discover Dehradun's hidden gem. Explore our curated 3-day itinerary, local attractions, and see why Vann Villa is the best luxury private villa in Dehradun."
       />
       
       {/* Hero Section */}
       <section className="experience-hero">
         <picture>
           <source media="(min-width: 769px)" srcSet="/images/vann-villa-exterior.webp" />
-          <img src="/images/vann-villa-outdoor-seating.webp" alt="Van Villa - Dehradun's Hidden Villa" className="global-hero-bg" loading="eager" />
+          <img src="/images/vann-villa-outdoor-seating.webp" alt="Vann Villa - Dehradun's Hidden Villa" className="global-hero-bg" loading="eager" />
         </picture>
         <motion.div 
           className="experience-hero-overlay"
@@ -46,13 +45,13 @@ const Experience = () => {
           >
             <h2 className="article-title">Why Choose a Luxury Villa in Dehradun?</h2>
             <p className="article-text">
-              When searching for the <strong>best luxury private villa in Dehradun</strong>, travelers often look for a balance between natural serenity and modern comfort. Tucked away from the bustling city center, Van Villa has earned its reputation as <strong>Dehradun's hidden villa</strong>, offering an exclusive sanctuary for families, couples, and groups seeking a premium retreat.
+              When searching for the <strong>best luxury private villa in Dehradun</strong>, travelers often look for a balance between natural serenity and modern comfort. Tucked away from the bustling city center, Vann Villa has earned its reputation as <strong>Dehradun's hidden villa</strong>, offering an exclusive sanctuary for families, couples, and groups seeking a premium retreat.
             </p>
             <p className="article-text">
-              Unlike traditional hotels where you are confined to a single room, a luxury villa provides expansive living spaces, private outdoor areas, and a personalized experience. At Van Villa, you're not just booking accommodation; you're securing a private, 5,000 sq ft estate surrounded by lush greenery, complete with a private swimming pool, fully equipped kitchen, and beautifully curated indoor spaces.
+              Unlike traditional hotels where you are confined to a single room, Vann Villa grants you exclusive reservation of an entire 5,000 sq ft estate surrounded by lush foothills, featuring a private swimming pool, fully equipped kitchen, and secluded indoor-outdoor living spaces.
             </p>
             <p className="article-text">
-              As a premier <strong>pet-friendly villa in Uttarakhand</strong>, we understand that a family vacation isn't complete without your furry companions. Our expansive lawns provide the perfect playground for pets, ensuring every member of your family enjoys the getaway. From waking up to the sound of chirping birds to spending evenings under the starlit sky, every moment at Van Villa is designed to be unforgettable.
+              As a premier <strong>pet-friendly villa in Uttarakhand</strong>, we understand that a family vacation isn't complete without your furry companions. Our expansive lawns provide the perfect playground for pets, ensuring every member of your family enjoys the getaway. From waking up to the sound of chirping birds to spending evenings under the starlit sky, every moment at Vann Villa is designed to be unforgettable.
             </p>
           </motion.div>
 
@@ -63,7 +62,7 @@ const Experience = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.3 }}
           >
-            <img src="/images/vann-villa-private-pool.webp" alt="Private swimming pool at Van Villa, luxury private villa in Dehradun" loading="lazy" />
+            <img src="/images/vann-villa-private-pool.webp" alt="Private swimming pool at Vann Villa, luxury private villa in Dehradun" loading="lazy" />
           </motion.div>
 
           <motion.div
@@ -74,66 +73,57 @@ const Experience = () => {
           >
             <h2 className="article-title">Your Perfect 3-Day Itinerary</h2>
             <p className="article-text">
-              Making the most of your stay at <strong>Dehradun's hidden gem</strong> requires the perfect balance of relaxation and exploration. Here is our curated itinerary to help you experience the best of Dehradun while enjoying the luxurious comforts of Van Villa.
+              Making the most of your stay at <strong>Dehradun's hidden gem</strong> requires the perfect balance of relaxation and exploration. Here is our curated itinerary to help you experience the best of Dehradun while enjoying the luxurious comforts of Vann Villa.
             </p>
 
             <div className="itinerary-days">
               {/* Day 1 */}
               <div className="itinerary-day">
-                <div className="day-badge">Day 1</div>
+                <div className="day-badge">Day 01</div>
                 <h3 className="day-title">Arrival & Unwinding</h3>
                 <ul className="day-activities">
                   <li>
-                    <Coffee className="activity-icon" />
-                    <span><strong>Afternoon Check-in:</strong> Arrive at Van Villa and be greeted by the tranquil surroundings. Enjoy a refreshing welcome drink as you settle into your beautifully appointed rooms.</span>
+                    <span><strong>Afternoon Check-in:</strong> Arrive at Vann Villa and settle into the quiet foothills. Settle into the spacious king suites.</span>
                   </li>
                   <li>
-                    <Sun className="activity-icon" />
-                    <span><strong>Leisure by the Pool:</strong> Spend the late afternoon lounging by our private swimming pool. Let the stress of travel melt away as you soak in the serene atmosphere.</span>
+                    <span><strong>Poolside Afternoon:</strong> Unwind by the private swimming pool as the mountain breeze sets in.</span>
                   </li>
                   <li>
-                    <Camera className="activity-icon" />
-                    <span><strong>Evening Under the Stars:</strong> As the sun sets, relax on the lawns under the starlit sky. Enjoy a quiet dinner or self-cooked meal with your loved ones in your private haven.</span>
+                    <span><strong>Evening Under the Stars:</strong> Relax on the 5,000 sq ft private lawns under the starlit Himalayan sky with quiet al fresco dining.</span>
                   </li>
                 </ul>
               </div>
 
               {/* Day 2 */}
               <div className="itinerary-day">
-                <div className="day-badge">Day 2</div>
+                <div className="day-badge">Day 02</div>
                 <h3 className="day-title">Exploring the Foothills</h3>
                 <ul className="day-activities">
                   <li>
-                    <MapPin className="activity-icon" />
-                    <span><strong>Morning Excursion to Robber's Cave:</strong> Start your day early with a trip to Gucchupani (Robber's Cave), a fascinating natural river cave formation just a short drive away.</span>
+                    <span><strong>Morning at Robber's Cave:</strong> Take a short drive to Gucchupani, an ancient natural river cave formation in Dehradun.</span>
                   </li>
                   <li>
-                    <MapPin className="activity-icon" />
-                    <span><strong>Visit Tapkeshwar Mahadev Temple:</strong> Experience the spiritual ambiance of this ancient temple situated on the banks of a seasonal river.</span>
+                    <span><strong>Tapkeshwar Mahadev Temple:</strong> Experience the peaceful heritage grounds situated on the banks of a mountain river.</span>
                   </li>
                   <li>
-                    <Sun className="activity-icon" />
-                    <span><strong>Relaxed Evening at the Villa:</strong> Return to the comfort of Van Villa. Enjoy a quiet evening on the terrace, perhaps reading a book or enjoying refreshments from the mini-bar.</span>
+                    <span><strong>Sunset at the Estate:</strong> Return to Vann Villa for quiet sunset tea and refreshments on the private mountain terrace.</span>
                   </li>
                 </ul>
               </div>
 
               {/* Day 3 */}
               <div className="itinerary-day">
-                <div className="day-badge">Day 3</div>
+                <div className="day-badge">Day 03</div>
                 <h3 className="day-title">Nature Trails & Departure</h3>
                 <ul className="day-activities">
                   <li>
-                    <MapPin className="activity-icon" />
-                    <span><strong>Nature Walk in the Foothills:</strong> Take a refreshing morning walk surrounded by greenery and pine forests.</span>
+                    <span><strong>Pine Foothill Walk:</strong> Enjoy a peaceful morning nature walk along the surrounding greenery and quiet trails.</span>
                   </li>
                   <li>
-                    <Coffee className="activity-icon" />
-                    <span><strong>Hearty Breakfast:</strong> Enjoy a delicious breakfast in our alfresco outdoor area, taking in the morning breeze.</span>
+                    <span><strong>Al Fresco Breakfast:</strong> Enjoy a fresh breakfast prepared in the modern kitchen, served outdoors on the lawn.</span>
                   </li>
                   <li>
-                    <ArrowRight className="activity-icon" />
-                    <span><strong>Departure:</strong> Check out with beautiful memories of your stay at the best luxury private villa in Dehradun, feeling rejuvenated and ready to face the world.</span>
+                    <span><strong>Relaxed Departure:</strong> Check out feeling rested and rejuvenated from your private mountain stay.</span>
                   </li>
                 </ul>
               </div>
@@ -147,8 +137,8 @@ const Experience = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.3 }}
           >
-            <img src="/images/vann-villa-master-bedroom.webp" alt="Luxurious bedroom at Van Villa" loading="lazy" />
-            <img src="/images/vann-villa-outdoor-seating.webp" alt="Outdoor seating at Van Villa Dehradun" loading="lazy" />
+            <img src="/images/vann-villa-master-bedroom.webp" alt="Luxurious bedroom at Vann Villa" loading="lazy" />
+            <img src="/images/vann-villa-outdoor-seating.webp" alt="Outdoor seating at Vann Villa Dehradun" loading="lazy" />
           </motion.div>
 
           <motion.div
@@ -159,7 +149,7 @@ const Experience = () => {
           >
             <h2 className="article-title">The Benefits of a Pet-Friendly Villa in Uttarakhand</h2>
             <p className="article-text">
-              Finding truly pet-friendly accommodations can often be a challenge for travelers. Van Villa stands out as a premier <strong>pet-friendly villa in Uttarakhand</strong> because we don't just tolerate pets; we welcome them. The expansive outdoor areas mean your dogs can run and play freely in a safe, enclosed environment. The crisp mountain air and natural surroundings provide sensory enrichment that city living often lacks.
+              Finding truly pet-friendly accommodations can often be a challenge for travelers. Vann Villa stands out as a premier <strong>pet-friendly villa in Uttarakhand</strong> because we don't just tolerate pets; we welcome them. The expansive outdoor areas mean your dogs can run and play freely in a safe, enclosed environment. The crisp mountain air and natural surroundings provide sensory enrichment that city living often lacks.
             </p>
             <p className="article-text">
               When planning your next vacation, don't leave a piece of your heart at a boarding kennel. Experience the joy of watching your pet explore the great outdoors right alongside you. Our commitment to providing a luxurious experience extends to all our guests, both two-legged and four-legged.

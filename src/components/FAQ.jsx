@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 import './FAQ.css';
+
+const ChevronIcon = ({ isOpen }) => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={`faq-chevron ${isOpen ? 'open' : ''}`}
+    aria-hidden="true"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+);
 
 const faqData = [
   {
@@ -61,7 +77,7 @@ const FAQ = () => {
     <section className="faq-section" aria-labelledby="faq-title" id="faq">
       <div className="faq-container">
         <h2 id="faq-title" className="faq-title">Frequently Asked Questions</h2>
-        
+
         {/* Hidden static Q&A list for AI search engine crawlers (ChatGPT, Perplexity, Claude, Gemini) */}
         <div className="ai-crawler-faq-list" style={{ display: 'none' }} aria-hidden="true">
           {faqData.map((item, idx) => (
@@ -84,10 +100,7 @@ const FAQ = () => {
                   aria-controls={`faq-answer-${index}`}
                 >
                   <span className="faq-question-text">{item.question}</span>
-                  <ChevronDown
-                    className={`faq-chevron ${isOpen ? 'open' : ''}`}
-                    size={20}
-                  />
+                  <ChevronIcon isOpen={isOpen} />
                 </button>
                 <AnimatePresence>
                   {isOpen && (

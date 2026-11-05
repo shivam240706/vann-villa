@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import './StatsCounter.css';
 
 const stats = [
-  { value: 200, suffix: '+', label: 'Happy Guests' },
-  { value: 4.7, suffix: '★', label: 'Google Rating', isDecimal: true },
+  { value: 200, suffix: '+', label: 'Hosted Guests' },
+  { value: 4.7, suffix: ' / 5', label: 'Guest Review Rating', isDecimal: true },
   { value: 5000, suffix: ' sq ft', label: 'Private Estate' },
-  { value: 100, suffix: '%', label: 'Pet Friendly' }
+  { value: 100, suffix: '%', label: 'Pet Friendly Grounds' }
 ];
 
 // Module-level flag: false on initial page load (hydration from prerendered HTML),

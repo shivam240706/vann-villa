@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import SEO from './SEO';
 import './PackagesHub.css';
 
 const packages = [
   {
     title: 'Romantic Couple Getaway',
-    description: 'A secluded private villa for two — private pool, starry nights, and complete privacy for anniversaries and honeymoons.',
+    description: 'A secluded private villa for two with private pool, starry nights, and complete privacy for anniversaries and honeymoons.',
     image: '/images/vann-villa-master-bedroom-view.webp',
     link: '/couple-getaway-dehradun',
   },
@@ -32,7 +31,7 @@ const packages = [
   },
   {
     title: 'Delhi Weekend Getaway',
-    description: 'A 5–6 hour drive from Delhi NCR to clean mountain air and your own private pool. Leave Friday, return Sunday recharged.',
+    description: 'A 5 to 6 hour drive from Delhi NCR to clean mountain air and your own private pool. Leave Friday, return Sunday recharged.',
     image: '/images/vann-villa-rooftop-view.webp',
     link: '/delhi-to-dehradun-weekend',
   },
@@ -42,8 +41,8 @@ const PackagesHub = () => {
   return (
     <div className="packages-hub-container">
       <SEO
-        title="Luxury Stay Packages in Dehradun | Van Villa"
-        description="Browse all stay packages at Van Villa — romantic getaways, family vacations, pet-friendly stays, and Delhi weekend trips. Private pool villa starting at just ₹4,499/night."
+        title="Luxury Stay Packages in Dehradun | Vann Villa"
+        description="Browse all stay packages at Vann Villa: romantic getaways, family vacations, pet-friendly stays, and Delhi weekend trips. Private pool villa starting at just ₹4,499/night."
       />
 
       <section
@@ -65,10 +64,10 @@ const PackagesHub = () => {
         {packages.map((pkg, idx) => (
           <motion.div
             key={pkg.link}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: idx * 0.1 }}
+            transition={{ duration: 0.3, delay: idx * 0.08 }}
           >
             <Link to={pkg.link} className="package-hub-card">
               <div
@@ -80,7 +79,7 @@ const PackagesHub = () => {
                 <h2>{pkg.title}</h2>
                 <p>{pkg.description}</p>
                 <span className="package-hub-card-cta">
-                  Learn More <ArrowRight size={16} />
+                  Explore Stay &rarr;
                 </span>
               </div>
             </Link>

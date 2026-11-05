@@ -1,7 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
+
+const PhoneIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+  </svg>
+);
+
+const MailIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16" rx="1"></rect>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+  </svg>
+);
+
+const PinIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+    <circle cx="12" cy="10" r="3"></circle>
+  </svg>
+);
 
 const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -52,13 +71,13 @@ const Footer = () => {
             <h3>Contact</h3>
             <address>
               <a href="tel:+919411770969" className="footer-contact-item">
-                <Phone size={14} aria-hidden="true" /> +91 94117 70969
+                <PhoneIcon /> +91 94117 70969
               </a>
               <a href="mailto:vannvilla@gmail.com" className="footer-contact-item">
-                <Mail size={14} aria-hidden="true" /> vannvilla@gmail.com
+                <MailIcon /> vannvilla@gmail.com
               </a>
               <a href="https://maps.app.goo.gl/gjF7a1iz6D2W21HR8" target="_blank" rel="noopener noreferrer" className="footer-contact-item">
-                <MapPin size={14} aria-hidden="true" /> Dehradun, Uttarakhand 248007
+                <PinIcon /> Dehradun, Uttarakhand 248007
               </a>
             </address>
           </div>
@@ -74,12 +93,12 @@ const Footer = () => {
 
           {/* Trust Column */}
           <div className="footer-col footer-trust">
-            <h3>Why Choose Us</h3>
+            <h3>Estate Standards</h3>
             <div className="trust-badges">
-              <span className="trust-badge">✓ Verified Property</span>
-              <span className="trust-badge">✓ Instant Confirmation</span>
-              <span className="trust-badge">✓ 4.7★ Google Rated</span>
-              <span className="trust-badge">✓ 100% Pet Friendly</span>
+              <span className="trust-badge"><span className="trust-marker">/</span> Verified Private Estate</span>
+              <span className="trust-badge"><span className="trust-marker">/</span> Direct Host Reservation</span>
+              <span className="trust-badge"><span className="trust-marker">/</span> 4.7 out of 5.0 Rating</span>
+              <span className="trust-badge"><span className="trust-marker">/</span> Dedicated Pet-Friendly Grounds</span>
             </div>
           </div>
 
@@ -97,7 +116,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Van Villa. All rights reserved. Made with ♥ in Dehradun.</p>
+        <p>&copy; {new Date().getFullYear()} Van Villa. All rights reserved. Curated in Dehradun, Uttarakhand.</p>
       </div>
     </footer>
   );

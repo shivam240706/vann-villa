@@ -25,10 +25,10 @@
 .amenities-coverflow .swiper-slide {
   width: 340px; /* Large width for mobile */
   height: 380px; /* Much taller on mobile, closer to user's red box */
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(165, 167, 155, 0.4);
   transition: transform 0.3s ease;
 }
 
@@ -102,27 +102,27 @@
 }
 
 .slide-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(4px);
-  width: 36px; /* Smaller on mobile */
+  background: rgba(43, 6, 5, 0.7);
+  border: 1px solid rgba(232, 210, 181, 0.4);
+  width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #FAF6F0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .amenities-coverflow .swiper-slide-active .slide-btn {
-  background: white;
-  color: #000000 !important; /* Force black so the arrow is always visible */
+  background: var(--forest-green);
+  color: var(--accent-gold) !important;
+  border-color: var(--accent-gold);
 }
 
 .amenities-coverflow .swiper-slide-active .slide-btn:hover {
-  transform: scale(1.1);
+  background: #3d0504;
 }
 
 /* Custom Swiper Navigation & Pagination */
@@ -160,44 +160,43 @@
 .amenities-coverflow .swiper-button-prev,
 .amenities-coverflow .swiper-button-next {
   pointer-events: auto;
-  color: white;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(4px);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  color: var(--accent-gold);
+  background: var(--forest-green);
+  width: 44px;
+  height: 44px;
+  border-radius: 2px;
+  border: 1px solid var(--accent-gold);
+  transition: background-color 0.25s ease;
 }
 
 .amenities-coverflow .swiper-button-prev:hover,
 .amenities-coverflow .swiper-button-next:hover {
-  background: rgba(0, 0, 0, 0.6);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: #3d0504;
 }
 
 .amenities-coverflow .swiper-button-prev:after,
 .amenities-coverflow .swiper-button-next:after {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .amenities-coverflow .swiper-pagination-bullet {
-  background: var(--text-dark, #333);
-  opacity: 0.5;
-  width: 10px;
-  height: 10px;
+  background: var(--forest-green);
+  opacity: 0.35;
+  width: 14px;
+  height: 3px;
+  border-radius: 1px;
 }
 
 .amenities-coverflow .swiper-pagination-bullet-active {
   opacity: 1;
-  background: var(--accent-color, #c5a880);
+  background: var(--forest-green);
 }
 
 @media (min-width: 768px) {
   .amenities-coverflow .swiper-slide {
     width: 480px;
     height: 420px;
-    border-radius: 16px;
+    border-radius: 2px;
   }
   
   .slide-content {

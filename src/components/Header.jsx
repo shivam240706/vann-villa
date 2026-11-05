@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 import './Header.css';
+
+const ChevronIcon = ({ className }) => (
+  <svg 
+    width="12" 
+    height="12" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className} 
+    aria-hidden="true"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+);
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -105,16 +121,16 @@ const Header = () => {
       />
       <div className="header-container">
         <div className="logo">
-          <Link to="/" onClick={handleHomeClick} aria-label="Van Villa — Home" className="logo-link">
+          <Link to="/" onClick={handleHomeClick} aria-label="Vann Villa Home" className="logo-link">
             <img 
               src="/images/vann-villa-logo.webp" 
-              alt="Van Villa Logo" 
+              alt="Vann Villa Logo" 
               className="header-logo-img" 
               width="44" 
               height="44" 
               loading="eager"
             />
-            <span className="logo-text">Van Villa</span>
+            <span className="logo-text">Vann Villa</span>
           </Link>
         </div>
         
@@ -143,7 +159,7 @@ const Header = () => {
               aria-expanded={policiesOpen}
               aria-haspopup="true"
             >
-              Policies <ChevronDown size={14} className={`dropdown-chevron ${policiesOpen ? 'rotated' : ''}`} />
+              Policies <ChevronIcon className={`dropdown-chevron ${policiesOpen ? 'rotated' : ''}`} />
             </button>
             <div className={`nav-dropdown-content ${policiesOpen ? 'open' : ''}`}>
               <Link to="/terms-conditions" onClick={closeMenu} aria-current={isActive('/terms-conditions') ? 'page' : undefined} className={isActive('/terms-conditions') ? 'nav-active' : ''}>Terms & Conditions</Link>

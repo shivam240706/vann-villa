@@ -1,11 +1,11 @@
 {
-  "name": "Van Villa",
+  "name": "Vann Villa",
   "short_name": "VanVilla",
   "description": "Luxury 2BHK Private Pool Villa in Dehradun",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#d4af37",
+  "background_color": "#FAF6F0",
+  "theme_color": "#590907",
   "icons": [
     {
       "src": "/favicon.svg",

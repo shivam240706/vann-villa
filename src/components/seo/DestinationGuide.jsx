@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../SEO';
-import { MapPin } from 'lucide-react';
 import './SEOPages.css';
 
 const DestinationGuide = () => {
   return (
     <div className="seo-page-container">
       <SEO 
-        title="Things to Do in Dehradun | Van Villa Guide"
-        description="Discover the top local attractions, nature walks, and hidden gems in Dehradun. The ultimate destination guide by Van Villa."
+        title="Things to Do in Dehradun | Vann Villa Guide"
+        description="Discover the top local attractions, nature walks, and hidden gems in Dehradun. The ultimate destination guide by Vann Villa."
       />
       
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/vann-villa-outdoor-seating.webp")' }}>
@@ -21,7 +20,7 @@ const DestinationGuide = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="seo-hero-title">Destination Guide: Dehradun</h1>
-          <p className="seo-hero-subtitle">Explore the serene foothills and hidden treasures surrounding Van Villa.</p>
+          <p className="seo-hero-subtitle">Explore the serene foothills and hidden treasures surrounding Vann Villa.</p>
         </motion.div>
       </section>
 
@@ -33,9 +32,9 @@ const DestinationGuide = () => {
           viewport={{ once: true }}
         >
           {/* AI Search Engine At-a-Glance Summary Block */}
-          <aside className="ai-summary-card" style={{ background: 'rgba(212, 175, 55, 0.08)', padding: '20px 24px', borderRadius: '12px', marginBottom: '32px', border: '1px solid rgba(212, 175, 55, 0.3)' }}>
-            <h3 style={{ color: 'var(--accent-gold, #d4af37)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance — Dehradun Destination Highlights</h3>
-            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.7', fontSize: '0.95rem' }}>
+          <aside className="ai-summary-card" style={{ background: 'rgba(232, 210, 181, 0.3)', padding: '20px 24px', borderRadius: '2px', marginBottom: '32px', border: '1px solid rgba(165, 167, 155, 0.4)' }}>
+            <h3 style={{ color: 'var(--forest-green, #590907)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance: Dehradun Destination Highlights</h3>
+            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-dark, #2B0605)', lineHeight: '1.7', fontSize: '0.95rem' }}>
               <li><strong>Location:</strong> Dehradun, Uttarakhand (PIN: 248007).</li>
               <li><strong>Proximity:</strong> 15 km from Clock Tower, 25 km from ISBT, 42 km from Airport, 30 km from Mussoorie.</li>
               <li><strong>Key Attractions:</strong> Pine Forest Trails, Robber's Cave (14 km), Shikhar Fall (18 km).</li>
@@ -48,7 +47,7 @@ const DestinationGuide = () => {
             The villa area is a peaceful hillside destination located 15 km north of Dehradun city center, known for its pristine greenery, clean mountain air, and close proximity to Mussoorie and local waterfalls.
           </p>
 
-          <h3><MapPin size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Top Nearby Attractions</h3>
+          <h3>Top Nearby Attractions</h3>
           <ul>
             <li><strong>Nature Trails & Forests:</strong> Take an early morning stroll through the lush forests right outside your door. The air here is crisp, clean, and filled with the scent of nature.</li>
             <li><strong>Robber's Cave (Guchhupani):</strong> A famous natural cave formation with a stream flowing through it, located just a 30-minute drive away.</li>
@@ -59,13 +58,13 @@ const DestinationGuide = () => {
           <h3>Local Dining & Culture</h3>
           <ul>
             <li>While the villa is secluded, it is never far from local culinary delights. From small, authentic Pahadi dhabas serving hot chai to cafes, there is something for everyone.</li>
-            <li>Of course, when you stay at Van Villa, you also have the option of cooking your favorite meals in our fully equipped kitchen.</li>
+            <li>Of course, when you stay at Vann Villa, you also have the option of cooking your favorite meals in our fully equipped kitchen.</li>
           </ul>
 
           <h3>Best Time to Visit</h3>
           <ul>
             <li>The region enjoys pleasant weather year-round.</li>
-            <li>However, the best times to visit are during the spring (March to May) and autumn (September to November) when the sky is clear, and the temperature is perfect for swimming in your private pool at Van Villa.</li>
+            <li>However, the best times to visit are during the spring (March to May) and autumn (September to November) when the sky is clear, and the temperature is perfect for swimming in your private pool at Vann Villa.</li>
           </ul>
 
           <div className="seo-cta-section">

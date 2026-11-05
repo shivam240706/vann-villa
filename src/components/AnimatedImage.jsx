@@ -6,19 +6,16 @@ const AnimatedImage = ({ src, alt, className = '', style = {}, ...props }) => {
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', ...style }} className={className}>
-      {/* Skeleton or blurred placeholder */}
+      {/* Subtle architectural placeholder */}
       {!isLoaded && (
-        <motion.div
-          initial={{ opacity: 0.5 }}
-          animate={{ opacity: 1 }}
-          transition={{ repeat: Infinity, duration: 1.5, repeatType: 'reverse' }}
+        <div
           style={{
             position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: '#e0e0e0',
+            backgroundColor: 'var(--secondary-bg, #F5EFEB)',
             zIndex: 1,
           }}
         />
@@ -27,12 +24,9 @@ const AnimatedImage = ({ src, alt, className = '', style = {}, ...props }) => {
         src={src}
         alt={alt}
         onLoad={() => setIsLoaded(true)}
-        initial={{ opacity: 0, filter: 'blur(10px)' }}
-        animate={{ 
-          opacity: isLoaded ? 1 : 0,
-          filter: isLoaded ? 'blur(0px)' : 'blur(10px)' 
-        }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoaded ? 1 : 0 }}
+        transition={{ duration: 0.35, ease: 'easeOut' }}
         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         {...props}
       />

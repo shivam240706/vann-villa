@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X, Maximize2 } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Mousewheel, FreeMode } from 'swiper/modules';
 
@@ -12,19 +11,47 @@ import 'swiper/css/navigation';
 import './Amenities.css';
 import './Gallery.css';
 
+const CloseIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+);
+
+const PrevIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="15 18 9 12 15 6"></polyline>
+  </svg>
+);
+
+const NextIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+);
+
+const ExpandIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <polyline points="9 21 3 21 3 15"></polyline>
+    <line x1="21" y1="3" x2="14" y2="10"></line>
+    <line x1="3" y1="21" x2="10" y2="14"></line>
+  </svg>
+);
+
 const Amenities = () => {
   const [lightboxState, setLightboxState] = useState({ isOpen: false, images: [], index: 0 });
 
   const features = [
-    { name: 'Swimming Pool', subtitle: 'Relax & Unwind', img: '/images/vann-villa-private-pool.webp', alt: 'Crystal-clear private swimming pool at Van Villa, Dehradun' },
+    { name: 'Swimming Pool', subtitle: 'Relax & Unwind', img: '/images/vann-villa-private-pool.webp', alt: 'Crystal-clear private swimming pool at Vann Villa, Dehradun' },
     { name: <><span style={{ fontFamily: '"Times New Roman", Times, serif', fontSize: '0.93em', fontWeight: 500, marginRight: '4px' }}>2</span>BHK Property</>, subtitle: 'Spacious Living', img: '/images/vann-villa-exterior.webp', alt: 'Full exterior view of the 2BHK private villa and landscaped gardens' },
-    { name: "AC's", subtitle: 'Cool Comfort', img: '/images/vann-villa-spacious-bedroom.webp', alt: 'Air-conditioned bedroom with premium bedding at Van Villa' },
+    { name: "AC's", subtitle: 'Cool Comfort', img: '/images/vann-villa-spacious-bedroom.webp', alt: 'Air-conditioned bedroom with premium bedding at Vann Villa' },
     { name: 'Kitchen', subtitle: 'Fully Equipped', img: '/images/vann-villa-kitchen.webp', alt: 'Fully equipped self-catering kitchen with modern appliances' },
     { name: 'Bedrooms', subtitle: 'Cozy Stays', img: ['/images/vann-villa-master-bedroom.webp', '/images/vann-villa-master-bedroom-view.webp'], alt: 'Spacious bedrooms with mountain views and luxury furnishings' },
     { name: 'Spacious Area', subtitle: 'Outdoor Bliss', img: '/images/vann-villa-morning-tea-spot.webp', alt: 'Shaded outdoor seating area surrounded by greenery in Dehradun' },
     { name: 'Mini Bar', subtitle: 'Refreshments', img: '/images/vann-villa-mini-bar.webp', alt: 'In-house mini bar with seating for private gatherings' },
-    { name: 'Private Lawns', subtitle: '5,000 Sq Ft', img: '/images/vann-villa-lawn-view.webp', alt: 'Expansive 5,000 sq ft private green lawn at Van Villa' },
-    { name: 'Mountain Terrace', subtitle: 'Scenic Views', img: '/images/vann-villa-rooftop-view.webp', alt: 'Rooftop terrace with serene views at Van Villa' }
+    { name: 'Private Lawns', subtitle: '5,000 Sq Ft', img: '/images/vann-villa-lawn-view.webp', alt: 'Expansive 5,000 sq ft private green lawn at Vann Villa' },
+    { name: 'Mountain Terrace', subtitle: 'Scenic Views', img: '/images/vann-villa-rooftop-view.webp', alt: 'Rooftop terrace with serene views at Vann Villa' }
   ];
 
   const allMedia = features.flatMap(f => Array.isArray(f.img) ? f.img : [f.img]);
@@ -122,7 +149,7 @@ const Amenities = () => {
                         className="slide-media" 
                       />
                     ) : (
-                      <img src={firstImg} alt={feature.alt || `Van Villa - ${typeof feature.name === 'string' ? feature.name : 'Premium Amenity'}`} loading="lazy" decoding="async" className="slide-media" />
+                      <img src={firstImg} alt={feature.alt || `Vann Villa - ${typeof feature.name === 'string' ? feature.name : 'Premium Amenity'}`} loading="lazy" decoding="async" className="slide-media" />
                     )}
                     <div className="slide-overlay"></div>
                     <div className="slide-content">
@@ -132,7 +159,7 @@ const Amenities = () => {
                       </div>
                       <div className="slide-action">
                         <button className="slide-btn" aria-label={`Expand ${typeof feature.name === 'string' ? feature.name : 'amenity'} image`} onClick={(e) => { e.stopPropagation(); openLightbox(firstImg); }}>
-                          <Maximize2 size={20} />
+                          <ExpandIcon />
                         </button>
                       </div>
                     </div>
@@ -159,9 +186,9 @@ const Amenities = () => {
             exit={{ opacity: 0 }}
             onClick={closeLightbox}
           >
-            <button className="lightbox-close" aria-label="Close lightbox" onClick={closeLightbox}><X size={32} /></button>
-            <button className="lightbox-nav prev" aria-label="Previous image" onClick={prevImage}><ChevronLeft size={48} /></button>
-            <button className="lightbox-nav next" aria-label="Next image" onClick={nextImage}><ChevronRight size={48} /></button>
+            <button className="lightbox-close" aria-label="Close lightbox" onClick={closeLightbox}><CloseIcon /></button>
+            <button className="lightbox-nav prev" aria-label="Previous image" onClick={prevImage}><PrevIcon /></button>
+            <button className="lightbox-nav next" aria-label="Next image" onClick={nextImage}><NextIcon /></button>
             
             <motion.div 
               className="lightbox-content"
@@ -176,10 +203,10 @@ const Amenities = () => {
                   autoPlay 
                   loop 
                   controls 
-                  style={{ maxWidth: '100%', maxHeight: '85vh', objectFit: 'contain', boxShadow: 'var(--shadow-xl)' }}
+                  style={{ maxWidth: '100%', maxHeight: '85vh', objectFit: 'contain' }}
                 />
               ) : (
-                <img src={lightboxState.images[lightboxState.index]} alt={`Van Villa amenity — image ${lightboxState.index + 1} of ${lightboxState.images.length}`} />
+                <img src={lightboxState.images[lightboxState.index]} alt={`Vann Villa amenity: image ${lightboxState.index + 1} of ${lightboxState.images.length}`} />
               )}
               <div className="lightbox-counter">
                 {lightboxState.index + 1} / {lightboxState.images.length}

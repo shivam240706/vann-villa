@@ -1,12 +1,12 @@
 .ultra-premium-price-section {
   width: 100%;
-  background-color: #FFFFFF;
-  background-image: radial-gradient(circle at 20% 80%, rgba(6, 78, 59, 0.03) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.03) 0%, transparent 50%);
+  background-color: var(--primary-bg);
+  border-top: 1px solid rgba(89, 9, 7, 0.1);
+  border-bottom: 1px solid rgba(89, 9, 7, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 90px 20px;
+  padding: 80px 20px;
 }
 
 .ultra-premium-price-content {
@@ -19,149 +19,106 @@
 }
 
 .ultra-premium-prefix {
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 13px;
-  color: #666666;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin: 0 0 18px 0;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.editorial-price-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.editorial-old-price {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  opacity: 0.65;
+}
+
+.editorial-curr-price {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--forest-green);
+  line-height: 1;
+}
+
+.editorial-price-unit {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-muted);
   font-weight: 500;
 }
 
-.ultra-premium-amount {
-  font-family: 'Playfair Display', serif;
-  font-size: 72px;
-  font-weight: 700;
-  color: #06162a;
-  line-height: 1.05;
-  margin: 0;
-  letter-spacing: -1px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.currency {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 34px;
-  opacity: 1;
-  margin-right: 6px;
-  margin-top: 8px;
-}
-
 .ultra-premium-suffix {
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 16px;
-  color: #444444;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-muted);
   font-weight: 400; 
-  margin: 10px 0 30px 0;
+  margin: 0 0 28px 0;
+  line-height: 1.5;
 }
 
 /* Trust Signals */
 .price-trust-signals {
   display: flex;
-  gap: 24px;
-  margin-bottom: 35px;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 30px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .trust-signal {
-  display: flex;
-  align-items: center;
-  gap: 6px;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: #555555;
-  font-weight: 400;
-}
-
-.trust-signal svg {
-  color: var(--forest-green, #064E3B);
-}
-
-.ultra-premium-book-btn {
-  background-color: #0F3D2E;
-  border: 1px solid #0F3D2E; 
-  border-radius: 4px;
-  padding: 16px 45px;
-  color: #ffffff;
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.ultra-premium-book-btn:hover {
-  background-color: #09261c; 
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-}
-
-.premium-btn-arrow {
-  color: #ffffff;
-  transition: transform 0.4s ease;
-}
-
-.ultra-premium-book-btn:hover .premium-btn-arrow {
-  transform: translateX(4px);
-}
-
-/* Urgency Text */
-.urgency-text {
-  margin-top: 20px;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: #B8860B;
+  color: var(--text-dark);
   font-weight: 500;
   letter-spacing: 0.5px;
 }
 
+.trust-divider {
+  color: var(--accent-gold);
+}
+
+.ultra-premium-book-btn {
+  padding: 16px 40px;
+  font-size: 0.85rem;
+  letter-spacing: 2.5px;
+}
+
+/* Urgency Text */
+.urgency-text {
+  margin-top: 18px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
 @media (max-width: 768px) {
-  .ultra-premium-price-section {
-    padding: 80px 20px;
+  .editorial-curr-price {
+    font-size: 2.8rem;
   }
   
-  .ultra-premium-amount {
-    font-size: 56px;
+  .editorial-old-price {
+    font-size: 1.4rem;
   }
   
-  .currency {
-    font-size: 26px;
-    margin-top: 6px;
-  }
-  
-  .ultra-premium-prefix {
-    font-size: 12px;
-  }
-  
-  .ultra-premium-suffix {
-    font-size: 14px;
-    margin: 12px 0 25px 0;
-  }
-  
-  .ultra-premium-book-btn {
-    padding: 14px 35px;
-    font-size: 0.9rem;
-  }
-
   .price-trust-signals {
-    gap: 16px;
+    flex-direction: column;
+    gap: 6px;
   }
-
-  .trust-signal {
-    font-size: 0.78rem;
-  }
-
-  .urgency-text {
-    font-size: 0.78rem;
+  
+  .trust-divider {
+    display: none;
   }
 }

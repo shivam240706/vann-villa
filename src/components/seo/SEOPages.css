@@ -1,7 +1,7 @@
 .seo-page-container {
   padding-top: 80px;
   min-height: 80vh;
-  background-color: #faf9f7;
+  background-color: var(--primary-bg, #FAF6F0);
 }
 
 .seo-hero {
@@ -54,10 +54,10 @@
 }
 
 .seo-content-block {
-  background: white;
-  border-radius: 12px;
+  background: var(--bg-light, #FAF6F0);
+  border-radius: 2px;
   padding: 40px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid rgba(165, 167, 155, 0.4);
   margin-bottom: 40px;
 }
 
@@ -67,7 +67,7 @@
   font-size: 2rem;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--accent-gold);
+  border-bottom: 1px solid var(--accent-gold);
 }
 
 .seo-content-block h3 {

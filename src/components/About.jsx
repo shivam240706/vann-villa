@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wifi, ChefHat, ConciergeBell, Dog, Waves, Leaf, ChevronLeft, ChevronRight, X, Bus, Clock, Landmark, GraduationCap, Mountain, Maximize2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
@@ -13,22 +12,41 @@ import AnimatedImage from './AnimatedImage';
 import './About.css';
 import './Gallery.css';
 
+const CloseIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+);
+
+const PrevIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="15 18 9 12 15 6"></polyline>
+  </svg>
+);
+
+const NextIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+);
+
 const facilities = [
-  { icon: Wifi, title: "Free Wi-Fi Access", desc: "High-speed connectivity throughout the property." },
-  { icon: ChefHat, title: "Equipped Kitchen", desc: "Self-catering kitchen with modern appliances." },
-  { icon: ConciergeBell, title: "Personalized Concierge", desc: "Catering to your every need." },
-  { icon: Dog, title: "Pet-Friendly", desc: "Your furry friends are always welcome." },
-  { icon: Waves, title: "Swimming Pool", desc: "A private oasis to unwind." },
-  { icon: Leaf, title: "Lush Green Lawns", desc: "5,000 sq ft of serene nature to explore." }
+  { num: "01", title: "High-Speed Wi-Fi", desc: "Stable high-speed connectivity across the villa grounds." },
+  { num: "02", title: "Equipped Kitchen", desc: "Full self-catering setup with modern cooking appliances." },
+  { num: "03", title: "Estate Concierge", desc: "Attentive personalized hospitality throughout your stay." },
+  { num: "04", title: "Pet-Friendly Grounds", desc: "Safe, enclosed green spaces welcoming your companions." },
+  { num: "05", title: "Private Pool", desc: "Secluded mountain-facing pool exclusively for your group." },
+  { num: "06", title: "5,000 Sq Ft Lawns", desc: "Sprawling private gardens for morning strolls and gatherings." }
 ];
 
 const distances = [
-  { icon: GraduationCap, name: "UPES University", dist: "500 m" },
-  { icon: Landmark, name: "Tapkeshwar Mandir", dist: "15 km" },
-  { icon: Landmark, name: "Badhraj Temple", dist: "15 km" },
-  { icon: Clock, name: "Clock Tower", dist: "17 km" },
-  { icon: Bus, name: "ISBT Bus Stand", dist: "18 km" },
-  { icon: Mountain, name: "Mussoorie", dist: "36 km" }
+  { name: "UPES University", dist: "500 m", note: "Immediate vicinity" },
+  { name: "Tapkeshwar Mandir", dist: "15 km", note: "Historic cave shrine" },
+  { name: "Badhraj Temple", dist: "15 km", note: "Scenic ridge trail" },
+  { name: "Clock Tower", dist: "17 km", note: "Dehradun city center" },
+  { name: "ISBT Bus Stand", dist: "18 km", note: "Interstate transit" },
+  { name: "Mussoorie", dist: "36 km", note: "Queen of the Hills" }
 ];
 
 const GalleryRow = ({ title, images, onImageClick }) => {
@@ -67,7 +85,7 @@ const GalleryRow = ({ title, images, onImageClick }) => {
                 >
                   <AnimatedImage src={imgObj.src} alt={imgObj.alt} loading="lazy" decoding="async" className="gallery-slide-media" />
                   <div className="gallery-overlay">
-                    <span className="expand-icon"><Maximize2 size={18} />Click to expand</span>
+                    <span className="expand-icon">View Fullscreen</span>
                   </div>
                 </div>
               )}
@@ -112,11 +130,11 @@ const About = () => {
   return (
     <div className="about-page">
       <SEO 
-        title="Dehradun's Hidden Gem | About Van Villa"
-        description="Learn more about Van Villa, Dehradun's hidden gem. Discover our luxury facilities, pet-friendly environment, and serene natural surroundings."
+        title="Dehradun's Hidden Gem | About Vann Villa"
+        description="Learn more about Vann Villa, Dehradun's hidden gem. Discover our luxury facilities, pet-friendly environment, and serene natural surroundings."
       />
       {/* Hero Section */}
-      <section className="about-hero" aria-label="About Van Villa">
+      <section className="about-hero" aria-label="About Vann Villa">
         <motion.div 
           className="about-hero-content"
           initial={{ opacity: 0, y: 50 }}
@@ -124,9 +142,9 @@ const About = () => {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <h1 className="massive-title">Dehradun's Hidden Gem</h1>
-          <p className="about-hero-subtitle">The Story of Van Villa</p>
+          <p className="about-hero-subtitle">The Story of Vann Villa</p>
           <p className="about-hero-text">
-            Escape the noise and commotion of the city and lose yourself in the peaceful surroundings of one of the finest villas in Dehradun. Van Villa is a haven of tranquility, nestled in the lap of nature, where you can unwind and recharge your senses. Recognized as Dehradun's hidden villa, our property is a sanctuary for those seeking a premium retreat.
+            Escape the noise and commotion of the city and lose yourself in the peaceful surroundings of one of the finest villas in Dehradun. Vann Villa is a haven of tranquility, nestled in the lap of nature, where you can unwind and recharge your senses. Recognized as Dehradun's hidden villa, our property is a sanctuary for those seeking a premium retreat.
           </p>
           <p className="about-hero-text" style={{ marginTop: '15px' }}>
             Whether you are searching for premium properties in Dehradun for family stays or a pet-friendly villa in Uttarakhand, our state-of-the-art facilities and amenities cater to your every need, ensuring a comfortable and indulgent luxury experience. We built this private villa with a simple vision: to offer a space where guests can reconnect with nature without compromising on modern luxury.
@@ -147,26 +165,20 @@ const About = () => {
         </motion.h2>
         
         <div className="facilities-grid">
-          {facilities.map((fac, idx) => {
-            const Icon = fac.icon;
-            return (
-              <motion.div 
-                key={idx} 
-                className="facility-card"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.2, delay: idx * 0.1 }}
-                whileHover={{ y: -10 }}
-              >
-                <div className="facility-icon">
-                  <Icon size={40} strokeWidth={1.5} />
-                </div>
-                <h3>{fac.title}</h3>
-                <p>{fac.desc}</p>
-              </motion.div>
-            );
-          })}
+          {facilities.map((fac, idx) => (
+            <motion.div 
+              key={idx} 
+              className="facility-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.2, delay: idx * 0.08 }}
+            >
+              <span className="facility-index">{fac.num}</span>
+              <h3>{fac.title}</h3>
+              <p>{fac.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
@@ -181,9 +193,9 @@ const About = () => {
           Gallery
         </motion.h2>
         <GalleryRow 
-          title="Van Villa" 
+          title="Vann Villa" 
           images={[
-            { src: '/images/vann-villa-exterior.webp', alt: 'Van Villa front exterior view' },
+            { src: '/images/vann-villa-exterior.webp', alt: 'Vann Villa front exterior view' },
             { src: '/images/vann-villa-lawn-view.webp', alt: 'Expansive lush green lawn' },
             { src: '/images/vann-villa-estate.webp', alt: 'Beautiful estate view' },
             { src: '/images/vann-villa-exterior-lawn.webp', alt: 'Exterior lawn and garden' },
@@ -239,12 +251,12 @@ const About = () => {
           >
             <div className="faq-grid">
               <div className="faq-item">
-                <h4>1. Where is Van Villa located?</h4>
-                <p><strong>Van Villa is located in Dehradun, Uttarakhand (PIN: 248007).</strong> It is roughly 15 km from Dehradun city centre. Exact location and Google Maps directions are shared upon booking confirmation.</p>
+                <h4>1. Where is Vann Villa located?</h4>
+                <p><strong>Vann Villa is located in Dehradun, Uttarakhand (PIN: 248007).</strong> It is roughly 15 km from Dehradun city centre. Exact location and Google Maps directions are shared upon booking confirmation.</p>
               </div>
               <div className="faq-item">
-                <h4>2. Is Van Villa pet-friendly?</h4>
-                <p><strong>Yes, 100% pet-friendly — with no hidden charges.</strong> Your pets are welcome to roam freely on our 5,000 sq ft of private, fenced lawns. We ask that pets are kept supervised near the pool area for their safety.</p>
+                <h4>2. Is Vann Villa pet-friendly?</h4>
+                <p><strong>Yes, 100% pet-friendly with no hidden charges.</strong> Your pets are welcome to roam freely on our 5,000 sq ft of private, fenced lawns. We ask that pets are kept supervised near the pool area for their safety.</p>
               </div>
               <div className="faq-item">
                 <h4>3. Is food provided? Can we order from Zomato or Swiggy?</h4>
@@ -256,19 +268,19 @@ const About = () => {
               </div>
               <div className="faq-item">
                 <h4>5. What are the check-in and check-out times?</h4>
-                <p><strong>Standard check-in is 2:00 PM and check-out is 11:00 AM.</strong> Early check-in or late check-out may be arranged based on availability — please let us know in advance via WhatsApp. Late-night arrivals are absolutely fine as long as we are notified beforehand.</p>
+                <p><strong>Standard check-in is 2:00 PM and check-out is 11:00 AM.</strong> Early check-in or late check-out may be arranged based on availability: please let us know in advance via WhatsApp. Late-night arrivals are welcome as long as we are notified beforehand.</p>
               </div>
               <div className="faq-item">
                 <h4>6. Is parking available? Is it safe?</h4>
                 <p><strong>Yes, secure on-site parking for up to 3 vehicles is included at no extra cost.</strong> The parking area is within the gated estate and monitored 24/7. It can comfortably accommodate SUVs and sedans.</p>
               </div>
               <div className="faq-item">
-                <h4>7. How far is Van Villa from Delhi?</h4>
-                <p><strong>The villa is approximately 270–300 km from Delhi</strong>, roughly a 5-6 hour drive via NH334 through Roorkee and Haridwar. It is an ideal destination for a Delhi weekend getaway, especially Thursday-to-Sunday bookings.</p>
+                <h4>7. How far is Vann Villa from Delhi?</h4>
+                <p><strong>The villa is approximately 270 to 300 km from Delhi</strong>, roughly a 5-6 hour drive via NH334 through Roorkee and Haridwar. It is an ideal destination for a Delhi weekend getaway, especially Thursday-to-Sunday bookings.</p>
               </div>
               <div className="faq-item">
                 <h4>8. What amenities are included in every booking?</h4>
-                <p><strong>Every booking includes the entire private pool, fully equipped kitchen, high-speed Wi-Fi, secure parking, and all 2 bedrooms.</strong> The villa is privately yours for the duration of your stay — no shared spaces with other guests.</p>
+                <p><strong>Every booking includes the entire private pool, fully equipped kitchen, high-speed Wi-Fi, secure parking, and all bedrooms.</strong> The villa is privately yours for the duration of your stay, with no shared spaces with other guests.</p>
               </div>
             </div>
           </motion.div>
@@ -281,20 +293,17 @@ const About = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="distances-list">
-              {distances.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <div key={idx} className="distance-item">
-                    <div className="distance-icon">
-                      <Icon size={24} color="#FFFFFF" strokeWidth={2} />
-                    </div>
-                    <div className="distance-text">
-                      <h5>{item.name}</h5>
-                      <span>{item.dist}</span>
-                    </div>
+              {distances.map((item, idx) => (
+                <div key={idx} className="distance-item">
+                  <div className="distance-marker">
+                    <span>{idx + 1}</span>
                   </div>
-                );
-              })}
+                  <div className="distance-text">
+                    <h5>{item.name}</h5>
+                    <span>{item.dist} · {item.note}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
           
@@ -305,7 +314,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.3 }}
           >
-            <div className="map-placeholder" style={{ padding: 0, overflow: 'hidden', borderRadius: '12px', border: '2px solid var(--accent-gold)', boxShadow: 'var(--shadow-xl)' }}>
+            <div className="map-placeholder" style={{ padding: 0, overflow: 'hidden', borderRadius: '2px', border: '1px solid var(--accent-gold)' }}>
               <iframe 
                 src="https://maps.google.com/maps?q=30.3765003,77.9633871&z=15&output=embed" 
                 width="100%" 
@@ -314,7 +323,7 @@ const About = () => {
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Van Villa Location"
+                title="Vann Villa Location"
               ></iframe>
             </div>
           </motion.div>
@@ -326,14 +335,14 @@ const About = () => {
         <div className="next-steps-container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <h2 className="next-steps-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', textAlign: 'center', marginBottom: '30px', color: 'var(--accent-gold)' }}>Continue Your Journey</h2>
           <div className="next-steps-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
-            <Link to="/experience" className="next-step-card" style={{ height: '350px', borderRadius: '12px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-end', textDecoration: 'none', color: 'var(--text-light)', boxShadow: 'var(--shadow-md)' }}>
+            <Link to="/experience" className="next-step-card" style={{ height: '350px', borderRadius: '2px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-end', textDecoration: 'none', color: 'var(--text-light)', border: '1px solid rgba(232, 210, 181, 0.3)' }}>
               <div className="next-step-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center', '--mobile-bg': 'url("/images/vann-villa-outdoor-seating.webp")', '--desktop-bg': 'url("/images/vann-villa-exterior.webp")', zIndex: 1 }}></div>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))', zIndex: 2 }}></div>
               <div style={{ position: 'relative', zIndex: 3, padding: '20px', width: '100%' }}>
                 <span className="next-step-btn" style={{ color: 'var(--accent-gold)', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.85rem' }}>Read our Local Guide &rarr;</span>
               </div>
             </Link>
-            <Link to="/contact" className="next-step-card" style={{ height: '350px', borderRadius: '12px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-end', textDecoration: 'none', color: 'var(--text-light)', boxShadow: 'var(--shadow-md)' }}>
+            <Link to="/contact" className="next-step-card" style={{ height: '350px', borderRadius: '2px', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-end', textDecoration: 'none', color: 'var(--text-light)', border: '1px solid rgba(232, 210, 181, 0.3)' }}>
               <div className="next-step-bg" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center', '--mobile-bg': 'url("/images/vann-villa-master-bedroom.webp")', '--desktop-bg': 'url("/images/vann-villa-rooftop-view.webp")', zIndex: 1 }}></div>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))', zIndex: 2 }}></div>
               <div style={{ position: 'relative', zIndex: 3, padding: '20px', width: '100%' }}>
@@ -357,9 +366,9 @@ const About = () => {
             exit={{ opacity: 0 }}
             onClick={closeLightbox}
           >
-            <button className="lightbox-close" aria-label="Close lightbox" onClick={closeLightbox}><X size={32} /></button>
-            <button className="lightbox-nav prev" aria-label="Previous image" onClick={prevImage}><ChevronLeft size={48} /></button>
-            <button className="lightbox-nav next" aria-label="Next image" onClick={nextImage}><ChevronRight size={48} /></button>
+            <button className="lightbox-close" aria-label="Close lightbox" onClick={closeLightbox}><CloseIcon /></button>
+            <button className="lightbox-nav prev" aria-label="Previous image" onClick={prevImage}><PrevIcon /></button>
+            <button className="lightbox-nav next" aria-label="Next image" onClick={nextImage}><NextIcon /></button>
             
             <motion.div 
               className="lightbox-content"

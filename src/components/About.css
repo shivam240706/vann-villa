@@ -71,33 +71,27 @@
 
 .facility-card {
   background-color: var(--primary-bg);
-  padding: 40px 30px;
-  border-radius: 4px;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-slow);
-  border: 1px solid rgba(0,0,0,0.02);
+  padding: 35px 25px;
+  border-radius: 2px;
+  text-align: left;
+  border: 1px solid rgba(165, 167, 155, 0.4);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  cursor: pointer;
+  align-items: flex-start;
+  transition: border-color 0.25s ease;
 }
 
 .facility-card:hover {
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent-gold);
-  transform: translateY(-5px);
+  border-color: var(--forest-green);
 }
 
-.facility-icon {
-  color: var(--accent-gold);
-  margin-bottom: 20px;
-  transition: var(--transition-fast);
-}
-
-.facility-card:hover .facility-icon {
-  transform: scale(1.1);
+.facility-index {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
   color: var(--forest-green);
+  margin-bottom: 12px;
+  display: block;
+  letter-spacing: 1px;
 }
 
 .facility-card h3 {
@@ -177,16 +171,20 @@
   gap: 15px;
 }
 
-.distance-icon {
-  width: 50px;
-  height: 50px;
-  background-color: #f97316; /* Bright orange like the screenshot */
-  border-radius: 50%;
+.distance-marker {
+  width: 36px;
+  height: 36px;
+  background-color: var(--forest-green);
+  border: 1px solid var(--accent-gold);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .distance-text h5 {

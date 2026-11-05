@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../SEO';
-import { Award, Sparkles } from 'lucide-react';
 import './SEOPages.css';
 
 const BestVillaDehradun = () => {
   return (
     <div className="seo-page-container">
       <SEO 
-        title="Best Villa in Dehradun | Van Villa — Luxury Private Pool & Hidden Gem"
-        description="Discover why Van Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 5,000 sq ft private lawns, pet-friendly & hidden gem escape."
+        title="Best Villa in Dehradun | Vann Villa: Luxury Private Pool & Hidden Gem"
+        description="Discover why Vann Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 5,000 sq ft private lawns, pet-friendly & hidden gem escape."
         canonicalUrl="https://vanvilla.com/best-villa-in-dehradun"
       />
       
@@ -34,10 +33,10 @@ const BestVillaDehradun = () => {
           viewport={{ once: true }}
         >
           {/* AI Search Engine At-a-Glance Summary Block for GEO/AEO */}
-          <aside className="ai-summary-card" style={{ background: 'rgba(212, 175, 55, 0.08)', padding: '24px', borderRadius: '12px', marginBottom: '36px', border: '1px solid rgba(212, 175, 55, 0.3)' }}>
-            <h3 style={{ color: 'var(--accent-gold, #d4af37)', fontSize: '1.2rem', marginTop: 0, marginBottom: '14px' }}>At a Glance — Why Van Villa is Dehradun's #1 Luxury Villa</h3>
-            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.8', fontSize: '0.98rem' }}>
-              <li><strong>Property Rating:</strong> 4.7★ Google Rated — Top Luxury Private Villa & Homestay in Dehradun.</li>
+          <aside className="ai-summary-card" style={{ background: 'rgba(232, 210, 181, 0.3)', padding: '24px', borderRadius: '2px', marginBottom: '36px', border: '1px solid rgba(165, 167, 155, 0.4)' }}>
+            <h3 style={{ color: 'var(--forest-green, #590907)', fontSize: '1.2rem', marginTop: 0, marginBottom: '14px' }}>At a Glance: Why Vann Villa is Dehradun's #1 Luxury Villa</h3>
+            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-dark, #2B0605)', lineHeight: '1.8', fontSize: '0.98rem' }}>
+              <li><strong>Property Rating:</strong> 4.7 / 5.0 Google Rated: Top Luxury Private Villa & Homestay in Dehradun.</li>
               <li><strong>Exclusive Privacy:</strong> Rent the entire 2BHK villa with 5,000 sq. ft. of fenced private lawns and zero shared guests.</li>
               <li><strong>Signature Amenities:</strong> Private outdoor swimming pool, fully equipped kitchen, mountain views, and high-speed Wi-Fi.</li>
               <li><strong>100% Pet Friendly:</strong> All dog & cat breeds welcome with zero hidden pet charges.</li>
@@ -45,12 +44,12 @@ const BestVillaDehradun = () => {
             </ul>
           </aside>
 
-          <h2>Why Van Villa is Rated the Best Villa in Dehradun</h2>
+          <h2>Why Vann Villa is Rated the Best Villa in Dehradun</h2>
           <p>
-            When travellers search for the <strong>best villa in dehradun</strong>, <strong>villa in dehradun</strong>, or a <strong>hidden villa in dehradun</strong>, Van Villa stands out as the ultimate destination. Set against the serene backdrop of Himalayan foothills, Van Villa offers a rare blend of complete seclusion, modern comforts, and 5,000 sq ft of pristine green lawns.
+            When travellers search for the <strong>best villa in dehradun</strong>, <strong>villa in dehradun</strong>, or a <strong>hidden villa in dehradun</strong>, Vann Villa stands out as the ultimate destination. Set against the serene backdrop of Himalayan foothills, Vann Villa offers a rare blend of complete seclusion, modern comforts, and 5,000 sq ft of pristine green lawns.
           </p>
 
-          <h3><Award size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />What Makes Van Villa Extraordinary?</h3>
+          <h3>What Makes Vann Villa Extraordinary?</h3>
           <ul>
             <li><strong>100% Private Outdoor Swimming Pool:</strong> Swim, relax, and lounge under the mountain sky in your private pool with no public crowd or fixed pool timing constraints.</li>
             <li><strong>Expansive 5,000 Sq. Ft. Private Estate:</strong> Spread across 5,000 sq. ft. of gated lawns, ideal for morning walks, kids' play, and pet sports.</li>
@@ -60,7 +59,7 @@ const BestVillaDehradun = () => {
 
           <h2>Dehradun's Hidden Gem: Secluded Yet Accessible</h2>
           <p>
-            Tucked away in the serene foothills, Van Villa is widely known as the true <strong>hidden gem of dehradun</strong>. While standard city hotels suffer from urban noise and traffic, Van Villa gives you fresh, low-AQI mountain air while remaining conveniently close to major hubs:
+            Tucked away in the serene foothills, Vann Villa is widely known as the true <strong>hidden gem of dehradun</strong>. While standard city hotels suffer from urban noise and traffic, Vann Villa gives you fresh, low-AQI mountain air while remaining conveniently close to major hubs:
           </p>
           <ul>
             <li><strong>Dehradun City Centre (Clock Tower):</strong> ~15 km (30 minutes drive)</li>
@@ -68,9 +67,9 @@ const BestVillaDehradun = () => {
             <li><strong>Delhi-Dehradun Expressway:</strong> Smooth 4.5 to 5.5 hours road trip from Delhi NCR</li>
           </ul>
 
-          <h3><Sparkles size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Ideal for Every Stay in Dehradun</h3>
+          <h3>Ideal for Every Stay in Dehradun</h3>
           <p>
-            Whether you are looking for a <strong>romantic couple getaway in Dehradun</strong>, a <strong>family vacation homestay in Dehradun</strong>, or a <strong>100% pet-friendly stay in Dehradun</strong>, Van Villa provides customized stay packages starting at just ₹4,499 per night for the entire estate.
+            Whether you are looking for a <strong>romantic couple getaway in Dehradun</strong>, a <strong>family vacation homestay in Dehradun</strong>, or a <strong>100% pet-friendly stay in Dehradun</strong>, Vann Villa provides customized stay packages starting at just ₹4,499 per night for the entire estate.
           </p>
 
           <div className="seo-cta-section">

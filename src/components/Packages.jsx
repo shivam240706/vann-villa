@@ -1,174 +1,143 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Heart, Users, Sparkles } from 'lucide-react';
-import './Packages.css';
-import KatanaStrikePrice from './KatanaStrikePrice';
 import { Link } from 'react-router-dom';
-import TiltCard from './TiltCard';
+import './Packages.css';
 
-const packageData = [
+const stayOptions = [
   {
-    id: 'pool-escape',
-    title: 'Private Pool Escape',
-    tagline: 'The entire property is yours — private pool, 5,000 sq ft lawns, and all.',
-    price: <KatanaStrikePrice oldPrice="₹8,999" newPrice="₹4,499" color="#b8860b" size="0.7em" newSize="1em" />,
-    unit: '/night',
-    icon: Sparkles,
-    bestFor: 'Up to 4 Guests',
-    link: '/pet-friendly-villa-dehradun',
-    linkText: 'See full pet-friendly stay details →',
-    features: [
-      'Entire 2BHK Private Villa',
-      '₹500 per extra person (if > 4 guests)',
-      'Exclusive Access to Swimming Pool',
-      'Fully Equipped Kitchen',
-      'High-Speed Wi-Fi & Smart TV'
+    id: 'estate-stay',
+    title: 'The Entire Estate Reservation',
+    subtitle: 'Exclusive private reservation of the 2BHK villa, pool, and 5,000 sq ft grounds',
+    oldPrice: '₹8,999',
+    price: '₹4,499',
+    unit: 'per night',
+    capacity: 'Base 4 Guests · Max 6',
+    inclusions: [
+      'Complete private access to the entire 2BHK luxury residence',
+      'Exclusive private swimming pool with zero shared guests',
+      '5,000 sq ft of securely fenced private green lawns',
+      'Fully equipped chef kitchen for self-cooking or catering',
+      'High-speed Wi-Fi, smart entertainment, and 24/7 power backup'
     ],
-    recommended: true,
+    note: '₹500 per extra guest beyond 4. 100% pet-friendly with zero pet fees.',
+    link: '/pet-friendly-villa-dehradun',
+    linkText: 'Explore pet-friendly stay details',
+    primary: true
   },
   {
     id: 'romantic-stay',
-    title: 'Romantic 2-Night Stay',
-    tagline: 'Two nights of uninterrupted stillness, private pool access, and a sky full of stars.',
-    price: <KatanaStrikePrice oldPrice="₹17,998" newPrice="₹8,998" color="#b8860b" size="0.7em" newSize="1em" />,
-    unit: 'total',
-    icon: Heart,
-    bestFor: 'Couples',
-    link: '/couple-getaway-dehradun',
-    linkText: 'See full romantic getaway details →',
-    features: [
-      '2 Nights in Luxury Master Suite',
-      'Late Check-out (Subject to Availability)',
-      'Exclusive Access to Swimming Pool',
-      'High-Speed Wi-Fi & Smart TV'
+    title: 'Romantic Couple Retreat',
+    subtitle: 'Two nights of mountain stillness and private poolside seclusion',
+    oldPrice: '₹17,998',
+    price: '₹8,998',
+    unit: '2 nights total',
+    capacity: 'Reserved for 2 Guests',
+    inclusions: [
+      '2 nights in the luxury master bedroom suite',
+      'Exclusive unshared swimming pool and starlit terrace access',
+      'Flexible check-in and late check-out subject to schedule',
+      'Fully equipped kitchen for private candlelight dining'
     ],
-    recommended: false,
+    note: 'Ideal for anniversaries, birthdays, and private celebrations.',
+    link: '/couple-getaway-dehradun',
+    linkText: 'Explore couple retreat details',
+    primary: false
   },
   {
-    id: 'family-getaway',
-    title: 'Family Villa Getaway',
-    tagline: 'Space for everyone: 5,000 sq ft of private grounds, a private pool, and a kitchen on your terms.',
-    price: <KatanaStrikePrice oldPrice="₹10,999" newPrice="₹5,499" color="#b8860b" size="0.7em" newSize="1em" />,
-    unit: '/night',
-    icon: Users,
-    bestFor: 'Families (up to 6 Guests)',
-    link: '/family-villa-dehradun',
-    linkText: 'See full family getaway details →',
-    features: [
-      'Entire 2BHK Villa',
-      'Extra Mattresses Provided',
-      'Fully Equipped Kitchen for Cooking',
-      'Pet-Friendly Access to Lawns',
-      'Exclusive Access to Swimming Pool',
-      'High-Speed Wi-Fi & Smart TV'
+    id: 'family-stay',
+    title: 'Family Mountain Getaway',
+    subtitle: 'Spacious multi-guest living surrounded by Himalayan pine foothills',
+    oldPrice: '₹10,999',
+    price: '₹5,499',
+    unit: 'per night',
+    capacity: 'Up to 6 Guests',
+    inclusions: [
+      'Two spacious bedrooms with comfortable additional bedding',
+      'Expansive secure grounds for children and pets to run freely',
+      'Complete kitchen setup with cookware, refrigerator, and gas stove',
+      'Secure on-site gated parking for multiple vehicles'
     ],
-    recommended: false,
+    note: 'All dog and cat breeds welcome with no pet restrictions.',
+    link: '/family-villa-dehradun',
+    linkText: 'Explore family getaway details',
+    primary: false
   }
 ];
 
 const Packages = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.2, ease: "easeOut" }
-    }
-  };
-
-  const handleBook = (pkgTitle) => {
-    const text = `Hi, I am interested in booking the "${pkgTitle}" package at Van Villa. Please share availability.`;
+  const handleInquire = (stayTitle) => {
+    const text = `Hi, I am interested in reserving "${stayTitle}" at Vann Villa. Please share current availability.`;
     window.open(`https://wa.me/919411770969?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
-    <section id="packages" className="packages-section section-padding" aria-label="Our Booking Packages">
+    <section id="packages" className="packages-section section-padding" aria-label="Estate Rates and Stays">
       <div className="packages-container">
         <motion.div 
           className="section-header text-center"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.3 }}
         >
-          <h2 className="section-title">Choose Your Experience</h2>
-          <p className="section-subtitle">Select the perfect luxury package for your stay in Dehradun</p>
+          <p className="section-subtitle">Estate Reservation & Rates</p>
+          <h2 className="section-title">Private Villa Stays</h2>
+          <p className="estate-rates-intro">
+            Vann Villa is rented strictly as an exclusive private estate. Every reservation guarantees 100% privacy with no other guests on the property.
+          </p>
         </motion.div>
 
-        <motion.div 
-          className="packages-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {packageData.map((pkg) => {
-            const Icon = pkg.icon;
-            return (
-              <TiltCard 
-                key={pkg.id} 
-                className={`package-card ${pkg.recommended ? 'recommended' : ''}`}
-                variants={itemVariants}
-                scale={pkg.recommended && window.innerWidth > 992 ? 1.05 : 1}
-              >
-                {pkg.recommended && <div className="recommended-badge">Most Popular</div>}
+        <div className="estate-stays-grid">
+          {stayOptions.map((stay, idx) => (
+            <motion.article 
+              key={stay.id} 
+              className={`estate-stay-card ${stay.primary ? 'estate-primary-card' : ''}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.25, delay: idx * 0.1 }}
+            >
+              <div className="stay-card-header">
+                <span className="stay-capacity">{stay.capacity}</span>
+                <h3 className="stay-title">{stay.title}</h3>
+                <p className="stay-subtitle">{stay.subtitle}</p>
                 
-                <div className="package-header">
-                  <div className="package-icon">
-                    <Icon size={28} />
-                  </div>
-                  <span className="best-for">Best For: {pkg.bestFor}</span>
-                  <h3 className="package-title">{pkg.title}</h3>
-                  {pkg.tagline && <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.5', marginTop: '6px', marginBottom: '8px', fontStyle: 'italic' }}>{pkg.tagline}</p>}
-                  <span className="package-price-prefix">Starting at just</span>
-                  <div className="package-price-wrap">
-                    <span className="package-price">{pkg.price}</span>
-                    <span className="package-unit">{pkg.unit}</span>
-                  </div>
+                <div className="stay-pricing">
+                  <span className="stay-rate-label">Rate:</span>
+                  <del className="stay-old-price">{stay.oldPrice}</del>
+                  <strong className="stay-price">{stay.price}</strong>
+                  <span className="stay-unit">{stay.unit}</span>
                 </div>
+              </div>
 
-                <div className="package-body">
-                  <ul className="package-features">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx}>
-                        <CheckCircle2 size={18} className="feature-check" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="stay-card-body">
+                <h4 className="stay-inclusions-label">Estate Inclusions:</h4>
+                <ul className="stay-inclusions-list">
+                  {stay.inclusions.map((item, itemIdx) => (
+                    <li key={itemIdx}>
+                      <span className="stay-bullet" aria-hidden="true">/</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                {stay.note && <p className="stay-note">{stay.note}</p>}
+              </div>
 
-                <div className="package-footer">
-                  {pkg.link && (
-                    <Link 
-                      to={pkg.link} 
-                      className="package-deep-link" 
-                      style={{ display: 'block', textAlign: 'center', marginBottom: '15px', color: 'var(--accent-gold)', fontWeight: '500', textDecoration: 'none', fontSize: '0.9rem', letterSpacing: '0.5px' }}
-                    >
-                      {pkg.linkText}
-                    </Link>
-                  )}
-                  <button 
-                    className={`btn-primary package-btn ${pkg.recommended ? 'pulse-glow' : ''}`}
-                    onClick={() => handleBook(pkg.title)}
-                  >
-                    Check Availability via WhatsApp
-                  </button>
-                </div>
-              </TiltCard>
-            );
-          })}
-        </motion.div>
+              <div className="stay-card-footer">
+                <Link to={stay.link} className="stay-deep-link">
+                  {stay.linkText}
+                </Link>
+                <button 
+                  type="button"
+                  className="btn-primary stay-inquire-btn"
+                  onClick={() => handleInquire(stay.title)}
+                >
+                  Inquire via WhatsApp
+                </button>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );

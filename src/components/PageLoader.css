@@ -2,7 +2,7 @@
 .page-loader {
   position: fixed;
   inset: 0;
-  background-color: var(--text-dark, #022C22);
+  background-color: var(--text-dark, #2B0605);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@
   font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--accent-gold, #B8860B);
+  color: var(--accent-gold, #A5A79B);
   margin-bottom: 25px;
   animation: pulseBrand 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -37,13 +37,13 @@
   left: 0;
   height: 100%;
   width: 40%;
-  background-color: var(--accent-gold, #B8860B);
+  background-color: var(--forest-green, #590907);
   animation: loadingSlide 1.5s infinite ease-in-out;
 }
 
 @keyframes pulseBrand {
   0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; text-shadow: 0 0 20px rgba(184, 134, 11, 0.3); }
+  50% { opacity: 1; text-shadow: 0 0 20px rgba(165, 167, 155, 0.3); }
 }
 
 @keyframes loadingSlide {

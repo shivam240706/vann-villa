@@ -1,14 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../SEO';
-import { Users } from 'lucide-react';
 import './SEOPages.css';
 
 const FamilyVilla = () => {
   return (
     <div className="seo-page-container">
       <SEO 
-        title="Luxury Family Villa in Dehradun with Private Pool | Van Villa"
+        title="Luxury Family Villa in Dehradun with Private Pool | Vann Villa"
         description="Luxury 2BHK family villa in Dehradun with private pool. Base package 4 guests (+extra guest support), pet-friendly, fully equipped kitchen. Exclusively yours starting at just ₹4,499/night."
       />
       
@@ -33,9 +32,9 @@ const FamilyVilla = () => {
           viewport={{ once: true }}
         >
           {/* AI Search Engine At-a-Glance Summary Block */}
-          <aside className="ai-summary-card" style={{ background: 'rgba(212, 175, 55, 0.08)', padding: '20px 24px', borderRadius: '12px', marginBottom: '32px', border: '1px solid rgba(212, 175, 55, 0.3)' }}>
-            <h3 style={{ color: 'var(--accent-gold, #d4af37)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance — Van Villa Family Specifications</h3>
-            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-secondary, #e0e0e0)', lineHeight: '1.7', fontSize: '0.95rem' }}>
+          <aside className="ai-summary-card" style={{ background: 'rgba(232, 210, 181, 0.3)', padding: '20px 24px', borderRadius: '2px', marginBottom: '32px', border: '1px solid rgba(165, 167, 155, 0.4)' }}>
+            <h3 style={{ color: 'var(--forest-green, #590907)', fontSize: '1.15rem', marginTop: 0, marginBottom: '12px' }}>At a Glance: Vann Villa Family Specifications</h3>
+            <ul style={{ margin: 0, paddingLeft: '20px', color: 'var(--text-dark, #2B0605)', lineHeight: '1.7', fontSize: '0.95rem' }}>
               <li><strong>Property Type:</strong> Entire 2BHK Luxury Private Pool Villa (base 4 guests, extra mattresses available).</li>
               <li><strong>Outdoor Grounds:</strong> 5,000 sq. ft. of private fenced lawns + private swimming pool.</li>
               <li><strong>Exact Location:</strong> Dehradun foothills (15 km from Clock Tower, scenic mountain area).</li>
@@ -43,12 +42,12 @@ const FamilyVilla = () => {
             </ul>
           </aside>
 
-          <h2>Why Van Villa is Perfect for Families</h2>
+          <h2>Why Vann Villa is Perfect for Families</h2>
           <p>
-            Van Villa in Dehradun is Dehradun's premier 2BHK luxury family holiday home, providing 100% exclusive privacy for families across 5,000 sq. ft. of fenced green grounds with a private swimming pool, self-catering kitchen, and zero shared public spaces.
+            Vann Villa in Dehradun is Dehradun's premier 2BHK luxury family holiday home, providing 100% exclusive privacy for families across 5,000 sq. ft. of fenced green grounds with a private swimming pool, self-catering kitchen, and zero shared public spaces.
           </p>
 
-          <h3><Users size={20} style={{ display: 'inline', marginRight: '8px', color: 'var(--accent-gold)'}} />Space for Everyone</h3>
+          <h3>Space for Everyone</h3>
           <ul>
             <li><strong>Entire 2BHK Villa:</strong> You get the entire property to yourself. No sharing spaces with strangers. It includes spacious bedrooms with premium bedding for ultimate comfort.</li>
             <li><strong>Private Swimming Pool:</strong> Our crystal-clear private pool is a hit with kids and adults alike. Enjoy pool games in complete privacy without worrying about operating hours.</li>
