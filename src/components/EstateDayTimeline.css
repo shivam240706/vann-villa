@@ -299,5 +299,26 @@
   .moment-stage-card {
     padding: 18px 16px;
   }
+
+  .timeline-heading {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .timeline-subheading {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .moment-title {
+    font-size: 1.35rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .moment-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
 }
 

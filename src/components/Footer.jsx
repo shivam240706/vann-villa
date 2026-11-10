@@ -52,8 +52,8 @@ const Footer = () => {
         <div className="footer-top-row">
           <div className="footer-col footer-brand">
             <div className="footer-brand-header">
-              <img src="/images/vann-villa-logo.webp" alt="Van Villa Logo" className="footer-logo-img" width="52" height="52" loading="lazy" />
-              <h2>Van Villa</h2>
+              <img src="/images/vann-villa-logo.webp" alt="Vann Villa Logo" className="footer-logo-img" width="52" height="52" loading="lazy" />
+              <h2>Vann Villa</h2>
             </div>
             <p>Your sanctuary in the lap of nature.</p>
             <div className="footer-social">

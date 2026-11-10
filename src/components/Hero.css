@@ -274,8 +274,10 @@
   }
 
   .hero-title {
-    font-size: clamp(2rem, 7.5vw, 2.7rem);
-    margin-bottom: 12px;
+    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
   }
 
   .hero-narrative {

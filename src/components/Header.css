@@ -224,7 +224,16 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  z-index: 1005;
+  z-index: 1002;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Hide the hamburger button completely when the drawer is open to prevent overlapping with the close button */
+.header.menu-open .mobile-menu-toggle {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  display: none !important;
 }
 
 .toggle-line {
@@ -243,7 +252,7 @@
   width: 100%;
   height: 100vh;
   background-color: #2B0605;
-  z-index: 1004;
+  z-index: 2500; /* Higher than fixed header to ensure pristine containment */
   display: flex;
   flex-direction: column;
   padding: 24px 28px 40px;
@@ -322,11 +331,11 @@
 
 .mobile-link {
   font-family: var(--font-heading);
-  font-size: 1.65rem;
+  font-size: 1.35rem;
   color: #FFFFFF;
   text-decoration: none;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   transition: color 0.2s ease;
   display: inline-block;
 }
@@ -452,6 +461,6 @@
   }
 
   .mobile-link {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
   }
 }

@@ -235,10 +235,16 @@
   }
 
   .stay-title {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
   }
 
   .stay-price {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
+  }
+
+  .stay-description {
+    font-size: 0.84rem;
+    margin-bottom: 14px;
   }
 }

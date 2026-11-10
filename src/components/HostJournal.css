@@ -252,5 +252,25 @@
   .host-journal-section {
     padding: 60px 16px 50px;
   }
+
+  .journal-heading {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .journal-subheading {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .detail-title {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .detail-snippet {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
 }
 

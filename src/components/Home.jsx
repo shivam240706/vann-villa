@@ -23,7 +23,7 @@ import ParallaxDivider from './ParallaxDivider';
 
 const Home = () => {
   return (
-    <main>
+    <main className="home-main-wrapper" style={{ paddingBottom: '70px' }}>
       <SEO 
         title="Best Villa in Dehradun | Vann Villa: Luxury Private Pool & Hidden Gem Stay"
         description="Looking for the best villa in Dehradun? Vann Villa is a 5-star rated luxury 2BHK private pool homestay & hidden gem set across 5,000 sq ft of private lawns."

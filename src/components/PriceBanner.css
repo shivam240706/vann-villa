@@ -1,12 +1,12 @@
 .ultra-premium-price-section {
   width: 100%;
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg, #FAF6F0);
   border-top: 1px solid rgba(89, 9, 7, 0.1);
   border-bottom: 1px solid rgba(89, 9, 7, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 20px;
+  padding: 70px 20px;
 }
 
 .ultra-premium-price-content {
@@ -20,11 +20,11 @@
 
 .ultra-premium-prefix {
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.76rem;
+  color: var(--deep-burgundy, #590907);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   font-weight: 600;
 }
 
@@ -33,38 +33,40 @@
   align-items: baseline;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .editorial-old-price {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
-  color: var(--text-muted);
+  font-size: 1.6rem;
+  color: var(--text-muted, #555750);
   opacity: 0.65;
+  text-decoration: line-through;
 }
 
 .editorial-curr-price {
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 3.4rem;
   font-weight: 600;
-  color: var(--forest-green);
+  color: var(--deep-burgundy, #590907);
   line-height: 1;
 }
 
 .editorial-price-unit {
   font-family: var(--font-body);
-  font-size: 1.1rem;
-  color: var(--text-muted);
+  font-size: 1rem;
+  color: var(--text-muted, #555750);
   font-weight: 500;
 }
 
 .ultra-premium-suffix {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  font-size: 0.9rem;
+  color: var(--text-muted, #555750);
   font-weight: 400; 
-  margin: 0 0 28px 0;
-  line-height: 1.5;
+  margin: 0 0 24px 0;
+  line-height: 1.55;
+  max-width: 620px;
 }
 
 /* Trust Signals */
@@ -72,53 +74,79 @@
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .trust-signal {
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: var(--text-dark);
+  font-size: 0.82rem;
+  color: var(--text-dark, #2B0605);
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 .trust-divider {
-  color: var(--accent-gold);
+  color: var(--muted-sage, #A5A79B);
 }
 
 .ultra-premium-book-btn {
-  padding: 16px 40px;
-  font-size: 0.85rem;
-  letter-spacing: 2.5px;
+  padding: 14px 36px;
+  font-size: 0.84rem;
+  letter-spacing: 2px;
+  min-height: 48px;
 }
 
 /* Urgency Text */
 .urgency-text {
-  margin-top: 18px;
+  margin-top: 14px;
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  letter-spacing: 0.5px;
+  font-size: 0.78rem;
+  color: var(--text-muted, #555750);
+  letter-spacing: 0.3px;
 }
 
 @media (max-width: 768px) {
+  .ultra-premium-price-section {
+    padding: 44px 16px 40px;
+  }
+
   .editorial-curr-price {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
   
   .editorial-old-price {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
+  }
+
+  .editorial-price-unit {
+    font-size: 0.88rem;
+  }
+
+  .ultra-premium-prefix {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .ultra-premium-suffix {
+    font-size: 0.84rem;
+    padding: 0 8px;
+    margin-bottom: 18px;
   }
   
   .price-trust-signals {
     flex-direction: column;
     gap: 6px;
+    margin-bottom: 20px;
   }
   
   .trust-divider {
     display: none;
+  }
+
+  .ultra-premium-book-btn {
+    width: 100%;
+    padding: 12px 20px;
   }
 }

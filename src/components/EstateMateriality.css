@@ -175,5 +175,19 @@
     scroll-snap-align: center;
     padding: 22px 18px;
   }
+
+  .materiality-heading {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .materiality-subheading {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .mat-name {
+    font-size: 1.25rem;
+  }
 }
 

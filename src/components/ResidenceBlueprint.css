@@ -324,5 +324,24 @@
     grid-template-columns: 1fr;
     gap: 10px;
   }
+
+  .blueprint-heading {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .blueprint-subheading {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .info-title {
+    font-size: 1.35rem;
+  }
+
+  .info-tagline {
+    font-size: 0.88rem;
+    margin-bottom: 18px;
+  }
 }
 
