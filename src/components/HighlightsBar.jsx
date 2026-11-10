@@ -55,32 +55,32 @@ const features = [
   {
     icon: <PoolIcon />,
     title: "Unshared Private Pool",
-    desc: "100% private to your booking. Filtered daily with mountain freshwater."
+    desc: "100% private to your booking with fresh mountain water."
   },
   {
     icon: <LawnIcon />,
     title: "5,000 Sq Ft Lawn",
-    desc: "A wide private green lawn with pine trees, safe for children and outdoor meals."
+    desc: "Expansive green lawn with pine trees and outdoor seating."
   },
   {
     icon: <PawIcon />,
     title: "100% Pet Friendly",
-    desc: "Fully fenced property boundary so pets can play off-leash safely."
+    desc: "Secure fenced perimeter so pets can play off-leash safely."
   },
   {
     icon: <VillaIcon />,
-    title: "Entire 2BHK Villa",
-    desc: "Two master suites, private bathrooms, living lounge, and dining area."
+    title: "Entire 2BHK Residence",
+    desc: "Two master suites, private balconies, and living lounge."
   },
   {
     icon: <KitchenIcon />,
-    title: "Self-Catering Kitchen",
-    desc: "Equipped with refrigerator, microwave, induction, RO water, and cookware."
+    title: "Chef & Self-Cook Kitchen",
+    desc: "Refrigerator, microwave, induction, RO water, and cookware."
   },
   {
     icon: <MountainIcon />,
-    title: "Foothill Views & Bonfire",
-    desc: "Fresh mountain air, peaceful forest surroundings, and evening bonfire setup."
+    title: "Bonfire & Rooftop Vistas",
+    desc: "Foothill views, starry skies, and open stone fire pit setup."
   }
 ];
 
@@ -89,12 +89,8 @@ const HighlightsBar = () => {
     <section className="highlights-section" id="highlights" aria-label="Key Highlights of Vann Villa">
       <div className="highlights-container">
         <div className="highlights-intro">
-          <span className="highlights-tag">Why Vann Villa</span>
-          <h2 className="highlights-title">An Authentic Mountain Sanctuary</h2>
-          <p className="highlights-desc">
-            Unlike commercial resorts or shared homestays, Vann Villa is reserved exclusively for one family or gathering at a time.
-            The entire 5,000 sq ft property and swimming pool are 100% yours.
-          </p>
+          <span className="highlights-tag">Estate Highlights</span>
+          <h2 className="highlights-title">Every Feature, Exclusively Yours</h2>
         </div>
 
         <div className="highlights-grid">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from './Hero';
+import ReservationBar from './ReservationBar';
 import HighlightsBar from './HighlightsBar';
 import Gallery from './Gallery';
 import ResidenceBlueprint from './ResidenceBlueprint';
@@ -19,6 +20,7 @@ const Home = () => {
         description="Vann Villa is a private 2BHK luxury pool villa set across 5,000 sq ft of private lawn in Dehradun foothills. 100% unshared privacy for families, couples, and pets."
       />
       <Hero />
+      <ReservationBar />
       <HighlightsBar />
       <Gallery />
       <ResidenceBlueprint />

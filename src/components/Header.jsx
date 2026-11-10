@@ -198,6 +198,14 @@ const Header = () => {
             Rates
           </a>
 
+          <a 
+            href="#reviews" 
+            onClick={(e) => handleSectionScroll(e, 'reviews')}
+            className="desktop-nav-link"
+          >
+            Reviews
+          </a>
+
           <Link 
             to="/contact" 
             className={`desktop-nav-link ${isActive('/contact') ? 'active' : ''}`}
@@ -332,10 +340,21 @@ const Header = () => {
             </a>
           </div>
 
+          <div className="mobile-nav-item">
+            <span className="nav-index">06</span>
+            <a 
+              href="#reviews" 
+              onClick={(e) => handleSectionScroll(e, 'reviews')} 
+              className="mobile-link"
+            >
+              Google Reviews
+            </a>
+          </div>
+
           {/* Mobile Policies Accordion */}
           <div className={`mobile-nav-item mobile-policies-group ${policiesOpen ? 'expanded' : ''}`}>
             <div className="policies-trigger-row" onClick={togglePolicies}>
-              <span className="nav-index">06</span>
+              <span className="nav-index">07</span>
               <button 
                 type="button" 
                 className="mobile-link policies-btn"
@@ -356,7 +375,7 @@ const Header = () => {
           </div>
 
           <div className="mobile-nav-item">
-            <span className="nav-index">07</span>
+            <span className="nav-index">08</span>
             <Link to="/contact" onClick={closeMenu} className="mobile-link">
               Contact & Location
             </Link>

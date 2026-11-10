@@ -6,15 +6,15 @@ import './SEOPages.css';
 const BestVillaDehradun = () => {
   return (
     <div className="seo-page-container">
-      <SEO 
+      <SEO
         title="Best Villa in Dehradun | Vann Villa: Luxury Private Pool & Hidden Gem"
         description="Discover why Vann Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 5,000 sq ft private lawns, pet-friendly & hidden gem escape."
         canonicalUrl="https://vann-villa.vercel.app/best-villa-in-dehradun"
       />
-      
+
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/vann-villa-exterior-lawn.webp")' }}>
         <div className="seo-hero-overlay"></div>
-        <motion.div 
+        <motion.div
           className="seo-hero-content"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ const BestVillaDehradun = () => {
       </section>
 
       <section className="seo-content-section">
-        <motion.div 
+        <motion.div
           className="seo-content-block"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

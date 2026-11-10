@@ -11,10 +11,10 @@
 }
 
 .reservation-bar-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(165, 167, 155, 0.45);
-  border-radius: 4px;
-  box-shadow: 0 4px 20px rgba(43, 6, 5, 0.06);
+  background: #FDFBF7;
+  border: 1px solid rgba(89, 9, 7, 0.15);
+  border-radius: 2px;
+  box-shadow: none;
   padding: 20px 28px 16px;
 }
 
@@ -87,7 +87,7 @@
 .field-input:focus,
 .field-select:focus {
   border-color: var(--deep-burgundy);
-  background: #FFFFFF;
+  background: #FDFBF7;
 }
 
 .field-divider {
