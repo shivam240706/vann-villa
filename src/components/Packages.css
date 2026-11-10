@@ -12,10 +12,27 @@
 
 .estate-rates-intro {
   max-width: 680px;
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+.mobile-swipe-hint {
+  display: none;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--forest-green);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .mobile-swipe-hint {
+    display: block;
+  }
 }
 
 .estate-stays-grid {
@@ -187,7 +204,41 @@
 
 @media (max-width: 1024px) {
   .estate-stays-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .estate-stays-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 10px 4px 24px;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    scrollbar-width: none;
+  }
+
+  .estate-stays-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .estate-stay-card {
+    flex: 0 0 85vw;
+    max-width: 340px;
+    scroll-snap-align: center;
+    padding: 26px 20px;
+  }
+
+  .stay-title {
+    font-size: 1.4rem;
+  }
+
+  .stay-price {
+    font-size: 2.2rem;
   }
 }

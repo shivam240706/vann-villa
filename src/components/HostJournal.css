@@ -222,6 +222,27 @@
     gap: 24px;
   }
 
+  .journal-entries-col {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -16px;
+    padding: 0 16px 8px;
+    gap: 12px;
+  }
+
+  .journal-entries-col::-webkit-scrollbar {
+    display: none;
+  }
+
+  .journal-entry-item {
+    flex: 0 0 78vw;
+    max-width: 290px;
+    scroll-snap-align: center;
+  }
+
   .journal-detail-card {
     padding: 24px 20px;
   }
@@ -232,3 +253,4 @@
     padding: 60px 16px 50px;
   }
 }
+

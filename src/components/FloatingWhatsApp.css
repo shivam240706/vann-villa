@@ -88,26 +88,6 @@
 
 @media (max-width: 768px) {
   .floating-whatsapp-container {
-    bottom: 84px;
-    right: 16px;
-  }
-  .floating-whatsapp {
-    padding: 10px;
-    border-radius: 2px;
-  }
-  .whatsapp-text {
     display: none;
-  }
-  .whatsapp-icon {
-    margin-right: 0;
-    width: 24px;
-    height: 24px;
-  }
-  .whatsapp-proactive-bubble {
-    font-size: 0.8rem;
-    padding: 10px 14px;
-  }
-  .whatsapp-proactive-bubble::after {
-    right: 20px;
   }
 }

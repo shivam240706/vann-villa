@@ -155,7 +155,25 @@
   }
 
   .materiality-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -16px;
+    padding: 0 16px 16px;
+    gap: 14px;
+  }
+
+  .materiality-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .materiality-card {
+    flex: 0 0 82vw;
+    max-width: 310px;
+    scroll-snap-align: center;
+    padding: 22px 18px;
   }
 }
+

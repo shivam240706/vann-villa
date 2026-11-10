@@ -337,12 +337,17 @@
   }
 
   .calc-button-row {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .calc-toggle-btn {
     width: 100%;
     justify-content: center;
+    padding: 11px 10px;
+    font-size: 0.85rem;
+    min-height: 44px;
   }
 }
 

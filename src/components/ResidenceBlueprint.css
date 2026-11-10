@@ -299,11 +299,21 @@
     overflow-x: auto;
     flex-wrap: nowrap;
     padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 0 -16px 24px;
+    padding: 0 16px 8px;
+  }
+
+  .blueprint-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .blueprint-tab-btn {
     min-width: 140px;
     padding: 10px 14px;
+    flex-shrink: 0;
+    min-height: 44px;
   }
 
   .blueprint-detail-card {

@@ -119,3 +119,4 @@ const HostJournal = () => {
 };
 
 export default HostJournal;
+

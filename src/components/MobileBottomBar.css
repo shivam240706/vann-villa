@@ -1,0 +1,121 @@
+.mobile-bottom-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2B0605;
+    border-top: 1px solid rgba(232, 210, 181, 0.4);
+    padding: 10px 16px max(12px, env(safe-area-inset-bottom));
+    z-index: 9999;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.35);
+  }
+
+  .mobile-bar-pricing {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .price-tag {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary-bg, #E8D2B5);
+    line-height: 1.1;
+  }
+
+  .price-unit {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 2px;
+  }
+
+  .price-guarantee {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    color: var(--muted-sage, #A5A79B);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-bar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .mobile-call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--secondary-bg, #E8D2B5);
+    border: 1px solid var(--secondary-bg, #E8D2B5);
+    border-radius: 2px;
+    padding: 8px 12px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    min-height: 40px;
+    transition: background 0.2s ease;
+  }
+
+  .mobile-call-btn:active {
+    background: rgba(232, 210, 181, 0.15);
+  }
+
+  .mobile-call-btn svg {
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  .mobile-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: var(--deep-burgundy, #590907);
+    color: #FFFFFF;
+    border: 1px solid var(--secondary-bg, #E8D2B5);
+    border-radius: 2px;
+    padding: 8px 16px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    min-height: 40px;
+    transition: background 0.2s ease;
+  }
+
+  .mobile-whatsapp-btn:active {
+    background-color: #78100E;
+  }
+
+  .mobile-whatsapp-btn svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: var(--secondary-bg, #E8D2B5);
+  }
+}

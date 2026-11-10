@@ -85,6 +85,9 @@ const Packages = () => {
           <p className="estate-rates-intro">
             Vann Villa is rented strictly as an exclusive private estate. Every reservation guarantees 100% privacy with no other guests on the property.
           </p>
+          <div className="mobile-swipe-hint" aria-hidden="true">
+            <span>Swipe to compare packages &rarr;</span>
+          </div>
         </motion.div>
 
         <div className="estate-stays-grid">
