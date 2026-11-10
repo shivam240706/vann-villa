@@ -247,22 +247,27 @@ const Header = () => {
             Direct Reservation
           </a>
 
-          {/* Mobile Menu Hamburger Button (< 992px) */}
-          <button
-            className={`mobile-menu-toggle ${menuOpen ? 'active' : ''}`}
-            onClick={toggleMenu}
-            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            aria-expanded={menuOpen}
-          >
-            <span className="toggle-line" />
-            <span className="toggle-line" />
-            <span className="toggle-line" />
-          </button>
+          {/* Mobile Menu Hamburger Button: ONLY rendered when drawer is CLOSED */}
+          {!menuOpen && (
+            <button
+              className="mobile-menu-toggle"
+              onClick={toggleMenu}
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+            >
+              <span className="toggle-line" />
+              <span className="toggle-line" />
+              <span className="toggle-line" />
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Mobile Drawer Overlay (< 992px) */}
-      <div className={`mobile-nav-drawer ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
+      {/* Mobile Drawer Overlay (< 1040px) */}
+      <div 
+        className={`mobile-nav-drawer ${menuOpen ? 'open' : ''}`} 
+        aria-hidden={!menuOpen}
+      >
         <div className="mobile-drawer-header">
           <Link to="/" onClick={handleHomeClick} className="mobile-drawer-logo">
             <img 
@@ -275,13 +280,14 @@ const Header = () => {
             <span className="logo-text">Vann Villa</span>
           </Link>
 
+          {/* Distinct, dedicated close button: ONLY visible inside drawer */}
           <button 
             type="button" 
             className="mobile-drawer-close-btn"
             onClick={closeMenu}
             aria-label="Close menu"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>

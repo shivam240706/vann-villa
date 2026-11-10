@@ -168,10 +168,6 @@ const ReservationBar = () => {
             <div className="guarantee-item">
               <span>100% Private 2BHK: Zero Shared Strangers</span>
             </div>
-            <div className="guarantee-dot" aria-hidden="true">•</div>
-            <div className="guarantee-item">
-              <span>Instant Confirmation: <a href="tel:+919411770969" className="guarantee-link">+91 94117 70969</a></span>
-            </div>
           </div>
         </div>
       </div>

@@ -9,12 +9,12 @@ const Hero = () => {
     offset: ["start start", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
-  const scrollToRates = (e) => {
+  const scrollToResidence = (e) => {
     e.preventDefault();
-    const el = document.getElementById('packages');
+    const el = document.getElementById('residence');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -24,44 +24,52 @@ const Hero = () => {
       
       <motion.div 
         className="hero-content"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
         style={{ y, opacity }}
       >
+        <span className="hero-eyebrow">
+          Dehradun Foothills • Uttarakhand
+        </span>
+
         <h1 className="hero-title">
-          Wake up to misty mountain views in Dehradun
+          An Unshared Mountain Sanctuary
         </h1>
 
-        <div className="hero-rate-tag">
-          Starting at <span className="rate-accent">₹4,499 /night</span>
-        </div>
+        <p className="hero-subtitle">
+          A secluded 2BHK private pool villa set across 5,000 sq ft of private lawn. Reserved exclusively for one family or gathering at a time.
+        </p>
 
         {/* 4 Clean Visual Spec Pills */}
         <div className="hero-pills-row">
-          <span className="hero-pill">Private Pool</span>
-          <span className="hero-pill">Pet Friendly</span>
+          <span className="hero-pill">Unshared Private Pool</span>
+          <span className="hero-pill">5,000 Sq Ft Lawn</span>
           <span className="hero-pill">Entire 2BHK Villa</span>
-          <span className="hero-pill">5,000 Sq Ft Lawns</span>
+          <span className="hero-pill">Pet Friendly</span>
         </div>
 
-        {/* Clean, Non-Cluttered Action Buttons */}
-        <div className="hero-actions-row">
+        {/* Action Button & Direct Rate */}
+        <div className="hero-actions-container">
           <a
-            href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20direct%20availability%20and%20rates."
+            href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20check%20availability%20and%20rates%20for%20a%20private%20stay."
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn-primary"
           >
-            Check Availability & Pricing
+            Check Availability on WhatsApp
           </a>
 
-          <a
-            href="#packages"
-            onClick={scrollToRates}
-            className="hero-btn-outline"
+          <div className="hero-rate-tag">
+            Starting from <span className="rate-accent">₹4,499 / night</span>
+          </div>
+
+          <a 
+            href="#residence" 
+            onClick={scrollToResidence}
+            className="hero-scroll-link"
           >
-            View Estate Rates
+            View Photos & Suites &darr;
           </a>
         </div>
       </motion.div>

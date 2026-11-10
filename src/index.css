@@ -417,6 +417,48 @@ html {
   transition-duration: 0.1s;
 }
 
+/* PC Resolution Refinement (>= 1025px): At least 20% Text Reduction across the site */
+@media (min-width: 1025px) {
+  body {
+    font-size: 0.88rem !important; /* Reduced by >20% from 1.1rem */
+    line-height: 1.65 !important;
+  }
+
+  .section-title {
+    font-size: 2.1rem !important; /* Reduced 30% from 3rem */
+    letter-spacing: 1.2px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .section-subtitle {
+    font-size: 0.74rem !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 8px !important;
+  }
+
+  h1 {
+    font-size: 2.3rem !important;
+  }
+
+  h2 {
+    font-size: 1.85rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  p {
+    font-size: 0.88rem !important;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    font-size: 0.82rem !important;
+    padding: 10px 22px !important;
+  }
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
 

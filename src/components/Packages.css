@@ -1,310 +1,280 @@
 .packages-section {
+  padding: 70px 20px 65px;
   background-color: var(--secondary-bg);
   border-top: 1px solid rgba(89, 9, 7, 0.1);
   border-bottom: 1px solid rgba(89, 9, 7, 0.1);
 }
 
 .packages-container {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .estate-rates-intro {
   max-width: 680px;
-  margin: 0 auto 30px;
-  font-size: 1.05rem;
+  margin: 0 auto 32px;
+  font-size: 0.92rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.55;
+  text-align: center;
 }
 
-.mobile-swipe-hint {
-  display: none;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--forest-green);
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .mobile-swipe-hint {
-    display: block;
-  }
-}
-
-.estate-stays-grid {
+/* 3-COLUMN SINGLE ROW ON DESKTOP */
+.packages-row-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
+  align-items: stretch;
 }
 
-.estate-stay-card {
+.package-card {
   background-color: var(--primary-bg);
-  border: 1px solid rgba(89, 9, 7, 0.15);
+  border: 1px solid rgba(89, 9, 7, 0.16);
   border-radius: 2px;
-  padding: 36px 28px;
+  padding: 24px 20px 20px;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.2s ease;
 }
 
-.estate-stay-card:hover {
-  border-color: var(--forest-green);
+.package-card:hover {
+  border-color: var(--deep-burgundy);
 }
 
-.estate-primary-card {
-  border: 1px solid var(--forest-green);
-  background-color: #FAF6F0;
-  margin-bottom: 36px;
-  padding: 40px 36px;
+.package-card.featured-card {
+  border: 1.5px solid var(--deep-burgundy);
+  background-color: #FDFBF7;
 }
 
-.primary-header {
+.package-top-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.primary-pricing {
-  align-items: flex-end;
-}
-
-.primary-inclusions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px 24px;
-}
-
-.curated-stays-subheading {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.subheading-title {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  color: var(--forest-green);
-}
-
-.curated-stays-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-}
-
-@media (max-width: 900px) {
-  .primary-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .primary-pricing {
-    align-items: flex-start;
-  }
-
-  .primary-inclusions {
-    grid-template-columns: 1fr;
-  }
-
-  .curated-stays-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-.stay-card-header {
-  border-bottom: 1px solid rgba(89, 9, 7, 0.1);
-  padding-bottom: 24px;
-  margin-bottom: 24px;
-}
-
-.stay-capacity {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--forest-green);
-  margin-bottom: 8px;
-}
-
-.stay-title {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  color: var(--forest-green);
-  margin: 0 0 8px 0;
-  line-height: 1.25;
-}
-
-.stay-subtitle {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 0 0 18px 0;
-}
-
-.stay-pricing {
-  display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
-.stay-rate-label {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+.package-capacity {
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.stay-old-price {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  opacity: 0.7;
-}
-
-.stay-price {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
   font-weight: 600;
-  color: var(--forest-green);
-  line-height: 1;
+  color: var(--deep-burgundy);
 }
 
-.stay-unit {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.stay-card-body {
-  flex-grow: 1;
-  margin-bottom: 24px;
-}
-
-.stay-inclusions-label {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
+.package-badge {
+  font-size: 0.62rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.8px;
+  background: var(--deep-burgundy);
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.package-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
   color: var(--text-dark);
-  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.package-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
   margin-bottom: 14px;
 }
 
-.stay-inclusions-list {
+.package-pricing {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(165, 167, 155, 0.25);
+}
+
+.package-rate-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.price-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.package-old-price {
+  font-size: 0.82rem;
+  color: #888888;
+  text-decoration: line-through;
+}
+
+.package-price {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--deep-burgundy);
+  line-height: 1;
+}
+
+.package-unit {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Card Body */
+.package-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.package-inclusions-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.package-inclusions-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 16px 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
-.stay-inclusions-list li {
+.package-inclusions-list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--text-dark);
-}
-
-.stay-bullet {
-  color: var(--forest-green);
-  font-weight: 700;
-  flex-shrink: 0;
-  line-height: 1.5;
-}
-
-.stay-note {
-  font-size: 0.82rem;
+  gap: 8px;
+  font-size: 0.78rem;
   color: var(--text-muted);
   line-height: 1.4;
-  margin: 12px 0 0 0;
-  padding-top: 12px;
-  border-top: 1px dashed rgba(89, 9, 7, 0.1);
 }
 
-.stay-card-footer {
+.package-bullet {
+  color: var(--deep-burgundy);
+  font-size: 0.85rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.package-note {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--deep-burgundy);
   margin-top: auto;
+  line-height: 1.35;
+}
+
+/* Card Footer */
+.package-card-footer {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  margin-top: auto;
 }
 
-.stay-deep-link {
-  font-size: 0.85rem;
-  color: var(--forest-green);
-  font-weight: 500;
+.package-deep-link {
+  font-size: 0.74rem;
+  color: var(--deep-burgundy);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.package-deep-link:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
-  text-align: center;
 }
 
-.stay-deep-link:hover {
-  color: var(--forest-green-hover);
-}
-
-.stay-inquire-btn {
+.package-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 14px 20px;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
+  padding: 10px 16px;
+  background: var(--deep-burgundy);
+  color: #FFFFFF;
+  border: 1px solid var(--deep-burgundy);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-@media (max-width: 1024px) {
-  .estate-stays-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+.package-cta-btn:hover {
+  background: #78100E;
+  border-color: #78100E;
 }
 
-@media (max-width: 768px) {
-  .estate-stays-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+.package-cta-btn.btn-featured {
+  background: #78100E;
+  border-color: var(--secondary-bg);
+}
+
+.package-cta-btn.btn-featured:hover {
+  background: #590907;
+}
+
+/* Responsive Tablets (< 960px) */
+@media (max-width: 960px) {
+  .packages-row-grid {
+    grid-template-columns: 1fr;
     gap: 16px;
-    padding: 10px 4px 24px;
-    margin: 0 -16px;
-    padding-left: 16px;
-    padding-right: 16px;
-    scrollbar-width: none;
   }
 
-  .estate-stays-grid::-webkit-scrollbar {
-    display: none;
+  .package-card {
+    padding: 20px 18px;
+  }
+}
+
+/* Responsive Mobile (< 640px) */
+@media (max-width: 640px) {
+  .packages-section {
+    padding: 48px 14px 42px;
   }
 
-  .estate-stay-card {
-    flex: 0 0 85vw;
-    max-width: 340px;
-    scroll-snap-align: center;
-    padding: 26px 20px;
-  }
-
-  .stay-title {
-    font-size: 1.25rem;
-    margin-bottom: 6px;
-  }
-
-  .stay-price {
-    font-size: 1.85rem;
-  }
-
-  .stay-description {
+  .estate-rates-intro {
     font-size: 0.84rem;
-    margin-bottom: 14px;
+    margin-bottom: 24px;
+  }
+
+  .package-card {
+    padding: 16px 14px;
+  }
+
+  .package-title {
+    font-size: 1.2rem;
+  }
+
+  .package-price {
+    font-size: 1.45rem;
+  }
+
+  .package-inclusions-list li {
+    font-size: 0.74rem;
+  }
+
+  .package-cta-btn {
+    padding: 10px 14px;
+    font-size: 0.8rem;
   }
 }

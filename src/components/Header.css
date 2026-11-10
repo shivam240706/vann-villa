@@ -431,10 +431,23 @@
 }
 
 /* Responsive Breakpoints */
+@media (min-width: 1041px) {
+  .mobile-nav-drawer {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+  }
+
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
 @media (max-width: 1040px) {
   .desktop-nav,
   .header-direct-btn {
-    display: none;
+    display: none !important;
   }
 
   .mobile-menu-toggle {

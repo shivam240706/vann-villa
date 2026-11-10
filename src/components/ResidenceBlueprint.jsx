@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
 import './ResidenceBlueprint.css';
 
 const spaces = [
@@ -101,7 +100,53 @@ const spaces = [
 ];
 
 const ResidenceBlueprint = () => {
-  const [selectedSpace, setSelectedSpace] = useState(spaces[0]);
+  const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const scrollToIndex = (index) => {
+    if (!scrollRef.current) return;
+    const cards = scrollRef.current.querySelectorAll('.blueprint-detail-card');
+    if (cards[index]) {
+      cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      setActiveIndex(index);
+    }
+  };
+
+  const handlePrev = () => {
+    const nextIdx = Math.max(0, activeIndex - 1);
+    scrollToIndex(nextIdx);
+  };
+
+  const handleNext = () => {
+    const nextIdx = Math.min(spaces.length - 1, activeIndex + 1);
+    scrollToIndex(nextIdx);
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+      const cards = el.querySelectorAll('.blueprint-detail-card');
+      const containerLeft = el.getBoundingClientRect().left;
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardLeft = card.getBoundingClientRect().left;
+        const dist = Math.abs(cardLeft - containerLeft);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIdx = idx;
+        }
+      });
+
+      setActiveIndex(closestIdx);
+    };
+
+    el.addEventListener('scroll', handleScroll, { passive: true });
+    return () => el.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section className="residence-blueprint-section" id="residence" aria-label="Villa Bedrooms and Living Spaces">
@@ -111,107 +156,128 @@ const ResidenceBlueprint = () => {
           <span className="blueprint-eyebrow">Accommodation & Spaces</span>
           <h2 className="blueprint-heading">The Villa & Bedrooms</h2>
           <p className="blueprint-subheading">
-            Explore the private suites, living lounge, and grounds of your 2BHK retreat.
-            Every room is designed for quiet comfort, mountain light, and complete privacy.
+            Scroll through the private suites, central salon, kitchen, and grounds.
+            Every space is 100% exclusive to your party.
           </p>
         </div>
 
-        {/* Space Selector Tabs */}
-        <div className="blueprint-tabs" role="tablist" aria-label="Villa Spaces">
-          {spaces.map((sp) => {
-            const isSelected = selectedSpace.id === sp.id;
-            return (
-              <button
-                key={sp.id}
-                role="tab"
-                aria-selected={isSelected}
-                className={`blueprint-tab-btn ${isSelected ? 'active' : ''}`}
-                onClick={() => setSelectedSpace(sp)}
-              >
-                <span className="tab-category">{sp.category}</span>
-                <span className="tab-title">{sp.title.split('(')[0].trim()}</span>
-              </button>
-            );
-          })}
+        {/* Quick-Jump Scroll Navigation Chips */}
+        <div className="blueprint-scroll-nav" role="tablist" aria-label="Quick jump to space">
+          {spaces.map((sp, idx) => (
+            <button
+              key={sp.id}
+              type="button"
+              className={`blueprint-nav-chip ${activeIndex === idx ? 'active' : ''}`}
+              onClick={() => scrollToIndex(idx)}
+            >
+              <span className="chip-category">{sp.category}</span>
+              <span className="chip-name">{sp.title.split('(')[0].trim()}</span>
+            </button>
+          ))}
         </div>
 
-        {/* Selected Space Layout Card */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedSpace.id}
-            className="blueprint-detail-card"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-          >
-            {/* Visual Column */}
-            <div className="blueprint-media-col">
-              <div className="blueprint-image-wrap">
-                <img
-                  src={selectedSpace.image}
-                  alt={selectedSpace.imageAlt}
-                  className="blueprint-img"
-                  loading="lazy"
-                />
-                <div className="blueprint-dimensions-badge">
-                  <span>{selectedSpace.dimensions}</span>
-                </div>
-              </div>
-            </div>
+        {/* Scrolling Showcase Container (All 5 spaces in continuous scroll) */}
+        <div className="blueprint-scroll-wrapper">
+          {/* Desktop & Mobile Prev / Next Controls */}
+          <div className="blueprint-scroll-controls">
+            <button 
+              type="button" 
+              className="scroll-btn prev-btn" 
+              onClick={handlePrev}
+              disabled={activeIndex === 0}
+              aria-label="Previous space"
+            >
+              &#8249;
+            </button>
+            <span className="scroll-indicator-text">
+              {activeIndex + 1} of {spaces.length}
+            </span>
+            <button 
+              type="button" 
+              className="scroll-btn next-btn" 
+              onClick={handleNext}
+              disabled={activeIndex === spaces.length - 1}
+              aria-label="Next space"
+            >
+              &#8250;
+            </button>
+          </div>
 
-            {/* Data Column */}
-            <div className="blueprint-info-col">
-              <span className="info-badge">{selectedSpace.category}</span>
-              <h3 className="info-title">{selectedSpace.title}</h3>
-              <p className="info-tagline">{selectedSpace.tagline}</p>
+          <div className="blueprint-scroll-track" ref={scrollRef}>
+            {spaces.map((sp, idx) => (
+              <article 
+                key={sp.id} 
+                className={`blueprint-detail-card ${activeIndex === idx ? 'current' : ''}`}
+              >
+                {/* Visual Column (Left Column - Always side-by-side as in Image 1) */}
+                <div className="blueprint-media-col">
+                  <div className="blueprint-image-wrap">
+                    <img
+                      src={sp.image}
+                      alt={sp.imageAlt}
+                      className="blueprint-img"
+                      loading="lazy"
+                    />
+                    <div className="blueprint-dimensions-badge">
+                      <span>{sp.dimensions}</span>
+                    </div>
+                  </div>
+                </div>
 
-              {/* Specs Matrix */}
-              <div className="blueprint-specs-matrix">
-                <div className="matrix-cell">
-                  <span className="matrix-label">Area</span>
-                  <strong className="matrix-value">{selectedSpace.dimensions}</strong>
-                </div>
-                <div className="matrix-cell">
-                  <span className="matrix-label">Capacity</span>
-                  <strong className="matrix-value">{selectedSpace.occupancy}</strong>
-                </div>
-                <div className="matrix-cell">
-                  <span className="matrix-label">Bed Type</span>
-                  <strong className="matrix-value">{selectedSpace.bedType}</strong>
-                </div>
-                <div className="matrix-cell">
-                  <span className="matrix-label">View</span>
-                  <strong className="matrix-value">{selectedSpace.view}</strong>
-                </div>
-              </div>
+                {/* Data Column (Right Column) */}
+                <div className="blueprint-info-col">
+                  <span className="info-badge">{sp.category}</span>
+                  <h3 className="info-title">{sp.title}</h3>
+                  <p className="info-tagline">{sp.tagline}</p>
 
-              {/* Inclusions */}
-              <div className="inclusions-section">
-                <h4 className="inclusions-title">Highlights:</h4>
-                <ul className="inclusions-list">
-                  {selectedSpace.features.map((feature, idx) => (
-                    <li key={idx} className="inclusion-item">
-                      <span className="inclusion-bullet" aria-hidden="true">•</span>
-                      <span className="inclusion-text">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  {/* Specs Matrix */}
+                  <div className="blueprint-specs-matrix">
+                    <div className="matrix-cell">
+                      <span className="matrix-label">Area</span>
+                      <strong className="matrix-value">{sp.dimensions}</strong>
+                    </div>
+                    <div className="matrix-cell">
+                      <span className="matrix-label">Capacity</span>
+                      <strong className="matrix-value">{sp.occupancy}</strong>
+                    </div>
+                    <div className="matrix-cell">
+                      <span className="matrix-label">Bed Type</span>
+                      <strong className="matrix-value">{sp.bedType}</strong>
+                    </div>
+                    <div className="matrix-cell">
+                      <span className="matrix-label">View</span>
+                      <strong className="matrix-value">{sp.view}</strong>
+                    </div>
+                  </div>
 
-              <div className="blueprint-cta-row">
-                <a
-                  href={`https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20booking%20and%20details%20for%20${encodeURIComponent(selectedSpace.title)}.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="blueprint-cta-link"
-                >
-                  Inquire on WhatsApp &rarr;
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+                  {/* Highlights / Inclusions */}
+                  <div className="inclusions-section">
+                    <h4 className="inclusions-title">Highlights:</h4>
+                    <ul className="inclusions-list">
+                      {sp.features.map((feature, fIdx) => (
+                        <li key={fIdx} className="inclusion-item">
+                          <span className="inclusion-bullet" aria-hidden="true">•</span>
+                          <span className="inclusion-text">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="blueprint-cta-row">
+                    <a
+                      href={`https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20booking%20and%20details%20for%20${encodeURIComponent(sp.title)}.`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="blueprint-cta-link"
+                    >
+                      Inquire on WhatsApp &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

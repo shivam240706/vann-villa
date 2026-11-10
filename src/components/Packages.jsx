@@ -12,16 +12,17 @@ const stayOptions = [
     price: '₹4,499',
     unit: 'per night',
     capacity: 'Base 4 Guests · Max 6',
+    badge: 'Most Popular',
     inclusions: [
-      'Complete private access to the entire 2BHK luxury residence',
-      'Exclusive private swimming pool with zero shared guests',
-      '5,000 sq ft of securely fenced private green lawns',
-      'Fully equipped chef kitchen for self-cooking or catering',
-      'High-speed Wi-Fi, smart entertainment, and 24/7 power backup'
+      'Complete private access to entire 2BHK residence',
+      'Exclusive unshared swimming pool (zero other guests)',
+      '5,000 sq ft of securely fenced private lawns',
+      'Fully equipped kitchen for self-cooking / catering',
+      'High-speed Wi-Fi & 24/7 power backup'
     ],
-    note: '₹500 per extra guest beyond 4. 100% pet-friendly with zero pet fees.',
+    note: '100% pet-friendly with zero pet charges.',
     link: '/pet-friendly-villa-dehradun',
-    linkText: 'Explore pet-friendly stay details',
+    linkText: 'Pet-friendly stay details',
     primary: true
   },
   {
@@ -32,15 +33,17 @@ const stayOptions = [
     price: '₹8,998',
     unit: '2 nights total',
     capacity: 'Reserved for 2 Guests',
+    badge: 'Couple Special',
     inclusions: [
       '2 nights in the luxury master bedroom suite',
-      'Exclusive unshared swimming pool and starlit terrace access',
-      'Flexible check-in and late check-out subject to schedule',
-      'Fully equipped kitchen for private candlelight dining'
+      'Exclusive unshared pool & starlit terrace access',
+      'Flexible check-in / late check-out upon request',
+      'Fully equipped kitchen for candlelight meals',
+      'Complimentary welcome beverage basket'
     ],
-    note: 'Ideal for anniversaries, birthdays, and private celebrations.',
+    note: 'Ideal for anniversaries and quiet getaways.',
     link: '/couple-getaway-dehradun',
-    linkText: 'Explore couple retreat details',
+    linkText: 'Couple retreat details',
     primary: false
   },
   {
@@ -51,31 +54,33 @@ const stayOptions = [
     price: '₹5,499',
     unit: 'per night',
     capacity: 'Up to 6 Guests',
+    badge: 'Family Gathering',
     inclusions: [
-      'Two spacious bedrooms with comfortable additional bedding',
-      'Expansive secure grounds for children and pets to run freely',
-      'Complete kitchen setup with cookware, refrigerator, and gas stove',
-      'Secure on-site gated parking for multiple vehicles'
+      'Two spacious bedrooms with comfortable extra bedding',
+      '5,000 sq ft secure grounds for children & pets',
+      'Full kitchen with cookware, fridge & gas stove',
+      'Secure on-site gated parking for multiple cars',
+      'Smart TV lounge with family board games'
     ],
-    note: 'All dog and cat breeds welcome with no pet restrictions.',
+    note: 'All pets welcome freely with no restrictions.',
     link: '/family-villa-dehradun',
-    linkText: 'Explore family getaway details',
+    linkText: 'Family getaway details',
     primary: false
   }
 ];
 
 const Packages = () => {
   const handleInquire = (stayTitle) => {
-    const text = `Hi, I am interested in reserving "${stayTitle}" at Vann Villa. Please share current availability.`;
+    const text = `Hi, I am interested in reserving "${stayTitle}" at Vann Villa. Please share current availability and dates.`;
     window.open(`https://wa.me/919411770969?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
-    <section id="packages" className="packages-section section-padding" aria-label="Estate Rates and Stays">
+    <section id="packages" className="packages-section" aria-label="Estate Rates and Stays">
       <div className="packages-container">
         <motion.div 
           className="section-header text-center"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
@@ -83,114 +88,62 @@ const Packages = () => {
           <p className="section-subtitle">Estate Reservation & Rates</p>
           <h2 className="section-title">Private Villa Stays</h2>
           <p className="estate-rates-intro">
-            Vann Villa is rented strictly as an exclusive private estate. Every reservation guarantees 100% privacy with no other guests on the property.
+            Vann Villa is booked exclusively as an unshared private sanctuary. Every package guarantees 100% privacy with zero strangers on the estate.
           </p>
-          <div className="mobile-swipe-hint" aria-hidden="true">
-            <span>Swipe to compare packages &rarr;</span>
-          </div>
         </motion.div>
 
-        {/* Featured Primary Estate Reservation */}
-        <motion.article 
-          className="estate-stay-card estate-primary-card"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.25 }}
-        >
-          <div className="stay-card-header primary-header">
-            <div className="header-meta">
-              <span className="stay-capacity">{stayOptions[0].capacity}</span>
-              <h3 className="stay-title">{stayOptions[0].title}</h3>
-              <p className="stay-subtitle">{stayOptions[0].subtitle}</p>
-            </div>
-            
-            <div className="stay-pricing primary-pricing">
-              <span className="stay-rate-label">Direct Host Rate:</span>
-              <del className="stay-old-price">{stayOptions[0].oldPrice}</del>
-              <strong className="stay-price">{stayOptions[0].price}</strong>
-              <span className="stay-unit">{stayOptions[0].unit}</span>
-            </div>
-          </div>
-
-          <div className="stay-card-body primary-body">
-            <h4 className="stay-inclusions-label">Exclusive Estate Inclusions:</h4>
-            <ul className="stay-inclusions-list primary-inclusions">
-              {stayOptions[0].inclusions.map((item, itemIdx) => (
-                <li key={itemIdx}>
-                  <span className="stay-bullet" aria-hidden="true">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            {stayOptions[0].note && <p className="stay-note">{stayOptions[0].note}</p>}
-          </div>
-
-          <div className="stay-card-footer primary-footer">
-            <Link to={stayOptions[0].link} className="stay-deep-link">
-              {stayOptions[0].linkText}
-            </Link>
-            <button 
-              type="button"
-              className="btn-primary stay-inquire-btn"
-              onClick={() => handleInquire(stayOptions[0].title)}
-            >
-              Reserve Entire Estate via WhatsApp
-            </button>
-          </div>
-        </motion.article>
-
-        {/* Tailored Retreat Arrangements (2 columns, NOT 3 SaaS tiers) */}
-        <div className="curated-stays-subheading">
-          <p className="subheading-title">Tailored Retreat Configurations</p>
-        </div>
-
-        <div className="curated-stays-grid">
-          {stayOptions.slice(1).map((stay, idx) => (
+        {/* 3-Column Single Row on Desktop */}
+        <div className="packages-row-grid">
+          {stayOptions.map((stay, idx) => (
             <motion.article 
               key={stay.id} 
-              className="estate-stay-card curated-card"
+              className={`package-card ${stay.primary ? 'featured-card' : ''}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: idx * 0.1 }}
+              transition={{ duration: 0.25, delay: idx * 0.08 }}
             >
-              <div className="stay-card-header">
-                <span className="stay-capacity">{stay.capacity}</span>
-                <h3 className="stay-title">{stay.title}</h3>
-                <p className="stay-subtitle">{stay.subtitle}</p>
+              <div className="package-card-header">
+                <div className="package-top-row">
+                  <span className="package-capacity">{stay.capacity}</span>
+                  {stay.badge && <span className="package-badge">{stay.badge}</span>}
+                </div>
+                <h3 className="package-title">{stay.title}</h3>
+                <p className="package-subtitle">{stay.subtitle}</p>
                 
-                <div className="stay-pricing">
-                  <span className="stay-rate-label">Rate:</span>
-                  <del className="stay-old-price">{stay.oldPrice}</del>
-                  <strong className="stay-price">{stay.price}</strong>
-                  <span className="stay-unit">{stay.unit}</span>
+                <div className="package-pricing">
+                  <span className="package-rate-label">Direct Host Rate:</span>
+                  <div className="price-line">
+                    <del className="package-old-price">{stay.oldPrice}</del>
+                    <strong className="package-price">{stay.price}</strong>
+                    <span className="package-unit">/{stay.unit}</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="stay-card-body">
-                <h4 className="stay-inclusions-label">Retreat Inclusions:</h4>
-                <ul className="stay-inclusions-list">
+              <div className="package-card-body">
+                <h4 className="package-inclusions-label">Highlights & Inclusions:</h4>
+                <ul className="package-inclusions-list">
                   {stay.inclusions.map((item, itemIdx) => (
                     <li key={itemIdx}>
-                      <span className="stay-bullet" aria-hidden="true">•</span>
+                      <span className="package-bullet" aria-hidden="true">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                {stay.note && <p className="stay-note">{stay.note}</p>}
+                {stay.note && <p className="package-note">{stay.note}</p>}
               </div>
 
-              <div className="stay-card-footer">
-                <Link to={stay.link} className="stay-deep-link">
-                  {stay.linkText}
+              <div className="package-card-footer">
+                <Link to={stay.link} className="package-deep-link">
+                  {stay.linkText} &rarr;
                 </Link>
                 <button 
                   type="button"
-                  className="btn-primary stay-inquire-btn"
+                  className={`package-cta-btn ${stay.primary ? 'btn-featured' : ''}`}
                   onClick={() => handleInquire(stay.title)}
                 >
-                  Inquire on WhatsApp
+                  Book via WhatsApp
                 </button>
               </div>
             </motion.article>
