@@ -175,3 +175,4 @@ const ReservationBar = () => {
 };
 
 export default ReservationBar;
+

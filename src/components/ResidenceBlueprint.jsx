@@ -236,3 +236,4 @@ const ResidenceBlueprint = () => {
 };
 
 export default ResidenceBlueprint;
+
