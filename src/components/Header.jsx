@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll } from 'framer-motion';
 import './Header.css';
 
@@ -27,15 +27,16 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [policiesOpen, setPoliciesOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setScrolled(currentScrollY > 50);
+      setScrolled(currentScrollY > 40);
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 150) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 180 && !menuOpen) {
         setHidden(true);
       } else if (currentScrollY < lastScrollY.current) {
         setHidden(false);
@@ -46,7 +47,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuOpen]);
 
   // Close menu on route change
   useEffect(() => {
@@ -81,15 +82,34 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleHomeClick = () => {
-    setMenuOpen(false);
-    setPoliciesOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const closeMenu = () => {
     setMenuOpen(false);
     setPoliciesOpen(false);
+  };
+
+  const handleHomeClick = (e) => {
+    closeMenu();
+    if (isHomePage) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleSectionScroll = (e, sectionId) => {
+    e.preventDefault();
+    closeMenu();
+    if (isHomePage) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(`/#${sectionId}`);
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   const togglePolicies = (e) => {
@@ -114,62 +134,244 @@ const Header = () => {
           left: 0,
           right: 0,
           height: '2px',
-          backgroundColor: 'var(--accent-gold)',
+          backgroundColor: 'var(--secondary-bg, #E8D2B5)',
           transformOrigin: '0%',
           zIndex: 1002
         }}
       />
+
       <div className="header-container">
+        {/* Brand Logo */}
         <div className="logo">
           <Link to="/" onClick={handleHomeClick} aria-label="Vann Villa Home" className="logo-link">
             <img 
               src="/images/vann-villa-logo.webp" 
               alt="Vann Villa Logo" 
               className="header-logo-img" 
-              width="44" 
-              height="44" 
+              width="40" 
+              height="40" 
               loading="eager"
             />
             <span className="logo-text">Vann Villa</span>
           </Link>
         </div>
-        
-        <button
-          className={`hamburger ${menuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={menuOpen}
-          aria-controls="main-nav"
-        >
-          <span className="bar" aria-hidden="true"></span>
-          <span className="bar" aria-hidden="true"></span>
-          <span className="bar" aria-hidden="true"></span>
-        </button>
 
-        <nav id="main-nav" className={`nav-links ${menuOpen ? 'active' : ''}`} role="navigation" aria-label="Primary navigation">
-          <Link to="/" onClick={handleHomeClick} aria-current={isActive('/') ? 'page' : undefined} className={isActive('/') ? 'nav-active' : ''}>Home</Link>
-          <Link to="/about" onClick={closeMenu} aria-current={isActive('/about') ? 'page' : undefined} className={isActive('/about') ? 'nav-active' : ''}>About & Gallery</Link>
-          <Link to="/packages" onClick={closeMenu} aria-current={isActive('/packages') ? 'page' : undefined} className={isActive('/packages') ? 'nav-active' : ''}>Packages</Link>
-          
-          <div className={`nav-dropdown ${policiesOpen ? 'open' : ''}`}>
+        {/* Desktop Navigation (>= 992px) */}
+        <nav className="desktop-nav" role="navigation" aria-label="Primary Desktop Navigation">
+          <Link 
+            to="/" 
+            onClick={handleHomeClick} 
+            className={`desktop-nav-link ${isActive('/') ? 'active' : ''}`}
+          >
+            Home
+          </Link>
+
+          <a 
+            href="#living-vision" 
+            onClick={(e) => handleSectionScroll(e, 'living-vision')}
+            className="desktop-nav-link"
+          >
+            The Living Vision
+          </a>
+
+          <a 
+            href="#residence-blueprint" 
+            onClick={(e) => handleSectionScroll(e, 'residence-blueprint')}
+            className="desktop-nav-link"
+          >
+            Blueprint & Suites
+          </a>
+
+          <a 
+            href="#status-calculator" 
+            onClick={(e) => handleSectionScroll(e, 'status-calculator')}
+            className="desktop-nav-link"
+          >
+            Rates & Savings
+          </a>
+
+          <Link 
+            to="/about" 
+            className={`desktop-nav-link ${isActive('/about') ? 'active' : ''}`}
+          >
+            About & Gallery
+          </Link>
+
+          {/* Policies Dropdown */}
+          <div 
+            className="desktop-dropdown"
+            onMouseEnter={() => setPoliciesOpen(true)}
+            onMouseLeave={() => setPoliciesOpen(false)}
+          >
             <button 
               type="button" 
-              className="nav-dropdown-toggle"
-              onClick={togglePolicies}
+              className="desktop-dropdown-btn"
+              onClick={() => setPoliciesOpen(!policiesOpen)}
               aria-expanded={policiesOpen}
-              aria-haspopup="true"
             >
-              Policies <ChevronIcon className={`dropdown-chevron ${policiesOpen ? 'rotated' : ''}`} />
+              <span>Policies</span>
+              <ChevronIcon className={`dropdown-chevron ${policiesOpen ? 'rotated' : ''}`} />
             </button>
-            <div className={`nav-dropdown-content ${policiesOpen ? 'open' : ''}`}>
-              <Link to="/terms-conditions" onClick={closeMenu} aria-current={isActive('/terms-conditions') ? 'page' : undefined} className={isActive('/terms-conditions') ? 'nav-active' : ''}>Terms & Conditions</Link>
-              <Link to="/privacy-policy" onClick={closeMenu} aria-current={isActive('/privacy-policy') ? 'page' : undefined} className={isActive('/privacy-policy') ? 'nav-active' : ''}>Privacy Policy</Link>
-              <Link to="/cancellation-refund" onClick={closeMenu} aria-current={isActive('/cancellation-refund') ? 'page' : undefined} className={isActive('/cancellation-refund') ? 'nav-active' : ''}>Cancellation & Refund</Link>
+            <div className={`desktop-dropdown-menu ${policiesOpen ? 'open' : ''}`}>
+              <Link to="/terms-conditions" onClick={closeMenu}>Terms & Conditions</Link>
+              <Link to="/privacy-policy" onClick={closeMenu}>Privacy Policy</Link>
+              <Link to="/cancellation-refund" onClick={closeMenu}>Cancellation & Refund</Link>
             </div>
           </div>
 
-          <Link to="/contact" onClick={closeMenu} aria-current={isActive('/contact') ? 'page' : undefined} className={isActive('/contact') ? 'nav-active' : ''}>Contact</Link>
+          <Link 
+            to="/contact" 
+            className={`desktop-nav-link ${isActive('/contact') ? 'active' : ''}`}
+          >
+            Contact
+          </Link>
         </nav>
+
+        {/* Desktop Header CTA */}
+        <div className="header-actions">
+          <a
+            href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20direct%20availability%20and%20rates."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-direct-btn"
+          >
+            Direct Reservation
+          </a>
+
+          {/* Mobile Menu Hamburger Button (< 992px) */}
+          <button
+            className={`mobile-menu-toggle ${menuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={menuOpen}
+          >
+            <span className="toggle-line" />
+            <span className="toggle-line" />
+            <span className="toggle-line" />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer Overlay (< 992px) */}
+      <div className={`mobile-nav-drawer ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
+        <div className="mobile-drawer-header">
+          <Link to="/" onClick={handleHomeClick} className="mobile-drawer-logo">
+            <img 
+              src="/images/vann-villa-logo.webp" 
+              alt="Vann Villa Logo" 
+              className="header-logo-img" 
+              width="36" 
+              height="36" 
+            />
+            <span className="logo-text">Vann Villa</span>
+          </Link>
+
+          <button 
+            type="button" 
+            className="mobile-drawer-close-btn"
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav className="mobile-nav-links" role="navigation" aria-label="Mobile Navigation">
+          <div className="mobile-nav-item">
+            <span className="nav-index">01</span>
+            <Link to="/" onClick={handleHomeClick} className="mobile-link">
+              Home
+            </Link>
+          </div>
+
+          <div className="mobile-nav-item">
+            <span className="nav-index">02</span>
+            <a 
+              href="#living-vision" 
+              onClick={(e) => handleSectionScroll(e, 'living-vision')} 
+              className="mobile-link"
+            >
+              The Living Vision
+            </a>
+          </div>
+
+          <div className="mobile-nav-item">
+            <span className="nav-index">03</span>
+            <a 
+              href="#residence-blueprint" 
+              onClick={(e) => handleSectionScroll(e, 'residence-blueprint')} 
+              className="mobile-link"
+            >
+              Suites & Blueprint
+            </a>
+          </div>
+
+          <div className="mobile-nav-item">
+            <span className="nav-index">04</span>
+            <a 
+              href="#status-calculator" 
+              onClick={(e) => handleSectionScroll(e, 'status-calculator')} 
+              className="mobile-link"
+            >
+              Rates & Savings
+            </a>
+          </div>
+
+          <div className="mobile-nav-item">
+            <span className="nav-index">05</span>
+            <Link to="/about" onClick={closeMenu} className="mobile-link">
+              About & Gallery
+            </Link>
+          </div>
+
+          {/* Mobile Policies Accordion */}
+          <div className={`mobile-nav-item mobile-policies-group ${policiesOpen ? 'expanded' : ''}`}>
+            <div className="policies-trigger-row" onClick={togglePolicies}>
+              <span className="nav-index">06</span>
+              <button 
+                type="button" 
+                className="mobile-link policies-btn"
+                aria-expanded={policiesOpen}
+              >
+                <span>Policies</span>
+                <ChevronIcon className={`dropdown-chevron ${policiesOpen ? 'rotated' : ''}`} />
+              </button>
+            </div>
+
+            {policiesOpen && (
+              <div className="mobile-policies-sublinks">
+                <Link to="/terms-conditions" onClick={closeMenu} className="mobile-sublink">Terms & Conditions</Link>
+                <Link to="/privacy-policy" onClick={closeMenu} className="mobile-sublink">Privacy Policy</Link>
+                <Link to="/cancellation-refund" onClick={closeMenu} className="mobile-sublink">Cancellation & Refund</Link>
+              </div>
+            )}
+          </div>
+
+          <div className="mobile-nav-item">
+            <span className="nav-index">07</span>
+            <Link to="/contact" onClick={closeMenu} className="mobile-link">
+              Contact & Location
+            </Link>
+          </div>
+        </nav>
+
+        {/* Mobile Drawer Footer with Direct Booking */}
+        <div className="mobile-drawer-footer">
+          <a
+            href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20direct%20availability%20and%20rates."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mobile-drawer-whatsapp-btn"
+          >
+            Direct Host WhatsApp: +91 94117 70969
+          </a>
+          <p className="mobile-drawer-location">
+            Dehradun Foothills, Uttarakhand • 100% Private 2BHK Pool Estate
+          </p>
+        </div>
       </div>
     </header>
   );

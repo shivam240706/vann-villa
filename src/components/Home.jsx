@@ -5,16 +5,19 @@ import ReservationBar from './ReservationBar';
 import HighlightsBar from './HighlightsBar';
 import LivingVision from './LivingVision';
 import ResidenceBlueprint from './ResidenceBlueprint';
+import EstateMateriality from './EstateMateriality';
 import EstateStatusCalculator from './EstateStatusCalculator';
 import EstateDayTimeline from './EstateDayTimeline';
 import Packages from './Packages';
 import Amenities from './Amenities';
 import StatsCounter from './StatsCounter';
+import HostJournal from './HostJournal';
 import Gallery from './Gallery';
 import Testimonials from './Testimonials';
 import FAQ from './FAQ';
 import LeadCapture from './LeadCapture';
 import PriceBanner from './PriceBanner';
+import StickyConciergeRibbon from './StickyConciergeRibbon';
 import SEO from './SEO';
 import ParallaxDivider from './ParallaxDivider';
 
@@ -30,12 +33,14 @@ const Home = () => {
       <HighlightsBar />
       <LivingVision />
       <ResidenceBlueprint />
+      <EstateMateriality />
       <EstateStatusCalculator />
       <EstateDayTimeline />
       <Packages />
       <ParallaxDivider imageSrc="/images/vann-villa-rooftop-view.webp" height="350px" />
       <Amenities />
       <StatsCounter />
+      <HostJournal />
       <Gallery />
       <ParallaxDivider imageSrc="/images/vann-villa-pool-nature.webp" height="350px" />
       <Testimonials />
@@ -64,6 +69,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Floating Bottom Concierge Ribbon */}
+      <StickyConciergeRibbon />
     </main>
   );
 };

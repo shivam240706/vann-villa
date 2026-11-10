@@ -1,8 +1,8 @@
 .floating-whatsapp-container {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000;
+  bottom: 60px;
+  right: 24px;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -88,8 +88,8 @@
 
 @media (max-width: 768px) {
   .floating-whatsapp-container {
-    bottom: 20px;
-    right: 20px;
+    bottom: 84px;
+    right: 16px;
   }
   .floating-whatsapp {
     padding: 10px;
