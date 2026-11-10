@@ -1,6 +1,6 @@
 .highlights-section {
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: var(--primary-bg, #FAF6F0);
   padding: 70px 24px;
   border-bottom: 1px solid rgba(165, 167, 155, 0.25);
 }
@@ -43,11 +43,11 @@
   color: var(--text-muted, #555750);
 }
 
-/* Clean 3-column grid on desktop, 2-column on tablet, 1-column on phone */
+/* Elegant 2-column architectural pairing */
 .highlights-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
 .highlight-box {
@@ -55,22 +55,21 @@
   align-items: flex-start;
   gap: 16px;
   padding: 24px 20px;
-  background: var(--primary-bg, #FAF6F0);
-  border: 1px solid rgba(165, 167, 155, 0.35);
-  border-radius: 3px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  background: #FDFBF7;
+  border: 1px solid rgba(89, 9, 7, 0.12);
+  border-radius: 2px;
+  transition: border-color 0.2s ease;
 }
 
 .highlight-box:hover {
   border-color: var(--deep-burgundy, #590907);
-  transform: translateY(-2px);
 }
 
 .highlight-icon-box {
   width: 44px;
   height: 44px;
   border-radius: 2px;
-  background: #FFFFFF;
+  background: rgba(89, 9, 7, 0.05);
   border: 1px solid rgba(165, 167, 155, 0.3);
   display: flex;
   align-items: center;

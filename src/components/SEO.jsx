@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, canonicalUrl, ogImage, ogType, name, schemaMarkup }) => {
   const defaultImage = '/images/vann-villa-exterior-lawn.webp';
-  const defaultCanonical = typeof window !== 'undefined' ? window.location.href : 'https://vanvilla.com/';
+  const defaultCanonical = typeof window !== 'undefined' ? window.location.href : 'https://vann-villa.vercel.app/';
   
   const finalCanonical = canonicalUrl || defaultCanonical;
   const finalImage = ogImage || defaultImage;

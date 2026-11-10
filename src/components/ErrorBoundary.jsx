@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component {
           padding: '20px'
         }}>
           <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '3rem', marginBottom: '20px' }}>Something went wrong.</h1>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.2rem', marginBottom: '30px' }}>We apologize for the inconvenience. Please try refreshing the page.</p>
+          <p style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '1.2rem', marginBottom: '30px' }}>We apologize for the inconvenience. Please try refreshing the page.</p>
           <button 
             onClick={() => window.location.reload()}
             style={{
@@ -38,7 +38,7 @@ class ErrorBoundary extends React.Component {
               color: '#fff',
               border: 'none',
               cursor: 'pointer',
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Plus Jakarta Sans, sans-serif',
               textTransform: 'uppercase',
               letterSpacing: '2px',
               fontWeight: 500

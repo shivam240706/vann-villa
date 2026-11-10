@@ -11,14 +11,14 @@
 }
 
 .lead-capture-content {
-  background: #FFFFFF;
-  border-radius: 3px;
+  background: var(--primary-bg, #FAF6F0);
+  border-radius: 2px;
   padding: 44px 40px;
-  border: 1px solid rgba(165, 167, 155, 0.4);
+  border: 1px solid rgba(89, 9, 7, 0.15);
   display: flex;
   align-items: center;
   gap: 40px;
-  box-shadow: 0 4px 16px rgba(43, 6, 5, 0.04);
+  box-shadow: none;
 }
 
 .lead-capture-text {
@@ -94,7 +94,7 @@
 
 .input-group input:focus {
   border-color: var(--deep-burgundy, #590907);
-  background: #FFFFFF;
+  background: var(--primary-bg, #FAF6F0);
 }
 
 .subscribe-btn {
@@ -122,7 +122,7 @@
 }
 
 .btn-arrow {
-  transition: transform 0.2s ease;
+  display: inline-block;
 }
 
 .lead-note {

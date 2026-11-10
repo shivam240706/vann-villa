@@ -62,7 +62,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 12px 18px;
-  background: #FFFFFF;
+  background: var(--primary-bg, #FAF6F0);
   border: 1px solid rgba(165, 167, 155, 0.45);
   border-radius: 2px;
   cursor: pointer;
@@ -108,11 +108,11 @@
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
-  background: #FFFFFF;
+  background: #FDFBF7;
   border: 1px solid rgba(165, 167, 155, 0.45);
-  border-radius: 4px;
+  border-radius: 2px;
   padding: 34px;
-  box-shadow: 0 4px 16px rgba(43, 6, 5, 0.05);
+  box-shadow: none;
 }
 
 .blueprint-media-col {
@@ -274,7 +274,6 @@
 .blueprint-cta-link:hover {
   color: #78100E;
   border-color: #78100E;
-  transform: translateX(4px);
 }
 
 @media (max-width: 960px) {

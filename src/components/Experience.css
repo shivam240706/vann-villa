@@ -197,19 +197,19 @@
 .next-step-card {
   position: relative;
   height: 350px;
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
   text-decoration: none;
   color: var(--text-light);
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  border: 1px solid rgba(165, 167, 155, 0.35);
+  transition: border-color 0.3s ease;
 }
 
 .next-step-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
+  border-color: var(--secondary-bg);
 }
 
 .next-step-bg {

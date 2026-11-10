@@ -5,7 +5,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #FFFFFF;
+  background-color: var(--primary-bg, #FAF6F0);
   color: var(--deep-burgundy, #590907);
   border: 1px solid rgba(165, 167, 155, 0.45);
   cursor: pointer;
@@ -14,14 +14,13 @@
   justify-content: center;
   z-index: 994;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 10px rgba(43, 6, 5, 0.1);
+  box-shadow: none;
 }
 
 .back-to-top:hover {
   background-color: var(--deep-burgundy, #590907);
   color: #FFFFFF;
   border-color: var(--deep-burgundy, #590907);
-  transform: translateY(-2px);
 }
 
 @media (max-width: 640px) {

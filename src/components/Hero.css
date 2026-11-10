@@ -136,7 +136,6 @@
 .hero-primary-btn:hover {
   background-color: #78100E;
   border-color: #FFFFFF;
-  transform: translateY(-1px);
 }
 
 .btn-rate-hint {

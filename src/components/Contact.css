@@ -285,7 +285,7 @@
 }
 
 .ota-card:hover {
-  transform: translateY(-5px);
+  opacity: 0.85;
 }
 
 .ota-name {
@@ -303,10 +303,11 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background-color: #fff;
+  background-color: var(--primary-bg);
   border-radius: 50%;
   padding: 12px;
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
+  border: 1px solid rgba(89, 9, 7, 0.15);
 }
 
 .ota-logo img {

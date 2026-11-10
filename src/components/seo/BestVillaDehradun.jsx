@@ -9,7 +9,7 @@ const BestVillaDehradun = () => {
       <SEO 
         title="Best Villa in Dehradun | Vann Villa: Luxury Private Pool & Hidden Gem"
         description="Discover why Vann Villa is rated the #1 best villa in Dehradun. Luxury 2BHK private pool homestay, 5,000 sq ft private lawns, pet-friendly & hidden gem escape."
-        canonicalUrl="https://vanvilla.com/best-villa-in-dehradun"
+        canonicalUrl="https://vann-villa.vercel.app/best-villa-in-dehradun"
       />
       
       <section className="seo-hero" style={{ backgroundImage: 'url("/images/vann-villa-exterior-lawn.webp")' }}>

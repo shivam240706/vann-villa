@@ -116,7 +116,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Van Villa. All rights reserved. Curated in Dehradun, Uttarakhand.</p>
+        <p>&copy; {new Date().getFullYear()} Vann Villa. All rights reserved. Curated in Dehradun, Uttarakhand.</p>
       </div>
     </footer>
   );

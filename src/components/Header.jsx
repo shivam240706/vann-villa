@@ -167,19 +167,11 @@ const Header = () => {
           </Link>
 
           <a 
-            href="#highlights" 
-            onClick={(e) => handleSectionScroll(e, 'highlights')}
-            className="desktop-nav-link"
-          >
-            Highlights
-          </a>
-
-          <a 
             href="#residence" 
             onClick={(e) => handleSectionScroll(e, 'residence')}
             className="desktop-nav-link"
           >
-            Suites & Spaces
+            Suites
           </a>
 
           <a 
@@ -196,6 +188,14 @@ const Header = () => {
             className="desktop-nav-link"
           >
             Amenities
+          </a>
+
+          <a 
+            href="#packages" 
+            onClick={(e) => handleSectionScroll(e, 'packages')}
+            className="desktop-nav-link"
+          >
+            Rates
           </a>
 
           <Link 
@@ -291,17 +291,6 @@ const Header = () => {
           <div className="mobile-nav-item">
             <span className="nav-index">02</span>
             <a 
-              href="#highlights" 
-              onClick={(e) => handleSectionScroll(e, 'highlights')} 
-              className="mobile-link"
-            >
-              Villa Highlights
-            </a>
-          </div>
-
-          <div className="mobile-nav-item">
-            <span className="nav-index">03</span>
-            <a 
               href="#residence" 
               onClick={(e) => handleSectionScroll(e, 'residence')} 
               className="mobile-link"
@@ -311,7 +300,7 @@ const Header = () => {
           </div>
 
           <div className="mobile-nav-item">
-            <span className="nav-index">04</span>
+            <span className="nav-index">03</span>
             <a 
               href="#gallery" 
               onClick={(e) => handleSectionScroll(e, 'gallery')} 
@@ -322,13 +311,24 @@ const Header = () => {
           </div>
 
           <div className="mobile-nav-item">
-            <span className="nav-index">05</span>
+            <span className="nav-index">04</span>
             <a 
               href="#amenities" 
               onClick={(e) => handleSectionScroll(e, 'amenities')} 
               className="mobile-link"
             >
               Amenities
+            </a>
+          </div>
+
+          <div className="mobile-nav-item">
+            <span className="nav-index">05</span>
+            <a 
+              href="#packages" 
+              onClick={(e) => handleSectionScroll(e, 'packages')} 
+              className="mobile-link"
+            >
+              Rates & Stays
             </a>
           </div>
 

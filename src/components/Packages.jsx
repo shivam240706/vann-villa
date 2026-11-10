@@ -90,11 +90,66 @@ const Packages = () => {
           </div>
         </motion.div>
 
-        <div className="estate-stays-grid">
-          {stayOptions.map((stay, idx) => (
+        {/* Featured Primary Estate Reservation */}
+        <motion.article 
+          className="estate-stay-card estate-primary-card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.25 }}
+        >
+          <div className="stay-card-header primary-header">
+            <div className="header-meta">
+              <span className="stay-capacity">{stayOptions[0].capacity}</span>
+              <h3 className="stay-title">{stayOptions[0].title}</h3>
+              <p className="stay-subtitle">{stayOptions[0].subtitle}</p>
+            </div>
+            
+            <div className="stay-pricing primary-pricing">
+              <span className="stay-rate-label">Direct Host Rate:</span>
+              <del className="stay-old-price">{stayOptions[0].oldPrice}</del>
+              <strong className="stay-price">{stayOptions[0].price}</strong>
+              <span className="stay-unit">{stayOptions[0].unit}</span>
+            </div>
+          </div>
+
+          <div className="stay-card-body primary-body">
+            <h4 className="stay-inclusions-label">Exclusive Estate Inclusions:</h4>
+            <ul className="stay-inclusions-list primary-inclusions">
+              {stayOptions[0].inclusions.map((item, itemIdx) => (
+                <li key={itemIdx}>
+                  <span className="stay-bullet" aria-hidden="true">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            {stayOptions[0].note && <p className="stay-note">{stayOptions[0].note}</p>}
+          </div>
+
+          <div className="stay-card-footer primary-footer">
+            <Link to={stayOptions[0].link} className="stay-deep-link">
+              {stayOptions[0].linkText}
+            </Link>
+            <button 
+              type="button"
+              className="btn-primary stay-inquire-btn"
+              onClick={() => handleInquire(stayOptions[0].title)}
+            >
+              Reserve Entire Estate via WhatsApp
+            </button>
+          </div>
+        </motion.article>
+
+        {/* Tailored Retreat Arrangements (2 columns, NOT 3 SaaS tiers) */}
+        <div className="curated-stays-subheading">
+          <p className="subheading-title">Tailored Retreat Configurations</p>
+        </div>
+
+        <div className="curated-stays-grid">
+          {stayOptions.slice(1).map((stay, idx) => (
             <motion.article 
               key={stay.id} 
-              className={`estate-stay-card ${stay.primary ? 'estate-primary-card' : ''}`}
+              className="estate-stay-card curated-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -114,11 +169,11 @@ const Packages = () => {
               </div>
 
               <div className="stay-card-body">
-                <h4 className="stay-inclusions-label">Estate Inclusions:</h4>
+                <h4 className="stay-inclusions-label">Retreat Inclusions:</h4>
                 <ul className="stay-inclusions-list">
                   {stay.inclusions.map((item, itemIdx) => (
                     <li key={itemIdx}>
-                      <span className="stay-bullet" aria-hidden="true">/</span>
+                      <span className="stay-bullet" aria-hidden="true">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -135,7 +190,7 @@ const Packages = () => {
                   className="btn-primary stay-inquire-btn"
                   onClick={() => handleInquire(stay.title)}
                 >
-                  Inquire via WhatsApp
+                  Inquire on WhatsApp
                 </button>
               </div>
             </motion.article>
