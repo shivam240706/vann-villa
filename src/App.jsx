@@ -6,7 +6,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import BackToTop from './components/BackToTop';
-import MobileBottomBar from './components/MobileBottomBar';
 import CustomCursor from './components/CustomCursor';
 import ErrorBoundary from './components/ErrorBoundary';
 import PageLoader from './components/PageLoader';
@@ -160,7 +159,6 @@ function App() {
           <Footer />
           <FloatingWhatsApp />
           <BackToTop />
-          <MobileBottomBar />
         </div>
         </Router>
       </ErrorBoundary>

@@ -5,136 +5,119 @@ import './ResidenceBlueprint.css';
 const spaces = [
   {
     id: 'master-1',
-    category: 'Bedroom Suite',
+    category: 'Master Bedroom',
     title: 'Master Suite 1 (Forest Canopy View)',
-    tagline: 'Peaceful seclusion overlooking pristine Shivalik trees',
+    tagline: 'Quiet seclusion overlooking Shivalik pine trees',
     image: '/images/vann-villa-master-bedroom.webp',
     imageAlt: 'Master Suite 1 at Vann Villa Dehradun',
-    dimensions: '350 Sq Ft (32.5 m²)',
+    dimensions: '350 Sq Ft',
     occupancy: '2 Adults (+1 Child)',
-    bedType: 'King Size Orthopedic Bed',
-    view: 'Dense Pine & Mountain Canopy',
+    bedType: 'King Size Bed',
+    view: 'Dense Pine & Mountain View',
     features: [
-      'Floor-to-ceiling glass framing morning forest light',
-      'En-suite artisan bathroom with open-sky rain shower',
-      'Quiet remote workstation with high-speed Wi-Fi',
-      'Independent climate control and bespoke ambient lighting',
-      'Handcrafted hardwood wardrobe and luggage bench'
+      'Floor-to-ceiling windows framing natural forest light',
+      'Attached private bathroom with open-sky rain shower',
+      'Quiet workspace with high-speed Wi-Fi',
+      'Air conditioning and custom warm lighting',
+      'Solid wood wardrobe and storage luggage bench'
     ]
   },
   {
     id: 'master-2',
-    category: 'Bedroom Suite',
+    category: 'Garden Bedroom',
     title: 'Suite 2 (Garden & Mountain Sunrise)',
     tagline: 'Direct lawn access with crisp valley morning breeze',
     image: '/images/vann-villa-spacious-bedroom.webp',
     imageAlt: 'Suite 2 garden view bedroom at Vann Villa',
-    dimensions: '320 Sq Ft (29.7 m²)',
+    dimensions: '320 Sq Ft',
     occupancy: '2 Adults (+1 Child)',
-    bedType: 'King Size Luxury Bed',
-    view: '5,000 Sq Ft Lawn & Pool Deck',
+    bedType: 'King Size Bed',
+    view: '5,000 Sq Ft Lawn & Pool Vista',
     features: [
-      'Direct French doors opening onto the morning lawn',
-      'En-suite bathroom with glass shower cubicle and luxury toiletries',
-      'Cozy corner reading nook with garden vantage',
-      'Air conditioning, quiet ceiling fan, and blackout curtains',
-      'Artisan bedside lamps and multiple USB charging points'
+      'Direct French doors opening out onto the morning lawn',
+      'Attached modern bathroom with glass shower and toiletries',
+      'Cozy corner reading nook with natural window light',
+      'Air conditioning and blackout curtains for deep sleep',
+      'Multiple bedside charging points and ambient lamps'
     ]
   },
   {
     id: 'salon',
     category: 'Living & Dining',
-    title: 'The Central Living Salon & Dining',
-    tagline: 'Double-height gathering space for conversations and film nights',
+    title: 'Central Living Salon & Dining',
+    tagline: 'Double-height gathering space for family conversations and movies',
     image: '/images/vann-villa-indoor-lounge.webp',
     imageAlt: 'Living salon and lounge at Vann Villa',
-    dimensions: '450 Sq Ft (41.8 m²)',
-    occupancy: 'Full Villa Gathering (Up to 8)',
-    bedType: 'Plush Velvet Sectional Seating',
-    view: 'Panoramic Pool & Lawn Vista',
+    dimensions: '450 Sq Ft',
+    occupancy: 'Full Villa (Up to 8 Guests)',
+    bedType: 'Plush Sectional Sofa',
+    view: 'Panoramic Pool & Lawn Outlook',
     features: [
-      '65-inch 4K Smart TV with Netflix, Prime, and YouTube',
+      '65-inch 4K Smart TV with Netflix, Prime & OTT streaming',
       'Solid wood 6-seater dining table for shared meals',
-      'Double-height ceiling with warm natural timber accents',
-      'Curated mountain bookshelf and board games collection',
-      'Seamless transition to the outdoor pool deck via sliding glass'
+      'High ceilings with natural timber touches',
+      'Board games and curated reading collection',
+      'Sliding glass doors leading directly to the pool deck'
     ]
   },
   {
     id: 'kitchen',
-    category: 'Culinary Space',
-    title: 'The Fully Equipped Chef Kitchen',
-    tagline: 'Self-catering freedom with modern appliances and tea bar',
+    category: 'Kitchen',
+    title: 'Fully Equipped Self-Catering Kitchen',
+    tagline: 'Complete culinary freedom with modern appliances',
     image: '/images/vann-villa-kitchen.webp',
     imageAlt: 'Self catering modern kitchen at Vann Villa',
-    dimensions: '180 Sq Ft (16.7 m²)',
+    dimensions: '180 Sq Ft',
     occupancy: 'Private Villa Use',
-    bedType: 'Complete Modular Kitchen',
+    bedType: 'Modular Kitchen',
     view: 'Courtyard & Side Lawn',
     features: [
       'Induction cooktop, high-suction chimney, and microwave oven',
       'Large double-door refrigerator and freezer',
       'Multi-stage RO purified drinking water tap',
-      'Electric kettle, premium tea assortments, and coffee maker',
-      'Full set of premium cookware, fine crockery, and glassware'
+      'Electric kettle, tea bar, and coffee maker',
+      'Cookware, pans, dinnerware, and glassware provided'
     ]
   },
   {
     id: 'grounds',
-    category: 'Outdoor Living',
-    title: '5,000 Sq Ft Lawn, Pool & Fire Pit',
-    tagline: 'Your private outdoor sanctuary with zero shared eyes',
+    category: 'Outdoors',
+    title: '5,000 Sq Ft Private Lawn & Swimming Pool',
+    tagline: 'Your private outdoor sanctuary with zero shared guests',
     image: '/images/vann-villa-private-pool.webp',
     imageAlt: 'Private swimming pool and lawn at Vann Villa',
-    dimensions: '5,000 Sq Ft Total Outdoor Perimeter',
-    occupancy: 'Entire Party',
-    bedType: 'Sun Loungers & Outdoor Seating',
+    dimensions: '5,000 Sq Ft Total',
+    occupancy: 'Entire Group',
+    bedType: 'Sun Loungers & Lawn Seating',
     view: '360° Foothills & Shivalik Ridges',
     features: [
-      'Private 4.5 ft sunken pool with filtered mountain water',
-      'Open stone fire pit for evening warmth and star watching',
-      'Outdoor barbecue setup for private grill sessions',
-      'Full perimeter safety fencing welcoming children and pets',
-      'Rooftop viewing terrace overlooking Mussoorie twinkling lights'
+      'Private 4.5 ft sunken pool with clean freshwater daily',
+      'Open stone fire pit for cold foothill evenings',
+      'Outdoor barbecue setup for private lawn grilling',
+      'Fully fenced perimeter safe for dogs and young children',
+      'Rooftop terrace overlooking Mussoorie evening lights'
     ]
   }
 ];
-
-const BlueprintIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-    <path d="M3 9h18"></path>
-    <path d="M9 21V9"></path>
-  </svg>
-);
-
-const CheckMark = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <polyline points="20 6 9 17 4 12"></polyline>
-  </svg>
-);
 
 const ResidenceBlueprint = () => {
   const [selectedSpace, setSelectedSpace] = useState(spaces[0]);
 
   return (
-    <section className="residence-blueprint-section" id="residence-blueprint" aria-label="Estate Residence Blueprint">
+    <section className="residence-blueprint-section" id="residence" aria-label="Villa Bedrooms and Living Spaces">
       <div className="blueprint-container">
         {/* Section Header */}
         <div className="blueprint-header">
-          <div className="blueprint-eyebrow">
-            <BlueprintIcon />
-            <span>Spatial Architecture</span>
-          </div>
-          <h2 className="blueprint-heading">Residence & Grounds Blueprint</h2>
+          <span className="blueprint-eyebrow">Accommodation & Spaces</span>
+          <h2 className="blueprint-heading">The Villa & Bedrooms</h2>
           <p className="blueprint-subheading">
-            Inspect the layout of your private 2BHK estate. Every suite and zone has been planned
-            for spatial flow, natural ventilation, and absolute seclusion.
+            Explore the private suites, living lounge, and grounds of your 2BHK retreat.
+            Every room is designed for quiet comfort, mountain light, and complete privacy.
           </p>
         </div>
 
         {/* Space Selector Tabs */}
-        <div className="blueprint-tabs" role="tablist" aria-label="Estate Spaces">
+        <div className="blueprint-tabs" role="tablist" aria-label="Villa Spaces">
           {spaces.map((sp) => {
             const isSelected = selectedSpace.id === sp.id;
             return (
@@ -157,10 +140,10 @@ const ResidenceBlueprint = () => {
           <motion.div
             key={selectedSpace.id}
             className="blueprint-detail-card"
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
           >
             {/* Visual Column */}
             <div className="blueprint-media-col">
@@ -172,21 +155,21 @@ const ResidenceBlueprint = () => {
                   loading="lazy"
                 />
                 <div className="blueprint-dimensions-badge">
-                  <span>Area: {selectedSpace.dimensions}</span>
+                  <span>{selectedSpace.dimensions}</span>
                 </div>
               </div>
             </div>
 
-            {/* Architectural Data Column */}
+            {/* Data Column */}
             <div className="blueprint-info-col">
-              <div className="info-badge">{selectedSpace.category}</div>
+              <span className="info-badge">{selectedSpace.category}</span>
               <h3 className="info-title">{selectedSpace.title}</h3>
               <p className="info-tagline">{selectedSpace.tagline}</p>
 
-              {/* Dimension Specs Matrix */}
+              {/* Specs Matrix */}
               <div className="blueprint-specs-matrix">
                 <div className="matrix-cell">
-                  <span className="matrix-label">Floor Area</span>
+                  <span className="matrix-label">Area</span>
                   <strong className="matrix-value">{selectedSpace.dimensions}</strong>
                 </div>
                 <div className="matrix-cell">
@@ -194,37 +177,36 @@ const ResidenceBlueprint = () => {
                   <strong className="matrix-value">{selectedSpace.occupancy}</strong>
                 </div>
                 <div className="matrix-cell">
-                  <span className="matrix-label">Sleeping Arrangement</span>
+                  <span className="matrix-label">Bed Type</span>
                   <strong className="matrix-value">{selectedSpace.bedType}</strong>
                 </div>
                 <div className="matrix-cell">
-                  <span className="matrix-label">Orientation / Outlook</span>
+                  <span className="matrix-label">View</span>
                   <strong className="matrix-value">{selectedSpace.view}</strong>
                 </div>
               </div>
 
-              {/* Key Architectural Inclusions */}
+              {/* Inclusions */}
               <div className="inclusions-section">
-                <h4 className="inclusions-title">Inclusions & Architecture:</h4>
+                <h4 className="inclusions-title">Highlights:</h4>
                 <ul className="inclusions-list">
                   {selectedSpace.features.map((feature, idx) => (
                     <li key={idx} className="inclusion-item">
-                      <span className="inclusion-icon"><CheckMark /></span>
+                      <span className="inclusion-bullet" aria-hidden="true">•</span>
                       <span className="inclusion-text">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Direct Booking Inquire for this layout */}
               <div className="blueprint-cta-row">
                 <a
-                  href={`https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20am%20interested%20in%20reserving%20the%20villa%20with%20specific%20details%20about%20${encodeURIComponent(selectedSpace.title)}.`}
+                  href={`https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20booking%20and%20details%20for%20${encodeURIComponent(selectedSpace.title)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="blueprint-cta-link"
                 >
-                  Inquire About This Space via Host WhatsApp &rarr;
+                  Inquire on WhatsApp &rarr;
                 </a>
               </div>
             </div>
@@ -236,4 +218,3 @@ const ResidenceBlueprint = () => {
 };
 
 export default ResidenceBlueprint;
-

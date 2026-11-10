@@ -21,7 +21,7 @@ const ChevronIcon = ({ isOpen }) => (
 
 const faqData = [
   {
-    question: "Is Van Villa pet-friendly?",
+    question: "Is Vann Villa pet-friendly?",
     answer: "Yes, we are 100% pet-friendly. Your dogs can roam free in our 5,000 sq ft of securely fenced lawns. We do not charge any extra pet fees."
   },
   {
@@ -38,7 +38,7 @@ const faqData = [
   },
   {
     question: "How far is it from Dehradun city center?",
-    answer: "Van Villa is located in the peaceful scenic hills of Dehradun, about a 30-40 minute drive from the main city center."
+    answer: "Vann Villa is located in the peaceful scenic hills of Dehradun (near UPES), about a 30-40 minute drive from the main city center."
   },
   {
     question: "Do you provide BBQ or bonfire?",

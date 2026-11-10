@@ -2,13 +2,6 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './Hero.css';
 
-const CompassIcon = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10"></circle>
-    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-  </svg>
-);
-
 const Hero = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -16,7 +9,7 @@ const Hero = () => {
     offset: ["start start", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   const scrollToSection = (id) => {
@@ -30,53 +23,36 @@ const Hero = () => {
       
       <motion.div 
         className="hero-content"
-        initial={{ opacity: 0, y: 25 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         style={{ y, opacity }}
       >
-        {/* Editorial Eyebrow */}
-        <div className="hero-eyebrow">
-          <span className="eyebrow-icon"><CompassIcon /></span>
-          <span className="eyebrow-text">Estate No. 01 • Shivalik Foothills, Dehradun</span>
-        </div>
+        <span className="hero-eyebrow-text">
+          Dehradun Foothills • Uttarakhand
+        </span>
 
-        {/* Master Headline */}
         <h1 className="hero-title">
           An Unshared Mountain Sanctuary
         </h1>
 
-        {/* Editorial Narrative */}
         <p className="hero-narrative">
-          A private 2BHK luxury residence enveloped by 5,000 sq ft of pine-fringed grounds and an unshared mountain plunge pool. 100% exclusive seclusion, 500m from UPES.
+          A secluded 2BHK private pool villa set across 5,000 sq ft of private lawn.
+          Reserved exclusively for one family or gathering at a time.
         </p>
 
-        {/* Architectural Specs Ribbon */}
-        <div className="hero-specs-ribbon">
-          <div className="hero-spec-item">
-            <strong className="spec-number">5,000</strong>
-            <span className="spec-unit">Sq Ft Grounds</span>
-            <span className="spec-detail">Secure Fenced Lawn</span>
-          </div>
-
-          <div className="hero-spec-divider" aria-hidden="true" />
-
-          <div className="hero-spec-item">
-            <strong className="spec-number">Unshared</strong>
-            <span className="spec-unit">Private Pool</span>
-            <span className="spec-detail">Mountain Water • 4.5 Ft</span>
-          </div>
-
-          <div className="hero-spec-divider" aria-hidden="true" />
-
-          <div className="hero-spec-item">
-            <strong className="spec-number">100%</strong>
-            <span className="spec-unit">Exclusive Privacy</span>
-            <span className="spec-detail">Entire 2BHK Residence</span>
-          </div>
+        {/* Clean, typographic spec line without bulky dark boxes */}
+        <div className="hero-features-line">
+          <span>Unshared Private Pool</span>
+          <span className="hero-dot" aria-hidden="true">•</span>
+          <span>5,000 Sq Ft Lawn</span>
+          <span className="hero-dot" aria-hidden="true">•</span>
+          <span>Entire 2BHK Villa</span>
+          <span className="hero-dot" aria-hidden="true">•</span>
+          <span>Pet Friendly</span>
         </div>
 
-        {/* Streamlined Action Bar */}
+        {/* Action Button */}
         <div className="hero-actions-row">
           <a
             href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20direct%20availability%20and%20rates."
@@ -84,36 +60,19 @@ const Hero = () => {
             rel="noopener noreferrer"
             className="hero-primary-btn"
           >
-            <span>Inquire Availability on WhatsApp</span>
-            <span className="btn-rate-hint">From ₹4,499/nt • Zero OTA Fee</span>
+            <span>Check Availability on WhatsApp</span>
+            <span className="btn-rate-hint">Starting from ₹4,499 / night</span>
           </a>
 
           <button
             type="button"
             className="hero-secondary-btn"
-            onClick={() => scrollToSection('living-vision')}
+            onClick={() => scrollToSection('gallery')}
           >
-            Explore The Living Vision ↓
+            View Photos & Suites ↓
           </button>
         </div>
       </motion.div>
-
-      {/* Understated Scroll Hint */}
-      <div 
-        className="hero-scroll-cue"
-        onClick={() => scrollToSection('reservation-section')}
-        role="button"
-        tabIndex={0}
-        aria-label="Scroll down to explore"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            scrollToSection('reservation-section');
-          }
-        }}
-      >
-        <span className="scroll-cue-line" />
-        <span className="scroll-cue-text">Scroll to Discover</span>
-      </div>
     </section>
   );
 };

@@ -167,34 +167,42 @@ const Header = () => {
           </Link>
 
           <a 
-            href="#living-vision" 
-            onClick={(e) => handleSectionScroll(e, 'living-vision')}
+            href="#highlights" 
+            onClick={(e) => handleSectionScroll(e, 'highlights')}
             className="desktop-nav-link"
           >
-            The Living Vision
+            Highlights
           </a>
 
           <a 
-            href="#residence-blueprint" 
-            onClick={(e) => handleSectionScroll(e, 'residence-blueprint')}
+            href="#residence" 
+            onClick={(e) => handleSectionScroll(e, 'residence')}
             className="desktop-nav-link"
           >
-            Blueprint & Suites
+            Suites & Spaces
           </a>
 
           <a 
-            href="#status-calculator" 
-            onClick={(e) => handleSectionScroll(e, 'status-calculator')}
+            href="#gallery" 
+            onClick={(e) => handleSectionScroll(e, 'gallery')}
             className="desktop-nav-link"
           >
-            Rates & Savings
+            Gallery
+          </a>
+
+          <a 
+            href="#amenities" 
+            onClick={(e) => handleSectionScroll(e, 'amenities')}
+            className="desktop-nav-link"
+          >
+            Amenities
           </a>
 
           <Link 
-            to="/about" 
-            className={`desktop-nav-link ${isActive('/about') ? 'active' : ''}`}
+            to="/contact" 
+            className={`desktop-nav-link ${isActive('/contact') ? 'active' : ''}`}
           >
-            About & Gallery
+            Contact
           </Link>
 
           {/* Policies Dropdown */}
@@ -218,13 +226,6 @@ const Header = () => {
               <Link to="/cancellation-refund" onClick={closeMenu}>Cancellation & Refund</Link>
             </div>
           </div>
-
-          <Link 
-            to="/contact" 
-            className={`desktop-nav-link ${isActive('/contact') ? 'active' : ''}`}
-          >
-            Contact
-          </Link>
         </nav>
 
         {/* Desktop Header CTA */}
@@ -290,41 +291,45 @@ const Header = () => {
           <div className="mobile-nav-item">
             <span className="nav-index">02</span>
             <a 
-              href="#living-vision" 
-              onClick={(e) => handleSectionScroll(e, 'living-vision')} 
+              href="#highlights" 
+              onClick={(e) => handleSectionScroll(e, 'highlights')} 
               className="mobile-link"
             >
-              The Living Vision
+              Villa Highlights
             </a>
           </div>
 
           <div className="mobile-nav-item">
             <span className="nav-index">03</span>
             <a 
-              href="#residence-blueprint" 
-              onClick={(e) => handleSectionScroll(e, 'residence-blueprint')} 
+              href="#residence" 
+              onClick={(e) => handleSectionScroll(e, 'residence')} 
               className="mobile-link"
             >
-              Suites & Blueprint
+              Suites & Spaces
             </a>
           </div>
 
           <div className="mobile-nav-item">
             <span className="nav-index">04</span>
             <a 
-              href="#status-calculator" 
-              onClick={(e) => handleSectionScroll(e, 'status-calculator')} 
+              href="#gallery" 
+              onClick={(e) => handleSectionScroll(e, 'gallery')} 
               className="mobile-link"
             >
-              Rates & Savings
+              Photo Gallery
             </a>
           </div>
 
           <div className="mobile-nav-item">
             <span className="nav-index">05</span>
-            <Link to="/about" onClick={closeMenu} className="mobile-link">
-              About & Gallery
-            </Link>
+            <a 
+              href="#amenities" 
+              onClick={(e) => handleSectionScroll(e, 'amenities')} 
+              className="mobile-link"
+            >
+              Amenities
+            </a>
           </div>
 
           {/* Mobile Policies Accordion */}

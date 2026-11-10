@@ -4,7 +4,7 @@ import './PriceBanner.css';
 
 const PriceBanner = () => {
   return (
-    <section className="ultra-premium-price-section" aria-label="Reservation summary and pricing">
+    <section id="rates" className="ultra-premium-price-section" aria-label="Reservation summary and pricing">
       <div className="ultra-premium-price-content">
         <motion.p 
           className="ultra-premium-prefix"
@@ -57,7 +57,7 @@ const PriceBanner = () => {
           id="price-cta-book"
           type="button"
           className="btn-primary ultra-premium-book-btn" 
-          onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20stay%20at%20Van%20Villa.'}
+          onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20reserve%20a%20stay.'}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
