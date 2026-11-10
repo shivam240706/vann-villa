@@ -1,17 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-bg: #FAF6F0; /* Soft warm cream */
-  --secondary-bg: #E8D2B5; /* Warm cream beige */
-  --warm-cream: #E8D2B5; /* Warm cream beige */
-  --accent-gold: #A5A79B; /* Muted sage grey */
-  --accent-gold-hover: #8E9084; /* Refined sage grey hover */
-  --muted-sage: #A5A79B; /* Muted sage grey */
-  --text-dark: #2B0605; /* Deep burgundy-tinted dark espresso */
-  --text-muted: #555750; /* Elegant sage slate */
-  --forest-green: #590907; /* Deep burgundy */
-  --forest-green-hover: #78100E; /* Vibrant rich burgundy hover */
-  --deep-burgundy: #590907; /* Deep burgundy */
+  --primary-bg: #FAF6F0;
+  /* Soft warm cream */
+  --secondary-bg: #E8D2B5;
+  /* Warm cream beige */
+  --warm-cream: #E8D2B5;
+  /* Warm cream beige */
+  --accent-gold: #A5A79B;
+  /* Muted sage grey */
+  --accent-gold-hover: #8E9084;
+  /* Refined sage grey hover */
+  --muted-sage: #A5A79B;
+  /* Muted sage grey */
+  --text-dark: #2B0605;
+  /* Deep burgundy-tinted dark espresso */
+  --text-muted: #555750;
+  /* Elegant sage slate */
+  --forest-green: #590907;
+  /* Deep burgundy */
+  --forest-green-hover: #78100E;
+  /* Vibrant rich burgundy hover */
+  --deep-burgundy: #590907;
+  /* Deep burgundy */
   --burgundy-hover: #78100E;
   --primary-color: #590907;
   --secondary-color: #A5A79B;
@@ -19,10 +30,10 @@
   --bg-light: #FAF6F0;
   --text-color: #2B0605;
   --text-light: #FFFFFF;
-  
+
   --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  
+
   /* Architectural Tailoring - Zero floaty diffused shadows */
   --shadow-sm: 0 1px 2px rgba(43, 6, 5, 0.04);
   --shadow-md: 0 2px 6px rgba(43, 6, 5, 0.06);
@@ -34,7 +45,7 @@
 
   --transition-fast: all 0.25s ease;
   --transition-slow: all 0.4s ease;
-  
+
   /* Spacing system */
   --section-gap: 100px;
   --container-max: 1400px;
@@ -69,19 +80,26 @@ body {
   cursor: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 500;
   color: var(--text-dark);
   line-height: 1.25;
-  letter-spacing: 1px; /* Increased for editorial look */
+  letter-spacing: 1px;
+  /* Increased for editorial look */
 }
 
 .section-title {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 25px;
-  letter-spacing: 2px; /* Extra tracking for massive titles */
+  letter-spacing: 2px;
+  /* Extra tracking for massive titles */
 }
 
 a {
@@ -135,7 +153,7 @@ html {
   background-color: var(--forest-green);
   color: var(--text-light);
   border: 1px solid var(--forest-green);
-  border-radius: 0px; 
+  border-radius: 0px;
   font-family: var(--font-body);
   font-weight: 500;
   text-transform: uppercase;
@@ -152,7 +170,10 @@ html {
 .btn-primary::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: var(--accent-gold);
   transform: scaleX(0);
   transform-origin: right;
@@ -198,7 +219,10 @@ html {
 .btn-outline::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: var(--forest-green);
   transform: scaleY(0);
   transform-origin: bottom;
@@ -236,7 +260,8 @@ html {
   font-family: var(--font-body);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 4px; /* More dramatic tracking for subtitles */
+  letter-spacing: 4px;
+  /* More dramatic tracking for subtitles */
   font-size: 0.95rem;
   margin-bottom: 8px;
 }
@@ -286,52 +311,73 @@ html {
 
 
 @keyframes pageIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
   .next-step-bg {
     background-image: var(--mobile-bg);
   }
-  
+
   body {
     font-size: 0.95rem;
     line-height: 1.6;
   }
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.6rem; }
-  h3 { font-size: 1.3rem; }
-  h4 { font-size: 1.1rem; }
-  
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
   .section-padding {
     padding: 50px 20px;
   }
-  
+
   .section-title {
     font-size: 1.6rem;
     margin-bottom: 16px;
     letter-spacing: 0.5px;
   }
-  
+
   .section-subtitle {
     margin-bottom: 8px;
     font-size: 0.75rem;
     letter-spacing: 2px;
   }
-  
-  .btn-primary, .btn-outline {
+
+  .btn-primary,
+  .btn-outline {
     width: 100%;
     height: 48px;
     padding: 0;
     font-size: 0.85rem;
     letter-spacing: 2px;
   }
-  
+
   /* Fix policy list alignment */
   ul {
     padding-left: 20px;
   }
+
   li {
     margin-bottom: 10px;
   }
@@ -371,7 +417,10 @@ html {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

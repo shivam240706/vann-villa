@@ -1,0 +1,347 @@
+.estate-status-calculator-section {
+  padding: 85px 20px 80px;
+  background-color: #FFFFFF;
+  border-top: 1px solid rgba(165, 167, 155, 0.3);
+  border-bottom: 1px solid rgba(165, 167, 155, 0.3);
+  position: relative;
+}
+
+.status-calculator-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Live Status Bar */
+.live-status-bar {
+  background: var(--primary-bg);
+  border: 1px solid rgba(165, 167, 155, 0.45);
+  border-radius: 4px;
+  padding: 20px 28px;
+  margin-bottom: 50px;
+}
+
+.status-bar-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.live-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--deep-burgundy);
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(89, 9, 7, 0.2);
+}
+
+.live-status-title {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--deep-burgundy);
+}
+
+.status-indicators-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.status-indicator-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.status-icon {
+  color: var(--deep-burgundy);
+  display: inline-flex;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.status-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.meta-val {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Calculator Wrapper */
+.calculator-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.calculator-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--deep-burgundy);
+  margin-bottom: 10px;
+}
+
+.calculator-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.calculator-sub {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.direct-perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.perk-check {
+  color: var(--deep-burgundy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  background: rgba(89, 9, 7, 0.08);
+  flex-shrink: 0;
+}
+
+/* Calculator Panel */
+.calculator-panel {
+  background: var(--primary-bg);
+  border: 1px solid rgba(165, 167, 155, 0.45);
+  border-radius: 4px;
+  padding: 32px 30px;
+  box-shadow: 0 4px 18px rgba(43, 6, 5, 0.04);
+}
+
+.calc-group {
+  margin-bottom: 22px;
+}
+
+.calc-group-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.calc-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.calc-toggle-btn {
+  padding: 9px 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(165, 167, 155, 0.45);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-toggle-btn:hover {
+  border-color: var(--deep-burgundy);
+}
+
+.calc-toggle-btn.active {
+  background: var(--deep-burgundy);
+  border-color: var(--deep-burgundy);
+  color: #FFFFFF;
+}
+
+.recommended-badge {
+  font-size: 0.65rem;
+  background: var(--secondary-bg);
+  color: var(--text-dark);
+  padding: 2px 5px;
+  border-radius: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calc-toggle-btn.active .recommended-badge {
+  background: #FFFFFF;
+  color: var(--deep-burgundy);
+}
+
+/* Price Breakdown */
+.calc-price-breakdown {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(165, 167, 155, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.94rem;
+  color: var(--text-muted);
+}
+
+.breakdown-val {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 1.05rem;
+}
+
+.ota-row {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.ota-val {
+  color: var(--text-muted);
+}
+
+.savings-highlight-bar {
+  background: rgba(89, 9, 7, 0.08);
+  border: 1px dashed var(--deep-burgundy);
+  border-radius: 2px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.savings-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--deep-burgundy);
+}
+
+.savings-val {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--deep-burgundy);
+}
+
+/* CTA */
+.calc-reserve-btn {
+  margin-top: 22px;
+  width: 100%;
+  padding: 13px 20px;
+  background: var(--deep-burgundy);
+  color: #FFFFFF;
+  border: 1px solid var(--deep-burgundy);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.calc-reserve-btn:hover {
+  background: #78100E;
+  border-color: #78100E;
+}
+
+.calc-note {
+  display: block;
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .status-indicators-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .calculator-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .estate-status-calculator-section {
+    padding: 60px 16px 50px;
+  }
+
+  .live-status-bar {
+    padding: 18px 16px;
+    margin-bottom: 36px;
+  }
+
+  .status-indicators-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .calculator-panel {
+    padding: 22px 18px;
+  }
+
+  .calc-button-row {
+    flex-direction: column;
+  }
+
+  .calc-toggle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

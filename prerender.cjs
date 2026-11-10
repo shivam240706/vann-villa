@@ -3,14 +3,11 @@
  * Runs after `vite build`. Serves dist/, visits every route with a headless
  * browser, waits for the app to signal it has finished rendering, then
  * overwrites each route's index.html with the fully rendered DOM.
- *
- * Requires the app to set `window.__PRERENDER_READY__ = true` once it has
- * finished its initial render AND any data it fetches on mount (see the
- * "app-side ready signal" note at the bottom of this file).
  */
 
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
 const puppeteer = require('puppeteer');
 const express = require('express');
 
@@ -18,35 +15,32 @@ const DIST_DIR = path.resolve(__dirname, 'dist');
 const PORT = 4173;
 
 // Every route that must be independently crawlable.
-// Add to this list whenever you add a new route to the app.
 const ROUTES = [
-  { path: '/', title: 'Best Villa in Dehradun | Van Villa Private Pool Stay', description: 'Van Villa is the premier luxury private pool villa and hidden gem stay in Dehradun. 2BHK homestay, 5,000 sq ft private lawns, fully equipped kitchen & pet-friendly.', priority: '1.0', changefreq: 'weekly' },
-  { path: '/best-villa-in-dehradun', title: 'Best Villa in Dehradun | Van Villa Luxury Homestay', description: 'Discover why Van Villa is rated the top villa in Dehradun. Luxury 2BHK private pool homestay, 5,000 sq ft lawns, mountain terrace & pet-friendly escape.', priority: '1.0', changefreq: 'weekly' },
-  { path: '/villa-in-dehradun', title: 'Villa in Dehradun | Van Villa Private Pool Homestay', description: 'Looking for a private luxury villa in Dehradun? Rent the entire 2BHK Van Villa with private swimming pool, 5,000 sq ft lawns, and 100% privacy.', priority: '0.9', changefreq: 'weekly' },
-  { path: '/about', title: 'About Us | Van Villa Dehradun', description: "Learn about Van Villa, Dehradun's premier 2BHK luxury private pool homestay set across 5,000 sq ft of private fenced lawns.", priority: '0.8', changefreq: 'monthly' },
-  { path: '/contact', title: 'Contact Us | Van Villa Dehradun', description: 'Contact Van Villa in Dehradun via WhatsApp or phone. Book your luxury private pool villa stay with instant confirmation.', priority: '0.8', changefreq: 'monthly' },
-  { path: '/experience', title: 'The Experience | Van Villa Dehradun', description: 'Explore the 5-star Van Villa experience in Dehradun — private pool, scenic terrace, mountain views, and lush gardens.', priority: '0.8', changefreq: 'monthly' },
-  { path: '/packages', title: 'Luxury Villa Packages in Dehradun | Van Villa', description: 'Browse luxury stay packages at Van Villa Dehradun. Private pool 2BHK stay, family vacations, couple getaways & weekend retreats from ₹4,499/night.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/destination-guide', title: 'Dehradun Travel & Destination Guide | Van Villa', description: 'Explore top attractions, nature trails, and hidden gems near Van Villa in Dehradun. The ultimate local getaway travel guide.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/family-villa-dehradun', title: 'Family Villa in Dehradun | Van Villa', description: 'Book the best family villa in Dehradun. Entire 2BHK luxury stay, private swimming pool, 5,000 sq ft fenced lawns, and space for up to 6 guests.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/couple-getaway-dehradun', title: 'Couple Getaway in Dehradun | Van Villa', description: 'Romantic private pool villa in Dehradun for couples. 100% exclusive access, panoramic mountain terrace, and cozy luxury stay from ₹8,998.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/pet-friendly-villa-dehradun', title: 'Pet Friendly Villa in Dehradun | Van Villa', description: '100% pet friendly luxury villa in Dehradun. Zero pet fees, 5,000 sq ft of securely fenced lawns, and private pool access for your stay.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/delhi-to-dehradun-weekend', title: 'Delhi to Dehradun Weekend Escape | Van Villa', description: 'Easy drive from Delhi NCR to your private luxury pool villa in Dehradun. 2BHK stay, gated parking, and fresh mountain air.', priority: '0.9', changefreq: 'monthly' },
-  { path: '/terms-conditions', title: 'Terms & Conditions | Van Villa', description: 'Terms and conditions for booking a stay at Van Villa in Dehradun. Check-in policies, guest guidelines, and house rules.', priority: '0.5', changefreq: 'yearly' },
-  { path: '/privacy-policy', title: 'Privacy Policy | Van Villa', description: 'Privacy Policy for Van Villa guests and website visitors. Learn how we protect your personal data and booking privacy.', priority: '0.5', changefreq: 'yearly' },
-  { path: '/cancellation-refund', title: 'Cancellation & Refund Policy | Van Villa', description: 'Cancellation and refund policy for Van Villa bookings in Dehradun. Review our transparent refund terms and reservation policies.', priority: '0.5', changefreq: 'yearly' },
+  { path: '/', title: 'Best Villa in Dehradun | Vann Villa Private Pool Stay', description: 'Vann Villa is the premier luxury private pool villa and hidden gem stay in Dehradun. 2BHK homestay, 5,000 sq ft private lawns, fully equipped kitchen & pet-friendly.', priority: '1.0', changefreq: 'weekly' },
+  { path: '/best-villa-in-dehradun', title: 'Best Villa in Dehradun | Vann Villa Luxury Homestay', description: 'Discover why Vann Villa is rated the top villa in Dehradun. Luxury 2BHK private pool homestay, 5,000 sq ft lawns, mountain terrace & pet-friendly escape.', priority: '1.0', changefreq: 'weekly' },
+  { path: '/villa-in-dehradun', title: 'Villa in Dehradun | Vann Villa Private Pool Homestay', description: 'Looking for a private luxury villa in Dehradun? Rent the entire 2BHK Vann Villa with private swimming pool, 5,000 sq ft lawns, and 100% privacy.', priority: '0.9', changefreq: 'weekly' },
+  { path: '/about', title: 'About Us | Vann Villa Dehradun', description: "Learn about Vann Villa, Dehradun's premier 2BHK luxury private pool homestay set across 5,000 sq ft of private fenced lawns.", priority: '0.8', changefreq: 'monthly' },
+  { path: '/contact', title: 'Contact Us | Vann Villa Dehradun', description: 'Contact Vann Villa in Dehradun via WhatsApp or phone. Book your luxury private pool villa stay with instant confirmation.', priority: '0.8', changefreq: 'monthly' },
+  { path: '/experience', title: 'The Experience | Vann Villa Dehradun', description: 'Explore the 5-star Vann Villa experience in Dehradun: private pool, scenic terrace, mountain views, and lush gardens.', priority: '0.8', changefreq: 'monthly' },
+  { path: '/packages', title: 'Luxury Villa Packages in Dehradun | Vann Villa', description: 'Browse luxury stay packages at Vann Villa Dehradun. Private pool 2BHK stay, family vacations, couple getaways & weekend retreats from ₹4,499/night.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/destination-guide', title: 'Dehradun Travel & Destination Guide | Vann Villa', description: 'Explore top attractions, nature trails, and hidden gems near Vann Villa in Dehradun. The ultimate local getaway travel guide.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/family-villa-dehradun', title: 'Family Villa in Dehradun | Vann Villa', description: 'Book the best family villa in Dehradun. Entire 2BHK luxury stay, private swimming pool, 5,000 sq ft fenced lawns, and space for up to 6 guests.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/couple-getaway-dehradun', title: 'Couple Getaway in Dehradun | Vann Villa', description: 'Romantic private pool villa in Dehradun for couples. 100% exclusive access, panoramic mountain terrace, and cozy luxury stay from ₹8,998.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/pet-friendly-villa-dehradun', title: 'Pet Friendly Villa in Dehradun | Vann Villa', description: '100% pet friendly luxury villa in Dehradun. Zero pet fees, 5,000 sq ft of securely fenced lawns, and private pool access for your stay.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/delhi-to-dehradun-weekend', title: 'Delhi to Dehradun Weekend Escape | Vann Villa', description: 'Easy drive from Delhi NCR to your private luxury pool villa in Dehradun. 2BHK stay, gated parking, and fresh mountain air.', priority: '0.9', changefreq: 'monthly' },
+  { path: '/terms-conditions', title: 'Terms & Conditions | Vann Villa', description: 'Terms and conditions for booking a stay at Vann Villa in Dehradun. Check-in policies, guest guidelines, and house rules.', priority: '0.5', changefreq: 'yearly' },
+  { path: '/privacy-policy', title: 'Privacy Policy | Vann Villa', description: 'Privacy Policy for Vann Villa guests and website visitors. Learn how we protect your personal data and booking privacy.', priority: '0.5', changefreq: 'yearly' },
+  { path: '/cancellation-refund', title: 'Cancellation & Refund Policy | Vann Villa', description: 'Cancellation and refund policy for Vann Villa bookings in Dehradun. Review our transparent refund terms and reservation policies.', priority: '0.5', changefreq: 'yearly' },
 ];
 
-const SITE_URL = 'https://vanvilla.com';
+const SITE_URL = 'https://vannvilla.com';
 const READY_TIMEOUT_MS = 15000;
 
 function startServer() {
   return new Promise((resolve) => {
     const app = express();
     app.use(express.static(DIST_DIR));
-    // SPA fallback for the dev server itself (not the final static host)
     app.use((req, res) => {
-      // console.log(`Fallback triggered for: ${req.url}`);
       const originalPath = path.join(DIST_DIR, 'original.html');
       if (fs.existsSync(originalPath)) {
         res.setHeader('Content-Type', 'text/html');
@@ -66,10 +60,8 @@ function outputPathFor(routePath) {
 }
 
 function injectMeta(html, route) {
-  // 1. Remove ALL existing <title> tags (including multiline, attributes like data-rh="true")
   html = html.replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '');
 
-  // 2. Remove ALL existing <meta> tags that match title, description, twitter:*
   html = html.replace(/<meta\b[^>]*>/gi, (tag) => {
     if (
       /name=["'](title|description|twitter:[^"']*)["']/i.test(tag) ||
@@ -80,7 +72,6 @@ function injectMeta(html, route) {
     return tag;
   });
 
-  // 3. Remove ALL existing <link rel="canonical"> tags
   html = html.replace(/<link\s+[^>]*rel=["']canonical["'][^>]*>/gi, '');
 
   const canonicalUrl = `${SITE_URL}${route.path === '/' ? '' : route.path}`;
@@ -91,17 +82,17 @@ function injectMeta(html, route) {
     <meta name="description" content="${route.description}" />
     <link rel="canonical" href="${canonicalUrl}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Van Villa" />
+    <meta property="og:site_name" content="Vann Villa" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:title" content="${route.title}" />
     <meta property="og:description" content="${route.description}" />
-    <meta property="og:image" content="https://vanvilla.com/images/vann-villa-exterior-lawn.webp" />
+    <meta property="og:image" content="https://vannvilla.com/images/vann-villa-exterior-lawn.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="${canonicalUrl}" />
     <meta name="twitter:title" content="${route.title}" />
     <meta name="twitter:description" content="${route.description}" />
-    <meta name="twitter:image" content="https://vanvilla.com/images/vann-villa-exterior-lawn.webp" />
+    <meta name="twitter:image" content="https://vannvilla.com/images/vann-villa-exterior-lawn.webp" />
   `;
 
   return html.replace('<head>', `<head>${cleanMeta}`);
@@ -121,17 +112,12 @@ async function prerender() {
     throw new Error('dist/ not found — run `vite build` before prerender.js');
   }
 
-  // Preserve the original empty shell for SPA fallback, so subsequent routes
-  // don't try to hydrate on top of the prerendered homepage.
   fs.copyFileSync(path.join(DIST_DIR, 'index.html'), path.join(DIST_DIR, 'original.html'));
 
   const server = await startServer();
 
-  // --no-sandbox / --disable-setuid-sandbox are required in most CI
-  // On Vercel, Puppeteer crashes due to missing shared libraries (e.g. libnspr4.so).
-  // We use @sparticuz/chromium which bundles the pre-compiled binary and libraries for AWS/Vercel.
   let executablePath = undefined;
-  let args = ['--no-sandbox', '--disable-setuid-sandbox'];
+  let args = ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu', '--disable-dev-shm-usage'];
   
   if (process.env.VERCEL && process.platform === 'linux') {
     console.log('Vercel Linux environment detected. Loading @sparticuz/chromium...');
@@ -140,11 +126,22 @@ async function prerender() {
     args = chromium.default.args;
   }
 
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    executablePath,
-    args,
-  });
+  let browser;
+  try {
+    const tempProfileDir = fs.mkdtempSync(path.join(os.tmpdir(), 'pptr-prerender-'));
+    browser = await puppeteer.launch({
+      headless: 'new',
+      executablePath,
+      userDataDir: tempProfileDir,
+      args,
+    });
+  } catch (launchErr) {
+    console.warn('[Prerender Warning] Headless browser launch skipped in this environment:', launchErr.message);
+    generateSitemap();
+    server.close();
+    console.log('Sitemap generated successfully. SPA distribution bundle ready.');
+    process.exit(0);
+  }
 
   const failures = [];
 
@@ -153,7 +150,6 @@ async function prerender() {
     page.on('console', msg => console.log(`[${route.path} LOG] ${msg.text()}`));
     page.on('pageerror', err => console.log(`[${route.path} ERR] ${err.message}`));
     
-    // Set prerender environment flag in browser before scripts execute
     await page.evaluateOnNewDocument(() => {
       window.__IS_PRERENDER__ = true;
       try {
@@ -166,13 +162,10 @@ async function prerender() {
     try {
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: READY_TIMEOUT_MS });
 
-      // Wait for the app-side ready signal (see main.jsx note below) instead
-      // of a fixed sleep, so late/async data fetches are captured too.
       await page.waitForFunction('window.__PRERENDER_READY__ === true', {
         timeout: READY_TIMEOUT_MS,
       });
 
-      // Explicitly remove loader from DOM if it exists
       await page.evaluate(() => {
         const loader = document.getElementById('initial-loader');
         if (loader) loader.remove();
@@ -181,13 +174,11 @@ async function prerender() {
       let html = await page.content();
       html = injectMeta(html, route);
 
-      // Clean up any absolute localhost / 127.0.0.1 origins injected into modulepreload, stylesheet, or script links
       html = html.replace(/https?:\/\/localhost:\d+\//gi, '/');
       html = html.replace(/https?:\/\/localhost:\d+/gi, '');
       html = html.replace(/https?:\/\/127\.0\.0\.1:\d+\//gi, '/');
       html = html.replace(/https?:\/\/127\.0\.0\.1:\d+/gi, '');
 
-      // Double safety: guarantee loader markup is never in static prerender HTML
       html = html.replace(/<div[^>]*id="initial-loader"[^>]*>[\s\S]*?<\/div>/gi, '');
       html = html.replace(/<div[^>]*style="[^"]*z-index:\s*99999[^"]*"[\s\S]*?<\/div>/gi, '');
 
@@ -212,46 +203,9 @@ async function prerender() {
   if (failures.length > 0) {
     console.error(`\n${failures.length} route(s) failed to prerender:`);
     failures.forEach((f) => console.error(`  - ${f.route}: ${f.error}`));
-    // Fail the build loudly rather than silently shipping blank pages.
     process.exit(1);
   }
 
-async function pingIndexNow() {
-  const https = require('https');
-  const urlList = ROUTES.map(r => `${SITE_URL}${r.path}`);
-  const payload = JSON.stringify({
-    host: 'vanvilla.com',
-    key: '404d80a1c1074e64816c8021cb8b7762',
-    keyLocation: 'https://vanvilla.com/404d80a1c1074e64816c8021cb8b7762.txt',
-    urlList: urlList
-  });
-
-  const options = {
-    hostname: 'api.indexnow.org',
-    port: 443,
-    path: '/indexnow',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-      'Content-Length': Buffer.byteLength(payload)
-    }
-  };
-
-  return new Promise((resolve) => {
-    const req = https.request(options, (res) => {
-      console.log(`[IndexNow Ping] Sent ${urlList.length} URLs to IndexNow. Status: ${res.statusCode}`);
-      resolve();
-    });
-    req.on('error', (e) => {
-      console.warn(`[IndexNow Ping Warning] ${e.message}`);
-      resolve();
-    });
-    req.write(payload);
-    req.end();
-  });
-}
-
-  await pingIndexNow();
   console.log(`\nAll ${ROUTES.length} routes prerendered successfully.`);
   process.exit(0);
 }

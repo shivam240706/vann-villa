@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from './Hero';
+import ReservationBar from './ReservationBar';
 import HighlightsBar from './HighlightsBar';
+import LivingVision from './LivingVision';
+import ResidenceBlueprint from './ResidenceBlueprint';
+import EstateStatusCalculator from './EstateStatusCalculator';
+import EstateDayTimeline from './EstateDayTimeline';
 import Packages from './Packages';
 import Amenities from './Amenities';
 import StatsCounter from './StatsCounter';
@@ -21,7 +26,12 @@ const Home = () => {
         description="Looking for the best villa in Dehradun? Vann Villa is a 5-star rated luxury 2BHK private pool homestay & hidden gem set across 5,000 sq ft of private lawns."
       />
       <Hero />
+      <ReservationBar />
       <HighlightsBar />
+      <LivingVision />
+      <ResidenceBlueprint />
+      <EstateStatusCalculator />
+      <EstateDayTimeline />
       <Packages />
       <ParallaxDivider imageSrc="/images/vann-villa-rooftop-view.webp" height="350px" />
       <Amenities />

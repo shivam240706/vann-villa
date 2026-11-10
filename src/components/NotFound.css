@@ -19,7 +19,7 @@
   color: var(--forest-green);
   line-height: 1;
   margin-bottom: 20px;
-  text-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .error-title {
@@ -53,9 +53,11 @@
   .error-code {
     font-size: 6rem;
   }
+
   .error-title {
     font-size: 1.5rem;
   }
+
   .error-actions {
     flex-direction: column;
     gap: 15px;

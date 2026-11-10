@@ -32,26 +32,26 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, phone, message } = formData;
-    
+
     // Construct the WhatsApp message
-    const whatsappText = `Hello Vann Villa! I have an inquiry.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+    const whatsappText = `Hello Van Villa! I have an inquiry.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
     const whatsappNumber = "919411770969";
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
-    
+
     // Redirect to WhatsApp
     window.open(whatsappURL, '_blank');
   };
 
   return (
     <div className="contact-page">
-      <SEO 
-        title="Contact Us | Book Vann Villa: Luxury Private Villa in Dehradun"
-        description="Ready to experience Dehradun's hidden gem? Contact Vann Villa today to book your luxury private villa retreat or inquire about our amenities."
+      <SEO
+        title="Contact Us | Book Van Villa: Luxury Private Villa in Dehradun"
+        description="Ready to experience Dehradun's hidden gem? Contact Van Villa today to book your luxury private villa retreat or inquire about our amenities."
       />
       {/* Hero Section */}
       <section className="contact-hero">
-        <img src="/images/vann-villa-exterior.webp" alt="Vann Villa: Premium Luxury Private Villa in Dehradun" className="global-hero-bg" loading="eager" />
-        <motion.div 
+        <img src="/images/vann-villa-exterior.webp" alt="Van Villa: Premium Luxury Private Villa in Dehradun" className="global-hero-bg" loading="eager" />
+        <motion.div
           className="contact-hero-overlay"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const Contact = () => {
 
       {/* Info Section */}
       <section className="contact-info-section section-padding" aria-label="Contact information">
-        <motion.div 
+        <motion.div
           className="contact-info-content"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -85,12 +85,12 @@ const Contact = () => {
           </a>
 
           <p className="info-desc">
-            Vann Villa is situated amidst the serene landscapes of Dehradun, offering a peaceful escape from the hustle and bustle of city life. Discover us at:
-            <br/><br/>
-            <a 
-              href="https://maps.app.goo.gl/gjF7a1iz6D2W21HR8" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            Van Villa is situated amidst the serene landscapes of Dehradun, offering a peaceful escape from the hustle and bustle of city life. Discover us at:
+            <br /><br />
+            <a
+              href="https://maps.app.goo.gl/gjF7a1iz6D2W21HR8"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ color: 'var(--accent-gold)', textDecoration: 'none', fontWeight: 'bold' }}
             >
               Dehradun, Uttarakhand, 248007
@@ -107,19 +107,19 @@ const Contact = () => {
       <section className="map-form-section" aria-label="Location and inquiry form">
         <div className="map-container">
           <div className="map-placeholder" style={{ padding: 0, overflow: 'hidden' }}>
-            <iframe 
-              src="https://maps.google.com/maps?q=30.3765003,77.9633871&z=15&output=embed" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
+            <iframe
+              src="https://maps.google.com/maps?q=30.3765003,77.9633871&z=15&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Vann Villa Location on Google Maps"
+              title="Van Villa Location on Google Maps"
             ></iframe>
           </div>
         </div>
-        <motion.div 
+        <motion.div
           className="form-container"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -129,56 +129,56 @@ const Contact = () => {
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
             <div className="form-group">
               <label htmlFor="contact-name" className="sr-only">Your Name</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="contact-name"
-                name="name" 
-                placeholder="Name" 
-                required 
+                name="name"
+                placeholder="Name"
+                required
                 autoComplete="name"
                 aria-required="true"
-                value={formData.name} 
-                onChange={handleChange} 
+                value={formData.name}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group">
               <label htmlFor="contact-email" className="sr-only">Email Address</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 id="contact-email"
-                name="email" 
-                placeholder="Email" 
-                required 
+                name="email"
+                placeholder="Email"
+                required
                 autoComplete="email"
                 aria-required="true"
-                value={formData.email} 
-                onChange={handleChange} 
+                value={formData.email}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group">
               <label htmlFor="contact-phone" className="sr-only">Phone Number</label>
-              <input 
-                type="tel" 
+              <input
+                type="tel"
                 id="contact-phone"
-                name="phone" 
-                placeholder="Phone" 
-                required 
+                name="phone"
+                placeholder="Phone"
+                required
                 autoComplete="tel"
                 aria-required="true"
-                value={formData.phone} 
-                onChange={handleChange} 
+                value={formData.phone}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group">
               <label htmlFor="contact-message" className="sr-only">Your Message</label>
-              <textarea 
+              <textarea
                 id="contact-message"
-                name="message" 
-                placeholder="HOW MAY I ASSIST YOU?" 
-                rows="4" 
-                required 
+                name="message"
+                placeholder="HOW MAY I ASSIST YOU?"
+                rows="4"
+                required
                 aria-required="true"
-                value={formData.message} 
+                value={formData.message}
                 onChange={handleChange}
               ></textarea>
             </div>
@@ -197,8 +197,8 @@ const Contact = () => {
           >
             Our Reservation Partners
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="ota-grid"
             initial="hidden"
             whileInView="visible"
