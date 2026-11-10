@@ -1,11 +1,9 @@
 .reservation-bar-wrapper {
   position: relative;
-  z-index: 20;
-  margin-top: -48px;
-  padding: 0 20px 40px;
+  z-index: 10;
+  padding: 24px 20px 48px;
   max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .reservation-bar-container {
@@ -14,10 +12,26 @@
 
 .reservation-bar-card {
   background: #FFFFFF;
-  border: 1px solid rgba(165, 167, 155, 0.5);
+  border: 1px solid rgba(165, 167, 155, 0.45);
   border-radius: 4px;
-  box-shadow: 0 4px 18px rgba(43, 6, 5, 0.08);
-  padding: 24px 28px 16px;
+  box-shadow: 0 4px 20px rgba(43, 6, 5, 0.06);
+  padding: 20px 28px 16px;
+}
+
+.res-card-top-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--deep-burgundy, #590907);
+  margin-bottom: 14px;
+}
+
+.res-tag-divider {
+  color: var(--muted-sage, #A5A79B);
 }
 
 .reservation-form {
@@ -37,12 +51,12 @@
 .field-label {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   color: var(--text-muted);
 }
 
@@ -54,10 +68,10 @@
 .field-input,
 .field-select {
   border: 1px solid rgba(165, 167, 155, 0.45);
-  background: var(--primary-bg);
-  color: var(--text-dark);
+  background: var(--primary-bg, #FAF6F0);
+  color: var(--text-dark, #2B0605);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 16px; /* Prevents iOS auto-zoom */
   min-height: 44px;
   font-weight: 500;
   padding: 10px 12px;
@@ -78,7 +92,7 @@
 
 .field-divider {
   width: 1px;
-  height: 42px;
+  height: 40px;
   background: rgba(165, 167, 155, 0.35);
 }
 
@@ -90,22 +104,23 @@
 }
 
 .reservation-submit-btn {
-  background: var(--deep-burgundy);
+  background: var(--deep-burgundy, #590907);
   color: #FFFFFF;
-  border: 1px solid var(--deep-burgundy);
+  border: 1px solid var(--deep-burgundy, #590907);
   border-radius: 2px;
   padding: 11px 22px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 48px;
   cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 .reservation-submit-btn:hover {
@@ -114,15 +129,15 @@
 }
 
 .btn-subtext {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 400;
   opacity: 0.88;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   margin-top: 2px;
 }
 
 .reservation-guarantee-bar {
-  margin-top: 18px;
+  margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid rgba(165, 167, 155, 0.25);
   display: flex;
@@ -160,6 +175,7 @@
   color: #78100E;
 }
 
+/* Tablet Layout */
 @media (max-width: 1024px) {
   .reservation-form {
     grid-template-columns: 1fr 1fr;
@@ -176,33 +192,59 @@
   }
 }
 
-@media (max-width: 640px) {
+/* Mobile Layout (< 768px) */
+@media (max-width: 768px) {
   .reservation-bar-wrapper {
-    margin-top: -24px;
-    padding: 0 16px 30px;
+    padding: 16px 16px 36px;
+    margin-top: 0;
   }
 
   .reservation-bar-card {
     padding: 18px 16px 14px;
   }
 
+  /* Side-by-side date pickers on phone to cut vertical bulk in half! */
   .reservation-form {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
 
+  .date-field-checkin {
+    grid-column: 1;
+  }
+
+  .date-field-checkout {
+    grid-column: 2;
+  }
+
+  .select-field-guests {
+    grid-column: span 2;
+  }
+
+  .select-field-stay {
+    grid-column: span 2;
+  }
+
   .reservation-cta-wrapper {
-    grid-column: span 1;
+    grid-column: span 2;
+    padding-top: 4px;
+  }
+
+  .reservation-submit-btn {
+    min-height: 48px;
+    padding: 12px 16px;
   }
 
   .reservation-guarantee-bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 6px;
+    font-size: 0.76rem;
   }
 
   .guarantee-dot {
     display: none;
   }
 }
-

@@ -1,8 +1,13 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import MagneticButton from './MagneticButton';
-
 import './Hero.css';
+
+const CompassIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="10"></circle>
+    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+  </svg>
+);
 
 const Hero = () => {
   const ref = useRef(null);
@@ -11,104 +16,104 @@ const Hero = () => {
     offset: ["start start", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.15
-      }
-    }
-  };
-
-  const wordVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1] }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3, ease: "easeOut" }
-    }
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section ref={ref} id="hero" className="hero" aria-label="Welcome to Vann Villa">
-      <div className="hero-overlay"></div>
+      <div className="hero-overlay" />
+      
       <motion.div 
         className="hero-content"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         style={{ y, opacity }}
       >
-        <motion.h1 className="hero-title" style={{ marginBottom: '10px' }}>
-          {"Wake up to misty mountain views in Dehradun".split(" ").map((word, idx) => (
-            <span key={idx} style={{ display: 'inline-block', marginRight: '0.25em', overflow: 'hidden' }}>
-              <motion.span style={{ display: 'inline-block' }} variants={wordVariants}>
-                {word}
-              </motion.span>
-            </span>
-          ))}
-        </motion.h1>
-        <motion.p variants={itemVariants} style={{ fontSize: '1.6rem', fontWeight: '600', color: 'var(--secondary-bg, #E8D2B5)', marginBottom: '30px' }}>
-          <span style={{ fontSize: '1.05rem', fontWeight: '400', color: 'rgba(255, 255, 255, 0.9)', marginRight: '8px', letterSpacing: '0.5px' }}>Starting at</span>
-          ₹4,499<span style={{ fontSize: '0.8em', marginLeft: '4px' }}>/night</span>
-        </motion.p>
+        {/* Editorial Eyebrow */}
+        <div className="hero-eyebrow">
+          <span className="eyebrow-icon"><CompassIcon /></span>
+          <span className="eyebrow-text">Estate No. 01 • Shivalik Foothills, Dehradun</span>
+        </div>
 
-        <motion.div variants={itemVariants} className="hero-selling-points">
-          <div className="point"><span>Private Pool</span></div>
-          <div className="point"><span>Pet Friendly</span></div>
-          <div className="point"><span>Entire 2BHK Villa</span></div>
-          <div className="point"><span>5,000 Sq Ft Lawns</span></div>
-        </motion.div>
+        {/* Master Headline */}
+        <h1 className="hero-title">
+          An Unshared Mountain Sanctuary
+        </h1>
 
-        <motion.div variants={itemVariants} className="hero-actions">
-          <MagneticButton id="hero-cta-book" className="btn-primary hero-cta-btn" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => window.location.href = 'https://wa.me/919411770969?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20and%20pricing%20at%20Vann%20Villa.'}>Check Availability & Pricing</MagneticButton>
-          <MagneticButton id="hero-cta-explore" className="btn-primary hero-cta-btn" style={{ textTransform: 'none', letterSpacing: '1px', fontSize: '1rem' }} onClick={() => {
-            const packagesSection = document.getElementById('packages');
-            if (packagesSection) packagesSection.scrollIntoView({ behavior: 'smooth' });
-          }}>View Estate Rates</MagneticButton>
-        </motion.div>
+        {/* Editorial Narrative */}
+        <p className="hero-narrative">
+          A private 2BHK luxury residence enveloped by 5,000 sq ft of pine-fringed grounds and an unshared mountain plunge pool. 100% exclusive seclusion, 500m from UPES.
+        </p>
+
+        {/* Architectural Specs Ribbon */}
+        <div className="hero-specs-ribbon">
+          <div className="hero-spec-item">
+            <strong className="spec-number">5,000</strong>
+            <span className="spec-unit">Sq Ft Grounds</span>
+            <span className="spec-detail">Secure Fenced Lawn</span>
+          </div>
+
+          <div className="hero-spec-divider" aria-hidden="true" />
+
+          <div className="hero-spec-item">
+            <strong className="spec-number">Unshared</strong>
+            <span className="spec-unit">Private Pool</span>
+            <span className="spec-detail">Mountain Water • 4.5 Ft</span>
+          </div>
+
+          <div className="hero-spec-divider" aria-hidden="true" />
+
+          <div className="hero-spec-item">
+            <strong className="spec-number">100%</strong>
+            <span className="spec-unit">Exclusive Privacy</span>
+            <span className="spec-detail">Entire 2BHK Residence</span>
+          </div>
+        </div>
+
+        {/* Streamlined Action Bar */}
+        <div className="hero-actions-row">
+          <a
+            href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20direct%20availability%20and%20rates."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-primary-btn"
+          >
+            <span>Inquire Availability on WhatsApp</span>
+            <span className="btn-rate-hint">From ₹4,499/nt • Zero OTA Fee</span>
+          </a>
+
+          <button
+            type="button"
+            className="hero-secondary-btn"
+            onClick={() => scrollToSection('living-vision')}
+          >
+            Explore The Living Vision ↓
+          </button>
+        </div>
       </motion.div>
 
-      {/* Animated scroll indicator */}
-      <motion.div 
-        className="scroll-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.4 }}
-        onClick={() => {
-          const nextSection = document.querySelector('.highlights-bar-container');
-          if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
-        }}
+      {/* Understated Scroll Hint */}
+      <div 
+        className="hero-scroll-cue"
+        onClick={() => scrollToSection('reservation-section')}
         role="button"
         tabIndex={0}
         aria-label="Scroll down to explore"
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            const nextSection = document.querySelector('.highlights-bar-container');
-            if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth' });
+            scrollToSection('reservation-section');
           }
         }}
       >
-        <div className="scroll-mouse">
-          <div className="scroll-wheel"></div>
-        </div>
-        <span className="scroll-text">Scroll</span>
-      </motion.div>
+        <span className="scroll-cue-line" />
+        <span className="scroll-cue-text">Scroll to Discover</span>
+      </div>
     </section>
   );
 };
