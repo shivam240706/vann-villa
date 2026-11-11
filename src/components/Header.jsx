@@ -236,18 +236,8 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Desktop Header CTA */}
+        {/* Mobile Menu Hamburger Button: ONLY rendered when drawer is CLOSED */}
         <div className="header-actions">
-          <a
-            href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20direct%20availability%20and%20rates."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="header-direct-btn"
-          >
-            Direct Reservation
-          </a>
-
-          {/* Mobile Menu Hamburger Button: ONLY rendered when drawer is CLOSED */}
           {!menuOpen && (
             <button
               className="mobile-menu-toggle"

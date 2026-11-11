@@ -1,7 +1,7 @@
 .testimonials-section {
   background-color: var(--primary-bg, #FAF6F0);
   border-top: 1px solid rgba(89, 9, 7, 0.1);
-  padding: 50px 20px 45px;
+  padding: 45px 20px 45px;
 }
 
 .testimonials-container {
@@ -10,60 +10,62 @@
   padding: 0 16px;
 }
 
-/* Authentic Google Aggregate Rating Header (Scaled down 20%) */
+/* SLEEK, REFINED GOOGLE RATING HEADER (No oversized 4.7 font) */
 .aggregate-rating-header {
-  max-width: 480px;
+  max-width: 580px;
   margin: 0 auto 28px;
-  padding: 12px 20px;
+  padding: 10px 18px;
   background-color: #FFFFFF;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  border: 1px solid rgba(165, 167, 155, 0.35);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .aggregate-rating-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.aggregate-score {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 2.2rem;
-  font-weight: 500;
-  color: var(--text-dark, #2B0605);
-  line-height: 1;
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #3c4043;
+  font-family: var(--font-body);
 }
 
-.aggregate-details {
-  text-align: left;
+.aggregate-score-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  background: rgba(89, 9, 7, 0.05);
+  border-radius: 2px;
+}
+
+/* REFINED 4.7 FONT: Balanced and proportional, not oversized */
+.aggregate-score {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--deep-burgundy, #590907);
+  line-height: 1;
 }
 
 .aggregate-stars {
   color: #FBBC04;
-  font-size: 1.05rem;
-  letter-spacing: 2px;
+  font-size: 0.92rem;
+  letter-spacing: 1px;
   line-height: 1;
-  margin-bottom: 2px;
 }
 
 .aggregate-label {
   font-size: 0.72rem;
-  color: #5f6368;
-  font-family: var(--font-body);
-}
-
-.google-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  background-color: #f8f9fa;
-  border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  font-size: 0.78rem;
-  font-weight: 500;
   color: #5f6368;
   font-family: var(--font-body);
 }
@@ -79,9 +81,9 @@
 
 .testimonial-card {
   background-color: #FFFFFF;
-  padding: 16px 14px;
-  border-radius: 6px;
-  border: 1px solid #e0e0e0;
+  padding: 18px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(165, 167, 155, 0.3);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -90,7 +92,7 @@
 }
 
 .testimonial-card:hover {
-  border-color: rgba(89, 9, 7, 0.3);
+  border-color: rgba(89, 9, 7, 0.4);
 }
 
 .review-header {
@@ -102,15 +104,15 @@
 }
 
 .review-avatar {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   font-family: var(--font-body);
   flex-shrink: 0;
 }
@@ -122,21 +124,22 @@
   min-width: 0;
 }
 
+/* REFINED GUEST NAME: Elegant editorial typography instead of harsh bold sans-serif */
 .author {
+  font-family: var(--font-heading);
   font-weight: 600;
-  color: #202124;
-  font-size: 0.78rem; /* 20% smaller than 0.96rem */
+  color: var(--text-dark, #2B0605);
+  font-size: 1.05rem;
   margin: 0;
-  letter-spacing: 0;
-  font-family: var(--font-body);
-  line-height: 1.25;
+  letter-spacing: 0.4px;
+  line-height: 1.15;
 }
 
 .review-meta {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.65rem; /* 20% smaller than 0.78rem */
+  font-size: 0.65rem;
   color: #70757a;
   font-family: var(--font-body);
 }
@@ -147,8 +150,8 @@
 }
 
 .meta-google-icon svg {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
 }
 
 .review-stars-container {
@@ -157,14 +160,14 @@
 
 .stars {
   color: #FBBC04;
-  font-size: 0.95rem; /* 20% smaller than 1.15rem */
-  letter-spacing: 1.5px;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
   line-height: 1;
 }
 
 .quote {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.74rem; /* 20% smaller than 0.9rem */
+  font-family: var(--font-body);
+  font-size: 0.74rem;
   color: #3c4043;
   line-height: 1.5;
   margin: 0;
@@ -181,7 +184,7 @@
 /* Mobile: 1 column */
 @media (max-width: 640px) {
   .testimonials-section {
-    padding: 38px 14px 32px;
+    padding: 36px 14px 30px;
   }
 
   .testimonials-grid {
@@ -194,15 +197,15 @@
   }
   
   .aggregate-rating-header {
-    padding: 12px 14px;
-    margin-bottom: 20px;
+    padding: 10px 12px;
+    margin-bottom: 18px;
   }
 
   .aggregate-score {
-    font-size: 1.9rem;
+    font-size: 1.05rem;
   }
 
   .aggregate-stars {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 }
