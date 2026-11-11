@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation, Mousewheel, FreeMode } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation, Mousewheel, FreeMode, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -103,11 +103,16 @@ const Amenities = () => {
       <div className="amenities-swiper-container">
         <Swiper
           effect={'coverflow'}
-          speed={600}
+          speed={850}
           freeMode={true}
           grabCursor={true}
           centeredSlides={true}
           loop={true}
+          autoplay={{
+            delay: 2800,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
           slidesPerView={'auto'}
           slideToClickedSlide={true}
           coverflowEffect={{
@@ -123,7 +128,7 @@ const Amenities = () => {
           }}
           pagination={{ clickable: true }}
           navigation={{ clickable: true }}
-          modules={[EffectCoverflow, Pagination, Navigation, Mousewheel, FreeMode]}
+          modules={[EffectCoverflow, Pagination, Navigation, Mousewheel, FreeMode, Autoplay]}
           className="amenities-coverflow"
         >
           {features.map((feature, idx) => {

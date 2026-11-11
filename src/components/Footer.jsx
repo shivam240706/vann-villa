@@ -64,14 +64,19 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Row */}
+        {/* Bottom Row: 3 Balanced Columns (Contact, Quick Links, Popular Retreats) */}
         <div className="footer-bottom-row">
           {/* Contact Column */}
           <div className="footer-col footer-contact">
             <h3>Contact</h3>
             <address>
-              <a href="tel:+919411770969" className="footer-contact-item">
-                <PhoneIcon /> +91 94117 70969
+              <a 
+                href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20a%20stay." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="footer-contact-item"
+              >
+                <PhoneIcon /> WhatsApp Concierge
               </a>
               <a href="mailto:vannvilla@gmail.com" className="footer-contact-item">
                 <MailIcon /> vannvilla@gmail.com
@@ -85,21 +90,10 @@ const Footer = () => {
           {/* Quick Links Column */}
           <div className="footer-col footer-quick-links">
             <h3>Quick Links</h3>
-            <Link to="/terms-conditions">Terms & Conditions</Link>
+            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/cancellation-refund">Cancellation Policy</Link>
             <Link to="/destination-guide">Dehradun Guide</Link>
-          </div>
-
-          {/* Trust Column */}
-          <div className="footer-col footer-trust">
-            <h3>Estate Standards</h3>
-            <div className="trust-badges">
-              <span className="trust-badge"><span className="trust-marker">/</span> Verified Private Estate</span>
-              <span className="trust-badge"><span className="trust-marker">/</span> Direct Host Reservation</span>
-              <span className="trust-badge"><span className="trust-marker">/</span> 4.7 out of 5.0 Rating</span>
-              <span className="trust-badge"><span className="trust-marker">/</span> Dedicated Pet-Friendly Grounds</span>
-            </div>
           </div>
 
           {/* Popular Retreats Column */}
@@ -110,7 +104,6 @@ const Footer = () => {
             <Link to="/pet-friendly-villa-dehradun">Pet-Friendly Stay</Link>
             <Link to="/family-villa-dehradun">Family Vacation</Link>
             <Link to="/delhi-to-dehradun-weekend">Delhi Weekend Trip</Link>
-            <Link to="/destination-guide">Dehradun Guide</Link>
           </div>
         </div>
       </div>

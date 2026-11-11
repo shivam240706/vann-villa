@@ -38,10 +38,10 @@ const Hero = () => {
         </h1>
 
         <p className="hero-subtitle">
-          A secluded 2BHK luxury pool residence set across 5,000 sq ft of private pine-fringed grounds. Reserved strictly for one gathering at a time.
+          Private 2BHK Pool Residence &amp; 5,000 Sq Ft Grounds &bull; Reserved Strictly for One Gathering
         </p>
 
-        {/* Elegant Minimalist Specs Line (No heavy boxy pill cluster) */}
+        {/* Minimalist Specs - Hidden on mobile to keep hero airy and uncluttered */}
         <div className="hero-specs-line">
           <span>Unshared Private Pool</span>
           <span className="spec-dot">&bull;</span>
@@ -64,15 +64,19 @@ const Hero = () => {
           </a>
 
           <div className="hero-rate-tag">
-            Direct Host Rate: <span className="rate-accent">₹4,499 / night</span> &bull; Zero OTA Commission
+            Direct Host Rate: <span className="rate-accent">From ₹4,499 / night</span>
           </div>
 
           <a 
-            href="#reservation" 
-            onClick={scrollToReservation}
+            href="#residence" 
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('residence') || document.getElementById('reservation');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="hero-scroll-link"
           >
-            Check Dates &amp; Details &darr;
+            Explore Villa &amp; Suites &darr;
           </a>
         </div>
       </motion.div>

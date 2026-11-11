@@ -378,7 +378,7 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Mobile Drawer Footer with Direct Booking */}
+        {/* Mobile Drawer Footer with Direct Booking (No raw phone number shown) */}
         <div className="mobile-drawer-footer">
           <a
             href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20inquire%20about%20direct%20availability%20and%20rates."
@@ -386,10 +386,10 @@ const Header = () => {
             rel="noopener noreferrer"
             className="mobile-drawer-whatsapp-btn"
           >
-            Direct Host WhatsApp: +91 94117 70969
+            Chat with Host on WhatsApp &rarr;
           </a>
           <p className="mobile-drawer-location">
-            Dehradun Foothills, Uttarakhand • 100% Private 2BHK Pool Estate
+            Dehradun Foothills, Uttarakhand &bull; 100% Private 2BHK Pool Estate
           </p>
         </div>
       </div>

@@ -72,7 +72,7 @@ const Contact = () => {
         >
           <h2 className="info-title">GET IN TOUCH WITH US</h2>
           <div className="info-details">
-            <a href="tel:+919411770969" className="contact-link">+91 94117 70969</a>
+            <a href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" className="contact-link">Direct WhatsApp Concierge</a>
             <span className="contact-separator" aria-hidden="true">|</span>
             <a href="mailto:info@vanvilla.com?subject=Inquiry%20for%20Vann%20Villa" className="contact-link email">info@vanvilla.com</a>
           </div>

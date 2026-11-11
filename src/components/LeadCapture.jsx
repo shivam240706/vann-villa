@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './LeadCapture.css';
 
-const MailIcon = () => (
+const PhoneIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="2" y="4" width="20" height="16" rx="1"></rect>
-    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
   </svg>
 );
 
@@ -16,37 +15,37 @@ const CheckIcon = () => (
 );
 
 const LeadCapture = () => {
-  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [lastEmail, setLastEmail] = useState('');
+  const [lastPhone, setLastPhone] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const trimmed = email.trim();
-    if (!trimmed || !trimmed.includes('@')) return;
+    const trimmed = phone.trim();
+    if (!trimmed || trimmed.length < 8) return;
 
-    setLastEmail(trimmed);
+    setLastPhone(trimmed);
     setSubmitted(true);
 
-    // 1. Save locally to localStorage so emails are never lost
+    // Save locally to localStorage so numbers are preserved
     try {
-      const existing = JSON.parse(localStorage.getItem('vann_villa_registered_emails') || '[]');
-      existing.push({ email: trimmed, date: new Date().toISOString() });
-      localStorage.setItem('vann_villa_registered_emails', JSON.stringify(existing));
+      const existing = JSON.parse(localStorage.getItem('vann_villa_registered_phones') || '[]');
+      existing.push({ phone: trimmed, date: new Date().toISOString() });
+      localStorage.setItem('vann_villa_registered_phones', JSON.stringify(existing));
     } catch {
       // Ignore localStorage error if private mode
     }
 
-    // 2. Direct WhatsApp forward to owner at +91 6396885805
+    // Direct WhatsApp forward to host (phone number kept private in backend URL, not shown in UI)
     const today = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-    const message = `Hello Vann Villa! Please register my email for Estate Dispatch, seasonal privileges, and exclusive rate updates:%0A%0A*Email:* ${encodeURIComponent(trimmed)}%0A*Date:* ${encodeURIComponent(today)}`;
+    const message = `Hello Vann Villa! Please register my mobile number for Estate Dispatch, seasonal privileges, and exclusive rate updates:%0A%0A*Mobile Number:* ${encodeURIComponent(trimmed)}%0A*Date:* ${encodeURIComponent(today)}`;
     const whatsappUrl = `https://wa.me/916396885805?text=${message}`;
 
     // Open WhatsApp in new window/tab
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
     // Reset input
-    setEmail('');
+    setPhone('');
   };
 
   return (
@@ -75,17 +74,17 @@ const LeadCapture = () => {
                 onSubmit={handleSubmit}
               >
                 <div className="input-group">
-                  <span className="input-icon"><MailIcon /></span>
+                  <span className="input-icon"><PhoneIcon /></span>
                   <input 
-                    type="email" 
-                    id="newsletter-email"
-                    name="email"
-                    autoComplete="email"
-                    placeholder="Enter your email address" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    type="tel" 
+                    id="newsletter-phone"
+                    name="phone"
+                    autoComplete="tel"
+                    placeholder="Enter your phone number" 
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     required 
-                    aria-label="Email address for estate dispatch"
+                    aria-label="Mobile phone number for estate dispatch"
                   />
                 </div>
                 <button type="submit" className="subscribe-btn">
@@ -93,7 +92,7 @@ const LeadCapture = () => {
                   <span className="btn-arrow" aria-hidden="true">&rarr;</span>
                 </button>
                 <span className="lead-note">
-                  Direct dispatch to host (+91 6396885805) • Zero spam
+                  Direct dispatch to estate host &bull; Zero spam
                 </span>
               </form>
             ) : (
@@ -103,14 +102,14 @@ const LeadCapture = () => {
                   <span className="success-tag">Registration Sent</span>
                 </div>
                 <p className="success-text">
-                  Your email <strong>{lastEmail}</strong> has been forwarded to our estate team on WhatsApp (+91 6396885805).
+                  Your number <strong>{lastPhone}</strong> has been shared with our estate concierge on WhatsApp.
                 </p>
                 <button 
                   type="button" 
                   className="register-another-btn"
                   onClick={() => setSubmitted(false)}
                 >
-                  Register another email
+                  Register another number
                 </button>
               </div>
             )}

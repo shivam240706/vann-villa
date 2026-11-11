@@ -23,12 +23,14 @@ const MobileBottomBar = () => {
 
       <div className="mobile-bar-buttons">
         <a
-          href="tel:+919411770969"
+          href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20connect%20with%20the%20host."
+          target="_blank"
+          rel="noopener noreferrer"
           className="mobile-call-btn"
-          aria-label="Call Villa Host"
+          aria-label="Chat with Villa Host"
         >
           <PhoneIcon />
-          <span>Call</span>
+          <span>Chat</span>
         </a>
 
         <a

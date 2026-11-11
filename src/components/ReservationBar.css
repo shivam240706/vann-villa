@@ -47,6 +47,7 @@
   flex-direction: column;
   gap: 4px;
   min-width: 0;
+  position: relative;
 }
 
 .field-label {
@@ -68,8 +69,7 @@
   height: 13px;
 }
 
-.field-input,
-.field-select {
+.field-input {
   border: 1px solid rgba(165, 167, 155, 0.45);
   background: var(--primary-bg, #FAF6F0);
   color: var(--text-dark, #2B0605);
@@ -83,14 +83,89 @@
   transition: border-color 0.2s ease, background 0.2s ease;
   width: 100%;
   cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
+  box-sizing: border-box;
 }
 
-.field-input:focus,
-.field-select:focus {
+.field-input:focus {
   border-color: var(--deep-burgundy);
   background: #FDFBF7;
+}
+
+/* Custom Select: Bounded strictly inside card, NEVER overflows mobile screen */
+.custom-select-trigger {
+  border: 1px solid rgba(165, 167, 155, 0.45);
+  background: var(--primary-bg, #FAF6F0);
+  color: var(--text-dark, #2B0605);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  min-height: 38px;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  user-select: none;
+}
+
+.custom-select-trigger.open,
+.custom-select-trigger:focus {
+  border-color: var(--deep-burgundy);
+  background: #FDFBF7;
+}
+
+.selected-value-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 6px;
+}
+
+.custom-select-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(165, 167, 155, 0.45);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(43, 6, 5, 0.18);
+  z-index: 100;
+  max-height: 220px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.custom-select-item {
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  color: var(--text-dark, #2B0605);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.15s ease, color 0.15s ease;
+  font-family: var(--font-body);
+}
+
+.custom-select-item:hover,
+.custom-select-item.selected {
+  background: rgba(89, 9, 7, 0.08);
+  color: var(--deep-burgundy, #590907);
+  font-weight: 600;
+}
+
+.item-check {
+  color: var(--deep-burgundy);
+  font-weight: 700;
+  font-size: 0.85rem;
 }
 
 .field-divider {
@@ -214,10 +289,25 @@
   }
 
   .field-input,
-  .field-select {
+  .field-select,
+  .custom-select-trigger {
     font-size: 0.82rem;
     min-height: 36px;
     padding: 6px 8px;
+  }
+
+  .custom-select-menu {
+    top: calc(100% + 2px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .custom-select-item {
+    padding: 9px 10px;
+    font-size: 0.78rem;
   }
 
   .reservation-submit-btn {
