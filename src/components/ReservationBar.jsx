@@ -61,7 +61,7 @@ const ReservationBar = () => {
   };
 
   return (
-    <section className="reservation-bar-wrapper" id="reservation-section" aria-label="Check Villa Availability">
+    <section className="reservation-bar-wrapper" id="reservation" aria-label="Check Villa Availability">
       <div className="reservation-bar-container">
         <div className="reservation-bar-card">
           <div className="res-card-top-tag">

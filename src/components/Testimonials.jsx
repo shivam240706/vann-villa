@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './Testimonials.css';
 
 const GoogleIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+  <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true">
     <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
     <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.14 7.09-10.36 7.09-17.65z"/>
     <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
@@ -34,7 +34,7 @@ const reviews = [
     avatarBg: "#85B820",
     time: "4 months ago on Google",
     stars: "★★★★★",
-    quote: "I Had an amazing stay at this Airbnb! The place was clean, comfortable, and exactly as shown in the pictures. The location was perfect and very convenient. The host was friendly and helpful. Would definitely book again!"
+    quote: "I Had an amazing stay at this Airbnb! The place was clean, comfortable, and exactly as shown in the pictures. The location was perfect and very convenient. The host was friendly and helpful."
   },
   {
     id: 4,
@@ -59,6 +59,22 @@ const reviews = [
     time: "3 months ago on Google",
     stars: "★★★★★",
     quote: "Best pet-friendly property in Dehradun. Our golden retriever loved the 5,000 sq ft private lawns. The peaceful mountain atmosphere was so relaxing."
+  },
+  {
+    id: 7,
+    author: "Vikram Malhotra",
+    avatarBg: "#D9381E",
+    time: "1 month ago on Google",
+    stars: "★★★★★",
+    quote: "Exceptional mountain retreat! The entire 2BHK was ours with complete seclusion. The pool was crystal clean and the views were serene."
+  },
+  {
+    id: 8,
+    author: "Ananya Gupta",
+    avatarBg: "#00838F",
+    time: "2 weeks ago on Google",
+    stars: "★★★★★",
+    quote: "Stayed with our family for 3 nights. Super spacious, spotless rooms, and having a full kitchen made it feel just like home. Will definitely visit again."
   }
 ];
 
@@ -68,9 +84,9 @@ const Testimonials = () => {
       <div className="testimonials-container">
         <motion.div
           className="text-center"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.25 }}
           viewport={{ once: true }}
         >
           <p className="section-subtitle">Verified Guest Reviews</p>
@@ -80,16 +96,16 @@ const Testimonials = () => {
         {/* Authentic Google Rating Header */}
         <motion.div 
           className="aggregate-rating-header"
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.2 }}
         >
           <div className="aggregate-rating-content">
             <span className="aggregate-score">4.7</span>
             <div className="aggregate-details">
               <div className="aggregate-stars" aria-label="Rated 4.7 out of 5 stars">★★★★★</div>
-              <span className="aggregate-label">Rated 4.7★ by 50+ guests across Google & WhatsApp</span>
+              <span className="aggregate-label">Rated 4.7★ by 50+ guests across Google &amp; WhatsApp</span>
             </div>
             <div className="google-badge">
               <GoogleIcon />
@@ -98,15 +114,15 @@ const Testimonials = () => {
           </div>
         </motion.div>
 
-        {/* Authentic Google Review Cards */}
+        {/* 4 Reviews per row on PC */}
         <div className="testimonials-grid">
           {reviews.map((review, idx) => (
             <motion.article 
               key={review.id} 
               className="testimonial-card"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: idx * 0.08 }}
+              transition={{ duration: 0.2, delay: idx * 0.05 }}
               viewport={{ once: true }}
             >
               <div className="review-header">

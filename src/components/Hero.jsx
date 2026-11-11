@@ -12,9 +12,9 @@ const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
-  const scrollToResidence = (e) => {
+  const scrollToReservation = (e) => {
     e.preventDefault();
-    const el = document.getElementById('residence');
+    const el = document.getElementById('reservation');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -65,11 +65,11 @@ const Hero = () => {
           </div>
 
           <a 
-            href="#residence" 
-            onClick={scrollToResidence}
+            href="#reservation" 
+            onClick={scrollToReservation}
             className="hero-scroll-link"
           >
-            View Photos & Suites &darr;
+            Check Dates &amp; Availability &darr;
           </a>
         </div>
       </motion.div>

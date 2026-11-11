@@ -1,5 +1,5 @@
 .residence-blueprint-section {
-  padding: 70px 20px 65px;
+  padding: 60px 20px 65px;
   background-color: var(--primary-bg);
   position: relative;
 }
@@ -12,7 +12,7 @@
 .blueprint-header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 32px;
+  margin: 0 auto 28px;
 }
 
 .blueprint-eyebrow {
@@ -28,18 +28,18 @@
 
 .blueprint-heading {
   font-family: var(--font-heading);
-  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.9rem, 2.6vw, 2.4rem);
   font-weight: 500;
   color: var(--text-dark);
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .blueprint-subheading {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 /* Quick Jump Category Chips */
@@ -49,7 +49,13 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  position: sticky;
+  top: 72px;
+  z-index: 20;
+  background-color: rgba(250, 246, 240, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 10px 0;
 }
 
 .blueprint-nav-chip {
@@ -104,82 +110,32 @@
   width: 100%;
 }
 
-.blueprint-scroll-controls {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
+/* PC VERSION: SPACES ARE UP TO DOWN (VERTICAL STACK) */
+@media (min-width: 901px) {
+  .blueprint-scroll-controls {
+    display: none !important;
+  }
 
-.scroll-btn {
-  background: #FDFBF7;
-  border: 1px solid rgba(165, 167, 155, 0.4);
-  color: var(--text-dark);
-  width: 34px;
-  height: 34px;
-  border-radius: 2px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+  .blueprint-scroll-track {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    overflow: visible;
+    padding: 0;
+  }
 
-.scroll-btn:hover:not(:disabled) {
-  background: var(--deep-burgundy);
-  color: #FFFFFF;
-  border-color: var(--deep-burgundy);
-}
-
-.scroll-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.scroll-indicator-text {
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  letter-spacing: 0.8px;
-}
-
-/* Scroll Track for Continuous Scrolling */
-.blueprint-scroll-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 4px 2px 16px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-
-.blueprint-scroll-track::-webkit-scrollbar {
-  height: 4px;
-}
-
-.blueprint-scroll-track::-webkit-scrollbar-thumb {
-  background: var(--deep-burgundy);
-  border-radius: 2px;
-}
-
-/* Detail Card: Desktop 2-column layout */
-.blueprint-detail-card {
-  flex: 0 0 100%;
-  min-width: 100%;
-  max-width: 100%;
-  scroll-snap-align: center;
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 32px;
-  background: #FDFBF7;
-  border: 1px solid rgba(165, 167, 155, 0.45);
-  border-radius: 2px;
-  padding: 26px 28px;
-  box-sizing: border-box;
+  .blueprint-detail-card {
+    width: 100%;
+    scroll-margin-top: 130px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 32px;
+    background: #FDFBF7;
+    border: 1px solid rgba(165, 167, 155, 0.45);
+    border-radius: 2px;
+    padding: 26px 28px;
+    box-sizing: border-box;
+  }
 }
 
 .blueprint-media-col {
@@ -238,7 +194,7 @@
 
 .info-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
   font-weight: 500;
   color: var(--text-dark);
   line-height: 1.22;
@@ -246,10 +202,10 @@
 }
 
 .info-tagline {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.45;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 /* Specs Matrix */
@@ -257,10 +213,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   border-top: 1px solid rgba(165, 167, 155, 0.3);
   border-bottom: 1px solid rgba(165, 167, 155, 0.3);
-  padding: 12px 0;
+  padding: 10px 0;
 }
 
 .matrix-cell {
@@ -269,7 +225,7 @@
 }
 
 .matrix-label {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--text-muted);
@@ -277,23 +233,23 @@
 }
 
 .matrix-value {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-dark);
 }
 
 /* Inclusions */
 .inclusions-section {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .inclusions-title {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--text-dark);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .inclusions-list {
@@ -302,21 +258,21 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .inclusion-item {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .inclusion-bullet {
   color: var(--deep-burgundy);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.2;
   flex-shrink: 0;
 }
@@ -331,7 +287,7 @@
   align-items: center;
   color: var(--deep-burgundy);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-decoration: none;
   border-bottom: 1px solid var(--deep-burgundy);
   padding-bottom: 2px;
@@ -343,14 +299,14 @@
   border-color: #78100E;
 }
 
-/* MOBILE LAYOUT: ALWAYS SIDE-BY-SIDE 2-COLUMN (Matches Screenshot 1, NEVER stacked Screenshot 2) */
-@media (max-width: 768px) {
+/* MOBILE LAYOUT (< 900px): SIDE-BY-SIDE 2-COLUMN (Matches Screenshot 1) */
+@media (max-width: 900px) {
   .residence-blueprint-section {
-    padding: 48px 14px 40px;
+    padding: 46px 14px 40px;
   }
 
   .blueprint-header {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .blueprint-heading {
@@ -366,10 +322,10 @@
     justify-content: flex-start;
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding-bottom: 6px;
-    margin: 0 -14px 16px;
-    padding: 0 14px 6px;
+    padding: 6px 14px;
+    margin: 0 -14px 14px;
     scrollbar-width: none;
+    position: static;
   }
 
   .blueprint-scroll-nav::-webkit-scrollbar {
@@ -387,21 +343,64 @@
   }
 
   .blueprint-scroll-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 8px;
   }
 
   .scroll-btn {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     font-size: 1.1rem;
+    background: #FDFBF7;
+    border: 1px solid rgba(165, 167, 155, 0.4);
+    color: var(--text-dark);
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
 
-  /* SIDE-BY-SIDE ON MOBILE: Matches Screenshot 1 */
+  .scroll-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .scroll-indicator-text {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .blueprint-scroll-track {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 12px;
+    padding: 4px 2px 14px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
   .blueprint-detail-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: center;
+    display: grid;
     grid-template-columns: 44% 56%;
     gap: 10px;
     padding: 10px 8px;
     align-items: start;
+    background: #FDFBF7;
+    border: 1px solid rgba(165, 167, 155, 0.45);
+    border-radius: 2px;
+    box-sizing: border-box;
   }
 
   .blueprint-image-wrap {

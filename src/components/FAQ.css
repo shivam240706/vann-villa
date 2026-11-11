@@ -1,29 +1,32 @@
+/* FAQ SECTION: REMOVED "EXTRA SPACE", 3 COLUMNS ON PC, 20% SMALLER TEXT */
 .faq-section {
-  padding: var(--section-gap) 20px;
+  padding: 24px 20px 50px;
   background-color: var(--primary-bg);
 }
 
 .faq-container {
-  max-width: 800px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 .faq-title {
   text-align: center;
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.6rem, 2.3vw, 2.1rem);
   color: var(--primary-dark);
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
+/* 3 COLUMNS FOR QUESTIONS ON PC (INSTEAD OF 1) */
 .faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  align-items: start;
 }
 
 .faq-item {
-  background: var(--bg-light);
+  background: var(--bg-light, #FAF6F0);
   border-radius: 2px;
   border: 1px solid rgba(165, 167, 155, 0.4);
   overflow: hidden;
@@ -39,7 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 11px 14px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -49,15 +52,18 @@
 }
 
 .faq-question-text {
-  font-size: 1.1rem;
+  font-size: 0.82rem; /* 20%+ smaller than 1.1rem */
   font-weight: 600;
-  padding-right: 20px;
+  padding-right: 12px;
+  line-height: 1.35;
 }
 
 .faq-chevron {
   color: var(--accent-gold);
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
   flex-shrink: 0;
+  width: 13px;
+  height: 13px;
 }
 
 .faq-chevron.open {
@@ -69,27 +75,46 @@
 }
 
 .faq-answer-text {
-  padding: 0 24px 24px;
-  font-size: 1rem;
-  line-height: 1.6;
+  padding: 0 14px 12px;
+  font-size: 0.76rem; /* 20%+ smaller than 1rem */
+  line-height: 1.5;
   color: var(--text-muted);
 }
 
-@media (max-width: 768px) {
+/* Tablet (2 columns) */
+@media (max-width: 960px) {
+  .faq-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Mobile (1 column) */
+@media (max-width: 640px) {
   .faq-section {
-    padding: 60px 20px;
+    padding: 20px 14px 36px;
+  }
+
+  .faq-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  .faq-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .faq-question-btn {
-    padding: 16px 20px;
+    padding: 10px 12px;
   }
 
   .faq-question-text {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .faq-answer-text {
-    padding: 0 20px 20px;
-    font-size: 0.95rem;
+    padding: 0 12px 10px;
+    font-size: 0.74rem;
   }
 }

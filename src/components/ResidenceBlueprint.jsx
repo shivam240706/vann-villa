@@ -104,11 +104,16 @@ const ResidenceBlueprint = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const scrollToIndex = (index) => {
+    setActiveIndex(index);
     if (!scrollRef.current) return;
     const cards = scrollRef.current.querySelectorAll('.blueprint-detail-card');
     if (cards[index]) {
-      cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      setActiveIndex(index);
+      const isMobile = window.innerWidth <= 900;
+      if (isMobile) {
+        cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      } else {
+        cards[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
@@ -127,6 +132,9 @@ const ResidenceBlueprint = () => {
     if (!el) return;
 
     const handleScroll = () => {
+      const isMobile = window.innerWidth <= 900;
+      if (!isMobile) return;
+
       const cards = el.querySelectorAll('.blueprint-detail-card');
       const containerLeft = el.getBoundingClientRect().left;
       let closestIdx = 0;
@@ -156,12 +164,12 @@ const ResidenceBlueprint = () => {
           <span className="blueprint-eyebrow">Accommodation & Spaces</span>
           <h2 className="blueprint-heading">The Villa & Bedrooms</h2>
           <p className="blueprint-subheading">
-            Scroll through the private suites, central salon, kitchen, and grounds.
+            Explore the private suites, central salon, kitchen, and grounds.
             Every space is 100% exclusive to your party.
           </p>
         </div>
 
-        {/* Quick-Jump Scroll Navigation Chips */}
+        {/* Quick-Jump Navigation Chips */}
         <div className="blueprint-scroll-nav" role="tablist" aria-label="Quick jump to space">
           {spaces.map((sp, idx) => (
             <button
@@ -176,9 +184,9 @@ const ResidenceBlueprint = () => {
           ))}
         </div>
 
-        {/* Scrolling Showcase Container (All 5 spaces in continuous scroll) */}
+        {/* Showcase Container */}
         <div className="blueprint-scroll-wrapper">
-          {/* Desktop & Mobile Prev / Next Controls */}
+          {/* Mobile Prev / Next Controls (Hidden on PC where spaces are up-to-down) */}
           <div className="blueprint-scroll-controls">
             <button 
               type="button" 
@@ -203,13 +211,15 @@ const ResidenceBlueprint = () => {
             </button>
           </div>
 
+          {/* Up-to-down on PC, Horizontal swipe on Mobile */}
           <div className="blueprint-scroll-track" ref={scrollRef}>
             {spaces.map((sp, idx) => (
               <article 
                 key={sp.id} 
+                id={`space-${sp.id}`}
                 className={`blueprint-detail-card ${activeIndex === idx ? 'current' : ''}`}
               >
-                {/* Visual Column (Left Column - Always side-by-side as in Image 1) */}
+                {/* Visual Column (Left Column) */}
                 <div className="blueprint-media-col">
                   <div className="blueprint-image-wrap">
                     <img
