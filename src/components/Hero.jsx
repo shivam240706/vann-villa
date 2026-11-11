@@ -52,16 +52,30 @@ const Hero = () => {
           <span>100% Pet Friendly</span>
         </div>
 
-        {/* Spacious, Clean Action Container */}
+        {/* Dual Action Buttons: Check Availability on WhatsApp & View Packages */}
         <div className="hero-actions-container">
-          <a
-            href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20check%20availability%20and%20rates%20for%20a%20private%20stay."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-btn-primary"
-          >
-            Check Availability on WhatsApp
-          </a>
+          <div className="hero-btn-group">
+            <a
+              href="https://wa.me/919411770969?text=Hello%20Vann%20Villa%2C%20I%20would%20like%20to%20check%20availability%20and%20rates%20for%20a%20private%20stay."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-btn-primary"
+            >
+              Check Availability on WhatsApp
+            </a>
+
+            <a
+              href="#packages"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('packages');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="hero-btn-secondary"
+            >
+              View Packages
+            </a>
+          </div>
 
           <div className="hero-rate-tag">
             Direct Host Rate: <span className="rate-accent">From ₹4,499 / night</span>

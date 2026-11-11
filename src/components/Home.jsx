@@ -26,8 +26,8 @@ const Home = () => {
       <ResidenceBlueprint />
       <Amenities />
       <Packages />
-      <PriceBanner />
       <Testimonials />
+      <PriceBanner />
       <FAQ />
       <LeadCapture />
     </main>
